@@ -455,10 +455,11 @@
   }
 
   /* ─── Stat row ─── */
-  .stats { display: flex; gap: 40px; margin-top: 16px; }
-  .stat-item { text-align: center; }
-  .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; }
-  .stat-label { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  .stats { display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap; justify-content: center; }
+  .stat-item { text-align: center; min-width: 100px; flex: 1; padding: 8px 4px; border-right: 1px solid var(--border); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.2; }
+  .stat-label { font-size: 11px; color: var(--text-dim); margin-top: 6px; line-height: 1.3; }
 
   /* ═══════════════════════════════════════════════════
      DIAGRAMS — Radial, Tree, Flow, Architecture
@@ -1245,24 +1246,24 @@
       <h2 data-editable>Метод 1: Экономия времени — как считать</h2>
       <div class="formula-box" style="font-size:14px;" data-editable>Экономия часов = (Время до − Время после) × Объём × Точность
 Денежный эффект = Экономия часов × Стоимость часа × Число сотрудников</div>
-      <div class="two-col" style="gap:20px; margin-top:8px;">
-        <div>
-          <h3 data-editable>Компоненты расчёта</h3>
-          <ul class="accent-list" style="margin-top:6px;">
-            <li data-editable><strong>Время до/после:</strong> минуты или часы на одну операцию до и после внедрения ИИ</li>
-            <li data-editable><strong>Объём:</strong> количество операций в месяц (транзакции, заявки, документы)</li>
-            <li data-editable><strong>Точность:</strong> доля успешно автоматизированных операций (90-95%)</li>
-            <li data-editable><strong>Стоимость часа:</strong> полная стоимость часа работы сотрудника с учётом ФОТ и накладных расходов</li>
-          </ul>
+      <div class="two-col" style="gap:20px; margin-top:12px;">
+        <div class="card" style="padding:16px;">
+          <h3 data-editable style="margin-bottom:12px;">Компоненты расчёта</h3>
+          <table class="slide-table" style="font-size:13px;">
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Время до/после</td><td style="padding:6px 0;" data-editable>Минуты или часы на одну операцию до и после внедрения ИИ</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Объём</td><td style="padding:6px 0;" data-editable>Количество операций в месяц (транзакции, заявки, документы)</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Точность</td><td style="padding:6px 0;" data-editable>Доля успешно автоматизированных операций (90-95%)</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Стоимость часа</td><td style="padding:6px 0;" data-editable>Полная стоимость часа работы сотрудника с учётом ФОТ и накладных</td></tr>
+          </table>
         </div>
-        <div>
-          <h3 data-editable>Важные нюансы</h3>
-          <ul class="accent-list" style="margin-top:6px;">
-            <li data-editable>Используйте полную стоимость часа: ФОТ + налоги + накладные</li>
-            <li data-editable>Не забудьте про реальную загрузку: сколько времени сотрудник фактически тратит на задачу</li>
-            <li data-editable>Учтите время на проверку результатов работы ИИ</li>
-            <li data-editable>Планируйте масштабирование: как растёт стоимость ИИ при росте объёмов</li>
-          </ul>
+        <div class="card" style="padding:16px;">
+          <h3 data-editable style="margin-bottom:12px;">Важные нюансы</h3>
+          <table class="slide-table" style="font-size:13px;">
+            <tr><td style="padding:6px 0;" data-editable>Используйте полную стоимость часа: ФОТ + налоги + накладные</td></tr>
+            <tr><td style="padding:6px 0;" data-editable>Не забудьте про реальную загрузку: сколько времени сотрудник фактически тратит на задачу</td></tr>
+            <tr><td style="padding:6px 0;" data-editable>Учтите время на проверку результатов работы ИИ</td></tr>
+            <tr><td style="padding:6px 0;" data-editable>Планируйте масштабирование: как растёт стоимость ИИ при росте объёмов</td></tr>
+          </table>
         </div>
       </div>
       <div class="card" style="padding:16px; margin-top:12px; border-left:3px solid var(--accent);">
@@ -1287,24 +1288,24 @@
       </div>
       <h2 data-editable>Метод 2: Снижение операционных затрат</h2>
       <div class="formula-box" data-editable>∆OPEX = (Затраты до − Затраты после) − Новые переменные издержки ИИ</div>
-      <div class="two-col" style="gap:20px; margin-top:8px;">
-        <div>
-          <h3 data-editable>Компоненты для анализа</h3>
-          <ul class="accent-list" style="margin-top:6px;">
-            <li data-editable><strong>Колл-центр:</strong> затраты на операторов, супервизоров, оборудование</li>
-            <li data-editable><strong>Ручные операции:</strong> бумажный документооборот, проверка данных, верификация</li>
-            <li data-editable><strong>ИТ-инфраструктура:</strong> серверы, лицензии, поддержка систем</li>
-            <li data-editable><strong>Брак и возвраты:</strong> затраты на исправление ошибок, претензионная работа</li>
-          </ul>
+      <div class="two-col" style="gap:20px; margin-top:12px;">
+        <div class="card" style="padding:16px;">
+          <h3 data-editable style="margin-bottom:12px;">Компоненты для анализа</h3>
+          <table class="slide-table" style="font-size:13px;">
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Колл-центр</td><td style="padding:6px 0;" data-editable>Затраты на операторов, супервизоров, оборудование</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Ручные операции</td><td style="padding:6px 0;" data-editable>Бумажный документооборот, проверка данных, верификация</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>ИТ-инфраструктура</td><td style="padding:6px 0;" data-editable>Серверы, лицензии, поддержка систем</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Брак и возвраты</td><td style="padding:6px 0;" data-editable>Затраты на исправление ошибок, претензионная работа</td></tr>
+          </table>
         </div>
-        <div>
-          <h3 data-editable>Учет новых затрат на ИИ</h3>
-          <ul class="accent-list" style="margin-top:6px;">
-            <li data-editable><strong>API и модели:</strong> стоимость запросов к внешним API, аренда облачных моделей</li>
-            <li data-editable><strong>Мониторинг:</strong> затраты на контроль качества работы ИИ-систем</li>
-            <li data-editable><strong>Доработка:</strong> постоянное обучение и настройка моделей</li>
-            <li data-editable><strong>Валидация:</strong> проверка корректности в критичных случаях</li>
-          </ul>
+        <div class="card" style="padding:16px;">
+          <h3 data-editable style="margin-bottom:12px;">Учет новых затрат на ИИ</h3>
+          <table class="slide-table" style="font-size:13px;">
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>API и модели</td><td style="padding:6px 0;" data-editable>Стоимость запросов к внешним API, аренда облачных моделей</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Мониторинг</td><td style="padding:6px 0;" data-editable>Затраты на контроль качества работы ИИ-систем</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Доработка</td><td style="padding:6px 0;" data-editable>Постоянное обучение и настройка моделей</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Валидация</td><td style="padding:6px 0;" data-editable>Проверка корректности в критичных случаях</td></tr>
+          </table>
         </div>
       </div>
       <div class="callout" style="margin-top:12px;">
@@ -1324,22 +1325,22 @@
       <h2 data-editable>Метод 3: Предотвращение ошибок (стоимость качества)</h2>
       <div class="formula-box" style="font-size:14px;" data-editable>Предотвращённые ошибки = Ошибки до × Эффективность ИИ
 Финансовый эффект = Предотвращённые ошибки × Стоимость одной ошибки</div>
-      <div class="two-col" style="gap:20px; margin-top:8px;">
-        <div>
-          <h3 data-editable>Компоненты стоимости ошибок</h3>
-          <ul class="accent-list" style="margin-top:6px;">
-            <li data-editable><strong>Прямые потери:</strong> затраты на исправление ошибок, штрафные санкции, компенсации</li>
-            <li data-editable><strong>Непрямые потери:</strong> время специалистов на устранение последствий, упущенные возможности</li>
-            <li data-editable><strong>Репутационные риски:</strong> негативные отзывы, потеря лояльности клиентов, снижение NPS</li>
-          </ul>
+      <div class="two-col" style="gap:20px; margin-top:12px;">
+        <div class="card" style="padding:16px;">
+          <h3 data-editable style="margin-bottom:12px;">Компоненты стоимости ошибок</h3>
+          <table class="slide-table" style="font-size:13px;">
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Прямые потери</td><td style="padding:6px 0;" data-editable>Затраты на исправление ошибок, штрафные санкции, компенсации</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Непрямые потери</td><td style="padding:6px 0;" data-editable>Время специалистов на устранение последствий, упущенные возможности</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Репутационные риски</td><td style="padding:6px 0;" data-editable>Негативные отзывы, потеря лояльности клиентов, снижение NPS</td></tr>
+          </table>
         </div>
-        <div>
-          <h3 data-editable>Оценка эффективности ИИ</h3>
-          <ul class="accent-list" style="margin-top:6px;">
-            <li data-editable><strong>Точность модели:</strong> % корректно определяемых случаев (precision, recall, F1-мера)</li>
-            <li data-editable><strong>Исторические данные:</strong> анализ ретроспективы на тестовом периоде для валидации</li>
-            <li data-editable><strong>Сценарное моделирование:</strong> пессимистичный/базовый/оптимистичный прогноз эффекта</li>
-          </ul>
+        <div class="card" style="padding:16px;">
+          <h3 data-editable style="margin-bottom:12px;">Оценка эффективности ИИ</h3>
+          <table class="slide-table" style="font-size:13px;">
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Точность модели</td><td style="padding:6px 0;" data-editable>% корректно определяемых случаев (precision, recall, F1-мера)</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Исторические данные</td><td style="padding:6px 0;" data-editable>Анализ ретроспективы на тестовом периоде для валидации</td></tr>
+            <tr><td style="font-weight:600;white-space:nowrap;vertical-align:top;padding:6px 12px 6px 0;" data-editable>Сценарное моделирование</td><td style="padding:6px 0;" data-editable>Пессимистичный / базовый / оптимистичный прогноз эффекта</td></tr>
+          </table>
         </div>
       </div>
       <div class="callout" style="margin-top:12px;">
