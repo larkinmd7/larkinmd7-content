@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оценка ИИ-проектов: расширенный взгляд | Colvir 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #FAFAFA;
+    --bg-card:      #FFFFFF;
+    --bg-dark:      #111111;
+    --text:         #111111;
+    --text-dim:     #6B7280;
+    --text-white:   #FFFFFF;
+    --accent:       #FF6B00;
+    --border:       #E5E7EB;
+    --label-concept: #3B82F6;
+    --label-demo:    #10B981;
+    --label-practice:#FF6B00;
+    --label-theory:  #8B5CF6;
+    --label-warning: #EF4444;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Progress bar top ─── */
+  #progress-bar {
+    position: fixed; top: 0; left: 0;
+    height: 3px; background: var(--accent);
+    transition: width 0.35s ease;
+    z-index: 200;
+  }
+
+  /* ─── Slides ─── */
+  #slides {
+    width: 100vw;
+    height: calc(100vh - 44px);
+    position: relative;
+  }
+
+  .slide {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 80px 20px;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .slide-inner {
+    max-width: 1100px;
+    width: 100%;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transform-origin: top center;
+  }
+
+  /* fadeUp animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide.active .slide-inner > * {
+    opacity: 0;
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  .slide.active .slide-inner > *:nth-child(1) { animation-delay: 0s; }
+  .slide.active .slide-inner > *:nth-child(2) { animation-delay: 0.08s; }
+  .slide.active .slide-inner > *:nth-child(3) { animation-delay: 0.16s; }
+  .slide.active .slide-inner > *:nth-child(4) { animation-delay: 0.24s; }
+  .slide.active .slide-inner > *:nth-child(5) { animation-delay: 0.32s; }
+  .slide.active .slide-inner > *:nth-child(6) { animation-delay: 0.40s; }
+  .slide.active .slide-inner > *:nth-child(7) { animation-delay: 0.48s; }
+
+  /* ─── Title slide ─── */
+  .slide-title {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    align-items: center;
+  }
+  .slide-title .slide-inner {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .slide-title h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .slide-title .subtitle {
+    font-size: 18px;
+    color: #9CA3AF;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+
+  .slide-title .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #4B5563;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* ─── Section header ─── */
+  .section-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    color: white;
+    background: var(--accent);
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title-text {
+    font-size: 14px; font-weight: 600;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── Typography ─── */
+  h2 {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  p, li {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #374151;
+  }
+
+  .subtitle-text {
+    font-size: 16px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+    line-height: 1.6;
+    max-width: 760px;
+  }
+
+  /* ─── Labels ─── */
+  .label {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    background: #F3F4F6;
+    color: #6B7280;
+  }
+  .label-concept  { background: #EFF6FF; color: #3B82F6; }
+  .label-demo     { background: #ECFDF5; color: #10B981; }
+  .label-practice { background: #FFF7ED; color: #FF6B00; }
+  .label-theory   { background: #F5F3FF; color: #8B5CF6; }
+  .label-warning  { background: #FEF2F2; color: #EF4444; }
+
+  /* ─── Tags (hero) ─── */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    color: #9CA3AF;
+  }
+
+  /* ─── Cards grid ─── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .cards-2 { grid-template-columns: repeat(2, 1fr); }
+  .cards-3 { grid-template-columns: repeat(3, 1fr); }
+  .cards-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  .slide.active .card:nth-child(1) { animation-delay: 0.25s; }
+  .slide.active .card:nth-child(2) { animation-delay: 0.33s; }
+  .slide.active .card:nth-child(3) { animation-delay: 0.41s; }
+  .slide.active .card:nth-child(4) { animation-delay: 0.49s; }
+  .slide.active .card:nth-child(5) { animation-delay: 0.57s; }
+  .slide.active .card:nth-child(6) { animation-delay: 0.65s; }
+
+  .card-icon { font-size: 22px; margin-bottom: 10px; }
+  .card h3   { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .card p    { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+  .card-accent { border-left: 3px solid var(--accent); }
+  .card-blue   { border-left: 3px solid #3B82F6; }
+  .card-green  { border-left: 3px solid #10B981; }
+  .card-dark {
+    background: var(--bg-dark); color: white;
+    border-color: #222;
+  }
+  .card-dark h3 { color: white; }
+  .card-dark p  { color: #9CA3AF; }
+
+  /* ─── Code block ─── */
+  .code-block {
+    background: #F8F9FA;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 18px 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.75;
+    overflow-x: auto;
+    color: #1F2937;
+    white-space: pre;
+  }
+  .code-block.sm { font-size: 12px; padding: 14px 18px; }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: #F3F4F6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #374151;
+  }
+
+  /* ─── Table ─── */
+  .slide-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .slide-table th {
+    background: #F9FAFB;
+    font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-dim); padding: 10px 14px;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+  }
+  .slide-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  .slide-table tr:last-child td { border-bottom: none; }
+  .slide-table tr:hover td { background: #F9FAFB; }
+  .slide-table .highlight { color: var(--accent); font-weight: 600; }
+  .slide-table .ok { color: #10B981; font-weight: 600; }
+  .slide-table .bad { color: #EF4444; font-weight: 600; }
+
+  /* ─── Timeline (process) ─── */
+  .timeline {
+    position: relative;
+    border-left: 2px solid var(--border);
+    margin-left: 12px;
+    padding-left: 28px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .timeline-step {
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  .slide.active .timeline-step:nth-child(1) { animation-delay: 0.2s; }
+  .slide.active .timeline-step:nth-child(2) { animation-delay: 0.3s; }
+  .slide.active .timeline-step:nth-child(3) { animation-delay: 0.4s; }
+  .slide.active .timeline-step:nth-child(4) { animation-delay: 0.5s; }
+  .slide.active .timeline-step:nth-child(5) { animation-delay: 0.6s; }
+  .slide.active .timeline-step:nth-child(6) { animation-delay: 0.7s; }
+
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -36px; top: 4px;
+    width: 14px; height: 14px;
+    background: white; border: 2px solid var(--border);
+    border-radius: 50%;
+  }
+  .timeline-step.active-step::before {
+    border-color: var(--accent); background: var(--accent);
+  }
+  .timeline-title { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .timeline-desc  { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+  /* ─── Compare block ─── */
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+  }
+  .compare-col { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .compare-col.col-bad  { border-top: 3px solid #EF4444; }
+  .compare-col.col-good { border-top: 3px solid #10B981; }
+  .compare-label { font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .col-bad  .compare-label { color: #EF4444; }
+  .col-good .compare-label { color: #10B981; }
+  .compare-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; }
+  .compare-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #D1D5DB; margin-top: 5px; flex-shrink: 0; }
+  .col-bad  .compare-item::before { background: #FCA5A5; }
+  .col-good .compare-item::before { background: #6EE7B7; }
+
+  /* ─── Callout ─── */
+  .callout {
+    display: flex; gap: 14px;
+    background: #FFF7ED; border: 1px solid #FED7AA;
+    border-left: 3px solid var(--accent);
+    border-radius: 10px; padding: 14px 18px;
+    margin-top: 14px;
+  }
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .callout-text { font-size: 13px; line-height: 1.6; color: #92400E; }
+  .callout.info { background: #EFF6FF; border-color: #BFDBFE; border-left-color: #3B82F6; }
+  .callout.info .callout-text { color: #1E40AF; }
+  .callout.success { background: #ECFDF5; border-color: #A7F3D0; border-left-color: #10B981; }
+  .callout.success .callout-text { color: #065F46; }
+  .callout.danger { background: #FEF2F2; border-color: #FECACA; border-left-color: #EF4444; }
+  .callout.danger .callout-text { color: #991B1B; }
+
+  /* ─── List with accents ─── */
+  .accent-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .accent-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 15px; line-height: 1.5; color: #374151;
+  }
+  .accent-list li::before {
+    content: '\2192'; color: var(--accent); font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ─── Caption / note ─── */
+  .caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--text-dim);
+    margin-top: 8px; text-align: center;
+    letter-spacing: 0.03em;
+  }
+  .note {
+    font-size: 13px; color: var(--text-dim);
+    margin-top: 10px; line-height: 1.5;
+  }
+
+  /* ─── Two columns layout ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+  /* ─── Highlight number ─── */
+  .big-number {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 800; color: var(--accent);
+    line-height: 1; letter-spacing: -0.04em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ─── Stat row ─── */
+  .stats { display: flex; gap: 40px; margin-top: 16px; }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  /* ─── Formula box ─── */
+  .formula-box {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    border-radius: 12px;
+    padding: 18px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* ─── Navigation dots ─── */
+  #dots {
+    display: flex; gap: 6px; align-items: center;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #D1D5DB; cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+  }
+  .dot:hover { background: #9CA3AF; transform: scale(1.3); }
+  .dot.active {
+    background: var(--accent);
+    width: 20px; border-radius: 3px;
+    transform: none;
+  }
+
+  /* ─── Side arrows ─── */
+  .nav-btn {
+    position: fixed; top: 50%; transform: translateY(-50%);
+    width: 40px; height: 40px; border-radius: 50%;
+    background: white; border: 1px solid var(--border);
+    cursor: pointer; font-size: 15px;
+    transition: all 0.2s;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: flex; align-items: center; justify-content: center;
+    color: #374151;
+    user-select: none;
+  }
+  #prev-btn { left: 16px; }
+  #next-btn { right: 16px; }
+  .nav-btn:hover { background: var(--bg-dark); color: white; border-color: var(--bg-dark); }
+  .nav-btn:disabled { opacity: 0.25; pointer-events: none; }
+
+  /* ─── Counter ─── */
+  #counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #9CA3AF;
+    user-select: none;
+  }
+
+  /* ─── Section badge ─── */
+  #section-badge {
+    position: fixed; top: 20px; right: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: #9CA3AF;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    z-index: 100; transition: opacity 0.3s;
+  }
+
+  /* ─── Animations for slide transitions ─── */
+  @keyframes slideLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+  }
+  @keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+  }
+
+  /* ─── EDIT MODE ─── */
+  #edit-btn {
+    position: fixed; bottom: 14px; left: 50%;
+    transform: translateX(-50%) translateX(80px);
+    z-index: 200;
+    background: var(--bg-dark); color: white;
+    border: none; border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 600;
+    padding: 7px 16px; cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    display: flex; align-items: center; gap: 7px;
+  }
+  #edit-btn:hover { background: var(--accent); transform: translateX(-50%) translateX(80px) scale(1.04); }
+  #edit-btn.active { background: var(--accent); }
+  .edit-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #4B5563;
+    transition: background 0.2s;
+  }
+  #edit-btn.active .edit-dot { background: #FFD700; }
+
+  /* edit mode toolbar */
+  #edit-toolbar {
+    position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 8px 14px;
+    display: none; gap: 10px; align-items: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    z-index: 500;
+  }
+  #edit-toolbar.visible { display: flex; }
+  .tb-sep { width: 1px; height: 20px; background: var(--border); }
+  .tb-btn {
+    font-size: 12px; font-weight: 500; padding: 5px 12px;
+    background: none; border: 1px solid var(--border);
+    border-radius: 7px; cursor: pointer; color: var(--text);
+    display: flex; align-items: center; gap: 6px;
+    transition: all 0.15s; white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+  }
+  .tb-btn:hover { background: #F3F4F6; }
+  .tb-btn.danger { color: #EF4444; border-color: #FECACA; }
+  .tb-btn.danger:hover { background: #FEF2F2; }
+  .tb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* contenteditable styles in edit mode */
+  body.edit-mode .slide.active [data-editable] {
+    cursor: text;
+  }
+  body.edit-mode .slide.active [data-editable]:hover {
+    outline: 1.5px dashed rgba(255,107,0,0.35);
+    outline-offset: 1px;
+  }
+  body.edit-mode .slide.active [data-editable]:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  body.edit-mode .slide.active [data-draggable] {
+    cursor: grab;
+    position: relative;
+  }
+  body.edit-mode .slide.active [data-draggable].dragging {
+    cursor: grabbing;
+    opacity: 0.7;
+    z-index: 999;
+  }
+  body.edit-mode .slide.active {
+    outline: 2px dashed rgba(255,107,0,0.2);
+    outline-offset: -6px;
+  }
+  .inserted-text {
+    font-size: 16px; color: var(--text); line-height: 1.6;
+    padding: 4px 0;
+  }
+  .inserted-img {
+    max-width: 100%; max-height: 320px;
+    border-radius: 10px; border: 1px solid var(--border);
+    display: block; margin-top: 12px;
+    object-fit: contain;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- EDIT TOOLBAR -->
+<div id="edit-toolbar">
+  <span class="tb-label">&#9998; &#1056;&#1077;&#1078;&#1080;&#1084; &#1088;&#1077;&#1076;&#1072;&#1082;&#1090;&#1086;&#1088;&#1072;</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn" id="tb-add-text" onclick="insertText()">&#65291; &#1058;&#1077;&#1082;&#1089;&#1090;</button>
+  <button class="tb-btn" id="tb-add-img"  onclick="insertImageBtn()">&#128444; &#1050;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1072;</button>
+  <div class="tb-sep"></div>
+  <span style="font-size:11px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">Ctrl+V — &#1074;&#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1100;</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn danger" onclick="toggleEdit()">&#10005; &#1042;&#1099;&#1081;&#1090;&#1080;</button>
+</div>
+
+<div id="slides">
+
+  <!-- 1. TITLE -->
+  <div class="slide slide-title" data-section="Старт">
+    <div class="slide-inner">
+      <div class="meta" data-editable>Colvir 2026 · Поток · Занятие 10 · Дополнение</div>
+      <h1 data-editable>Оценка ИИ&#8209;проектов:<br>расширенный взгляд</h1>
+      <p class="subtitle" data-editable>Новые данные, российские кейсы и практические советы для ваших проектов</p>
+      <div class="tags">
+        <span class="tag" data-editable>Российские кейсы 2024–2025</span>
+        <span class="tag" data-editable>Когда НЕ использовать LLM</span>
+        <span class="tag" data-editable>Тренды 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 95% GenAI проектов -->
+  <div class="slide" data-section="Провокация">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">!</div>
+        <div class="section-title-text" data-editable>Провокация</div>
+      </div>
+      <h2 data-editable>95% GenAI проектов не показали измеримый ROI</h2>
+      <div class="compare">
+        <div class="compare-col col-bad">
+          <div class="compare-label" data-editable>Проблема</div>
+          <div class="compare-item" data-editable>MIT исследование: 95% enterprise GenAI проектов не показали измеримый финансовый результат за 6 месяцев</div>
+          <div class="compare-item" data-editable>42% компаний отказались от большинства AI-инициатив в 2025 году</div>
+          <div class="compare-item" data-editable>60% AI-проектов не достигают ожидаемой ценности из-за неверных расчётов ROI</div>
+        </div>
+        <div class="compare-col col-good">
+          <div class="compare-label" data-editable>Реальность</div>
+          <div class="compare-item" data-editable>Проблема в измерении, не в технологии</div>
+          <div class="compare-item" data-editable>IDC: компании получают в среднем $3.50 на каждый $1, вложенный в ИИ</div>
+          <div class="compare-item" data-editable>Компании со структурированным фреймворком ROI получают 3.5x возврат за 24 месяца</div>
+          <div class="compare-item" data-editable>Пилот-стратегия: ROI за 6–9 мес vs 18–24 мес при full-scale внедрении</div>
+        </div>
+      </div>
+      <div class="callout info" style="margin-top:16px;">
+        <div class="callout-icon">&#128161;</div>
+        <div class="callout-text" data-editable><strong>Вывод:</strong> без правильной методологии расчёта даже успешный проект выглядит провальным. Именно поэтому мы разбираем ROI на этом занятии.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Российские кейсы -->
+  <div class="slide" data-section="Кейсы">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-title-text" data-editable>Кейсы</div>
+      </div>
+      <h2 data-editable>Экономический эффект ИИ в российских компаниях</h2>
+      <div class="cards cards-3">
+        <div class="card card-accent">
+          <div class="card-icon" data-editable>&#127981;</div>
+          <h3 data-editable>СИБУР — 6.5 млрд &#8381;/год</h3>
+          <p data-editable>250+ проектов цифровизации в 2024 году. 50 млрд &#8381; совокупный эффект за 7 лет. Предиктивная диагностика «Прана», IoT-датчики. Автоматизированное видеонаблюдение на производстве.</p>
+        </div>
+        <div class="card card-blue">
+          <div class="card-icon" data-editable>&#9874;&#65039;</div>
+          <h3 data-editable>ЕВРАЗ — 5.8 млрд &#8381;/год</h3>
+          <p data-editable>100+ проектов в 2024 году. 60% эффекта — от ИИ (ML, компьютерное зрение, математическая оптимизация). Видеоаналитика на агломерационной фабрике. 15 проектов на GenAI и LLM.</p>
+        </div>
+        <div class="card card-green">
+          <div class="card-icon" data-editable>&#128196;</div>
+          <h3 data-editable>Металлургический холдинг — 45 млн &#8381;/год</h3>
+          <p data-editable>Автономные ИИ-агенты для документооборота. Обработка первичных документов: 4 часа &#8594; 20 минут. Ошибки ручного ввода &#8594; менее 10%. Масштабирование на все дочерние предприятия.</p>
+        </div>
+      </div>
+      <div class="callout info" style="margin-top:16px;">
+        <div class="callout-icon">&#128202;</div>
+        <div class="callout-text" data-editable><strong>Яков и Партнёры + Яндекс:</strong> ожидаемый экономический эффект от ИИ в России — до 13 трлн &#8381; к 2030 году (5.5% ВВП). 70% компаний уже интегрировали GenAI хотя бы в один процесс.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 7й источник ценности -->
+  <div class="slide" data-section="Ответ на вопрос">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-title-text" data-editable>Ответ на вопрос</div>
+      </div>
+      <h2 data-editable>7й источник ценности ИИ: конкурентное выживание</h2>
+      <div class="callout danger" style="margin-top:0;">
+        <div class="callout-icon">&#9888;&#65039;</div>
+        <div class="callout-text" data-editable><strong>Утконос</strong> доставлял еду за 1–2 дня. Пришёл Самокат, Яндекс — доставка за 20 минут. Утконоса больше нет.</div>
+      </div>
+      <ul class="accent-list" style="margin-top:20px;">
+        <li data-editable>Если рынок делает коммерческие предложения с ИИ за 20 минут, а вы делаете за день — клиент уйдёт к тому, кто ответил быстрее</li>
+        <li data-editable>Даже если ваш проект выходит в ноль по ROI — компания не потеряет позиции на рынке</li>
+        <li data-editable>Конкурентное отставание — самый дорогой «скрытый расход», который невозможно посчитать по формуле</li>
+      </ul>
+      <div class="formula-box" data-editable>Стоимость бездействия = Потерянные клиенты × LTV + Упущенная доля рынка</div>
+    </div>
+  </div>
+
+  <!-- 5. Когда НЕ использовать LLM -->
+  <div class="slide" data-section="Практика">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div class="section-title-text" data-editable>Практика</div>
+      </div>
+      <h2 data-editable>Когда НЕ использовать LLM в вашем агенте</h2>
+      <div class="compare">
+        <div class="compare-col col-bad">
+          <div class="compare-label" data-editable>Используйте скрипт</div>
+          <div class="compare-item" data-editable>Данные структурированы и формат стабилен</div>
+          <div class="compare-item" data-editable>Постоянно обращаетесь к одним и тем же страницам с одинаковой структурой</div>
+          <div class="compare-item" data-editable>Можно вытащить данные по ключевым словам</div>
+          <div class="compare-item" data-editable>Нужен детерминированный, 100% предсказуемый результат</div>
+          <div class="compare-item" data-editable>Пример: парсинг постановки задачи из Wiki с фиксированной структурой</div>
+        </div>
+        <div class="compare-col col-good">
+          <div class="compare-label" data-editable>LLM лучше</div>
+          <div class="compare-item" data-editable>Данные НЕ структурированы или формат меняется</div>
+          <div class="compare-item" data-editable>Нужно понимание смысла, а не ключевых слов («футболка бежевая» = «тишот светлый»)</div>
+          <div class="compare-item" data-editable>Разные источники с разной структурой (парсинг разных сайтов)</div>
+          <div class="compare-item" data-editable>Регламент или документ периодически меняется</div>
+          <div class="compare-item" data-editable>Пример: извлечение информации из произвольных сайтов — парсер сломается при смене вёрстки, LLM — нет</div>
+        </div>
+      </div>
+      <div class="callout info" style="margin-top:16px;">
+        <div class="callout-icon">&#128161;</div>
+        <div class="callout-text" data-editable><strong>Правило:</strong> где можно обойтись без LLM и выполнить задачу качественно — обойдитесь без неё. Снижаете объём «чёрных ящиков», экономите деньги, повышаете надёжность.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Скрытые затраты -->
+  <div class="slide" data-section="TCO">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div class="section-title-text" data-editable>TCO</div>
+      </div>
+      <h2 data-editable>Скрытые затраты: 40–60% от общих инвестиций</h2>
+      <div class="stats" style="justify-content:center;">
+        <div class="stat-item">
+          <div class="stat-num" data-editable>40–60%</div>
+          <div class="stat-label" data-editable>Доля скрытых затрат</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-editable>55%</div>
+          <div class="stat-label" data-editable>Ценность от непрямых выгод</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-editable>15–20%</div>
+          <div class="stat-label" data-editable>Бюджет на change management</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-editable>67%</div>
+          <div class="stat-label" data-editable>Рост успеха при C-suite спонсорстве</div>
+        </div>
+      </div>
+      <ul class="accent-list" style="margin-top:24px;">
+        <li data-editable><strong>Change management</strong> — обучение сотрудников, преодоление сопротивления, новые процессы</li>
+        <li data-editable><strong>Подготовка данных</strong> — сбор, очистка, разметка часто стоит дороже самой модели</li>
+        <li data-editable><strong>Интеграция</strong> — коннекторы, API, адаптация под legacy-системы</li>
+        <li data-editable><strong>Soft ROI:</strong> удовлетворённость сотрудников (Microsoft: 83% довольны работой с ИИ), скорость принятия решений, привлечение талантов</li>
+      </ul>
+      <div class="callout success" style="margin-top:16px;">
+        <div class="callout-icon">&#9989;</div>
+        <div class="callout-text" data-editable><strong>PwC:</strong> Soft ROI составляет 55% от долгосрочной ценности ИИ-проекта. Считайте и его — иначе занижаете реальный эффект.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Agentic AI -->
+  <div class="slide" data-section="Тренды">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <div class="section-title-text" data-editable>Тренды</div>
+      </div>
+      <h2 data-editable>Agentic AI — главный тренд 2026</h2>
+      <ul class="accent-list">
+        <li data-editable>Агенты создают НОВЫЕ категории ценности, выходя за пределы простой автоматизации</li>
+        <li data-editable>Лидеры рынка (Авито, Альфа-Банк, Магнит) уже инвестируют в агентные экосистемы</li>
+        <li data-editable>Разрыв между компаниями углубляется: кто начал в 2023 — собирает результаты, остальные в панике</li>
+        <li data-editable>Модели дешевеют на 40–60% в год &#8594; барьер входа снижается</li>
+      </ul>
+      <div class="callout info" style="margin-top:16px;">
+        <div class="callout-icon">&#128161;</div>
+        <div class="callout-text" data-editable><strong>Практический совет:</strong> Open Router или Польза РФ как агрегаторы моделей. DeepSeek — ~5000 &#8381;/мес на всю компанию. Бесплатные модели с prefix free/ на Open Router.</div>
+      </div>
+      <div class="timeline" style="margin-top:20px;">
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>2023 — Эксперименты</div>
+          <div class="timeline-desc" data-editable>Пилоты, чат-боты, первые попытки</div>
+        </div>
+        <div class="timeline-step active-step">
+          <div class="timeline-title" data-editable>2025 — Отрезвление</div>
+          <div class="timeline-desc" data-editable>Бизнес научился считать эффекты, отказываться от бесполезных внедрений</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>2026 — Агентные экосистемы</div>
+          <div class="timeline-desc" data-editable>Автономные агенты, встроенные в бизнес-процессы, масштабирование</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Итоги -->
+  <div class="slide" data-section="Итоги">
+    <div class="slide-inner">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <div class="section-title-text" data-editable>Итоги</div>
+      </div>
+      <h2 data-editable>Ключевые выводы</h2>
+      <div class="cards cards-2">
+        <div class="card card-accent">
+          <h3 data-editable>Считайте ROI правильно</h3>
+          <p data-editable>Используйте формулы из занятия. Учитывайте скрытые затраты (40–60%) и Soft ROI (55% ценности). Проводите пилот 2–4 недели перед полным расчётом.</p>
+        </div>
+        <div class="card card-blue">
+          <h3 data-editable>Российские компании уже получают миллиарды</h3>
+          <p data-editable>СИБУР (6.5 млрд &#8381;), ЕВРАЗ (5.8 млрд &#8381;) — это не стартапы, а промышленные гиганты. Ваши проекты могут дать аналогичный эффект в масштабе Colvir.</p>
+        </div>
+        <div class="card card-green">
+          <h3 data-editable>Не всё нужно решать через LLM</h3>
+          <p data-editable>Там где данные структурированы и формат стабилен — скрипт надёжнее и дешевле. LLM — для неструктурированных данных и меняющихся форматов.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid #8B5CF6;">
+          <h3 data-editable>Бездействие стоит дороже ошибок</h3>
+          <p data-editable>7й источник ценности: конкурентное выживание. Если рынок ускоряется с ИИ, а вы нет — вы теряете клиентов и позиции.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /slides -->
+
+<!-- ── СТАТУС-БАР ── -->
+<div id="statusbar">
+  <div id="sb-left">
+    <button class="sb-btn" id="sb-contents-btn" onclick="togglePanel()" title="С / C">Содержание</button>
+    <button class="sb-btn" id="sb-edit-btn" onclick="toggleEdit()" title="E / Е">Редактор</button>
+    <div id="sb-save-wrap" style="position:relative">
+      <button class="sb-btn" id="sb-save-btn" onclick="toggleSaveMenu(event)" title="Скачать"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1v8M3.5 6L7 9.5 10.5 6"/><path d="M2 12h10"/></svg></button>
+      <div id="save-menu" class="save-menu" style="display:none">
+        <button class="save-menu-item" onclick="saveHTML();closeSaveMenu()">HTML</button>
+      </div>
+    </div>
+    <div id="sb-editor-panel">
+      <button class="sb-ed-btn sb-ed-save" onclick="editorSave()" title="Сохранить">&#128190; Сохранить</button>
+      <button class="sb-ed-btn sb-ed-discard" onclick="editorDiscard()" title="Отменить все изменения">&#10005; Сбросить</button>
+      <div class="sb-ed-sep"></div>
+      <button class="sb-ed-btn" id="sb-ed-undo" onclick="editorUndo()" title="Отменить">&#8634;</button>
+      <button class="sb-ed-btn" id="sb-ed-redo" onclick="editorRedo()" title="Повторить">&#8635;</button>
+    </div>
+    <span id="sb-undo-hint" style="display:none">&#8984;Z отменить · &#8984;&#8679;Z повторить</span>
+  </div>
+  <div id="sb-center">
+    <div id="dots"></div>
+  </div>
+  <div id="sb-right">
+    <div id="sb-author">
+      <img id="sb-avatar" src="https://unavatar.io/telegram/larkinmd07" onerror="this.style.display='none'" alt="">
+      <span id="sb-author-name">Михаил Ларкин</span>
+      <span id="sb-author-handle">@larkinmd07</span>
+    </div>
+    <span id="counter"></span>
+  </div>
+</div>
+
+<!-- ── SECTION BADGE ── -->
+<div id="section-badge"></div>
+
+<!-- ── БОКОВАЯ ПАНЕЛЬ ── -->
+<div id="side-panel">
+  <button id="panel-close" onclick="closePanel()">&#215;</button>
+  <div id="panel-body">
+    <div class="panel-section">
+      <div class="timer-label">&#9201; Таймер занятия</div>
+      <div id="timer-display">00:00:00</div>
+      <div class="timer-controls">
+        <button class="timer-btn" id="timer-start-btn" onclick="toggleTimer()">&#9654; Старт</button>
+        <button class="timer-btn" onclick="resetTimer()">&#8634; Сброс</button>
+      </div>
+    </div>
+    <hr class="panel-divider">
+    <div class="panel-section">
+      <div class="timer-label">&#128203; Содержание</div>
+      <div id="toc-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden file input -->
+<input type="file" id="img-file-input" accept="image/*" style="display:none" onchange="handleImageFile(this)">
+
+<style>
+/* ── СТАТУС-БАР ── */
+#statusbar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 44px;
+  background: #FAFAFA;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 20px;
+  z-index: 200;
+  gap: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+#statusbar.sb-dark {
+  background: var(--bg-dark);
+  border-top-color: rgba(255,255,255,0.1);
+}
+#statusbar.sb-dark .sb-btn { color: rgba(255,255,255,0.45); }
+#statusbar.sb-dark .sb-btn:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); }
+#statusbar.sb-dark .sb-btn.active { color: var(--accent); }
+#statusbar.sb-dark #counter { color: rgba(255,255,255,0.35); }
+#statusbar.sb-dark #sb-author-name { color: rgba(255,255,255,0.5); }
+#statusbar.sb-dark #sb-author-handle { color: rgba(255,255,255,0.35); }
+#statusbar.sb-dark #sb-author { border-right-color: rgba(255,255,255,0.1); }
+#statusbar.sb-dark #sb-avatar { border-color: rgba(255,255,255,0.15); }
+#statusbar.sb-dark #sb-save-btn svg { stroke: rgba(255,255,255,0.45); }
+#statusbar.sb-dark .dot { background: rgba(255,255,255,0.2); }
+#statusbar.sb-dark .dot.active { background: var(--accent); }
+#sb-left  { display: flex; gap: 6px; align-items: center; flex: 1; }
+#sb-center { display: flex; justify-content: center; align-items: center; flex: 1; }
+#sb-right { display: flex; align-items: center; gap: 8px; flex: 1; justify-content: flex-end; }
+
+.sb-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 500;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 6px;
+  background: none; color: var(--text-dim);
+  cursor: pointer; transition: all 0.15s;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+.sb-btn:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+.sb-btn.active { color: var(--accent); background: none; font-weight: 600; }
+
+#sb-save-btn svg { vertical-align: middle; }
+#sb-save-wrap { display: inline-flex; }
+.save-menu {
+  position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  background: #fff; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12); padding: 4px; z-index: 9999;
+  min-width: 80px;
+}
+.save-menu-item {
+  display: block; width: 100%; padding: 6px 14px; border: none; background: none;
+  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+  color: #333; cursor: pointer; border-radius: 5px; text-align: left;
+  white-space: nowrap;
+}
+.save-menu-item:hover { background: rgba(0,0,0,0.05); }
+#statusbar.sb-dark .save-menu {
+  background: #222; border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+#statusbar.sb-dark .save-menu-item { color: rgba(255,255,255,0.7); }
+#statusbar.sb-dark .save-menu-item:hover { background: rgba(255,255,255,0.08); }
+#sb-undo-hint {
+  font-size: 10px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  opacity: 0.6;
+}
+#statusbar.sb-dark #sb-undo-hint { color: rgba(255,255,255,0.35); }
+
+/* ── Editor panel ── */
+#sb-editor-panel { display: none; align-items: center; gap: 4px; }
+body.edit-mode #sb-editor-panel { display: flex; }
+body.edit-mode #sb-save-wrap { display: none; }
+body.edit-mode #sb-edit-btn { display: none; }
+#sb-editor-panel .sb-ed-btn {
+  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+  padding: 3px 7px; border: none; border-radius: 5px;
+  background: none; color: var(--text-dim); cursor: pointer;
+  transition: all 0.15s; white-space: nowrap; line-height: 1;
+  display: inline-flex; align-items: center; gap: 3px;
+}
+#sb-editor-panel .sb-ed-btn:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+#sb-editor-panel .sb-ed-btn.sb-ed-save { color: #10B981; }
+#sb-editor-panel .sb-ed-btn.sb-ed-save:hover { background: rgba(16,185,129,0.1); }
+#sb-editor-panel .sb-ed-btn.sb-ed-discard { color: #EF4444; }
+#sb-editor-panel .sb-ed-btn.sb-ed-discard:hover { background: rgba(239,68,68,0.1); }
+#sb-editor-panel .sb-ed-btn:disabled { opacity: 0.3; cursor: default; }
+#sb-editor-panel .sb-ed-btn:disabled:hover { background: none; }
+#sb-editor-panel .sb-ed-sep { width: 1px; height: 16px; background: var(--border); margin: 0 2px; }
+#statusbar.sb-dark #sb-editor-panel .sb-ed-btn { color: rgba(255,255,255,0.45); }
+#statusbar.sb-dark #sb-editor-panel .sb-ed-btn:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); }
+#statusbar.sb-dark #sb-editor-panel .sb-ed-btn.sb-ed-save { color: #34D399; }
+#statusbar.sb-dark #sb-editor-panel .sb-ed-btn.sb-ed-discard { color: #F87171; }
+#statusbar.sb-dark #sb-editor-panel .sb-ed-sep { background: rgba(255,255,255,0.1); }
+
+#counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: #9CA3AF;
+  white-space: nowrap;
+}
+
+#sb-author {
+  display: flex; align-items: center; gap: 6px;
+  margin-right: 12px;
+  border-right: 1px solid var(--border);
+  padding-right: 12px;
+}
+#sb-avatar {
+  width: 24px; height: 24px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+#sb-author-name {
+  font-size: 11px; font-weight: 600; color: var(--text);
+  white-space: nowrap;
+}
+#sb-author-handle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--text-dim);
+  white-space: nowrap;
+}
+
+#dots { display: flex; gap: 5px; align-items: center; }
+
+#section-badge {
+  position: fixed; top: 16px; right: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #9CA3AF;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  z-index: 100;
+}
+
+/* ── БОКОВАЯ ПАНЕЛЬ ── */
+#side-panel {
+  position: fixed; right: 0; top: 0; bottom: 44px;
+  width: 300px;
+  background: white;
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 32px rgba(0,0,0,0.08);
+  z-index: 300;
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#side-panel.open { transform: translateX(0); }
+#panel-body {
+  flex: 1; overflow-y: auto; padding: 48px 16px 16px;
+  display: flex; flex-direction: column; gap: 0;
+}
+.panel-section { padding: 8px 0; }
+.panel-divider { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+
+#panel-close {
+  position: absolute; top: 10px; right: 12px;
+  background: none; border: none; cursor: pointer;
+  font-size: 18px; color: var(--text-dim); padding: 4px 8px;
+  border-radius: 6px; transition: all 0.15s; line-height: 1;
+}
+#panel-close:hover { background: #F3F4F6; color: var(--text); }
+
+/* TOC list */
+#toc-list { display: flex; flex-direction: column; gap: 4px; }
+.toc-item {
+  font-size: 12px; color: var(--text-dim); cursor: pointer;
+  padding: 7px 10px; border-radius: 7px;
+  border: 1px solid transparent; transition: all 0.15s;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.toc-item:hover { background: #F9FAFB; color: var(--text); border-color: var(--border); }
+.toc-item.toc-active { color: var(--accent); font-weight: 600; background: #FFF7ED; border-color: #FED7AA; }
+.toc-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); min-width: 22px; flex-shrink: 0; padding-top: 1px; }
+
+/* Timer */
+.timer-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+#timer-display { font-family: 'JetBrains Mono', monospace; font-size: 36px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1; }
+.timer-controls { display: flex; gap: 8px; margin-bottom: 16px; }
+.timer-btn { flex: 1; padding: 8px 0; border: 1px solid var(--border); background: white; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer; color: var(--text); transition: all 0.15s; }
+.timer-btn:hover { background: var(--bg-dark); color: white; border-color: var(--bg-dark); }
+</style>
+
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const dotsEl = document.getElementById('dots');
+const counter = document.getElementById('counter');
+const badge = document.getElementById('section-badge');
+const progBar = document.getElementById('progress-bar');
+const tocList = document.getElementById('toc-list');
+const sidePanel = document.getElementById('side-panel');
+
+let current = 0;
+let timerInt = null, timerSec = 0, timerRunning = false;
+let editMode = false;
+let panelOpen = false;
+
+// ── INIT ──
+function init() {
+  slides.forEach((s, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot';
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+
+    const t = document.createElement('div');
+    t.className = 'toc-item';
+    t.innerHTML = `<span class="toc-num">${String(i+1).padStart(2,'0')}</span>${s.dataset.section || '\u2014'}`;
+    t.addEventListener('click', () => { goTo(i); closePanel(); });
+    tocList.appendChild(t);
+  });
+
+  loadEdits();
+  update();
+}
+
+function adaptStatusbar(slide) {
+  const sb = document.getElementById('statusbar');
+  const cs = getComputedStyle(slide);
+  const bg = cs.backgroundColor;
+  const m = bg.match(/\d+/g);
+  if (m && m.length >= 3) {
+    const r = parseInt(m[0]), g = parseInt(m[1]), b = parseInt(m[2]);
+    const a = m[3] !== undefined ? parseFloat(m[3]) : 1;
+    if (a < 0.1) {
+      sb.classList.remove('sb-dark');
+      sb.style.background = '';
+      sb.style.borderTopColor = '';
+      return;
+    }
+    const lum = (r * 299 + g * 587 + b * 114) / 1000;
+    const isDark = lum < 128;
+    sb.classList.toggle('sb-dark', isDark);
+    sb.style.background = isDark ? bg : '';
+    sb.style.borderTopColor = isDark ? 'rgba(255,255,255,0.1)' : '';
+  } else {
+    sb.classList.remove('sb-dark');
+    sb.style.background = '';
+    sb.style.borderTopColor = '';
+  }
+}
+
+function update() {
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  tocList.querySelectorAll('.toc-item').forEach((t, i) => t.classList.toggle('toc-active', i === current));
+  counter.textContent = `${current + 1} / ${slides.length}`;
+  badge.textContent = slides[current].dataset.section || '';
+  progBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+  adaptStatusbar(slides[current]);
+  if (editMode) attachEditListeners();
+  requestAnimationFrame(() => requestAnimationFrame(autoScaleSlide));
+}
+
+function autoScaleSlide() {
+  const slide = slides[current];
+  if (slide.classList.contains('slide-title')) return;
+  const inner = slide.querySelector('.slide-inner');
+  if (!inner) return;
+  inner.style.transform = '';
+  inner.style.height = '';
+  slide.style.alignItems = '';
+  const cs = getComputedStyle(slide);
+  const padTop = parseFloat(cs.paddingTop);
+  const padBottom = parseFloat(cs.paddingBottom);
+  const availH = slide.clientHeight - padTop - padBottom;
+  const innerH = inner.scrollHeight;
+  if (innerH > availH) {
+    const scale = Math.max(0.5, availH / innerH);
+    slide.style.alignItems = 'flex-start';
+    inner.style.transformOrigin = 'top center';
+    inner.style.transform = `scale(${scale})`;
+  }
+}
+
+function goTo(n) {
+  if (n < 0 || n >= slides.length) return;
+  current = n;
+  update();
+}
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+
+// ── KEYBOARD ──
+document.addEventListener('keydown', e => {
+  const inEdit = e.target.isContentEditable;
+
+  if (editMode && (e.metaKey || e.ctrlKey) && e.code === 'KeyS') {
+    e.preventDefault(); editorSave(); return;
+  }
+
+  if (e.key === 'Escape') {
+    if (panelOpen) { closePanel(); return; }
+    if (editMode) { return; }
+    return;
+  }
+
+  if (!inEdit) {
+    if (e.code === 'KeyC') { e.preventDefault(); togglePanel(); return; }
+    if (e.code === 'KeyE' || e.code === 'KeyR') { e.preventDefault(); toggleEdit(); return; }
+    if (e.code === 'ArrowRight' || e.code === 'Space') { e.preventDefault(); next(); return; }
+    if (e.code === 'ArrowLeft') { e.preventDefault(); prev(); return; }
+    if (e.code === 'Home') { goTo(0); return; }
+    if (e.code === 'End') { goTo(slides.length - 1); return; }
+  }
+});
+
+// ── PANEL ──
+function togglePanel() {
+  if (panelOpen) { closePanel(); return; }
+  sidePanel.classList.add('open');
+  panelOpen = true;
+  document.getElementById('sb-contents-btn').classList.add('active');
+}
+function closePanel() {
+  sidePanel.classList.remove('open');
+  panelOpen = false;
+  document.getElementById('sb-contents-btn').classList.remove('active');
+}
+
+// ── TIMER ──
+function pad(n) { return String(n).padStart(2,'0'); }
+function fmtTime(s) { return `${pad(Math.floor(s/3600))}:${pad(Math.floor((s%3600)/60))}:${pad(s%60)}`; }
+function toggleTimer() {
+  timerRunning = !timerRunning;
+  const btn = document.getElementById('timer-start-btn');
+  if (timerRunning) {
+    btn.textContent = '\u23F8 \u041F\u0430\u0443\u0437\u0430';
+    timerInt = setInterval(() => { timerSec++; document.getElementById('timer-display').textContent = fmtTime(timerSec); }, 1000);
+  } else {
+    btn.textContent = '\u25B6 \u0421\u0442\u0430\u0440\u0442';
+    clearInterval(timerInt);
+  }
+}
+function resetTimer() {
+  clearInterval(timerInt); timerRunning = false; timerSec = 0;
+  document.getElementById('timer-display').textContent = '00:00:00';
+  document.getElementById('timer-start-btn').textContent = '\u25B6 \u0421\u0442\u0430\u0440\u0442';
+}
+
+// ── UNDO/REDO ──
+const undoStack = [];
+const redoStack = [];
+const undoHint = document.getElementById('sb-undo-hint');
+let editEntrySnapshot = null;
+let editsSavedSinceEntry = false;
+
+function pushUndo() {
+  const slide = slides[current];
+  undoStack.push({ idx: current, html: slide.innerHTML });
+  if (undoStack.length > 50) undoStack.shift();
+  redoStack.length = 0;
+  updateEditorButtons();
+}
+function editorUndo() {
+  if (!undoStack.length) return;
+  const snap = undoStack.pop();
+  const slide = slides[snap.idx];
+  redoStack.push({ idx: snap.idx, html: slide.innerHTML });
+  slide.innerHTML = snap.html;
+  current = snap.idx;
+  update();
+  updateEditorButtons();
+}
+function editorRedo() {
+  if (!redoStack.length) return;
+  const snap = redoStack.pop();
+  const slide = slides[snap.idx];
+  undoStack.push({ idx: snap.idx, html: slide.innerHTML });
+  slide.innerHTML = snap.html;
+  current = snap.idx;
+  update();
+  updateEditorButtons();
+}
+function updateEditorButtons() {
+  const undoBtn = document.getElementById('sb-ed-undo');
+  const redoBtn = document.getElementById('sb-ed-redo');
+  if (undoBtn) undoBtn.disabled = !undoStack.length;
+  if (redoBtn) redoBtn.disabled = !redoStack.length;
+}
+function editorSave() {
+  saveEdits();
+  editsSavedSinceEntry = true;
+  exitEditMode();
+}
+function editorDiscard() {
+  if (!editEntrySnapshot) return;
+  slides.forEach((s, i) => {
+    if (editEntrySnapshot[i]) s.innerHTML = editEntrySnapshot[i];
+  });
+  saveEdits();
+  editsSavedSinceEntry = true;
+  exitEditMode();
+}
+function exitEditMode() {
+  if (!editMode) return;
+  editMode = false;
+  document.body.classList.remove('edit-mode');
+  document.getElementById('sb-edit-btn').classList.remove('active');
+  undoHint.style.display = 'none';
+  editEntrySnapshot = null;
+  undoStack.length = 0;
+  redoStack.length = 0;
+  // Remove contenteditable
+  document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+    el.contentEditable = 'false';
+  });
+  update();
+}
+
+// ── EDIT MODE ──
+function toggleEdit() {
+  if (editMode) return;
+  editMode = true;
+  document.body.classList.add('edit-mode');
+  document.getElementById('sb-edit-btn').classList.add('active');
+  undoHint.style.display = '';
+  editEntrySnapshot = {};
+  slides.forEach((s, i) => { editEntrySnapshot[i] = s.innerHTML; });
+  editsSavedSinceEntry = false;
+  undoStack.length = 0;
+  redoStack.length = 0;
+  pushUndo();
+  attachEditListeners();
+  updateEditorButtons();
+}
+
+function attachEditListeners() {
+  const slide = slides[current];
+  slide.querySelectorAll('[data-editable]').forEach(el => {
+    if (el._editAttached) return;
+    el._editAttached = true;
+    el.addEventListener('dblclick', () => {
+      if (!editMode) return;
+      pushUndo();
+      el.contentEditable = 'true';
+      el.focus();
+    });
+    el.addEventListener('blur', () => {
+      el.contentEditable = 'false';
+      saveEdits();
+    });
+  });
+}
+
+function insertText() {
+  if (!editMode) return;
+  const inner = slides[current].querySelector('.slide-inner');
+  if (!inner) return;
+  pushUndo();
+  const div = document.createElement('div');
+  div.className = 'inserted-text';
+  div.setAttribute('data-editable', '');
+  div.contentEditable = 'true';
+  div.textContent = 'Введи текст';
+  inner.appendChild(div);
+  div.focus();
+  saveEdits();
+}
+
+function insertImageBtn() {
+  document.getElementById('img-file-input').click();
+}
+function handleImageFile(inp) {
+  const file = inp.files[0];
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  const inner = slides[current].querySelector('.slide-inner');
+  if (!inner) return;
+  pushUndo();
+  const img = document.createElement('img');
+  img.src = url;
+  img.className = 'inserted-img';
+  inner.appendChild(img);
+  saveEdits();
+  inp.value = '';
+}
+
+// ── SAVE / LOAD (localStorage) ──
+const STORAGE_KEY = 'colvir-lesson10-addon';
+
+function saveEdits() {
+  const state = {};
+  slides.forEach((s, i) => {
+    state[i] = s.innerHTML;
+  });
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+function loadEdits() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const state = JSON.parse(raw);
+    slides.forEach((s, i) => {
+      if (state[i]) s.innerHTML = state[i];
+    });
+  } catch(e) {}
+}
+
+function saveHTML() {
+  document.querySelectorAll('[contenteditable="true"]').forEach(el => el.blur());
+  saveEdits();
+  const clone = document.documentElement.cloneNode(true);
+  clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+  clone.querySelector('body')?.classList.remove('edit-mode');
+  const cloneDots = clone.querySelector('#dots');
+  if (cloneDots) cloneDots.innerHTML = '';
+  const cloneToc = clone.querySelector('#toc-list');
+  if (cloneToc) cloneToc.innerHTML = '';
+  clone.querySelectorAll('.slide').forEach(s => {
+    s.style.display = '';
+    s.classList.remove('active');
+  });
+  const firstSlide = clone.querySelector('.slide');
+  if (firstSlide) firstSlide.classList.add('active');
+  const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  const blob = new Blob([html], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'colvir-bootcamp-lesson10-addon.html';
+  a.click();
+}
+
+// ── SAVE MENU ──
+function toggleSaveMenu(e) {
+  e.stopPropagation();
+  const menu = document.getElementById('save-menu');
+  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+function closeSaveMenu() {
+  document.getElementById('save-menu').style.display = 'none';
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('#sb-save-wrap')) closeSaveMenu();
+});
+
+
+init();
+</script>
+</body>
+</html>
