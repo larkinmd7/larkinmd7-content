@@ -1778,31 +1778,25 @@
     <div class="slide-inner">
       <div class="label label-concept" data-editable>Ваш слайд 1</div>
       <h2 data-editable>Описание проекта</h2>
-      <div class="cards cards-2" style="gap:12px;">
-        <div class="card" style="padding:16px;">
-          <div class="card-icon">&#128196;</div>
-          <h3 data-editable>Название и описание</h3>
-          <p data-editable>Кратко сформулируйте суть проекта и какую бизнес-задачу решает ваш ИИ-агент</p>
+      <div class="two-col" style="gap:28px; margin-top:16px; align-items:start;">
+        <div>
+          <ul style="list-style:disc; padding-left:20px; display:flex; flex-direction:column; gap:18px; font-size:15px; line-height:1.6;">
+            <li data-editable><strong>Название и описание</strong> — кратко сформулируйте суть проекта и какую бизнес-задачу решает ваш ИИ-агент</li>
+            <li data-editable><strong>Скриншоты интерфейса</strong> — добавьте 1-2 ключевых скриншота, демонстрирующих главный функционал</li>
+            <li data-editable><strong>Команда проекта</strong> — укажите 2-4 участников с фото, именами, должностями и ролью в проекте (промпт-инжиниринг, интеграция, и т.д.)</li>
+            <li data-editable><strong>Контекст</strong> — объясните, для какого подразделения/процесса предназначен агент и какие проблемы решает</li>
+          </ul>
         </div>
-        <div class="card" style="padding:16px;">
-          <div class="card-icon">&#128247;</div>
-          <h3 data-editable>Скриншоты интерфейса</h3>
-          <p data-editable>Добавьте 1-2 ключевых скриншота, демонстрирующих главный функционал</p>
+        <div class="card" style="padding:20px;">
+          <h3 data-editable style="margin-bottom:8px;">HR Assistant: интеллектуальный помощник рекрутера</h3>
+          <p data-editable style="font-size:14px;color:var(--text-dim);line-height:1.5;">ИИ-агент для автоматизации первичного скрининга кандидатов. Анализирует резюме, проводит оценку соответствия требованиям и формирует шорт-лист для интервью.</p>
+          <div style="background:#F3F4F6;border-radius:8px;padding:24px;text-align:center;margin:14px 0;color:var(--text-dim);font-size:13px;" data-editable>Место для скриншота интерфейса</div>
+          <div style="display:flex;gap:20px;margin-top:12px;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:32px;height:32px;border-radius:50%;background:#E5E7EB;flex-shrink:0;"></div><div><div style="font-weight:600;font-size:13px;" data-editable>Анна Петрова</div><div style="font-size:12px;color:var(--text-dim);" data-editable>HR-аналитик, промпт-инжиниринг</div></div></div>
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:32px;height:32px;border-radius:50%;background:#E5E7EB;flex-shrink:0;"></div><div><div style="font-weight:600;font-size:13px;" data-editable>Сергей Иванов</div><div style="font-size:12px;color:var(--text-dim);" data-editable>Data Engineer, интеграции</div></div></div>
+          </div>
+          <p style="font-size:12px;color:var(--text-dim);margin-top:12px;font-style:italic;" data-editable>Примечание: это пример оформления. Заполните этот слайд вашей информацией.</p>
         </div>
-        <div class="card" style="padding:16px;">
-          <div class="card-icon">&#128101;</div>
-          <h3 data-editable>Команда проекта</h3>
-          <p data-editable>Укажите 2-4 участников с фото, именами, должностями и ролью в проекте (промпт-инжиниринг, интеграция и т.д.)</p>
-        </div>
-        <div class="card" style="padding:16px;">
-          <div class="card-icon">&#128736;</div>
-          <h3 data-editable>Контекст</h3>
-          <p data-editable>Объясните, для какого подразделения/процесса предназначен агент и какие проблемы решает</p>
-        </div>
-      </div>
-      <div class="callout" style="margin-top:12px; background:#F3F4F6; border-color:#E5E7EB; border-left-color:#6B7280;">
-        <div class="callout-icon">&#128204;</div>
-        <div class="callout-text" style="color:#374151;" data-editable><strong>Пример:</strong> HR Assistant: интеллектуальный помощник рекрутера. ИИ-агент для автоматизации первичного скрининга кандидатов. Анализирует резюме, проводит оценку соответствия требованиям и формирует шорт-лист для интервью. Анна Петрова — HR-аналитик, промпт-инжиниринг. Сергей Иванов — Data Engineer, интеграции. <em>Примечание: это пример оформления. Заполните этот слайд вашей информацией.</em></div>
       </div>
     </div>
   </div>
@@ -1907,30 +1901,30 @@
     </div>
   </div>
 
-  <!-- ═══ SLIDE 30 — Ключевые выводы ═══ -->
+  <!-- ═══ SLIDE 30 — Структура презентации (повтор-закрепление) ═══ -->
   <div class="slide" data-section="Итоги">
     <div class="slide-inner">
-      <div class="section-header">
-        <div class="section-num">&#127942;</div>
-        <div class="section-title-text" data-editable>Итоги</div>
-      </div>
-      <h2 data-editable>Ключевые выводы</h2>
-      <div class="cards cards-2">
-        <div class="card card-accent">
-          <h3 data-editable>LLM-агенты уже работают в РФ</h3>
-          <p data-editable>Ритейл: 3 агента заменяют отдел из 5 человек. «Находка»: LLM для CRM на 400 магазинах. Авито: AI-аналитика звонков = сотни млн ₽. Это не эксперименты — это продакшн.</p>
+      <h2 data-editable>Структура вашей презентации (5 слайдов = 5 минут)</h2>
+      <div class="timeline" style="margin-top:12px;">
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>1. Описание проекта и команда</div>
+          <div class="timeline-desc" data-editable>Название, описание проекта, скриншоты, информация о команде (2-4 человека)</div>
         </div>
-        <div class="card card-blue">
-          <h3 data-editable>Считайте ROI правильно</h3>
-          <p data-editable>Учитывайте скрытые затраты (40–60%) и Soft ROI (55% ценности). Проводите пилот 2–4 недели. 89% проектов застревают на пилотах — не будьте в их числе.</p>
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>2. Схема работы агента</div>
+          <div class="timeline-desc" data-editable>Архитектура решения, интеграции, потоки данных</div>
         </div>
-        <div class="card card-green">
-          <h3 data-editable>Бездействие стоит дороже ошибок</h3>
-          <p data-editable>7й источник ценности: конкурентное выживание. Утконос vs Самокат. Если рынок ускоряется с ИИ, а вы нет — вы теряете клиентов и позиции.</p>
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>3. Живая демонстрация</div>
+          <div class="timeline-desc" data-editable>Dify + vibe coding, демонстрация работающего агента</div>
         </div>
-        <div class="card" style="border-left: 3px solid #8B5CF6;">
-          <h3 data-editable>ИИ-инструменты стали мейнстримом</h3>
-          <p data-editable>95% разработчиков используют ИИ еженедельно. Claude Code — #1 инструмент. 4% коммитов на GitHub — от ИИ. Модели дешевеют, open-source растёт. Барьер входа = минимальный.</p>
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>4. Оценка проекта</div>
+          <div class="timeline-desc" data-editable>Бизнес-эффект, ROI, срок окупаемости</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-title" data-editable>5. Стадия и план развития</div>
+          <div class="timeline-desc" data-editable>Текущий статус, необходимые ресурсы: временные, компетентностные, финансовые</div>
         </div>
       </div>
     </div>
