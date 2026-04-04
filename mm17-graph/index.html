@@ -29,7 +29,7 @@
 body { font-family: var(--font); background: var(--bg); color: var(--text); overflow: hidden; height: 100vh; }
 
 /* Layout */
-.app { display: grid; grid-template-columns: 1fr 380px; grid-template-rows: 56px 1fr; height: 100vh; }
+.app { display: grid; grid-template-columns: 340px 1fr 380px; grid-template-rows: 56px 1fr; height: 100vh; }
 .header { grid-column: 1 / -1; display: flex; align-items: center; padding: 0 20px; gap: 16px; border-bottom: 1px solid var(--border); background: var(--surface); z-index: 10; }
 .graph-area { position: relative; overflow: hidden; }
 .sidebar { border-left: 1px solid var(--border); background: var(--surface); overflow-y: auto; display: flex; flex-direction: column; }
@@ -176,9 +176,25 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text2); }
 
+/* Left sidebar */
+.sidebar-left { border-right: 1px solid var(--border); background: var(--surface); overflow-y: auto; display: flex; flex-direction: column; grid-row: 2; }
+
+/* Welcome screen */
+#welcomeScreen { position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+#welcomeScreen .welcome-logo { font-size: 42px; font-weight: 700; color: var(--accent); }
+#welcomeScreen .welcome-logo span { color: var(--text2); font-weight: 300; font-size: 24px; display: block; margin-top: 4px; }
+#welcomeScreen .welcome-subtitle { font-size: 16px; color: var(--text2); max-width: 400px; text-align: center; line-height: 1.6; }
+#welcomeScreen .welcome-input { width: 320px; padding: 14px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 12px; color: var(--text); font-size: 16px; font-family: var(--mono); text-align: center; outline: none; transition: border-color 0.3s; }
+#welcomeScreen .welcome-input:focus { border-color: var(--accent); }
+#welcomeScreen .welcome-btn { padding: 14px 48px; background: var(--accent); color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: transform 0.2s, box-shadow 0.2s; }
+#welcomeScreen .welcome-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
+#welcomeScreen .welcome-skip { color: var(--text2); font-size: 13px; cursor: pointer; border: none; background: none; margin-top: 8px; }
+#welcomeScreen .welcome-skip:hover { color: var(--text); }
+
 /* Mobile */
 @media (max-width: 768px) {
-  .app { grid-template-columns: 1fr; grid-template-rows: 56px 1fr 45vh; }
+  .app { grid-template-columns: 1fr; grid-template-rows: 56px 1fr 40vh; }
+  .sidebar-left { display: none; }
   .sidebar { border-left: none; border-top: 1px solid var(--border); }
   .stats { display: none; }
   .mode-tabs { overflow-x: auto; }
@@ -187,7 +203,16 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 </head>
 <body>
 
-<div class="app">
+<!-- Welcome Screen -->
+<div id="welcomeScreen">
+  <div class="welcome-logo">MM17<span>Social Graph</span></div>
+  <div class="welcome-subtitle">Найди себя в сети участников MasterMind 17</div>
+  <input class="welcome-input" id="welcomeInput" type="text" placeholder="@username">
+  <button class="welcome-btn" id="welcomeEnter">Войти</button>
+  <button class="welcome-skip" id="welcomeSkip">Пропустить</button>
+</div>
+
+<div class="app" style="display:none">
   <!-- Header -->
   <header class="header">
     <div class="logo">MM17<span>Social Graph</span></div>
@@ -198,7 +223,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
     </div>
     <div class="mode-tabs">
       <button class="mode-tab active" data-mode="graph">Граф</button>
-      <button class="mode-tab" data-mode="intros">Интро</button>
       <button class="mode-tab" data-mode="clusters">Кластеры</button>
       <button class="mode-tab" data-mode="rankings">Рейтинг</button>
     </div>
@@ -207,6 +231,19 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
       <div class="stat-item"><span id="statLinks">0</span> связей</div>
     </div>
   </header>
+
+  <!-- Left Sidebar: Intros -->
+  <div class="sidebar-left" id="sidebarLeft">
+    <div class="sidebar-header">
+      <div class="sidebar-title" id="sidebarLeftTitle">Интро</div>
+    </div>
+    <div class="sidebar-content" id="sidebarLeftContent">
+      <div class="empty-state">
+        <h3>Рекомендации</h3>
+        <p>Выбери участника, чтобы увидеть персональные рекомендации по знакомствам.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Graph -->
   <div class="graph-area" id="graphArea">
@@ -281,6 +318,7 @@ async function loadData() {
   setupSearch();
   setupModes();
   setupFilters();
+  updateLeftSidebar(null);
 }
 
 // ============================================================
@@ -330,14 +368,14 @@ function initGraph() {
   const validLinks = DATA.links.filter(l => nodeMap[l.source] && nodeMap[l.target]);
 
   simulation = d3.forceSimulation(DATA.nodes)
-    .force('link', d3.forceLink(validLinks).id(d => d.id).distance(d => 180 - d.strength * 6).strength(d => 0.04 + d.strength * 0.008))
-    .force('charge', d3.forceManyBody().strength(-350).distanceMax(600))
+    .force('link', d3.forceLink(validLinks).id(d => d.id).distance(d => 220 - d.strength * 6).strength(d => 0.03 + d.strength * 0.006))
+    .force('charge', d3.forceManyBody().strength(-500).distanceMax(800))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(d => getNodeRadius(d) + 14).strength(0.8))
-    .force('x', d3.forceX(width / 2).strength(0.015))
-    .force('y', d3.forceY(height / 2).strength(0.015))
-    .alphaDecay(0.012)
-    .velocityDecay(0.45);
+    .force('collision', d3.forceCollide().radius(d => getNodeRadius(d) + 20).strength(0.8))
+    .force('x', d3.forceX(width / 2).strength(0.012))
+    .force('y', d3.forceY(height / 2).strength(0.012))
+    .alphaDecay(0.01)
+    .velocityDecay(0.5);
 
   // Draw links
   const linkElements = linkG.selectAll('line')
@@ -516,6 +554,7 @@ function selectNode(d) {
   highlightNeighbors(d);
   centerOnNode(d);
   showPersonCard(d);
+  updateLeftSidebar(d);
 }
 
 function centerOnNode(d) {
@@ -586,15 +625,15 @@ function showPersonCard(d) {
 
     <!-- Tabs -->
     <div class="profile-tabs">
-      ${hasBiz ? '<div class="profile-tab active" data-tab="biz">Бизнес</div>' : ''}
-      ${hasLife ? `<div class="profile-tab ${!hasBiz ? 'active' : ''}" data-tab="life">Личное</div>` : ''}
-      ${hasConn ? `<div class="profile-tab ${!hasBiz && !hasLife ? 'active' : ''}" data-tab="connections">Связи <span style="font-size:10px;opacity:0.6">${connections.length}</span></div>` : ''}
+      ${hasBiz ? '<div class="profile-tab active" data-tab="overview">Обзор</div>' : ''}
+      <div class="profile-tab ${!hasBiz ? 'active' : ''}" data-tab="details">Подробнее</div>
+      ${hasConn ? `<div class="profile-tab" data-tab="connections">Связи <span style="font-size:10px;opacity:0.6">${connections.length}</span></div>` : ''}
       ${intros.length ? '<div class="profile-tab" data-tab="intros">Интро</div>' : ''}
     </div>`;
 
-  // === TAB: Business ===
+  // === TAB: Overview ===
   if (hasBiz) {
-    html += `<div class="tab-content active" data-tab="biz">`;
+    html += `<div class="tab-content active" data-tab="overview">`;
     if (d.industries.length) {
       html += `<div class="card-section"><div class="card-section-title">Сфера деятельности</div>
         <div class="tag-list">${d.industries.map(t => `<span class="tag industry">${t}</span>`).join('')}</div></div>`;
@@ -614,22 +653,11 @@ function showPersonCard(d) {
     html += `</div>`;
   }
 
-  // === TAB: Life ===
-  if (hasLife) {
-    html += `<div class="tab-content" data-tab="life">`;
-    if (d.geo.length) {
-      html += `<div class="card-section"><div class="card-section-title">География</div>
-        <div class="tag-list">${d.geo.map(t => `<span class="tag geo">${t}</span>`).join('')}</div></div>`;
-    }
-    if (d.hobbies.length) {
-      html += `<div class="card-section"><div class="card-section-title">Хобби и увлечения</div>
-        <div class="tag-list">${d.hobbies.map(t => `<span class="tag hobby">${t}</span>`).join('')}</div></div>`;
-    }
-    if (d.age) {
-      html += `<div class="info-row"><span class="info-label">Возраст</span><span class="info-value">${d.age} лет</span></div>`;
-    }
-    html += `<div class="info-row"><span class="info-label">Уверенность профиля</span><span class="info-value">${(d.confidence * 100).toFixed(0)}%</span></div>`;
-    html += `</div>`;
+  // === TAB: Details (Подробнее) ===
+  {
+    html += `<div class="tab-content ${!hasBiz ? 'active' : ''}" data-tab="details">
+      <div style="font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap">${d.full_bio || d.bio}</div>
+    </div>`;
   }
 
   // === TAB: Connections (rich) ===
@@ -930,6 +958,74 @@ function showEmptyState() {
     <h3>Кликни на узел или связь</h3>
     <p>Выбери участника на графе, чтобы увидеть его профиль, связи и рекомендации.</p>
   </div>`;
+  updateLeftSidebar(null);
+}
+
+// ============================================================
+// LEFT SIDEBAR — INTROS
+// ============================================================
+function updateLeftSidebar(d) {
+  const title = document.getElementById('sidebarLeftTitle');
+  const content = document.getElementById('sidebarLeftContent');
+
+  if (!DATA) return;
+
+  if (d) {
+    // Person-specific intros
+    const intros = DATA.introductions.filter(i =>
+      i.person_a === d.id || i.person_b === d.id ||
+      (i.group_members && i.group_members.includes(d.id))
+    );
+
+    title.textContent = `Интро для ${d.name.split(' ')[0]} (${intros.length})`;
+
+    if (intros.length === 0) {
+      content.innerHTML = `<div class="empty-state"><p>Нет рекомендаций для этого участника</p></div>`;
+      return;
+    }
+
+    content.innerHTML = intros.map(i => {
+      const otherId = i.person_a === d.id ? i.person_b : i.person_a;
+      const other = DATA.nodes.find(n => n.id === otherId);
+      if (!other) return '';
+      const oBg = getNodeColor(other).replace('#', '');
+      const oAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(other.name)}&background=${oBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
+      const valueForMe = i.person_a === d.id ? i.value_for_a : i.value_for_b;
+      const valueForThem = i.person_a === d.id ? i.value_for_b : i.value_for_a;
+
+      return `<div class="conn-card" style="padding:12px 20px;cursor:pointer" onclick="focusNode('${other.id}')">
+        <div class="conn-card-header">
+          <img class="conn-card-avatar" src="${oAvatar}" alt="${other.name}">
+          <div style="flex:1">
+            <div class="conn-card-name">${other.name} <span class="intro-priority">${i.priority}/10</span></div>
+            <div class="conn-card-role">${other.bio ? other.bio.substring(0, 60) + (other.bio.length > 60 ? '...' : '') : ''}</div>
+          </div>
+        </div>
+        <div class="conn-card-why" style="padding-left:42px">${i.why_connect}</div>
+        ${valueForMe ? `<div style="padding-left:42px;margin-top:4px;font-size:12px;color:var(--green)">Польза: ${valueForMe}</div>` : ''}
+      </div>`;
+    }).join('');
+
+  } else {
+    // Global intros
+    title.textContent = `Рекомендации (${DATA.introductions.length})`;
+    content.innerHTML = DATA.introductions.map(i => {
+      const a = DATA.nodes.find(n => n.id === i.person_a);
+      const b = DATA.nodes.find(n => n.id === i.person_b);
+      const names = [a?.name || i.person_a, b?.name || i.person_b];
+      if (i.group_members) {
+        i.group_members.forEach(gm => {
+          const gn = DATA.nodes.find(n => n.id === gm);
+          if (gn) names.push(gn.name);
+        });
+      }
+      return `<div class="intro-card" onclick="focusIntro('${i.person_a}','${i.person_b}')">
+        <div class="intro-people">${names.join(' + ')}</div>
+        <div class="intro-why">${i.why_connect}</div>
+        <span class="intro-priority">Приоритет: ${i.priority}/10</span>
+      </div>`;
+    }).join('');
+  }
 }
 
 // ============================================================
@@ -997,6 +1093,36 @@ window.addEventListener('resize', () => {
 // INIT
 // ============================================================
 loadData();
+
+// ============================================================
+// WELCOME SCREEN
+// ============================================================
+function enterApp(tgHandle) {
+  document.getElementById('welcomeScreen').style.display = 'none';
+  document.querySelector('.app').style.display = 'grid';
+
+  // Wait for graph to initialize
+  setTimeout(() => {
+    if (tgHandle) {
+      const clean = tgHandle.replace('@', '').toLowerCase();
+      const node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
+      if (node) {
+        selectNode(node);
+        return;
+      }
+    }
+  }, 800);
+}
+
+document.getElementById('welcomeEnter').addEventListener('click', () => {
+  enterApp(document.getElementById('welcomeInput').value.trim());
+});
+document.getElementById('welcomeSkip').addEventListener('click', () => {
+  enterApp(null);
+});
+document.getElementById('welcomeInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') enterApp(document.getElementById('welcomeInput').value.trim());
+});
 </script>
 </body>
 </html>
