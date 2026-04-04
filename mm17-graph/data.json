@@ -1,0 +1,6823 @@
+{
+  "metadata": {
+    "title": "ММ17 Social Graph",
+    "description": "Интерактивный граф связей участников MasterMind 17",
+    "total_people": 107,
+    "total_links": 354,
+    "total_clusters": 37,
+    "total_intros": 26,
+    "generated": "2026-04-04"
+  },
+  "nodes": [
+    {
+      "id": "artur_shamalov",
+      "name": "Артур Шамалов",
+      "telegram": "@artur_shamalov",
+      "role": "organizer",
+      "age": null,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Основатель и лидер Mastermind. Проводит разборы, ставит цели участникам. Вдохновляющий спикер.",
+      "industries": [
+        "Образование",
+        "Консалтинг"
+      ],
+      "hobbies": [
+        "Путешествия"
+      ],
+      "stage": "Организатор",
+      "strengths": [
+        "лидерство",
+        "мотивация",
+        "разборы кейсов"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "нетворк",
+        "целеполагание"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "katerina",
+      "name": "Катерина",
+      "telegram": "@rybioshka",
+      "role": "organizer",
+      "age": null,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Организатор ММ17, волшебница ММ. Логистика, расписание, модерация чата.",
+      "industries": [
+        "Развлечения"
+      ],
+      "hobbies": [],
+      "stage": "Организатор",
+      "strengths": [
+        "организация",
+        "модерация",
+        "логистика"
+      ],
+      "needs": [],
+      "offers": [
+        "координация событий"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "roman_sh",
+      "name": "Роман Шаяхметов",
+      "telegram": "@Roman_Shayakhmetov",
+      "role": "organizer",
+      "age": 32,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Организатор ММ. Физик МИФИ. B2B продажи Apple >1 млрд руб. Конюшня, глэмпинг, 25 собак.",
+      "industries": [
+        "Финансы и инвестиции",
+        "Животные",
+        "Развлечения"
+      ],
+      "hobbies": [
+        "Верховая езда",
+        "Путешествия"
+      ],
+      "stage": "Организатор",
+      "strengths": [
+        "B2B продажи",
+        "финансы",
+        "организация"
+      ],
+      "needs": [],
+      "offers": [
+        "B2B экспертиза",
+        "площадка для мероприятий"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "anatoliy_sergeev",
+      "name": "Анатолий Сергеев",
+      "telegram": "@Ser26anev",
+      "role": "organizer",
+      "age": null,
+      "geo": [],
+      "bio": "Организатор ММ17.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Организатор",
+      "strengths": [
+        "организация"
+      ],
+      "needs": [],
+      "offers": [
+        "координация"
+      ],
+      "confidence": 0.3
+    },
+    {
+      "id": "sergey_zhivotnev",
+      "name": "Сергей Животнёв",
+      "telegram": "@sergey_zhivotnev",
+      "role": "mentor",
+      "age": 35,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Серийный предприниматель. Склад стройматериалов, мебель, франшиза КукиЛуки, табак, электрика. Партнёрства - ключевая компетенция.",
+      "industries": [
+        "Строительство и ремонт",
+        "Производство",
+        "Еда и напитки"
+      ],
+      "hobbies": [
+        "Велосипед",
+        "Охота",
+        "Путешествия",
+        "Баня",
+        "Походы"
+      ],
+      "stage": "Ментор",
+      "strengths": [
+        "партнёрства",
+        "серийное предпринимательство",
+        "мотивация"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "построение партнёрств",
+        "нетворк"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "maxim_sinaev",
+      "name": "Максим Синаев",
+      "telegram": "@sinaevmaksim",
+      "role": "mentor",
+      "age": 34,
+      "geo": [
+        "Москва",
+        "Камчатка"
+      ],
+      "bio": "Золотой Чемпион ММ14. Строительная компания Sinaev Company. 2 франшизы кофейни. Дисциплина и спорт.",
+      "industries": [
+        "Строительство и ремонт",
+        "Еда и напитки"
+      ],
+      "hobbies": [
+        "Фитнес",
+        "Сноуборд",
+        "Серфинг",
+        "Велосипед",
+        "Путешествия"
+      ],
+      "stage": "Ментор",
+      "strengths": [
+        "дисциплина",
+        "строительство",
+        "модерация"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "строительная экспертиза",
+        "франшиза кофейни"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "natalya_zvereva",
+      "name": "Наталья Зверева",
+      "telegram": "@zvereva_natali",
+      "role": "mentor",
+      "age": null,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "22+ лет в бьюти-индустрии. Бизнес-школа ДВИК. 1000+ учеников. Аудит бизнеса, финмодель.",
+      "industries": [
+        "Бьюти и красота",
+        "Образование",
+        "Консалтинг"
+      ],
+      "hobbies": [
+        "Путешествия",
+        "Фитнес"
+      ],
+      "stage": "Ментор",
+      "strengths": [
+        "бьюти-бизнес",
+        "финансовая модель",
+        "аудит"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство в бьюти",
+        "бизнес-аудит"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "sergey_efimov",
+      "name": "Сергей Ефимов",
+      "telegram": "@ES_Vologda",
+      "role": "mentor",
+      "age": 41,
+      "geo": [
+        "Вологда"
+      ],
+      "bio": "Золотой чемпион ММ15. Электроэнергетика промышленных предприятий. Стрельба, охота.",
+      "industries": [
+        "Строительство и ремонт",
+        "Энергетика"
+      ],
+      "hobbies": [
+        "Стрельба",
+        "Охота",
+        "Рыбалка",
+        "Плавание"
+      ],
+      "stage": "Ментор",
+      "strengths": [
+        "строительство",
+        "электроэнергетика",
+        "стрельба"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "электроэнергетика"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "igor_torovin",
+      "name": "Игорь Торовин",
+      "telegram": "@igorexator",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Ментор ММ17. Активен в чате (14 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "менторство"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство"
+      ],
+      "confidence": 0.3
+    },
+    {
+      "id": "egor_bashkov",
+      "name": "Егор Башков",
+      "telegram": "@Egor_bashkov",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Ментор ММ17.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "менторство"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство"
+      ],
+      "confidence": 0.3
+    },
+    {
+      "id": "denis_lobanov",
+      "name": "Денис Лобанов",
+      "telegram": "@Achi1ess",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Ментор ММ17.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "менторство"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство"
+      ],
+      "confidence": 0.3
+    },
+    {
+      "id": "evgeniy_borisov",
+      "name": "Евгений Борисов",
+      "telegram": "@Borisov_EC",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Ментор ММ17. Проводит разборы участников.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "менторство",
+        "разборы"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство"
+      ],
+      "confidence": 0.4
+    },
+    {
+      "id": "dmitrii_klimchuk",
+      "name": "Дмитрий Климчук",
+      "telegram": "@dklimchuk",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Ментор ММ17. Ведёт мини-группу Юли Степановой.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "менторство"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство"
+      ],
+      "confidence": 0.4
+    },
+    {
+      "id": "sergey_topal",
+      "name": "Сергей Топал",
+      "telegram": "@SergeiTopal",
+      "role": "mentor",
+      "age": 35,
+      "geo": [
+        "Москва",
+        "Зеленоград"
+      ],
+      "bio": "B2B клининг, масштабирование через франшизу. КМС баскетбол, бокс. Чемпион ММ8, ММ9, ММ12.",
+      "industries": [
+        "Клининг"
+      ],
+      "hobbies": [
+        "Баскетбол",
+        "Бокс",
+        "Фитнес"
+      ],
+      "stage": "Ментор",
+      "strengths": [
+        "масштабирование",
+        "франшиза",
+        "клининг"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "франшиза клининга"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "ruslan_rudnev",
+      "name": "Руслан Руднев",
+      "telegram": "@RudRus_86",
+      "role": "mentor",
+      "age": 40,
+      "geo": [
+        "Орёл"
+      ],
+      "bio": "Строительство быстровозводимых домов. 150+ объектов. Создание федеральной сети.",
+      "industries": [
+        "Строительство и ремонт",
+        "Недвижимость"
+      ],
+      "hobbies": [
+        "Горные лыжи",
+        "Шахматы",
+        "Настольные игры",
+        "Нумизматика"
+      ],
+      "stage": "Ментор",
+      "strengths": [
+        "строительство домов",
+        "федеральная сеть"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "строительная экспертиза"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "kirill_chiriatyev",
+      "name": "Кирилл Чирятьев",
+      "telegram": "@kirill_just_do_it",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Производство металлоконструкций, промышленное строительство. Ментор ММ17.",
+      "industries": [
+        "Строительство и ремонт",
+        "Производство"
+      ],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "промышленное строительство",
+        "металлоконструкции"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "производство"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "alexey_mentor",
+      "name": "Алексей (наставник)",
+      "telegram": "@ss_masta",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Наставник ММ17. Активен в чате (27 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "менторство"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство"
+      ],
+      "confidence": 0.3
+    },
+    {
+      "id": "ilya_makarov",
+      "name": "Илья Макаров",
+      "telegram": "@Vezdeleto",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Самый активный участник чата (79 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность",
+        "коммуникация"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "anna_bondarenko",
+      "name": "Анна Бондаренко",
+      "telegram": "@Acora",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Вторая по активности в чате (75 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность",
+        "коммуникация"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "grigoriy_nikonov",
+      "name": "Григорий Никонов",
+      "telegram": "@urdearh",
+      "role": "participant",
+      "age": 29,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "Маркетинг: дизайн и реклама. 10 лет: Лебедев, АДВ, ББДО. Ушёл из найма 1.5 года назад. Тайский бокс, кино, LoL.",
+      "industries": [
+        "Маркетинг и реклама",
+        "Дизайн"
+      ],
+      "hobbies": [
+        "Единоборства",
+        "Книги",
+        "Гейминг"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "маркетинг",
+        "дизайн",
+        "реклама",
+        "метрики"
+      ],
+      "needs": [
+        "масштабирование",
+        "партнёрства"
+      ],
+      "offers": [
+        "маркетинговая экспертиза",
+        "дизайн"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "abu_said",
+      "name": "Абу-Саид",
+      "telegram": "@abu_said98",
+      "role": "participant",
+      "age": 27,
+      "geo": [],
+      "bio": "Лесозаготовка и переработка древесины 3+ лет. Доска, брус. Масштабирование производства.",
+      "industries": [
+        "Деревообработка",
+        "Производство"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "лесозаготовка",
+        "производство"
+      ],
+      "needs": [
+        "масштабирование",
+        "рынки сбыта"
+      ],
+      "offers": [
+        "пиломатериалы"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "aleksandr_artemyev",
+      "name": "Александр Артемьев",
+      "telegram": "@Aleksandr_Art_86",
+      "role": "participant",
+      "age": 39,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "Соучредитель компании промышленного проектирования. От малых объектов до перегрузочных комплексов.",
+      "industries": [
+        "Строительство и ремонт",
+        "Производство"
+      ],
+      "hobbies": [
+        "Горные лыжи",
+        "Готовка"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "промышленное проектирование",
+        "техническое консультирование"
+      ],
+      "needs": [],
+      "offers": [
+        "проектирование",
+        "техконсультации"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "aleksandr_gulyaev",
+      "name": "Александр Гуляев",
+      "telegram": "@aleksandr_guliaev",
+      "role": "participant",
+      "age": 33,
+      "geo": [
+        "Казань",
+        "Оренбург"
+      ],
+      "bio": "Тату и бьюти (пирсинг, тату-студия). Из продажников. Организовывал встречи участников.",
+      "industries": [
+        "Бьюти и красота"
+      ],
+      "hobbies": [
+        "Путешествия",
+        "Фитнес"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "продажи",
+        "организация встреч"
+      ],
+      "needs": [
+        "масштабирование бьюти"
+      ],
+      "offers": [
+        "нетворкинг",
+        "продажи"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "aleksandr_devkin",
+      "name": "Александр Девкин",
+      "telegram": "@alexd2502",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Участник ММ17. В мини-группе Юли Степановой.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "aleksandr_ivkin",
+      "name": "Александр Ивкин",
+      "telegram": "@aloxanderr",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (12 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "alexey_shalamov",
+      "name": "Алексей Шаламов",
+      "telegram": "@shalamov_aa",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Финансовый советник. Активен в чате (8 сообщений).",
+      "industries": [
+        "Финансы и инвестиции",
+        "Консалтинг"
+      ],
+      "hobbies": [],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "финансовое консультирование"
+      ],
+      "needs": [],
+      "offers": [
+        "финансовые советы"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "anastasia_alyabyeva",
+      "name": "Анастасия Алябьева",
+      "telegram": "@anastieshaprojekt",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (3 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "angelina_bukatina",
+      "name": "Ангелина Букатина",
+      "telegram": "@ABukatina",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (5 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "andrey_zer_guud",
+      "name": "Андрей (Zer_guud)",
+      "telegram": "@incetro",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Andrew Green. В мини-группе Михаила Ларкина.",
+      "industries": [
+        "IT и технологии"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "IT"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "anzor",
+      "name": "Анзор Мемансвелидзе",
+      "telegram": "@memanvelidze",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Режиссёр монтажа, ИИ, Оператор. Видеопроизводство.",
+      "industries": [
+        "Видеопроизводство",
+        "IT и технологии"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "видеомонтаж",
+        "AI",
+        "съёмка"
+      ],
+      "needs": [],
+      "offers": [
+        "видеопроизводство",
+        "монтаж"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "anna_tigi",
+      "name": "Анна (tigi_rigi)",
+      "telegram": "@tigi_rigi",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (6 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "anna_asilbekyan",
+      "name": "Анна Асилбекян",
+      "telegram": "@Annacosmetologist6",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Косметолог. Активна в чате (18 сообщений).",
+      "industries": [
+        "Косметология",
+        "Бьюти и красота"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "косметология"
+      ],
+      "needs": [],
+      "offers": [
+        "косметологические услуги"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "anton",
+      "name": "Антон",
+      "telegram": "",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (27 сообщений). Без подробного профиля.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "artem_mustafin",
+      "name": "Артем Мустафин",
+      "telegram": "@mustafin_artem",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (4 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "artur_shamalov_p",
+      "name": "Артур Шамалов (участник)",
+      "telegram": "@bigs8",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (6 сообщений). Другой Артур, не основатель.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "artur",
+      "name": "Артур",
+      "telegram": "@bigs8",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Участник ММ17.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "arut",
+      "name": "Арут",
+      "telegram": "@minassians",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Чемпион предыдущего потока. Поздравлялся ментором Топалом.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Устоявшийся",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "askhab",
+      "name": "Асхаб",
+      "telegram": "@magomedrasulov05",
+      "role": "mentor",
+      "age": null,
+      "geo": [],
+      "bio": "Ментор ММ17. Парфюм Ойл. Позитивный, поддерживающий.",
+      "industries": [
+        "Парфюмерия"
+      ],
+      "hobbies": [],
+      "stage": "Ментор",
+      "strengths": [
+        "парфюмерия",
+        "менторство"
+      ],
+      "needs": [],
+      "offers": [
+        "менторство",
+        "парфюмерный бизнес"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "boris_laptinskiy",
+      "name": "Борис Лаптинский",
+      "telegram": "@bronek967",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (21 сообщение). В мини-группе Юли Степановой.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность",
+        "коммуникация"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.4
+    },
+    {
+      "id": "valeriya_elatnikova",
+      "name": "Валерия Елатникова",
+      "telegram": "@LeraValeri777",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (37 сообщений). В мини-группе Максима Синаева.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.4
+    },
+    {
+      "id": "veta",
+      "name": "Вета",
+      "telegram": "@veta_magic",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (4 сообщения). Магия/эзотерика.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "viktoriya_mitrofanova",
+      "name": "Виктория Митрофанова",
+      "telegram": "@mitrofanovavika",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (6 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "vitaliy_darya",
+      "name": "Виталий и Дарья Замок",
+      "telegram": "@daryazamok",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Пара участников ММ17.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "vladimir_chip",
+      "name": "Владимир (чип-тюнинг)",
+      "telegram": "@cheytac_375",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Чип-тюнинг автомобилей. Активен (7 сообщений).",
+      "industries": [
+        "Автомобили"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "чип-тюнинг авто"
+      ],
+      "needs": [],
+      "offers": [
+        "автотюнинг"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "vladimir_gusarov",
+      "name": "Владимир Гусаров",
+      "telegram": "@ORENPALOMNIK",
+      "role": "participant",
+      "age": null,
+      "geo": [
+        "Оренбург"
+      ],
+      "bio": "Из Оренбурга. Паломник. В мини-группе Юли Степановой.",
+      "industries": [],
+      "hobbies": [
+        "Путешествия"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "vladimir_zonov",
+      "name": "Владимир Зонов",
+      "telegram": "@Auf_gabe",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (19 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.4
+    },
+    {
+      "id": "vladimir_ievlev",
+      "name": "Владимир Иевлев",
+      "telegram": "@Vladimir_Ievlev",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (3 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "denis_trukhmenev",
+      "name": "Денис Трухменёв",
+      "telegram": "@argu28",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (4 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "dmitriy_gelver",
+      "name": "Дмитрий Гельвер",
+      "telegram": "@StroySnabService",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Стройснабсервис. Строительные материалы.",
+      "industries": [
+        "Строительство и ремонт"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "стройматериалы"
+      ],
+      "needs": [],
+      "offers": [
+        "стройматериалы"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "dmitriy_nefedov",
+      "name": "Дмитрий Нефёдов",
+      "telegram": "@DmANef",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "D.A.N. Активен в чате (4 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "dmitriy_smirnov",
+      "name": "Дмитрий Смирнов",
+      "telegram": "@LegalBSDL",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Юрист. Активен (3 сообщения).",
+      "industries": [
+        "Юриспруденция"
+      ],
+      "hobbies": [],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "юриспруденция"
+      ],
+      "needs": [],
+      "offers": [
+        "юридические консультации"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "dmitriy_stepanov",
+      "name": "Дмитрий Степанов",
+      "telegram": "@dmitry_stepanov93",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (3 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "ekaterina_aleksandrova",
+      "name": "Екатерина Александрова",
+      "telegram": "@KaterinaWoo",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "SUVERUM. Активна в чате (38 сообщений). Бьюти/ювелирка.",
+      "industries": [
+        "Бьюти и красота"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.5
+    },
+    {
+      "id": "ekaterina_artur",
+      "name": "Екатерина и Артур",
+      "telegram": "@kate_beautiful_fox",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Пара. Активны в чате (6 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "elena_pakhtina",
+      "name": "Елена Пахтина",
+      "telegram": "@helenamalena",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Елена Рубинштейн. Активна в чате (4 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "ivan_grodikov",
+      "name": "Иван Гродиков",
+      "telegram": "@grodikov",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (20 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.4
+    },
+    {
+      "id": "igor_gelver",
+      "name": "Игорь Гельвер",
+      "telegram": "@Igor_gelver",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (9 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "ildar_iskhakov",
+      "name": "Ильдар Исхаков",
+      "telegram": "@IldariskhakovM",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (15 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "активность"
+      ],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "ilya_novoselov",
+      "name": "Илья Новосёлов",
+      "telegram": "@IL47RUS",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (4 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "inna_borisenko",
+      "name": "Инна Борисенко",
+      "telegram": "@borisenkoinna",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активна в чате (13 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.3
+    },
+    {
+      "id": "karim_siraev",
+      "name": "Карим Сираев",
+      "telegram": "@karimsiraev",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "В мини-группе Михаила Ларкина.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "karolina_romanova",
+      "name": "Каролина Романова",
+      "telegram": "@Lux_hair_by_KarolinaRomanova",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Люкс-парикмахер. Активна (4 сообщения).",
+      "industries": [
+        "Бьюти и красота"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "парикмахерское искусство"
+      ],
+      "needs": [],
+      "offers": [
+        "люксовые стрижки"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "kirill_kryzh",
+      "name": "Кирилл Крыжановский",
+      "telegram": "@Kirill_sti",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (16 сообщений). Готовил суп для участников. В мини-группе Синаева.",
+      "industries": [],
+      "hobbies": [
+        "Готовка"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "забота",
+        "готовка"
+      ],
+      "needs": [],
+      "offers": [
+        "кулинария"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "kirill_mochalov",
+      "name": "Кирилл Мочалов",
+      "telegram": "@kirill00838",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен в чате (5 сообщений).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "konstantin_kontsevoy",
+      "name": "Константин Концевой",
+      "telegram": "@kkontsevoy",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Активен (4 сообщения).",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "lyudmila",
+      "name": "Людмила",
+      "telegram": "@Wlusi",
+      "role": "participant",
+      "age": null,
+      "geo": [
+        "КМВ"
+      ],
+      "bio": "Маркетплейсы, собственное производство. Бывший текстильный дизайн. Масштабирование.",
+      "industries": [
+        "Маркетплейсы",
+        "Производство",
+        "Текстиль"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "маркетплейсы",
+        "аналитика"
+      ],
+      "needs": [
+        "масштабирование"
+      ],
+      "offers": [
+        "опыт маркетплейсов",
+        "производство"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "maxim_gimaev",
+      "name": "Максим Гимаев",
+      "telegram": "@mgimaev2",
+      "role": "participant",
+      "age": 20,
+      "geo": [
+        "Пермь"
+      ],
+      "bio": "Кадровое агентство, работа с МО. Бывший арбитраж трафика. Самый молодой участник.",
+      "industries": [
+        "HR и рекрутинг"
+      ],
+      "hobbies": [],
+      "stage": "Начинающий",
+      "strengths": [
+        "кадровые услуги",
+        "арбитраж трафика"
+      ],
+      "needs": [
+        "инвестиции",
+        "бизнес-план"
+      ],
+      "offers": [
+        "рекрутинг"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "maxim_gurov",
+      "name": "Максим Гуров",
+      "telegram": "@iMVG89",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "В поиске главного дела жизни. Борьба со страхом.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Смена направления",
+      "strengths": [],
+      "needs": [
+        "направление",
+        "мотивация"
+      ],
+      "offers": [],
+      "confidence": 0.4
+    },
+    {
+      "id": "maxim_permyakov",
+      "name": "Максим Пермяков",
+      "telegram": "@mypermyakov",
+      "role": "participant",
+      "age": 34,
+      "geo": [
+        "Чебоксары"
+      ],
+      "bio": "Производство парфюмерии, WB/Ozon. Пчеловодство 9 лет. Личностный кризис.",
+      "industries": [
+        "Парфюмерия",
+        "Маркетплейсы"
+      ],
+      "hobbies": [
+        "Пчеловодство"
+      ],
+      "stage": "Кризис/восстановление",
+      "strengths": [
+        "маркетплейсы",
+        "парфюмерия"
+      ],
+      "needs": [
+        "границы",
+        "баланс"
+      ],
+      "offers": [
+        "опыт WB/Ozon",
+        "парфюмерное производство"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "maxim_stukalkin",
+      "name": "Максим Стукалкин",
+      "telegram": "@Maksim_Stukalkin",
+      "role": "participant",
+      "age": 37,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "Проектная организация, 40 человек, 300 млн оборот. Промышленное проектирование 14 лет.",
+      "industries": [
+        "Строительство и ремонт",
+        "Производство"
+      ],
+      "hobbies": [
+        "Футбол",
+        "Баня",
+        "Настольные игры",
+        "Путешествия",
+        "Музыка"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "промышленное проектирование",
+        "управление крупной компанией"
+      ],
+      "needs": [
+        "рост прибыли",
+        "регламентация"
+      ],
+      "offers": [
+        "проектирование",
+        "управленческий опыт"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "maxim_yaparov",
+      "name": "Максим Япаров",
+      "telegram": "@adalmax",
+      "role": "participant",
+      "age": 38,
+      "geo": [
+        "Чебоксары"
+      ],
+      "bio": "Агентство недвижимости по всей РФ и за рубежом. 10+ лет, сотни сделок.",
+      "industries": [
+        "Недвижимость"
+      ],
+      "hobbies": [
+        "Горные лыжи",
+        "Шахматы"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "недвижимость",
+        "инвестиции",
+        "чтение рынка"
+      ],
+      "needs": [],
+      "offers": [
+        "консультации по недвижимости",
+        "оценка инвестиций"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "margarita_chalaya",
+      "name": "Маргарита Чалая",
+      "telegram": "@ritachalaia",
+      "role": "participant",
+      "age": 40,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Бренд женской одежды CHALAIA. Бывшая ВЭД (Китай). Говорит по-китайски. Хочет переехать в Китай.",
+      "industries": [
+        "Мода и одежда"
+      ],
+      "hobbies": [
+        "Танцы",
+        "Баня",
+        "Путешествия"
+      ],
+      "stage": "Смена направления",
+      "strengths": [
+        "ВЭД",
+        "Китай",
+        "переговоры"
+      ],
+      "needs": [
+        "масштаб",
+        "переезд"
+      ],
+      "offers": [
+        "связи с Китаем",
+        "бренд одежды"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "marina",
+      "name": "Марина",
+      "telegram": "@dzancik",
+      "role": "participant",
+      "age": 31,
+      "geo": [
+        "Чебоксары"
+      ],
+      "bio": "Шторы премиум 10 лет. Умный дом. Работает в ЧБ, Казани, Москве, СПб.",
+      "industries": [
+        "Строительство и ремонт",
+        "Производство"
+      ],
+      "hobbies": [
+        "Готовка"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "шторы премиум",
+        "умный дом"
+      ],
+      "needs": [
+        "новая ниша"
+      ],
+      "offers": [
+        "дизайн интерьера",
+        "шторы"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "mark_kroman",
+      "name": "Марк Кроман",
+      "telegram": "@markkrom2021",
+      "role": "participant",
+      "age": 37,
+      "geo": [],
+      "bio": "Селлер на WB/Ozon/Lamoda, свой фулфилмент. Благотворительный фонд. Перенёс инфаркт.",
+      "industries": [
+        "Маркетплейсы",
+        "Благотворительность"
+      ],
+      "hobbies": [],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "маркетплейсы",
+        "фулфилмент"
+      ],
+      "needs": [],
+      "offers": [
+        "опыт маркетплейсов",
+        "фулфилмент"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "mikhail_larkin",
+      "name": "Михаил Ларкин",
+      "telegram": "@larkinmd7",
+      "role": "participant",
+      "age": 28,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "AI-образование, корпоративные буткемпы. Ушёл из найма. Personal AI OS. Стоял на крыле самолёта.",
+      "industries": [
+        "IT и технологии",
+        "Образование",
+        "Консалтинг"
+      ],
+      "hobbies": [
+        "Путешествия"
+      ],
+      "stage": "Из найма в бизнес",
+      "strengths": [
+        "AI",
+        "обучение корпораций",
+        "ИИ-инструменты"
+      ],
+      "needs": [
+        "долгосрочный проект"
+      ],
+      "offers": [
+        "AI-экспертиза",
+        "обучение ИИ"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": "mikhail_shurmin",
+      "name": "Михаил Шурмин",
+      "telegram": "@sintenol",
+      "role": "participant",
+      "age": 26,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "Детская школа танцев Мувинг. Брейкинг, хип-хоп, к-поп, контемп. Маньяк табличек.",
+      "industries": [
+        "Танцы",
+        "Образование"
+      ],
+      "hobbies": [
+        "Сноуборд",
+        "Путешествия"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "танцевальная школа",
+        "аналитика"
+      ],
+      "needs": [
+        "рост дохода x5"
+      ],
+      "offers": [
+        "танцевальное образование"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "nikita_shepard",
+      "name": "Никита (Shepard)",
+      "telegram": "@Shepard1801",
+      "role": "participant",
+      "age": 23,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Программист и предприниматель. Несколько малых проектов. Хочет уйти из найма.",
+      "industries": [
+        "IT и технологии"
+      ],
+      "hobbies": [
+        "Теннис",
+        "Музыка"
+      ],
+      "stage": "Из найма в бизнес",
+      "strengths": [
+        "IT",
+        "разработка ПО",
+        "системное мышление"
+      ],
+      "needs": [
+        "масштабируемые идеи"
+      ],
+      "offers": [
+        "IT-экспертиза"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "nikita_aleksandrov",
+      "name": "Никита Александров",
+      "telegram": "@n_aleksandrov",
+      "role": "participant",
+      "age": 35,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "Крипто-трейдинг и инвестиции. 5000 учеников. Бывший врач. Авантюрист.",
+      "industries": [
+        "Крипто и трейдинг",
+        "Финансы и инвестиции",
+        "Образование"
+      ],
+      "hobbies": [
+        "Парашютный спорт",
+        "Походы"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "инвестиции",
+        "крипто",
+        "обучение"
+      ],
+      "needs": [],
+      "offers": [
+        "инвестиционная экспертиза",
+        "обучение трейдингу"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "nikita_sokolov",
+      "name": "Никита Соколов",
+      "telegram": "@SokolovNYU",
+      "role": "participant",
+      "age": 27,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "Карьерный консультант, профориентолог. 2000+ консультаций. Лектор Знание. Хочет открыть компанию.",
+      "industries": [
+        "Образование",
+        "Консалтинг",
+        "HR и рекрутинг"
+      ],
+      "hobbies": [
+        "Фитнес",
+        "Путешествия"
+      ],
+      "stage": "Из найма в бизнес",
+      "strengths": [
+        "профориентация",
+        "карьерное консультирование",
+        "гранты"
+      ],
+      "needs": [
+        "масштабирование",
+        "бизнес-модель",
+        "лиды"
+      ],
+      "offers": [
+        "карьерные консультации",
+        "профориентация"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "nikolay",
+      "name": "Николай",
+      "telegram": "@skorp_ion03",
+      "role": "participant",
+      "age": 38,
+      "geo": [
+        "Чебоксары"
+      ],
+      "bio": "Производство парфюмерии. Бывший электромонтаж. Эндуро, сноуборд фрирайд.",
+      "industries": [
+        "Парфюмерия",
+        "Производство"
+      ],
+      "hobbies": [
+        "Эндуро",
+        "Сноуборд",
+        "Путешествия",
+        "Походы"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "парфюмерное производство"
+      ],
+      "needs": [
+        "масштабирование"
+      ],
+      "offers": [
+        "парфюмерия"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "oleg_inet",
+      "name": "Олег (Inet1000)",
+      "telegram": "@Inet1000",
+      "role": "participant",
+      "age": 49,
+      "geo": [
+        "Геленджик"
+      ],
+      "bio": "Программист+радиоэлектроника. Аттракционы, видеонаблюдение, умный дом. Хочет в производство.",
+      "industries": [
+        "IT и технологии",
+        "Аттракционы",
+        "Производство"
+      ],
+      "hobbies": [
+        "Горные лыжи",
+        "Серфинг",
+        "Вейкборд",
+        "Путешествия"
+      ],
+      "stage": "Смена направления",
+      "strengths": [
+        "IT",
+        "умный дом",
+        "аттракционы"
+      ],
+      "needs": [
+        "переориентация бизнеса",
+        "партнёрство"
+      ],
+      "offers": [
+        "IT-экспертиза",
+        "умный дом"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "olga_matveeva",
+      "name": "Ольга Матвеева",
+      "telegram": "@OlgaMatveeva21",
+      "role": "participant",
+      "age": 38,
+      "geo": [
+        "Чебоксары"
+      ],
+      "bio": "Турагентство VIPTouristik 11 лет. Испанские танцы, горные лыжи.",
+      "industries": [
+        "Туризм"
+      ],
+      "hobbies": [
+        "Танцы",
+        "Горные лыжи",
+        "Баня"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "туризм"
+      ],
+      "needs": [],
+      "offers": [
+        "организация туров"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "petr",
+      "name": "Пётр",
+      "telegram": "@homyk152",
+      "role": "participant",
+      "age": null,
+      "geo": [
+        "Нижний Новгород"
+      ],
+      "bio": "Начинающий предприниматель из НН. Строит компанию, зарылся в операционке. Скоро второй ребёнок.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Начинающий",
+      "strengths": [],
+      "needs": [
+        "масштабирование",
+        "делегирование",
+        "выход из операционки"
+      ],
+      "offers": [],
+      "confidence": 0.6
+    },
+    {
+      "id": "roman_grigoryev",
+      "name": "Роман Григорьев",
+      "telegram": "@gromaric",
+      "role": "participant",
+      "age": 39,
+      "geo": [
+        "Цивильск"
+      ],
+      "bio": "Автосервис, недвижимость, маркетплейсы. 4 детей. Мотоцикл, сноуборд. Хочет 10 млн/мес.",
+      "industries": [
+        "Автомобили",
+        "Недвижимость",
+        "Маркетплейсы"
+      ],
+      "hobbies": [
+        "Мотоспорт",
+        "Сноуборд",
+        "Путешествия"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "автосервис",
+        "разнообразный бизнес"
+      ],
+      "needs": [
+        "команда",
+        "масштабирование"
+      ],
+      "offers": [
+        "автосервис",
+        "маркетплейсы"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "ruslan_kerimov",
+      "name": "Руслан Керимов",
+      "telegram": "@kerimovrd",
+      "role": "participant",
+      "age": 36,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Лидогенерация за процент от прибыли. Без предоплаты. Общительный, с юмором.",
+      "industries": [
+        "Лидогенерация",
+        "Маркетинг и реклама"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "лидогенерация",
+        "трафик"
+      ],
+      "needs": [],
+      "offers": [
+        "генерация заявок",
+        "лидогенерация"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "svetlana_rodionova",
+      "name": "Светлана Родионова",
+      "telegram": "@SvetaSvetlanaRodionova",
+      "role": "participant",
+      "age": 45,
+      "geo": [],
+      "bio": "Турагентство 17 лет. Космические туры на космодром. Недвижимость. Финансовые трудности.",
+      "industries": [
+        "Туризм",
+        "Недвижимость"
+      ],
+      "hobbies": [
+        "Путешествия",
+        "Баня"
+      ],
+      "stage": "Кризис/восстановление",
+      "strengths": [
+        "туризм",
+        "космические туры"
+      ],
+      "needs": [
+        "финансовая стабилизация",
+        "фокус"
+      ],
+      "offers": [
+        "туристический опыт",
+        "космические туры"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "sergey_volkov",
+      "name": "Сергей Волков",
+      "telegram": "@Sergey_Walk",
+      "role": "participant",
+      "age": 32,
+      "geo": [],
+      "bio": "Транспортная компания - грузоперевозки по РФ и СНГ. Каша в голове, поиск фокуса.",
+      "industries": [
+        "Транспорт и логистика"
+      ],
+      "hobbies": [
+        "Плавание",
+        "Баскетбол"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "грузоперевозки"
+      ],
+      "needs": [
+        "фокус",
+        "структурность"
+      ],
+      "offers": [
+        "логистика"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "sergey_kovalchuk",
+      "name": "Сергей Ковальчук",
+      "telegram": "@kovalchukser",
+      "role": "participant",
+      "age": 38,
+      "geo": [
+        "Москва",
+        "Зеленоград"
+      ],
+      "bio": "Строительство бассейнов Гидробро. Банный комплекс. Двукратный чемпион панкратиона.",
+      "industries": [
+        "Строительство и ремонт",
+        "СПА и велнес"
+      ],
+      "hobbies": [
+        "Единоборства"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "строительство бассейнов",
+        "единоборства"
+      ],
+      "needs": [
+        "пассивный доход"
+      ],
+      "offers": [
+        "монолитные бассейны"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "sergey_trofimov",
+      "name": "Сергей Трофимов",
+      "telegram": "@sergei_1984",
+      "role": "participant",
+      "age": 41,
+      "geo": [
+        "Чебоксары"
+      ],
+      "bio": "Строительные материалы с 2012. Помогают строить дома мечты. Триатлон, походы.",
+      "industries": [
+        "Строительство и ремонт"
+      ],
+      "hobbies": [
+        "Триатлон",
+        "Бег",
+        "Плавание",
+        "Велосипед",
+        "Походы"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "стройматериалы"
+      ],
+      "needs": [],
+      "offers": [
+        "опыт стройматериалов"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "solbon",
+      "name": "Солбон",
+      "telegram": "@balson93",
+      "role": "participant",
+      "age": 32,
+      "geo": [
+        "Улан-Удэ"
+      ],
+      "bio": "Очистка двигателей водородом (франшиза 7.5 лет). АРБ. Перепродажа полезных ископаемых.",
+      "industries": [
+        "Автомобили",
+        "Добыча ресурсов"
+      ],
+      "hobbies": [
+        "Единоборства"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "франшиза",
+        "автосервис"
+      ],
+      "needs": [
+        "рост дохода"
+      ],
+      "offers": [
+        "водородная очистка"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "sofia_kasatochka",
+      "name": "София (Касаточка)",
+      "telegram": "@i_see_youuuuuuuuu",
+      "role": "participant",
+      "age": null,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Помощник руководителя в логистике (11 лет). Мечтает о студии танцев/массажа.",
+      "industries": [
+        "Транспорт и логистика",
+        "Танцы"
+      ],
+      "hobbies": [
+        "Сноуборд",
+        "Танцы"
+      ],
+      "stage": "Из найма в бизнес",
+      "strengths": [
+        "организация процессов",
+        "адаптация молодёжи"
+      ],
+      "needs": [
+        "свой бизнес"
+      ],
+      "offers": [
+        "организация процессов"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "stanislav",
+      "name": "Станислав",
+      "telegram": "@Stason7771",
+      "role": "participant",
+      "age": 37,
+      "geo": [],
+      "bio": "Электромонтажная компания, 10 сотрудников, 40 млн оборот. Дайвинг, сноуборд, рыбалка.",
+      "industries": [
+        "Строительство и ремонт",
+        "Энергетика"
+      ],
+      "hobbies": [
+        "Дайвинг",
+        "Сноуборд",
+        "Рыбалка"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "электромонтаж",
+        "многозадачность"
+      ],
+      "needs": [],
+      "offers": [
+        "электромонтажные работы"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "stas_velisevich",
+      "name": "Стас Велисевич",
+      "telegram": "@engine1207",
+      "role": "participant",
+      "age": 24,
+      "geo": [],
+      "bio": "Маркетплейсы женская одежда. IT-стартап. В критической ситуации. Футбол, мафия.",
+      "industries": [
+        "Маркетплейсы",
+        "Мода и одежда",
+        "IT и технологии"
+      ],
+      "hobbies": [
+        "Футбол",
+        "Плавание",
+        "Мафия"
+      ],
+      "stage": "Кризис/восстановление",
+      "strengths": [
+        "маркетплейсы",
+        "IT-стартап"
+      ],
+      "needs": [
+        "инвестиции",
+        "антикризис"
+      ],
+      "offers": [
+        "опыт маркетплейсов"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "umar",
+      "name": "Умар",
+      "telegram": "@Prosto9950",
+      "role": "participant",
+      "age": 23,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Шлифовка и полировка стекол на новостройках. Создаёт свою команду.",
+      "industries": [
+        "Стекольные работы",
+        "Строительство и ремонт"
+      ],
+      "hobbies": [],
+      "stage": "Начинающий",
+      "strengths": [
+        "шлифовка стекол"
+      ],
+      "needs": [
+        "контакты застройщиков"
+      ],
+      "offers": [
+        "стекольные работы"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "fedor_koleda",
+      "name": "Фёдор Коледа",
+      "telegram": "@koledaf",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Позитивный участник. Мало данных.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    },
+    {
+      "id": "eduard_verzhbitskiy",
+      "name": "Эдуард Вержбицкий",
+      "telegram": "@eavceo",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Внештатный директор по маркетингу. Трафик-агентство для зарубежного бизнеса.",
+      "industries": [
+        "Маркетинг и реклама"
+      ],
+      "hobbies": [],
+      "stage": "Из найма в бизнес",
+      "strengths": [
+        "маркетинг",
+        "трафик"
+      ],
+      "needs": [
+        "свой проект"
+      ],
+      "offers": [
+        "маркетинговая экспертиза"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "eleonora_kruzhkova",
+      "name": "Элеонора Кружкова",
+      "telegram": "@kruzhkova_eleonora",
+      "role": "participant",
+      "age": 43,
+      "geo": [
+        "Сочи"
+      ],
+      "bio": "Лингвист, методолог, бизнес-тренер. Онлайн-школа английского. Бывший биатлон. Бегает трейлы.",
+      "industries": [
+        "Образование",
+        "Консалтинг"
+      ],
+      "hobbies": [
+        "Бег",
+        "Походы",
+        "Биатлон"
+      ],
+      "stage": "Смена направления",
+      "strengths": [
+        "образование",
+        "методология",
+        "нейролингвистика",
+        "командообразование"
+      ],
+      "needs": [
+        "новая ниша",
+        "масштабируемая модель"
+      ],
+      "offers": [
+        "обучение",
+        "методология",
+        "тренинги"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "id": "elina",
+      "name": "Элина",
+      "telegram": "@ElinaaEAe",
+      "role": "participant",
+      "age": 25,
+      "geo": [
+        "Москва",
+        "Северная Осетия"
+      ],
+      "bio": "5 лет в реанимации + госпиталь. 2 СПА-кабинета (Москва и Кавказ). Эмпат.",
+      "industries": [
+        "Медицина",
+        "СПА и велнес",
+        "Бьюти и красота"
+      ],
+      "hobbies": [
+        "Готовка",
+        "Рисование",
+        "Плавание"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "медицина",
+        "СПА"
+      ],
+      "needs": [
+        "масштабирование"
+      ],
+      "offers": [
+        "медицинская помощь",
+        "СПА"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "ernest_amiramov",
+      "name": "Эрнест Амирамов",
+      "telegram": "@ErniAmoff",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Предприниматель 10+ лет. Потерял бизнес, в кризисе. Финансовый анализ для друзей.",
+      "industries": [
+        "Финансы и инвестиции"
+      ],
+      "hobbies": [],
+      "stage": "Кризис/восстановление",
+      "strengths": [
+        "предпринимательство",
+        "финанализ"
+      ],
+      "needs": [
+        "новое направление",
+        "стабилизация"
+      ],
+      "offers": [
+        "финансовый анализ"
+      ],
+      "confidence": 0.6
+    },
+    {
+      "id": "yulya_stepanova",
+      "name": "Юля Степанова (Донцова)",
+      "telegram": "@julie_dontsova",
+      "role": "participant",
+      "age": 34,
+      "geo": [
+        "Санкт-Петербург"
+      ],
+      "bio": "2 салона лазерной эпиляции Гладкое Дело. Беременна. Упаковка франшизы. Муж-чемпион ММ.",
+      "industries": [
+        "Бьюти и красота"
+      ],
+      "hobbies": [
+        "Сноуборд",
+        "Серфинг",
+        "Путешествия"
+      ],
+      "stage": "Масштабирование",
+      "strengths": [
+        "бьюти-система",
+        "франшиза",
+        "процессы"
+      ],
+      "needs": [
+        "инвесторы",
+        "масштабирование"
+      ],
+      "offers": [
+        "бьюти-экспертиза",
+        "систематизация"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": "yura_litvinko",
+      "name": "Юра Литвинко",
+      "telegram": "@yuralitvinko",
+      "role": "participant",
+      "age": null,
+      "geo": [
+        "Москва"
+      ],
+      "bio": "Активный нетворкер. Встречи в ресторанах Москвы.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "нетворкинг"
+      ],
+      "needs": [],
+      "offers": [
+        "организация встреч"
+      ],
+      "confidence": 0.4
+    },
+    {
+      "id": "yuriy_efimov",
+      "name": "Юрий Ефимов",
+      "telegram": "@tihlan",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Студия массажа Мять. Организовал мужской чат ММ17. Переход от ремесленника к предпринимателю.",
+      "industries": [
+        "Массаж",
+        "СПА и велнес"
+      ],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "массаж",
+        "организация сообщества"
+      ],
+      "needs": [
+        "масштабирование x3",
+        "делегирование"
+      ],
+      "offers": [
+        "массажные услуги"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": "yuriy_terentyev",
+      "name": "Юрий Терентьев",
+      "telegram": "@yurii_happy_math",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Преподаватель математики ОГЭ/ЕГЭ. Хочет мини онлайн-школу. Цель 1 млн чистыми.",
+      "industries": [
+        "Образование"
+      ],
+      "hobbies": [],
+      "stage": "Из найма в бизнес",
+      "strengths": [
+        "преподавание математики"
+      ],
+      "needs": [
+        "масштабирование",
+        "делегирование",
+        "команда"
+      ],
+      "offers": [
+        "обучение математике"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "d_miron",
+      "name": "D (Миронов)",
+      "telegram": "@Miron1771",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Вышел из бизнес-проекта. В поиске инвестиций и партнёров.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Смена направления",
+      "strengths": [],
+      "needs": [
+        "инвестиции",
+        "партнёрство"
+      ],
+      "offers": [],
+      "confidence": 0.4
+    },
+    {
+      "id": "drevartel",
+      "name": "DREVARTEL",
+      "telegram": "@SLADGRADD",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "ДревАртель - деревообработка, строительство домов. Экопоселение, агротуризм, экокоин.",
+      "industries": [
+        "Деревообработка",
+        "Строительство и ремонт",
+        "Сельское хозяйство"
+      ],
+      "hobbies": [
+        "Походы"
+      ],
+      "stage": "Растущий бизнес",
+      "strengths": [
+        "деревообработка",
+        "строительство домов"
+      ],
+      "needs": [
+        "инвестиции 70-80 млн"
+      ],
+      "offers": [
+        "пиломатериалы",
+        "экопоселение"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "id": "kawasaki_fanis",
+      "name": "KAWASAKI (Фанис)",
+      "telegram": "@FANIS_FF",
+      "role": "participant",
+      "age": null,
+      "geo": [
+        "Екатеринбург"
+      ],
+      "bio": "Инженер по сварке. Охота на гуся, рыбалка, готовка на костре.",
+      "industries": [
+        "Производство"
+      ],
+      "hobbies": [
+        "Охота",
+        "Рыбалка",
+        "Готовка"
+      ],
+      "stage": "Устоявшийся",
+      "strengths": [
+        "сварочное дело"
+      ],
+      "needs": [],
+      "offers": [
+        "сварка"
+      ],
+      "confidence": 0.5
+    },
+    {
+      "id": "katrin_l",
+      "name": "Katrin L",
+      "telegram": "@KloudyFox",
+      "role": "participant",
+      "age": null,
+      "geo": [],
+      "bio": "Участница ММ17. Активна (3 сообщения). Друг Руслана Керимова.",
+      "industries": [],
+      "hobbies": [],
+      "stage": "Растущий бизнес",
+      "strengths": [],
+      "needs": [],
+      "offers": [],
+      "confidence": 0.2
+    }
+  ],
+  "links": [
+    {
+      "source": "sergey_zhivotnev",
+      "target": "maxim_sinaev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Еда и напитки, Строительство и ремонт; Общие хобби: Путешествия, Велосипед; Одна география: Москва",
+      "strength": 8.0,
+      "confidence": 1.0,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "aleksandr_gulyaev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Наталья Зверева может помочь с: масштабирование бьюти",
+      "strength": 8.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня",
+      "strength": 7.0,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия, Фитнес",
+      "strength": 7.0,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "natalya_zvereva",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 6.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "mikhail_larkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 6.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "mikhail_larkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 6.5,
+      "confidence": 0.95,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "yulya_stepanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Юля Степанова (Донцова) может помочь с: масштабирование бьюти",
+      "strength": 6.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Похожий этап: Из найма в бизнес",
+      "strength": 6.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство; Одна география: Санкт-Петербург; Похожий этап: Устоявшийся",
+      "strength": 6,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "mikhail_larkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии; Одна мини-группа на ММ",
+      "strength": 6,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_yaparov",
+      "target": "sergey_trofimov",
+      "relation_type": "geography",
+      "explanation": "Одна география: Чебоксары; Похожий этап: Устоявшийся; Одна мини-группа на ММ",
+      "strength": 6,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "nikita_aleksandrov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Одна мини-группа на ММ",
+      "strength": 6,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "strength": 5.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка",
+      "strength": 5.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Готовка",
+      "strength": 5.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "vladimir_gusarov",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна мини-группа на ММ",
+      "strength": 5.5,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Походы, Путешествия",
+      "strength": 5.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Походы, Велосипед",
+      "strength": 5.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "maxim_yaparov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Недвижимость; Общие хобби: Шахматы, Горные лыжи",
+      "strength": 5.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "nikita_aleksandrov",
+      "relation_type": "geography",
+      "explanation": "Одна география: Санкт-Петербург; Одна мини-группа на ММ",
+      "strength": 5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "umar",
+      "relation_type": "geography",
+      "explanation": "Одна география: Москва; Одна мини-группа на ММ",
+      "strength": 5,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Серфинг, Путешествия",
+      "strength": 4.5,
+      "confidence": 0.95,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Готовка; Похожий этап: Устоявшийся",
+      "strength": 4.5,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "mikhail_larkin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Максим Стукалкин может помочь с: долгосрочный проект",
+      "strength": 4.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
+      "strength": 4.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг",
+      "strength": 4,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "kirill_chiriatyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "aleksandr_artemyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "margarita_chalaya",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Баня; Одна география: Москва",
+      "strength": 4.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "natalya_zvereva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "strength": 4.0,
+      "confidence": 1.0,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "sofia_kasatochka",
+      "relation_type": "synergy",
+      "explanation": "Одна география: Москва; Наталья Зверева может помочь с: свой бизнес",
+      "strength": 4,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг",
+      "strength": 4,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "aleksandr_artemyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "andrey_zer_guud",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "mikhail_larkin",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "umar",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "nikita_aleksandrov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "umar",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "boris_laptinskiy",
+      "target": "vladimir_gusarov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "boris_laptinskiy",
+      "target": "maxim_permyakov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "boris_laptinskiy",
+      "target": "ruslan_kerimov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "boris_laptinskiy",
+      "target": "yulya_stepanova",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "valeriya_elatnikova",
+      "target": "kirill_kryzh",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "valeriya_elatnikova",
+      "target": "maxim_yaparov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "valeriya_elatnikova",
+      "target": "nikita_sokolov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "valeriya_elatnikova",
+      "target": "sergey_trofimov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "vladimir_gusarov",
+      "target": "maxim_permyakov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "vladimir_gusarov",
+      "target": "ruslan_kerimov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_kryzh",
+      "target": "maxim_yaparov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_kryzh",
+      "target": "nikita_sokolov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_kryzh",
+      "target": "sergey_trofimov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "ruslan_kerimov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "yulya_stepanova",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "strength": 4,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_yaparov",
+      "target": "nikita_sokolov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "nikita_shepard",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии; Одна география: Москва; Похожий этап: Из найма в бизнес",
+      "strength": 4,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг",
+      "strength": 4,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
+      "strength": 4.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "umar",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_sokolov",
+      "target": "sergey_trofimov",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_sokolov",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование, Консалтинг",
+      "strength": 4,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_kerimov",
+      "target": "yulya_stepanova",
+      "relation_type": "team",
+      "explanation": "Одна мини-группа на ММ",
+      "strength": 4,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "mikhail_shurmin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "sergey_efimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Охота",
+      "strength": 3.5,
+      "confidence": 1.0,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Походы",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Охота",
+      "strength": 3.5,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Велосипед",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд",
+      "strength": 3.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "mikhail_shurmin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "yulya_stepanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.95,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Плавание",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "aleksandr_artemyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Горные лыжи",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Настольные игры",
+      "strength": 3.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Горные лыжи",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_yaparov",
+      "target": "olga_matveeva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Горные лыжи; Одна география: Чебоксары; Похожий этап: Устоявшийся",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Готовка",
+      "strength": 3.5,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "mikhail_shurmin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "sofia_kasatochka",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Танцы; Общие хобби: Сноуборд",
+      "strength": 3.5,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Общие хобби: Походы",
+      "strength": 3.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "nikolay",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "olga_matveeva",
+      "target": "svetlana_rodionova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Туризм; Общие хобби: Баня",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_grigoryev",
+      "target": "svetlana_rodionova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Недвижимость; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_trofimov",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Походы",
+      "strength": 3.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "katerina",
+      "target": "roman_sh",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Развлечения; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Роман Шаяхметов может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "svetlana_rodionova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Баня",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "aleksandr_gulyaev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "strength": 3.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "mikhail_shurmin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "nikita_sokolov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "strength": 3.0,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "nikolay",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "oleg_inet",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Серфинг",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Максим Синаев может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "roman_grigoryev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Наталья Зверева может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "elina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "kawasaki_fanis",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Охота, Рыбалка",
+      "strength": 3.0,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "sergey_topal",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Сергей Топал может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Руслан Руднев может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Кирилл Чирятьев может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Григорий Никонов может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "mikhail_larkin",
+      "relation_type": "synergy",
+      "explanation": "Александр Артемьев может помочь с: долгосрочный проект",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "eduard_verzhbitskiy",
+      "relation_type": "synergy",
+      "explanation": "Александр Артемьев может помочь с: свой проект",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "nikita_sokolov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "strength": 3.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "alexey_shalamov",
+      "target": "nikita_aleksandrov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Финансы и инвестиции; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "anzor",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Анзор Мемансвелидзе может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "askhab",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Асхаб может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "askhab",
+      "target": "sofia_kasatochka",
+      "relation_type": "synergy",
+      "explanation": "Асхаб может помочь с: свой бизнес",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Людмила может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Парфюмерия; Одна география: Чебоксары",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Максим Пермяков может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы; Похожий этап: Кризис/восстановление",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "margarita_chalaya",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Баня",
+      "strength": 3.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "svetlana_rodionova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Баня",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "eduard_verzhbitskiy",
+      "relation_type": "synergy",
+      "explanation": "Максим Стукалкин может помочь с: свой проект",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "margarita_chalaya",
+      "target": "olga_matveeva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Танцы, Баня",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "margarita_chalaya",
+      "target": "svetlana_rodionova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Баня",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Одна география: Чебоксары",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Марина может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Одна география: Чебоксары",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Михаил Ларкин может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Похожий этап: Из найма в бизнес",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "nikita_aleksandrov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Одна география: Санкт-Петербург",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "nikolay",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "roman_grigoryev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_shepard",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Никита (Shepard) может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Одна география: Санкт-Петербург",
+      "strength": 3,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Никита Александров может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_sokolov",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование; Похожий этап: Из найма в бизнес",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikolay",
+      "target": "roman_grigoryev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikolay",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "oleg_inet",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Олег (Inet1000) может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "oleg_inet",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия, Серфинг",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "olga_matveeva",
+      "target": "petr",
+      "relation_type": "synergy",
+      "explanation": "Ольга Матвеева может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "petr",
+      "target": "sofia_kasatochka",
+      "relation_type": "synergy",
+      "explanation": "София (Касаточка) может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "petr",
+      "target": "eduard_verzhbitskiy",
+      "relation_type": "synergy",
+      "explanation": "Эдуард Вержбицкий может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "petr",
+      "target": "ernest_amiramov",
+      "relation_type": "synergy",
+      "explanation": "Эрнест Амирамов может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "petr",
+      "target": "yulya_stepanova",
+      "relation_type": "synergy",
+      "explanation": "Юля Степанова (Донцова) может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "petr",
+      "target": "yura_litvinko",
+      "relation_type": "synergy",
+      "explanation": "Юра Литвинко может помочь с: выход из операционки",
+      "strength": 3,
+      "confidence": 0.4,
+      "is_inferred": true
+    },
+    {
+      "source": "roman_grigoryev",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
+      "strength": 3.0,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_kovalchuk",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_kovalchuk",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_kovalchuk",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_kovalchuk",
+      "target": "elina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: СПА и велнес; Одна география: Москва",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_trofimov",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт; Похожий этап: Устоявшийся",
+      "strength": 3,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_trofimov",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Походы, Бег",
+      "strength": 3.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "roman_sh",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "sergey_zhivotnev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "maxim_sinaev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "margarita_chalaya",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "sergey_zhivotnev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "maxim_sinaev",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "natalya_zvereva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "margarita_chalaya",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "mikhail_larkin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "natalya_zvereva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 1.0,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "mikhail_larkin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.95,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "sergey_topal",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Фитнес; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "margarita_chalaya",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "mikhail_larkin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.95,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "sofia_kasatochka",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Сноуборд; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "sergey_topal",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Фитнес; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "margarita_chalaya",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "maxim_yaparov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Горные лыжи; Похожий этап: Устоявшийся",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "olga_matveeva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Горные лыжи; Похожий этап: Устоявшийся",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "vladimir_gusarov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Оренбург",
+      "strength": 2.5,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "mikhail_shurmin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Санкт-Петербург",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "nikita_sokolov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Санкт-Петербург",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "olga_matveeva",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Баня; Похожий этап: Устоявшийся",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Санкт-Петербург",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "margarita_chalaya",
+      "target": "mikhail_larkin",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "margarita_chalaya",
+      "target": "oleg_inet",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Похожий этап: Смена направления",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "margarita_chalaya",
+      "target": "sofia_kasatochka",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Танцы; Одна география: Москва",
+      "strength": 2.5,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "sergey_trofimov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Походы; Похожий этап: Устоявшийся",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_sokolov",
+      "target": "yulya_stepanova",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Путешествия; Одна география: Санкт-Петербург",
+      "strength": 2.5,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "nikolay",
+      "target": "sergey_trofimov",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Походы; Одна география: Чебоксары",
+      "strength": 2.5,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "stanislav",
+      "target": "kawasaki_fanis",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Рыбалка; Похожий этап: Устоявшийся",
+      "strength": 2.5,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "alexey_shalamov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Консалтинг",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "nikita_aleksandrov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_shamalov",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "alexey_shalamov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Финансы и инвестиции",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "nikita_aleksandrov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Финансы и инвестиции",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_sh",
+      "target": "ernest_amiramov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Финансы и инвестиции",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "ruslan_rudnev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "abu_said",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "dmitriy_gelver",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "lyudmila",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_zhivotnev",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "sergey_efimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 1.0,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "ruslan_rudnev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "kirill_chiriatyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "aleksandr_artemyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "dmitriy_gelver",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "alexey_shalamov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Консалтинг",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "anna_asilbekyan",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "ekaterina_aleksandrova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "karolina_romanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "nikita_aleksandrov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "ruslan_rudnev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "kirill_chiriatyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "aleksandr_artemyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "dmitriy_gelver",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.9,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_efimov",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_topal",
+      "target": "sergey_kovalchuk",
+      "relation_type": "geography",
+      "explanation": "Одна география: Москва, Зеленоград",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "kirill_chiriatyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "dmitriy_gelver",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "roman_grigoryev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Недвижимость",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "svetlana_rodionova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Недвижимость",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_rudnev",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "abu_said",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "dmitriy_gelver",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "lyudmila",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "kirill_chiriatyev",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "ruslan_kerimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетинг и реклама",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "grigoriy_nikonov",
+      "target": "eduard_verzhbitskiy",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетинг и реклама",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "aleksandr_artemyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "lyudmila",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Деревообработка",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "abu_said",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "dmitriy_gelver",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "lyudmila",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "nikita_aleksandrov",
+      "relation_type": "geography",
+      "explanation": "Одна география: Санкт-Петербург; Похожий этап: Устоявшийся",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_artemyev",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "anna_asilbekyan",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "ekaterina_aleksandrova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "karolina_romanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "elina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "alexey_shalamov",
+      "target": "mikhail_larkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Консалтинг",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "alexey_shalamov",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Консалтинг",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "alexey_shalamov",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Консалтинг",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "alexey_shalamov",
+      "target": "ernest_amiramov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Финансы и инвестиции",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "anzor",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "nikita_shepard",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "andrey_zer_guud",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.3,
+      "is_inferred": true
+    },
+    {
+      "source": "anzor",
+      "target": "mikhail_larkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "anzor",
+      "target": "nikita_shepard",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "anzor",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "anzor",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "anna_asilbekyan",
+      "target": "ekaterina_aleksandrova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "anna_asilbekyan",
+      "target": "karolina_romanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "anna_asilbekyan",
+      "target": "elina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "anna_asilbekyan",
+      "target": "yulya_stepanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "askhab",
+      "target": "maxim_permyakov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Парфюмерия",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "askhab",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Парфюмерия",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "vladimir_chip",
+      "target": "roman_grigoryev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Автомобили",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "vladimir_chip",
+      "target": "solbon",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Автомобили",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "sergey_trofimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "dmitriy_gelver",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "ekaterina_aleksandrova",
+      "target": "karolina_romanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "ekaterina_aleksandrova",
+      "target": "elina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "ekaterina_aleksandrova",
+      "target": "yulya_stepanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "karolina_romanova",
+      "target": "elina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "karolina_romanova",
+      "target": "yulya_stepanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "lyudmila",
+      "target": "maxim_permyakov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "maxim_stukalkin",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "marina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "mark_kroman",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "nikolay",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "roman_grigoryev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "lyudmila",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "maxim_gimaev",
+      "target": "nikita_sokolov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: HR и рекрутинг",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "mark_kroman",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_permyakov",
+      "target": "roman_grigoryev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "nikita_aleksandrov",
+      "relation_type": "geography",
+      "explanation": "Одна география: Санкт-Петербург; Похожий этап: Устоявшийся",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_stukalkin",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_yaparov",
+      "target": "roman_grigoryev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Недвижимость",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_yaparov",
+      "target": "svetlana_rodionova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Недвижимость",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "margarita_chalaya",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Мода и одежда",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "sergey_kovalchuk",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "stanislav",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "marina",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mark_kroman",
+      "target": "roman_grigoryev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mark_kroman",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "sofia_kasatochka",
+      "relation_type": "geography",
+      "explanation": "Одна география: Москва; Похожий этап: Из найма в бизнес",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_larkin",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "eleonora_kruzhkova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "mikhail_shurmin",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_shepard",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_shepard",
+      "target": "sofia_kasatochka",
+      "relation_type": "geography",
+      "explanation": "Одна география: Москва; Похожий этап: Из найма в бизнес",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_shepard",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "ernest_amiramov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Финансы и инвестиции",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_aleksandrov",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "nikolay",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "oleg_inet",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: IT и технологии",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "oleg_inet",
+      "target": "kawasaki_fanis",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство",
+      "strength": 2,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
+      "source": "olga_matveeva",
+      "target": "sergey_trofimov",
+      "relation_type": "geography",
+      "explanation": "Одна география: Чебоксары; Похожий этап: Устоявшийся",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_grigoryev",
+      "target": "solbon",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Автомобили",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "roman_grigoryev",
+      "target": "stas_velisevich",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетплейсы",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ruslan_kerimov",
+      "target": "eduard_verzhbitskiy",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Маркетинг и реклама",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_volkov",
+      "target": "sofia_kasatochka",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Транспорт и логистика",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_kovalchuk",
+      "target": "yuriy_efimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: СПА и велнес",
+      "strength": 2,
+      "confidence": 0.8,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_kovalchuk",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "sergey_trofimov",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "stanislav",
+      "target": "umar",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "stanislav",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "umar",
+      "target": "drevartel",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Строительство и ремонт",
+      "strength": 2,
+      "confidence": 0.6,
+      "is_inferred": false
+    },
+    {
+      "source": "eleonora_kruzhkova",
+      "target": "yuriy_terentyev",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Образование",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "elina",
+      "target": "yulya_stepanova",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "elina",
+      "target": "yuriy_efimov",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: СПА и велнес",
+      "strength": 2,
+      "confidence": 0.7,
+      "is_inferred": false
+    }
+  ],
+  "clusters": [
+    {
+      "id": "cluster_geo_moscow",
+      "name": "Москва",
+      "type": "geography",
+      "members": [
+        "artur_shamalov",
+        "katerina",
+        "roman_sh",
+        "sergey_zhivotnev",
+        "maxim_sinaev",
+        "natalya_zvereva",
+        "sergey_topal",
+        "margarita_chalaya",
+        "mikhail_larkin",
+        "nikita_shepard",
+        "ruslan_kerimov",
+        "sergey_kovalchuk",
+        "sofia_kasatochka",
+        "umar",
+        "elina",
+        "yura_litvinko"
+      ],
+      "description": "Участники из Москва",
+      "size": 16
+    },
+    {
+      "id": "cluster_hobby_travel",
+      "name": "Путешествия",
+      "type": "hobby",
+      "members": [
+        "artur_shamalov",
+        "roman_sh",
+        "sergey_zhivotnev",
+        "maxim_sinaev",
+        "natalya_zvereva",
+        "aleksandr_gulyaev",
+        "maxim_stukalkin",
+        "margarita_chalaya",
+        "mikhail_larkin",
+        "mikhail_shurmin",
+        "nikita_sokolov",
+        "nikolay",
+        "oleg_inet",
+        "roman_grigoryev",
+        "svetlana_rodionova",
+        "yulya_stepanova"
+      ],
+      "description": "Любители путешествия",
+      "size": 16
+    },
+    {
+      "id": "cluster_construction",
+      "name": "Строительство и ремонт",
+      "type": "industry",
+      "members": [
+        "sergey_zhivotnev",
+        "maxim_sinaev",
+        "sergey_efimov",
+        "ruslan_rudnev",
+        "kirill_chiriatyev",
+        "aleksandr_artemyev",
+        "dmitriy_gelver",
+        "maxim_stukalkin",
+        "marina",
+        "sergey_kovalchuk",
+        "sergey_trofimov",
+        "stanislav",
+        "umar",
+        "drevartel"
+      ],
+      "description": "Участники из сферы строительство и ремонт",
+      "size": 14
+    },
+    {
+      "id": "cluster_stage_established",
+      "name": "Устоявшийся",
+      "type": "stage",
+      "members": [
+        "aleksandr_artemyev",
+        "alexey_shalamov",
+        "dmitriy_smirnov",
+        "maxim_stukalkin",
+        "maxim_yaparov",
+        "mark_kroman",
+        "nikita_aleksandrov",
+        "olga_matveeva",
+        "sergey_kovalchuk",
+        "sergey_trofimov",
+        "stanislav",
+        "kawasaki_fanis"
+      ],
+      "description": "Участники на этапе: устоявшийся",
+      "size": 12
+    },
+    {
+      "id": "cluster_manufacturing",
+      "name": "Производство",
+      "type": "industry",
+      "members": [
+        "sergey_zhivotnev",
+        "kirill_chiriatyev",
+        "abu_said",
+        "aleksandr_artemyev",
+        "lyudmila",
+        "maxim_stukalkin",
+        "marina",
+        "nikolay",
+        "oleg_inet",
+        "kawasaki_fanis"
+      ],
+      "description": "Участники из сферы производство",
+      "size": 10
+    },
+    {
+      "id": "cluster_education",
+      "name": "Образование",
+      "type": "industry",
+      "members": [
+        "artur_shamalov",
+        "natalya_zvereva",
+        "mikhail_larkin",
+        "mikhail_shurmin",
+        "nikita_aleksandrov",
+        "nikita_sokolov",
+        "eleonora_kruzhkova",
+        "yuriy_terentyev"
+      ],
+      "description": "Участники из сферы образование",
+      "size": 8
+    },
+    {
+      "id": "cluster_stage_mentor",
+      "name": "Ментор",
+      "type": "stage",
+      "members": [
+        "sergey_zhivotnev",
+        "maxim_sinaev",
+        "natalya_zvereva",
+        "sergey_efimov",
+        "sergey_topal",
+        "ruslan_rudnev",
+        "kirill_chiriatyev",
+        "askhab"
+      ],
+      "description": "Участники на этапе: ментор",
+      "size": 8
+    },
+    {
+      "id": "cluster_beauty",
+      "name": "Бьюти и красота",
+      "type": "industry",
+      "members": [
+        "natalya_zvereva",
+        "aleksandr_gulyaev",
+        "anna_asilbekyan",
+        "ekaterina_aleksandrova",
+        "karolina_romanova",
+        "elina",
+        "yulya_stepanova"
+      ],
+      "description": "Участники из сферы бьюти и красота",
+      "size": 7
+    },
+    {
+      "id": "cluster_geo_spb",
+      "name": "Санкт-Петербург",
+      "type": "geography",
+      "members": [
+        "grigoriy_nikonov",
+        "aleksandr_artemyev",
+        "maxim_stukalkin",
+        "mikhail_shurmin",
+        "nikita_aleksandrov",
+        "nikita_sokolov",
+        "yulya_stepanova"
+      ],
+      "description": "Участники из Санкт-Петербург",
+      "size": 7
+    },
+    {
+      "id": "cluster_hobby_snowboard",
+      "name": "Сноуборд",
+      "type": "hobby",
+      "members": [
+        "maxim_sinaev",
+        "mikhail_shurmin",
+        "nikolay",
+        "roman_grigoryev",
+        "sofia_kasatochka",
+        "stanislav",
+        "yulya_stepanova"
+      ],
+      "description": "Любители сноуборд",
+      "size": 7
+    },
+    {
+      "id": "cluster_consulting",
+      "name": "Консалтинг",
+      "type": "industry",
+      "members": [
+        "artur_shamalov",
+        "natalya_zvereva",
+        "alexey_shalamov",
+        "mikhail_larkin",
+        "nikita_sokolov",
+        "eleonora_kruzhkova"
+      ],
+      "description": "Участники из сферы консалтинг",
+      "size": 6
+    },
+    {
+      "id": "cluster_geo_cheboksary",
+      "name": "Чебоксары",
+      "type": "geography",
+      "members": [
+        "maxim_permyakov",
+        "maxim_yaparov",
+        "marina",
+        "nikolay",
+        "olga_matveeva",
+        "sergey_trofimov"
+      ],
+      "description": "Участники из Чебоксары",
+      "size": 6
+    },
+    {
+      "id": "cluster_hobby_hiking",
+      "name": "Походы",
+      "type": "hobby",
+      "members": [
+        "sergey_zhivotnev",
+        "nikita_aleksandrov",
+        "nikolay",
+        "sergey_trofimov",
+        "eleonora_kruzhkova",
+        "drevartel"
+      ],
+      "description": "Любители походы",
+      "size": 6
+    },
+    {
+      "id": "cluster_stage_employed_transition",
+      "name": "Из найма в бизнес",
+      "type": "stage",
+      "members": [
+        "mikhail_larkin",
+        "nikita_shepard",
+        "nikita_sokolov",
+        "sofia_kasatochka",
+        "eduard_verzhbitskiy",
+        "yuriy_terentyev"
+      ],
+      "description": "Участники на этапе: из найма в бизнес",
+      "size": 6
+    },
+    {
+      "id": "cluster_it_tech",
+      "name": "IT и технологии",
+      "type": "industry",
+      "members": [
+        "anzor",
+        "mikhail_larkin",
+        "nikita_shepard",
+        "oleg_inet",
+        "stas_velisevich"
+      ],
+      "description": "Участники из сферы it и технологии",
+      "size": 5
+    },
+    {
+      "id": "cluster_marketplace",
+      "name": "Маркетплейсы",
+      "type": "industry",
+      "members": [
+        "lyudmila",
+        "maxim_permyakov",
+        "mark_kroman",
+        "roman_grigoryev",
+        "stas_velisevich"
+      ],
+      "description": "Участники из сферы маркетплейсы",
+      "size": 5
+    },
+    {
+      "id": "cluster_hobby_sauna",
+      "name": "Баня",
+      "type": "hobby",
+      "members": [
+        "sergey_zhivotnev",
+        "maxim_stukalkin",
+        "margarita_chalaya",
+        "olga_matveeva",
+        "svetlana_rodionova"
+      ],
+      "description": "Любители баня",
+      "size": 5
+    },
+    {
+      "id": "cluster_hobby_fitness",
+      "name": "Фитнес",
+      "type": "hobby",
+      "members": [
+        "maxim_sinaev",
+        "natalya_zvereva",
+        "sergey_topal",
+        "aleksandr_gulyaev",
+        "nikita_sokolov"
+      ],
+      "description": "Любители фитнес",
+      "size": 5
+    },
+    {
+      "id": "cluster_hobby_swimming",
+      "name": "Плавание",
+      "type": "hobby",
+      "members": [
+        "sergey_efimov",
+        "sergey_volkov",
+        "sergey_trofimov",
+        "stas_velisevich",
+        "elina"
+      ],
+      "description": "Любители плавание",
+      "size": 5
+    },
+    {
+      "id": "cluster_hobby_skiing",
+      "name": "Горные лыжи",
+      "type": "hobby",
+      "members": [
+        "ruslan_rudnev",
+        "aleksandr_artemyev",
+        "maxim_yaparov",
+        "oleg_inet",
+        "olga_matveeva"
+      ],
+      "description": "Любители горные лыжи",
+      "size": 5
+    },
+    {
+      "id": "cluster_hobby_cooking",
+      "name": "Готовка",
+      "type": "hobby",
+      "members": [
+        "aleksandr_artemyev",
+        "kirill_kryzh",
+        "marina",
+        "elina",
+        "kawasaki_fanis"
+      ],
+      "description": "Любители готовка",
+      "size": 5
+    },
+    {
+      "id": "cluster_finance",
+      "name": "Финансы и инвестиции",
+      "type": "industry",
+      "members": [
+        "roman_sh",
+        "alexey_shalamov",
+        "nikita_aleksandrov",
+        "ernest_amiramov"
+      ],
+      "description": "Участники из сферы финансы и инвестиции",
+      "size": 4
+    },
+    {
+      "id": "cluster_real_estate",
+      "name": "Недвижимость",
+      "type": "industry",
+      "members": [
+        "ruslan_rudnev",
+        "maxim_yaparov",
+        "roman_grigoryev",
+        "svetlana_rodionova"
+      ],
+      "description": "Участники из сферы недвижимость",
+      "size": 4
+    },
+    {
+      "id": "cluster_stage_crisis",
+      "name": "Кризис/восстановление",
+      "type": "stage",
+      "members": [
+        "maxim_permyakov",
+        "svetlana_rodionova",
+        "stas_velisevich",
+        "ernest_amiramov"
+      ],
+      "description": "Участники на этапе: кризис/восстановление",
+      "size": 4
+    },
+    {
+      "id": "cluster_marketing",
+      "name": "Маркетинг и реклама",
+      "type": "industry",
+      "members": [
+        "grigoriy_nikonov",
+        "ruslan_kerimov",
+        "eduard_verzhbitskiy"
+      ],
+      "description": "Участники из сферы маркетинг и реклама",
+      "size": 3
+    },
+    {
+      "id": "cluster_perfumery",
+      "name": "Парфюмерия",
+      "type": "industry",
+      "members": [
+        "askhab",
+        "maxim_permyakov",
+        "nikolay"
+      ],
+      "description": "Участники из сферы парфюмерия",
+      "size": 3
+    },
+    {
+      "id": "cluster_auto",
+      "name": "Автомобили",
+      "type": "industry",
+      "members": [
+        "vladimir_chip",
+        "roman_grigoryev",
+        "solbon"
+      ],
+      "description": "Участники из сферы автомобили",
+      "size": 3
+    },
+    {
+      "id": "cluster_spa",
+      "name": "СПА и велнес",
+      "type": "industry",
+      "members": [
+        "sergey_kovalchuk",
+        "elina",
+        "yuriy_efimov"
+      ],
+      "description": "Участники из сферы спа и велнес",
+      "size": 3
+    },
+    {
+      "id": "cluster_hobby_cycling",
+      "name": "Велосипед",
+      "type": "hobby",
+      "members": [
+        "sergey_zhivotnev",
+        "maxim_sinaev",
+        "sergey_trofimov"
+      ],
+      "description": "Любители велосипед",
+      "size": 3
+    },
+    {
+      "id": "cluster_hobby_hunting",
+      "name": "Охота",
+      "type": "hobby",
+      "members": [
+        "sergey_zhivotnev",
+        "sergey_efimov",
+        "kawasaki_fanis"
+      ],
+      "description": "Любители охота",
+      "size": 3
+    },
+    {
+      "id": "cluster_hobby_surfing",
+      "name": "Серфинг",
+      "type": "hobby",
+      "members": [
+        "maxim_sinaev",
+        "oleg_inet",
+        "yulya_stepanova"
+      ],
+      "description": "Любители серфинг",
+      "size": 3
+    },
+    {
+      "id": "cluster_hobby_fishing",
+      "name": "Рыбалка",
+      "type": "hobby",
+      "members": [
+        "sergey_efimov",
+        "stanislav",
+        "kawasaki_fanis"
+      ],
+      "description": "Любители рыбалка",
+      "size": 3
+    },
+    {
+      "id": "cluster_hobby_martial_arts",
+      "name": "Единоборства",
+      "type": "hobby",
+      "members": [
+        "grigoriy_nikonov",
+        "sergey_kovalchuk",
+        "solbon"
+      ],
+      "description": "Любители единоборства",
+      "size": 3
+    },
+    {
+      "id": "cluster_hobby_dancing",
+      "name": "Танцы",
+      "type": "hobby",
+      "members": [
+        "margarita_chalaya",
+        "olga_matveeva",
+        "sofia_kasatochka"
+      ],
+      "description": "Любители танцы",
+      "size": 3
+    },
+    {
+      "id": "cluster_stage_organizer",
+      "name": "Организатор",
+      "type": "stage",
+      "members": [
+        "artur_shamalov",
+        "katerina",
+        "roman_sh"
+      ],
+      "description": "Участники на этапе: организатор",
+      "size": 3
+    },
+    {
+      "id": "cluster_stage_starting",
+      "name": "Начинающий",
+      "type": "stage",
+      "members": [
+        "maxim_gimaev",
+        "petr",
+        "umar"
+      ],
+      "description": "Участники на этапе: начинающий",
+      "size": 3
+    },
+    {
+      "id": "cluster_stage_pivot",
+      "name": "Смена направления",
+      "type": "stage",
+      "members": [
+        "margarita_chalaya",
+        "oleg_inet",
+        "eleonora_kruzhkova"
+      ],
+      "description": "Участники на этапе: смена направления",
+      "size": 3
+    }
+  ],
+  "introductions": [
+    {
+      "person_a": "maxim_permyakov",
+      "person_b": "nikolay",
+      "group_members": [
+        "askhab"
+      ],
+      "why_connect": "Три парфюмера! Объединение усилий по производству и продажам",
+      "value_for_a": "Общая ниша, разный опыт",
+      "value_for_b": "Коллаборация на маркетплейсах",
+      "synergy_type": "industry_cluster",
+      "priority": 10,
+      "confidence": 0.95
+    },
+    {
+      "person_a": "sergey_zhivotnev",
+      "person_b": "maxim_sinaev",
+      "group_members": null,
+      "why_connect": "Уже партнёры по строительству + кофейня. Ключевая связь потока.",
+      "value_for_a": "Партнёрство подтверждено",
+      "value_for_b": "Sinaev Company = совместный проект",
+      "synergy_type": "partnership",
+      "priority": 10,
+      "confidence": 1.0
+    },
+    {
+      "person_a": "mikhail_larkin",
+      "person_b": "nikita_shepard",
+      "group_members": null,
+      "why_connect": "Оба IT + предпринимательство, оба ищут масштабируемый проект",
+      "value_for_a": "Никита - разработчик, ищет идеи",
+      "value_for_b": "Михаил - AI-эксперт с корпоративным опытом",
+      "synergy_type": "co_founder",
+      "priority": 9,
+      "confidence": 0.85
+    },
+    {
+      "person_a": "mikhail_larkin",
+      "person_b": "eleonora_kruzhkova",
+      "group_members": null,
+      "why_connect": "AI-образование + методология обучения = идеальное партнёрство для EdTech",
+      "value_for_a": "Элеонора - методолог с 22 годами опыта",
+      "value_for_b": "Михаил - AI и корп обучение",
+      "synergy_type": "product_synergy",
+      "priority": 9,
+      "confidence": 0.9
+    },
+    {
+      "person_a": "yulya_stepanova",
+      "person_b": "natalya_zvereva",
+      "group_members": null,
+      "why_connect": "Франшиза лазерной эпиляции + бьюти-бизнес экспертиза = масштабирование сети",
+      "value_for_a": "Наталья знает финмодель бьюти",
+      "value_for_b": "Юля упаковывает франшизу",
+      "synergy_type": "mentorship",
+      "priority": 9,
+      "confidence": 0.9
+    },
+    {
+      "person_a": "grigoriy_nikonov",
+      "person_b": "ruslan_kerimov",
+      "group_members": [
+        "eduard_verzhbitskiy"
+      ],
+      "why_connect": "Маркетинг + лидогенерация + трафик = полноценное маркетинговое агентство",
+      "value_for_a": "Григорий - дизайн и стратегия",
+      "value_for_b": "Руслан - лидогенерация, Эдуард - трафик",
+      "synergy_type": "co_founder",
+      "priority": 9,
+      "confidence": 0.85
+    },
+    {
+      "person_a": "drevartel",
+      "person_b": "abu_said",
+      "group_members": null,
+      "why_connect": "Оба в деревообработке! Коллаборация по производству и сбыту",
+      "value_for_a": "DREVARTEL - дома из бруса",
+      "value_for_b": "Абу-Саид - лесозаготовка и пиломатериалы",
+      "synergy_type": "supply_chain",
+      "priority": 9,
+      "confidence": 0.85
+    },
+    {
+      "person_a": "mikhail_larkin",
+      "person_b": "anzor",
+      "group_members": null,
+      "why_connect": "AI-образование + видеопроизводство с AI = контент-студия нового поколения",
+      "value_for_a": "Анзор снимает и монтирует, знает AI",
+      "value_for_b": "Михаил обучает AI корпорации",
+      "synergy_type": "product_synergy",
+      "priority": 8,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "maxim_stukalkin",
+      "person_b": "aleksandr_artemyev",
+      "group_members": null,
+      "why_connect": "Оба - промышленное проектирование в СПб, масштабные объекты",
+      "value_for_a": "Взаимообмен клиентами и экспертизой",
+      "value_for_b": "Схожий масштаб бизнеса",
+      "synergy_type": "industry_cluster",
+      "priority": 8,
+      "confidence": 0.9
+    },
+    {
+      "person_a": "nikita_sokolov",
+      "person_b": "yuriy_terentyev",
+      "group_members": null,
+      "why_connect": "Оба в образовании, хотят масштабировать преподавание в онлайн-школу",
+      "value_for_a": "Никита - профориентация, Юрий - математика",
+      "value_for_b": "Общие проблемы масштабирования",
+      "synergy_type": "peer_support",
+      "priority": 8,
+      "confidence": 0.85
+    },
+    {
+      "person_a": "svetlana_rodionova",
+      "person_b": "olga_matveeva",
+      "group_members": null,
+      "why_connect": "Обе в туризме 10+ лет, разные специализации",
+      "value_for_a": "Светлана - космические туры",
+      "value_for_b": "Ольга - классический туризм",
+      "synergy_type": "industry_cluster",
+      "priority": 8,
+      "confidence": 0.85
+    },
+    {
+      "person_a": "elina",
+      "person_b": "yuriy_efimov",
+      "group_members": [
+        "sofia_kasatochka"
+      ],
+      "why_connect": "СПА + массаж + мечта о студии = партнёрство в велнесе",
+      "value_for_a": "Элина - 2 СПА-кабинета",
+      "value_for_b": "Юрий - студия массажа, София мечтает о студии",
+      "synergy_type": "co_founder",
+      "priority": 8,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "maxim_stukalkin",
+      "person_b": "stanislav",
+      "group_members": null,
+      "why_connect": "Промышленное проектирование + электромонтаж = полный цикл стройки",
+      "value_for_a": "Максим проектирует объекты",
+      "value_for_b": "Станислав делает электромонтаж",
+      "synergy_type": "supply_chain",
+      "priority": 8,
+      "confidence": 0.85
+    },
+    {
+      "person_a": "umar",
+      "person_b": "maxim_stukalkin",
+      "group_members": [
+        "sergey_kovalchuk"
+      ],
+      "why_connect": "Все в строительстве: стекло + проектирование + бассейны = комплексная стройка",
+      "value_for_a": "Умар ищет застройщиков",
+      "value_for_b": "Максим проектирует, Сергей строит бассейны",
+      "synergy_type": "supply_chain",
+      "priority": 8,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "ruslan_rudnev",
+      "person_b": "drevartel",
+      "group_members": null,
+      "why_connect": "Оба строят дома! Быстровозводимые + из бруса = полный ассортимент",
+      "value_for_a": "Руслан - каркасные дома, федеральная сеть",
+      "value_for_b": "DREVARTEL - дома из профбруса",
+      "synergy_type": "industry_cluster",
+      "priority": 8,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "nikita_sokolov",
+      "person_b": "mikhail_shurmin",
+      "group_members": null,
+      "why_connect": "Карьерное консультирование + танцевальная школа = детские лагеря нового формата",
+      "value_for_a": "Никита планирует лагеря для взрослых",
+      "value_for_b": "Михаил имеет детскую школу",
+      "synergy_type": "product_synergy",
+      "priority": 7,
+      "confidence": 0.7
+    },
+    {
+      "person_a": "margarita_chalaya",
+      "person_b": "lyudmila",
+      "group_members": null,
+      "why_connect": "Обе в fashion/текстиле с опытом производства",
+      "value_for_a": "Маргарита - бренд одежды + Китай",
+      "value_for_b": "Людмила - маркетплейсы + производство",
+      "synergy_type": "industry_cluster",
+      "priority": 7,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "sergey_kovalchuk",
+      "person_b": "sergey_topal",
+      "group_members": null,
+      "why_connect": "Оба в Зеленограде, оба в B2B услугах (бассейны + клининг)",
+      "value_for_a": "Общая клиентская база",
+      "value_for_b": "Кросс-продажи",
+      "synergy_type": "geography",
+      "priority": 7,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "ernest_amiramov",
+      "person_b": "maxim_gurov",
+      "group_members": [
+        "d_miron"
+      ],
+      "why_connect": "Все трое в переходном периоде, ищут новое направление",
+      "value_for_a": "Взаимная поддержка в кризисе",
+      "value_for_b": "Обмен опытом и мотивация",
+      "synergy_type": "peer_support",
+      "priority": 7,
+      "confidence": 0.7
+    },
+    {
+      "person_a": "nikita_aleksandrov",
+      "person_b": "alexey_shalamov",
+      "group_members": null,
+      "why_connect": "Оба в финансах: крипто + классический финсоветник",
+      "value_for_a": "Никита - рисковые активы",
+      "value_for_b": "Алексей - финансовый советник",
+      "synergy_type": "industry_cluster",
+      "priority": 7,
+      "confidence": 0.7
+    },
+    {
+      "person_a": "marina",
+      "person_b": "oleg_inet",
+      "group_members": null,
+      "why_connect": "Шторы премиум + умный дом = комплексное решение для премиальных клиентов",
+      "value_for_a": "Марина делает премиум-шторы",
+      "value_for_b": "Олег - умный дом и видеонаблюдение",
+      "synergy_type": "supply_chain",
+      "priority": 7,
+      "confidence": 0.75
+    },
+    {
+      "person_a": "yulya_stepanova",
+      "person_b": "elina",
+      "group_members": null,
+      "why_connect": "Лазерная эпиляция + СПА = расширение бьюти-сети",
+      "value_for_a": "Юля масштабирует сеть",
+      "value_for_b": "Элина владеет СПА-кабинетами",
+      "synergy_type": "industry_cluster",
+      "priority": 7,
+      "confidence": 0.8
+    },
+    {
+      "person_a": "solbon",
+      "person_b": "vladimir_chip",
+      "group_members": [
+        "roman_grigoryev"
+      ],
+      "why_connect": "Водородная очистка + чип-тюнинг + автосервис = авто-кластер",
+      "value_for_a": "Солбон - водород",
+      "value_for_b": "Владимир - тюнинг, Роман - автосервис",
+      "synergy_type": "industry_cluster",
+      "priority": 7,
+      "confidence": 0.75
+    },
+    {
+      "person_a": "petr",
+      "person_b": "roman_grigoryev",
+      "group_members": null,
+      "why_connect": "Оба начинающие предприниматели, оба в операционке, хотят команду",
+      "value_for_a": "Общие проблемы",
+      "value_for_b": "Взаимная поддержка",
+      "synergy_type": "peer_support",
+      "priority": 6,
+      "confidence": 0.7
+    },
+    {
+      "person_a": "roman_sh",
+      "person_b": "kawasaki_fanis",
+      "group_members": [
+        "sergey_efimov"
+      ],
+      "why_connect": "Охотники-рыбаки объединяйтесь! Лёгкий вход через общее хобби",
+      "value_for_a": "Фанис охотится на гуся",
+      "value_for_b": "Сергей Ефимов тоже охотник, у Романа - конюшня",
+      "synergy_type": "hobby_connection",
+      "priority": 6,
+      "confidence": 0.75
+    },
+    {
+      "person_a": "stankevich_velisevich",
+      "person_b": "stas_velisevich",
+      "group_members": null,
+      "why_connect": "IT-стартап + маркетплейсы",
+      "value_for_a": "",
+      "value_for_b": "",
+      "synergy_type": "industry_cluster",
+      "priority": 5,
+      "confidence": 0.5
+    }
+  ],
+  "rankings": {
+    "central_hubs": [
+      {
+        "id": "maxim_sinaev",
+        "name": "Максим Синаев",
+        "connections": 28
+      },
+      {
+        "id": "maxim_stukalkin",
+        "name": "Максим Стукалкин",
+        "connections": 27
+      },
+      {
+        "id": "sergey_zhivotnev",
+        "name": "Сергей Животнёв",
+        "connections": 24
+      },
+      {
+        "id": "mikhail_larkin",
+        "name": "Михаил Ларкин",
+        "connections": 23
+      },
+      {
+        "id": "aleksandr_artemyev",
+        "name": "Александр Артемьев",
+        "connections": 23
+      },
+      {
+        "id": "petr",
+        "name": "Пётр",
+        "connections": 22
+      },
+      {
+        "id": "natalya_zvereva",
+        "name": "Наталья Зверева",
+        "connections": 21
+      },
+      {
+        "id": "sergey_trofimov",
+        "name": "Сергей Трофимов",
+        "connections": 21
+      },
+      {
+        "id": "marina",
+        "name": "Марина",
+        "connections": 19
+      },
+      {
+        "id": "kirill_chiriatyev",
+        "name": "Кирилл Чирятьев",
+        "connections": 19
+      },
+      {
+        "id": "yulya_stepanova",
+        "name": "Юля Степанова (Донцова)",
+        "connections": 18
+      },
+      {
+        "id": "oleg_inet",
+        "name": "Олег (Inet1000)",
+        "connections": 18
+      },
+      {
+        "id": "nikita_sokolov",
+        "name": "Никита Соколов",
+        "connections": 17
+      },
+      {
+        "id": "nikita_aleksandrov",
+        "name": "Никита Александров",
+        "connections": 17
+      },
+      {
+        "id": "ruslan_rudnev",
+        "name": "Руслан Руднев",
+        "connections": 17
+      }
+    ],
+    "bridge_people": [
+      {
+        "id": "sergey_zhivotnev",
+        "name": "Сергей Животнёв",
+        "domains": 9
+      },
+      {
+        "id": "maxim_sinaev",
+        "name": "Максим Синаев",
+        "domains": 9
+      },
+      {
+        "id": "maxim_stukalkin",
+        "name": "Максим Стукалкин",
+        "domains": 8
+      },
+      {
+        "id": "oleg_inet",
+        "name": "Олег (Inet1000)",
+        "domains": 8
+      },
+      {
+        "id": "elina",
+        "name": "Элина",
+        "domains": 8
+      },
+      {
+        "id": "sergey_trofimov",
+        "name": "Сергей Трофимов",
+        "domains": 7
+      },
+      {
+        "id": "sergey_efimov",
+        "name": "Сергей Ефимов",
+        "domains": 7
+      },
+      {
+        "id": "nikolay",
+        "name": "Николай",
+        "domains": 7
+      },
+      {
+        "id": "ruslan_rudnev",
+        "name": "Руслан Руднев",
+        "domains": 7
+      },
+      {
+        "id": "roman_grigoryev",
+        "name": "Роман Григорьев",
+        "domains": 7
+      }
+    ],
+    "hidden_gems": [
+      {
+        "id": "grigoriy_nikonov",
+        "name": "Григорий Никонов",
+        "confidence": 0.9,
+        "offers": 2
+      },
+      {
+        "id": "sergey_topal",
+        "name": "Сергей Топал",
+        "confidence": 0.8,
+        "offers": 2
+      },
+      {
+        "id": "ruslan_kerimov",
+        "name": "Руслан Керимов",
+        "confidence": 0.8,
+        "offers": 2
+      },
+      {
+        "id": "mark_kroman",
+        "name": "Марк Кроман",
+        "confidence": 0.7,
+        "offers": 2
+      },
+      {
+        "id": "svetlana_rodionova",
+        "name": "Светлана Родионова",
+        "confidence": 0.7,
+        "offers": 2
+      },
+      {
+        "id": "anzor",
+        "name": "Анзор Мемансвелидзе",
+        "confidence": 0.6,
+        "offers": 2
+      },
+      {
+        "id": "askhab",
+        "name": "Асхаб",
+        "confidence": 0.6,
+        "offers": 2
+      }
+    ]
+  }
+}

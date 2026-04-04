@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MM17 Social Graph</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0a0a0f;
+  --surface: #14141f;
+  --surface2: #1e1e2e;
+  --border: #2a2a3e;
+  --text: #e4e4ef;
+  --text2: #8888a0;
+  --accent: #FF6B00;
+  --accent2: #ff8c33;
+  --blue: #4a9eff;
+  --green: #4ae0a0;
+  --red: #ff4a6a;
+  --purple: #a855f7;
+  --yellow: #fbbf24;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', monospace;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body { font-family: var(--font); background: var(--bg); color: var(--text); overflow: hidden; height: 100vh; }
+
+/* Layout */
+.app { display: grid; grid-template-columns: 1fr 380px; grid-template-rows: 56px 1fr; height: 100vh; }
+.header { grid-column: 1 / -1; display: flex; align-items: center; padding: 0 20px; gap: 16px; border-bottom: 1px solid var(--border); background: var(--surface); z-index: 10; }
+.graph-area { position: relative; overflow: hidden; }
+.sidebar { border-left: 1px solid var(--border); background: var(--surface); overflow-y: auto; display: flex; flex-direction: column; }
+
+/* Header */
+.logo { font-weight: 700; font-size: 18px; color: var(--accent); white-space: nowrap; }
+.logo span { color: var(--text2); font-weight: 400; font-size: 14px; margin-left: 8px; }
+.search-box { flex: 1; max-width: 400px; position: relative; }
+.search-box input { width: 100%; padding: 8px 12px 8px 36px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 14px; outline: none; transition: border-color 0.2s; }
+.search-box input:focus { border-color: var(--accent); }
+.search-box svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text2); }
+.search-results { position: absolute; top: 100%; left: 0; right: 0; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; margin-top: 4px; max-height: 300px; overflow-y: auto; z-index: 100; display: none; }
+.search-results.active { display: block; }
+.search-result-item { padding: 10px 14px; cursor: pointer; border-bottom: 1px solid var(--border); font-size: 13px; }
+.search-result-item:hover { background: var(--accent); color: #fff; }
+.search-result-item .role-tag { font-size: 11px; color: var(--text2); margin-left: 8px; }
+.search-result-item:hover .role-tag { color: rgba(255,255,255,0.7); }
+
+/* Mode tabs */
+.mode-tabs { display: flex; gap: 4px; }
+.mode-tab { padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; background: transparent; color: var(--text2); border: none; transition: all 0.2s; }
+.mode-tab.active { background: var(--accent); color: #fff; }
+.mode-tab:hover:not(.active) { background: var(--surface2); color: var(--text); }
+
+/* Stats */
+.stats { display: flex; gap: 16px; margin-left: auto; font-size: 12px; color: var(--text2); }
+.stat-item span { color: var(--accent); font-weight: 600; font-family: var(--mono); }
+
+/* Graph */
+.graph-canvas { width: 100%; height: 100%; }
+.graph-tooltip { position: absolute; padding: 8px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 50; max-width: 250px; }
+.graph-tooltip.visible { opacity: 1; }
+
+/* Filters bar */
+.filters-bar { position: absolute; top: 12px; left: 12px; display: flex; flex-wrap: wrap; gap: 6px; z-index: 5; }
+.filter-chip { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: rgba(20,20,31,0.9); backdrop-filter: blur(8px); color: var(--text2); transition: all 0.2s; }
+.filter-chip.active { border-color: var(--accent); color: var(--accent); background: rgba(255,107,0,0.1); }
+.filter-chip:hover:not(.active) { border-color: var(--text2); color: var(--text); }
+
+/* Legend */
+.legend { position: absolute; bottom: 12px; left: 12px; display: flex; gap: 12px; font-size: 11px; color: var(--text2); z-index: 5; background: rgba(20,20,31,0.9); padding: 8px 14px; border-radius: 8px; backdrop-filter: blur(8px); }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* Sidebar */
+.sidebar-header { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.sidebar-title { font-size: 14px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
+.sidebar-content { flex: 1; overflow-y: auto; padding: 0; }
+
+/* Person card */
+.card { padding: 20px; }
+.card-name { font-size: 22px; font-weight: 700; margin-bottom: 2px; }
+.card-tg { font-size: 13px; color: var(--blue); margin-bottom: 12px; font-family: var(--mono); }
+.card-role { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.card-role.organizer { background: rgba(168,85,247,0.15); color: var(--purple); }
+.card-role.mentor { background: rgba(74,224,160,0.15); color: var(--green); }
+.card-role.participant { background: rgba(74,158,255,0.15); color: var(--blue); }
+.card-bio { font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 16px; }
+.card-section { margin-bottom: 16px; }
+.card-section-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { padding: 3px 10px; border-radius: 12px; font-size: 12px; background: var(--surface2); border: 1px solid var(--border); color: var(--text); }
+.tag.industry { border-color: var(--accent); color: var(--accent2); }
+.tag.hobby { border-color: var(--blue); color: var(--blue); }
+.tag.geo { border-color: var(--green); color: var(--green); }
+.tag.strength { border-color: var(--yellow); color: var(--yellow); }
+.tag.need { border-color: var(--red); color: var(--red); }
+.tag.offer { border-color: var(--purple); color: var(--purple); }
+
+.card-connections { list-style: none; }
+.card-connections li { padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.card-connections li:hover { color: var(--accent); }
+.conn-strength { font-size: 11px; font-family: var(--mono); color: var(--text2); }
+
+/* Edge detail */
+.edge-detail { padding: 20px; }
+.edge-between { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.edge-type { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; margin-bottom: 12px; }
+.edge-explanation { font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+.edge-meta { font-size: 12px; color: var(--text2); display: flex; flex-direction: column; gap: 4px; }
+
+/* Intros list */
+.intro-card { padding: 16px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
+.intro-card:hover { background: var(--surface2); }
+.intro-people { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.intro-why { font-size: 13px; color: var(--text2); line-height: 1.5; }
+.intro-priority { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; font-family: var(--mono); background: rgba(255,107,0,0.15); color: var(--accent); margin-top: 6px; }
+
+/* Cluster list */
+.cluster-card { padding: 16px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
+.cluster-card:hover { background: var(--surface2); }
+.cluster-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.cluster-type { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
+.cluster-count { font-size: 12px; color: var(--accent); font-family: var(--mono); }
+
+/* Rankings */
+.ranking-section { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.ranking-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.ranking-item { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; cursor: pointer; }
+.ranking-item:hover { color: var(--accent); }
+.ranking-score { font-family: var(--mono); color: var(--text2); font-size: 12px; }
+
+/* Empty state */
+.empty-state { padding: 40px 20px; text-align: center; color: var(--text2); }
+.empty-state h3 { font-size: 16px; margin-bottom: 8px; color: var(--text); }
+.empty-state p { font-size: 13px; line-height: 1.6; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text2); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 56px 1fr 45vh; }
+  .sidebar { border-left: none; border-top: 1px solid var(--border); }
+  .stats { display: none; }
+  .mode-tabs { overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MM17<span>Social Graph</span></div>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Найти участника...">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="graph">Граф</button>
+      <button class="mode-tab" data-mode="intros">Интро</button>
+      <button class="mode-tab" data-mode="clusters">Кластеры</button>
+      <button class="mode-tab" data-mode="rankings">Рейтинг</button>
+    </div>
+    <div class="stats">
+      <div class="stat-item"><span id="statNodes">0</span> участников</div>
+      <div class="stat-item"><span id="statLinks">0</span> связей</div>
+    </div>
+  </header>
+
+  <!-- Graph -->
+  <div class="graph-area" id="graphArea">
+    <div class="filters-bar" id="filtersBar">
+      <div class="filter-chip active" data-filter="all">Все</div>
+      <div class="filter-chip" data-filter="strong">Сильные связи</div>
+      <div class="filter-chip" data-filter="intros">Рекомендации</div>
+      <div class="filter-chip" data-filter="inferred">Гипотезы</div>
+      <div class="filter-chip" data-filter="industry">Индустрия</div>
+      <div class="filter-chip" data-filter="hobby">Хобби</div>
+      <div class="filter-chip" data-filter="team">Мини-группы</div>
+    </div>
+    <svg class="graph-canvas" id="graphCanvas"></svg>
+    <div class="graph-tooltip" id="tooltip"></div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Организатор</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Ментор</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>Участник</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Ты (Михаил)</div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title" id="sidebarTitle">Детали</div>
+    </div>
+    <div class="sidebar-content" id="sidebarContent">
+      <div class="empty-state">
+        <h3>Кликни на узел или связь</h3>
+        <p>Выбери участника на графе, чтобы увидеть его профиль, связи и рекомендации. Или используй поиск вверху.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// APP STATE
+// ============================================================
+let DATA = null;
+let simulation = null;
+let svg, g, linkG, nodeG;
+let currentMode = 'graph';
+let currentFilter = 'all';
+let selectedNode = null;
+let width, height;
+
+const ROLE_COLORS = {
+  organizer: '#a855f7',
+  mentor: '#4ae0a0',
+  participant: '#4a9eff',
+};
+const LINK_TYPE_COLORS = {
+  industry: '#FF6B00',
+  hobby: '#4a9eff',
+  synergy: '#4ae0a0',
+  geography: '#fbbf24',
+  team: '#a855f7',
+  general: '#555570',
+};
+
+// ============================================================
+// LOAD DATA
+// ============================================================
+async function loadData() {
+  const resp = await fetch('data.json');
+  DATA = await resp.json();
+  document.getElementById('statNodes').textContent = DATA.nodes.length;
+  document.getElementById('statLinks').textContent = DATA.links.length;
+  initGraph();
+  setupSearch();
+  setupModes();
+  setupFilters();
+}
+
+// ============================================================
+// GRAPH
+// ============================================================
+function initGraph() {
+  const area = document.getElementById('graphArea');
+  width = area.clientWidth;
+  height = area.clientHeight;
+
+  svg = d3.select('#graphCanvas')
+    .attr('width', width)
+    .attr('height', height);
+
+  // Zoom
+  const zoom = d3.zoom()
+    .scaleExtent([0.15, 4])
+    .on('zoom', (e) => g.attr('transform', e.transform));
+  svg.call(zoom);
+
+  g = svg.append('g');
+  linkG = g.append('g').attr('class', 'links');
+  nodeG = g.append('g').attr('class', 'nodes');
+
+  // Defs for glow
+  const defs = svg.append('defs');
+  const filter = defs.append('filter').attr('id', 'glow');
+  filter.append('feGaussianBlur').attr('stdDeviation', '3').attr('result', 'coloredBlur');
+  const merge = filter.append('feMerge');
+  merge.append('feMergeNode').attr('in', 'coloredBlur');
+  merge.append('feMergeNode').attr('in', 'SourceGraphic');
+
+  // Build simulation
+  const nodeMap = {};
+  DATA.nodes.forEach(n => nodeMap[n.id] = n);
+
+  const validLinks = DATA.links.filter(l => nodeMap[l.source] && nodeMap[l.target]);
+
+  simulation = d3.forceSimulation(DATA.nodes)
+    .force('link', d3.forceLink(validLinks).id(d => d.id).distance(d => 120 - d.strength * 8).strength(d => 0.1 + d.strength * 0.02))
+    .force('charge', d3.forceManyBody().strength(-200))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(25))
+    .force('x', d3.forceX(width / 2).strength(0.03))
+    .force('y', d3.forceY(height / 2).strength(0.03));
+
+  // Draw links
+  const linkElements = linkG.selectAll('line')
+    .data(validLinks)
+    .join('line')
+    .attr('stroke', d => LINK_TYPE_COLORS[d.relation_type] || '#333')
+    .attr('stroke-width', d => 0.5 + d.strength * 0.3)
+    .attr('stroke-opacity', d => d.is_inferred ? 0.2 : 0.35)
+    .attr('stroke-dasharray', d => d.is_inferred ? '4,4' : 'none')
+    .style('cursor', 'pointer')
+    .on('click', (e, d) => showEdgeDetail(d))
+    .on('mouseenter', (e, d) => showTooltip(e, `${getName(d.source)} ↔ ${getName(d.target)}`))
+    .on('mouseleave', hideTooltip);
+
+  // Draw nodes
+  const nodeElements = nodeG.selectAll('g')
+    .data(DATA.nodes)
+    .join('g')
+    .attr('class', 'node-group')
+    .style('cursor', 'pointer')
+    .call(d3.drag()
+      .on('start', dragStarted)
+      .on('drag', dragged)
+      .on('end', dragEnded))
+    .on('click', (e, d) => selectNode(d))
+    .on('mouseenter', (e, d) => {
+      highlightNeighbors(d);
+      showTooltip(e, d.name);
+    })
+    .on('mouseleave', (e, d) => {
+      unhighlightAll();
+      hideTooltip();
+    });
+
+  nodeElements.append('circle')
+    .attr('r', d => getNodeRadius(d))
+    .attr('fill', d => getNodeColor(d))
+    .attr('stroke', d => d.id === 'mikhail_larkin' ? '#FF6B00' : 'rgba(255,255,255,0.1)')
+    .attr('stroke-width', d => d.id === 'mikhail_larkin' ? 3 : 1)
+    .attr('filter', d => d.role === 'organizer' || d.id === 'mikhail_larkin' ? 'url(#glow)' : 'none');
+
+  nodeElements.append('text')
+    .text(d => d.name.split(' ')[0])
+    .attr('dy', d => getNodeRadius(d) + 14)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '10px')
+    .attr('fill', 'var(--text2)')
+    .attr('font-family', 'var(--font)');
+
+  simulation.on('tick', () => {
+    linkElements
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+    nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+
+  // Store refs
+  window._linkElements = linkElements;
+  window._nodeElements = nodeElements;
+  window._validLinks = validLinks;
+}
+
+function getNodeRadius(d) {
+  if (d.id === 'mikhail_larkin') return 16;
+  if (d.role === 'organizer') return 14;
+  if (d.role === 'mentor') return 12;
+  return 7 + d.confidence * 4;
+}
+
+function getNodeColor(d) {
+  if (d.id === 'mikhail_larkin') return '#FF6B00';
+  return ROLE_COLORS[d.role] || ROLE_COLORS.participant;
+}
+
+function getName(d) {
+  return typeof d === 'string' ? d : d.name;
+}
+
+// Drag
+function dragStarted(e, d) {
+  if (!e.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x; d.fy = d.y;
+}
+function dragged(e, d) { d.fx = e.x; d.fy = e.y; }
+function dragEnded(e, d) {
+  if (!e.active) simulation.alphaTarget(0);
+  d.fx = null; d.fy = null;
+}
+
+// Highlight
+function highlightNeighbors(d) {
+  const neighbors = new Set();
+  window._validLinks.forEach(l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    if (sid === d.id) neighbors.add(tid);
+    if (tid === d.id) neighbors.add(sid);
+  });
+  neighbors.add(d.id);
+
+  window._nodeElements.select('circle')
+    .attr('opacity', n => neighbors.has(n.id) ? 1 : 0.15);
+  window._nodeElements.select('text')
+    .attr('opacity', n => neighbors.has(n.id) ? 1 : 0.1);
+  window._linkElements
+    .attr('stroke-opacity', l => {
+      const sid = typeof l.source === 'string' ? l.source : l.source.id;
+      const tid = typeof l.target === 'string' ? l.target : l.target.id;
+      return (sid === d.id || tid === d.id) ? 0.7 : 0.03;
+    });
+}
+
+function unhighlightAll() {
+  if (selectedNode) {
+    highlightNeighbors(selectedNode);
+    return;
+  }
+  window._nodeElements.select('circle').attr('opacity', 1);
+  window._nodeElements.select('text').attr('opacity', 1);
+  window._linkElements.attr('stroke-opacity', d => d.is_inferred ? 0.2 : 0.35);
+}
+
+// Tooltip
+function showTooltip(e, text) {
+  const tt = document.getElementById('tooltip');
+  tt.textContent = text;
+  tt.classList.add('visible');
+  tt.style.left = (e.pageX + 12) + 'px';
+  tt.style.top = (e.pageY - 28) + 'px';
+}
+function hideTooltip() {
+  document.getElementById('tooltip').classList.remove('visible');
+}
+
+// ============================================================
+// SELECTION
+// ============================================================
+function selectNode(d) {
+  selectedNode = d;
+  highlightNeighbors(d);
+  centerOnNode(d);
+  showPersonCard(d);
+}
+
+function centerOnNode(d) {
+  const area = document.getElementById('graphArea');
+  const w = area.clientWidth;
+  const h = area.clientHeight;
+  const scale = 1.5;
+  const x = w / 2 - d.x * scale;
+  const y = h / 2 - d.y * scale;
+
+  svg.transition().duration(600)
+    .call(d3.zoom().transform, d3.zoomIdentity.translate(x, y).scale(scale));
+}
+
+function showPersonCard(d) {
+  document.getElementById('sidebarTitle').textContent = 'Профиль';
+  const content = document.getElementById('sidebarContent');
+
+  // Find connections
+  const connections = [];
+  DATA.links.forEach(l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    if (sid === d.id || tid === d.id) {
+      const otherId = sid === d.id ? tid : sid;
+      const other = DATA.nodes.find(n => n.id === otherId);
+      if (other) connections.push({ person: other, link: l });
+    }
+  });
+  connections.sort((a, b) => b.link.strength - a.link.strength);
+
+  // Find recommended intros
+  const intros = DATA.introductions.filter(i =>
+    i.person_a === d.id || i.person_b === d.id ||
+    (i.group_members && i.group_members.includes(d.id))
+  );
+
+  let html = `<div class="card">
+    <div class="card-name">${d.name}</div>
+    <div class="card-tg">${d.telegram || ''}</div>
+    <span class="card-role ${d.role}">${d.role === 'organizer' ? 'Организатор' : d.role === 'mentor' ? 'Ментор' : 'Участник'}</span>
+    ${d.age ? `<span style="margin-left:8px;font-size:13px;color:var(--text2)">${d.age} лет</span>` : ''}
+    <div class="card-bio">${d.bio}</div>`;
+
+  if (d.industries.length) {
+    html += `<div class="card-section"><div class="card-section-title">Сфера</div>
+      <div class="tag-list">${d.industries.map(t => `<span class="tag industry">${t}</span>`).join('')}</div></div>`;
+  }
+  if (d.geo.length) {
+    html += `<div class="card-section"><div class="card-section-title">География</div>
+      <div class="tag-list">${d.geo.map(t => `<span class="tag geo">${t}</span>`).join('')}</div></div>`;
+  }
+  if (d.hobbies.length) {
+    html += `<div class="card-section"><div class="card-section-title">Хобби</div>
+      <div class="tag-list">${d.hobbies.map(t => `<span class="tag hobby">${t}</span>`).join('')}</div></div>`;
+  }
+  if (d.strengths.length) {
+    html += `<div class="card-section"><div class="card-section-title">Сильные стороны</div>
+      <div class="tag-list">${d.strengths.map(t => `<span class="tag strength">${t}</span>`).join('')}</div></div>`;
+  }
+  if (d.needs.length) {
+    html += `<div class="card-section"><div class="card-section-title">Запросы</div>
+      <div class="tag-list">${d.needs.map(t => `<span class="tag need">${t}</span>`).join('')}</div></div>`;
+  }
+  if (d.offers.length) {
+    html += `<div class="card-section"><div class="card-section-title">Может дать</div>
+      <div class="tag-list">${d.offers.map(t => `<span class="tag offer">${t}</span>`).join('')}</div></div>`;
+  }
+
+  if (connections.length) {
+    html += `<div class="card-section"><div class="card-section-title">Связи (${connections.length})</div>
+      <ul class="card-connections">`;
+    connections.slice(0, 20).forEach(c => {
+      html += `<li onclick="focusNode('${c.person.id}')">${c.person.name} <span class="conn-strength">${c.link.strength.toFixed(1)}</span></li>`;
+    });
+    html += `</ul></div>`;
+  }
+
+  if (intros.length) {
+    html += `<div class="card-section"><div class="card-section-title">Рекомендуемые знакомства</div>`;
+    intros.forEach(i => {
+      const otherName = i.person_a === d.id
+        ? (DATA.nodes.find(n => n.id === i.person_b)?.name || i.person_b)
+        : (DATA.nodes.find(n => n.id === i.person_a)?.name || i.person_a);
+      html += `<div class="intro-card" style="padding:10px 0; border-bottom:1px solid var(--border)">
+        <div style="font-weight:600;font-size:14px">${otherName}</div>
+        <div style="font-size:12px;color:var(--text2);margin-top:4px">${i.why_connect}</div>
+        <span class="intro-priority">Приоритет: ${i.priority}/10</span>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+  content.innerHTML = html;
+}
+
+function showEdgeDetail(d) {
+  document.getElementById('sidebarTitle').textContent = 'Связь';
+  const content = document.getElementById('sidebarContent');
+  const sourceName = typeof d.source === 'string' ? d.source : d.source.name;
+  const targetName = typeof d.target === 'string' ? d.target : d.target.name;
+
+  const typeLabels = {
+    industry: 'Индустрия',
+    hobby: 'Хобби',
+    synergy: 'Синергия',
+    geography: 'География',
+    team: 'Команда',
+    general: 'Общее',
+  };
+
+  content.innerHTML = `<div class="edge-detail">
+    <div class="edge-between">${sourceName} ↔ ${targetName}</div>
+    <span class="edge-type" style="background:${LINK_TYPE_COLORS[d.relation_type]}22; color:${LINK_TYPE_COLORS[d.relation_type]}">${typeLabels[d.relation_type] || d.relation_type}</span>
+    ${d.is_inferred ? '<span class="edge-type" style="background:rgba(255,74,106,0.15);color:var(--red);margin-left:6px">Гипотеза</span>' : ''}
+    <div class="edge-explanation">${d.explanation}</div>
+    <div class="edge-meta">
+      <div>Сила связи: <strong>${d.strength}/10</strong></div>
+      <div>Уверенность: <strong>${(d.confidence * 100).toFixed(0)}%</strong></div>
+    </div>
+  </div>`;
+}
+
+function focusNode(id) {
+  const node = DATA.nodes.find(n => n.id === id);
+  if (node) selectNode(node);
+}
+
+// ============================================================
+// SEARCH
+// ============================================================
+function setupSearch() {
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    if (q.length < 2) { results.classList.remove('active'); return; }
+
+    const matches = DATA.nodes.filter(n =>
+      n.name.toLowerCase().includes(q) || (n.telegram && n.telegram.toLowerCase().includes(q))
+    ).slice(0, 10);
+
+    if (matches.length === 0) { results.classList.remove('active'); return; }
+
+    results.innerHTML = matches.map(m =>
+      `<div class="search-result-item" data-id="${m.id}">${m.name}<span class="role-tag">${m.role}</span></div>`
+    ).join('');
+    results.classList.add('active');
+
+    results.querySelectorAll('.search-result-item').forEach(el => {
+      el.addEventListener('click', () => {
+        focusNode(el.dataset.id);
+        results.classList.remove('active');
+        input.value = '';
+      });
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-box')) results.classList.remove('active');
+  });
+}
+
+// ============================================================
+// MODES
+// ============================================================
+function setupModes() {
+  document.querySelectorAll('.mode-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentMode = tab.dataset.mode;
+      selectedNode = null;
+      unhighlightAll();
+
+      if (currentMode === 'intros') showIntrosList();
+      else if (currentMode === 'clusters') showClustersList();
+      else if (currentMode === 'rankings') showRankings();
+      else showEmptyState();
+    });
+  });
+}
+
+function showIntrosList() {
+  document.getElementById('sidebarTitle').textContent = `Рекомендации (${DATA.introductions.length})`;
+  const content = document.getElementById('sidebarContent');
+  content.innerHTML = DATA.introductions.map(i => {
+    const a = DATA.nodes.find(n => n.id === i.person_a);
+    const b = DATA.nodes.find(n => n.id === i.person_b);
+    const names = [a?.name || i.person_a, b?.name || i.person_b];
+    if (i.group_members) {
+      i.group_members.forEach(gm => {
+        const gn = DATA.nodes.find(n => n.id === gm);
+        if (gn) names.push(gn.name);
+      });
+    }
+    return `<div class="intro-card" onclick="focusIntro('${i.person_a}','${i.person_b}')">
+      <div class="intro-people">${names.join(' + ')}</div>
+      <div class="intro-why">${i.why_connect}</div>
+      <span class="intro-priority">Приоритет: ${i.priority}/10</span>
+    </div>`;
+  }).join('');
+}
+
+function focusIntro(a, b) {
+  const na = DATA.nodes.find(n => n.id === a);
+  if (na) selectNode(na);
+}
+
+function showClustersList() {
+  document.getElementById('sidebarTitle').textContent = `Кластеры (${DATA.clusters.length})`;
+  const content = document.getElementById('sidebarContent');
+  content.innerHTML = DATA.clusters.map(c => {
+    const typeLabels = { industry: 'Индустрия', geography: 'География', hobby: 'Хобби', stage: 'Этап' };
+    return `<div class="cluster-card" onclick="highlightCluster('${c.id}')">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="cluster-name">${c.name}</div>
+        <span class="cluster-count">${c.size}</span>
+      </div>
+      <div class="cluster-type">${typeLabels[c.type] || c.type}</div>
+    </div>`;
+  }).join('');
+}
+
+function highlightCluster(clusterId) {
+  const cluster = DATA.clusters.find(c => c.id === clusterId);
+  if (!cluster) return;
+
+  const memberSet = new Set(cluster.members);
+
+  window._nodeElements.select('circle')
+    .attr('opacity', n => memberSet.has(n.id) ? 1 : 0.1);
+  window._nodeElements.select('text')
+    .attr('opacity', n => memberSet.has(n.id) ? 1 : 0.05);
+  window._linkElements.attr('stroke-opacity', l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    return (memberSet.has(sid) && memberSet.has(tid)) ? 0.6 : 0.02;
+  });
+
+  selectedNode = null;
+
+  // Show cluster members in sidebar
+  document.getElementById('sidebarTitle').textContent = cluster.name;
+  const content = document.getElementById('sidebarContent');
+  let html = `<div class="card">
+    <div class="card-bio">${cluster.description}</div>
+    <div class="card-section"><div class="card-section-title">Участники (${cluster.size})</div>
+    <ul class="card-connections">`;
+  cluster.members.forEach(mid => {
+    const m = DATA.nodes.find(n => n.id === mid);
+    if (m) html += `<li onclick="focusNode('${m.id}')">${m.name}</li>`;
+  });
+  html += `</ul></div></div>`;
+  content.innerHTML = html;
+}
+
+function showRankings() {
+  document.getElementById('sidebarTitle').textContent = 'Рейтинг';
+  const content = document.getElementById('sidebarContent');
+  const r = DATA.rankings;
+
+  let html = '';
+  if (r.central_hubs.length) {
+    html += `<div class="ranking-section"><div class="ranking-title">Центральные хабы</div>`;
+    r.central_hubs.forEach(h => {
+      html += `<div class="ranking-item" onclick="focusNode('${h.id}')"><span>${h.name}</span><span class="ranking-score">${h.connections} связей</span></div>`;
+    });
+    html += `</div>`;
+  }
+  if (r.bridge_people.length) {
+    html += `<div class="ranking-section"><div class="ranking-title">Мосты между кластерами</div>`;
+    r.bridge_people.forEach(b => {
+      html += `<div class="ranking-item" onclick="focusNode('${b.id}')"><span>${b.name}</span><span class="ranking-score">${b.domains} сфер</span></div>`;
+    });
+    html += `</div>`;
+  }
+  if (r.hidden_gems.length) {
+    html += `<div class="ranking-section"><div class="ranking-title">Скрытые жемчужины</div>`;
+    r.hidden_gems.forEach(g => {
+      html += `<div class="ranking-item" onclick="focusNode('${g.id}')"><span>${g.name}</span><span class="ranking-score">${g.offers} предложений</span></div>`;
+    });
+    html += `</div>`;
+  }
+  content.innerHTML = html;
+}
+
+function showEmptyState() {
+  document.getElementById('sidebarTitle').textContent = 'Детали';
+  document.getElementById('sidebarContent').innerHTML = `<div class="empty-state">
+    <h3>Кликни на узел или связь</h3>
+    <p>Выбери участника на графе, чтобы увидеть его профиль, связи и рекомендации.</p>
+  </div>`;
+}
+
+// ============================================================
+// FILTERS
+// ============================================================
+function setupFilters() {
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentFilter = chip.dataset.filter;
+      applyFilter();
+    });
+  });
+}
+
+function applyFilter() {
+  selectedNode = null;
+
+  // Determine which links to show
+  const introSet = new Set();
+  DATA.introductions.forEach(i => {
+    introSet.add(`${i.person_a}|${i.person_b}`);
+    introSet.add(`${i.person_b}|${i.person_a}`);
+  });
+
+  window._linkElements
+    .attr('stroke-opacity', d => {
+      const sid = typeof d.source === 'string' ? d.source : d.source.id;
+      const tid = typeof d.target === 'string' ? d.target : d.target.id;
+      const key = `${sid}|${tid}`;
+
+      if (currentFilter === 'all') return d.is_inferred ? 0.2 : 0.35;
+      if (currentFilter === 'strong') return d.strength >= 5 ? 0.6 : 0.03;
+      if (currentFilter === 'intros') return introSet.has(key) ? 0.7 : 0.03;
+      if (currentFilter === 'inferred') return d.is_inferred ? 0.5 : 0.03;
+      if (currentFilter === 'industry') return d.relation_type === 'industry' ? 0.6 : 0.03;
+      if (currentFilter === 'hobby') return d.relation_type === 'hobby' ? 0.6 : 0.03;
+      if (currentFilter === 'team') return d.relation_type === 'team' ? 0.8 : 0.03;
+      return 0.35;
+    });
+
+  window._nodeElements.select('circle').attr('opacity', 1);
+  window._nodeElements.select('text').attr('opacity', 1);
+}
+
+// ============================================================
+// RESIZE
+// ============================================================
+window.addEventListener('resize', () => {
+  const area = document.getElementById('graphArea');
+  width = area.clientWidth;
+  height = area.clientHeight;
+  svg.attr('width', width).attr('height', height);
+  simulation.force('center', d3.forceCenter(width / 2, height / 2));
+  simulation.alpha(0.3).restart();
+});
+
+// ============================================================
+// INIT
+// ============================================================
+loadData();
+</script>
+</body>
+</html>
