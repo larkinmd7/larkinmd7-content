@@ -3,7 +3,7 @@
     "title": "Социальные связи чата ММ17",
     "description": "Интерактивный граф связей участников чата ММ17",
     "total_people": 154,
-    "total_links": 1203,
+    "total_links": 1207,
     "total_clusters": 59,
     "total_intros": 417,
     "generated": "2026-04-04"
@@ -1853,11 +1853,11 @@
       "coverage_note": "Профиль восстановлен автоматически. В чате заметна активность: 6 сообщений."
     },
     {
-      "id": "artur_shamalov_p",
-      "name": "Артур Шамалов (участник)",
+      "id": "artur_bigs8",
+      "name": "Arthur",
       "telegram": "@bigs8",
       "role": "participant",
-      "age": 38,
+      "age": 43,
       "geo": [
         "Москва",
         "Санкт-Петербург"
@@ -1868,20 +1868,25 @@
         "Производство"
       ],
       "hobbies": [
+        "Фитнес",
         "Путешествия"
       ],
-      "stage": "Растущий бизнес",
+      "stage": "Масштабирование",
       "strengths": [
-        "индустрия красоты",
-        "производство и масштабирование"
+        "косметологическое оборудование",
+        "патенты",
+        "производство"
       ],
-      "needs": [],
+      "needs": [
+        "масштабирование",
+        "конкурентная защита"
+      ],
       "offers": [
-        "консультации по бьюти-бизнесу",
-        "производственный опыт"
+        "опыт импорта из Кореи/Китая",
+        "производство оборудования"
       ],
       "confidence": 0.83,
-      "full_bio": "# Артур\n\n**Telegram:** @bigs8\n**Роль:** Участник\n**Активность в чате:** 6 сообщений\n\n## О человеке\n\n43 года. Женат на Екатерине (@kate_beautiful_fox). Москва и СПб - 38 лет прожил в Питере, потом переехал в Москву, спустя 5 лет понимает, что сделал правильный выбор. Когда приезжает в Питер - \"что-то не то\". Совместный бизнес с женой - продажа косметологического оборудования по всей РФ из Кореи и Китая для студий красоты. Собственное производство аппарата Cyclosphere Pro. Зарегистрировано 3 патента. ТГ-канал: https://t.me/cyclicityOfBeauty.\n\nХотят масштабировать бизнес и убрать конкурентов. Занимаются спортом, любят путешествовать. Философски относится к деньгам (\"главное какой пресс у тебя в кармане, а не на животе\").\n\n## Из кружочков\n\n- 38 лет прожил в Питере, переехал в Москву 5 лет назад - считает это правильным решением\n- Рассуждал о важности окружения: \"Если у тебя есть окружение, с которым тебе хорошо - это одно. А если ты все время один...\"\n\n## Ключевые темы\n\n- Косметологическое оборудование (Корея, Китай)\n- Собственное производство (Cyclosphere Pro, 3 патента)\n- Масштабирование бизнеса\n\n## Контекст восстановления\n\n- Есть развернутый профиль. В чате заметна активность: 6 сообщений.\n\n## Контекст в графе\n\n- Сферы: Бьюти и красота, Производство.\n- Интересы: Путешествия.\n- География: Москва, Санкт-Петербург.\n- Этап: Растущий бизнес.\n- Чатовый след: 6 сообщений, 1 упоминаний.\n- Есть развернутый профиль. В чате заметна активность: 6 сообщений.\n\n## Чем может быть полезен\n\n- консультации по бьюти-бизнесу\n- производственный опыт",
+      "full_bio": "# Артур\n\n**Telegram:** @bigs8\n**Роль:** Участник\n**Активность в чате:** 6 сообщений\n\n## О человеке\n\n43 года. Женат на Екатерине (@kate_beautiful_fox). Москва и СПб - 38 лет прожил в Питере, потом переехал в Москву, спустя 5 лет понимает, что сделал правильный выбор. Когда приезжает в Питер - \"что-то не то\". Совместный бизнес с женой - продажа косметологического оборудования по всей РФ из Кореи и Китая для студий красоты. Собственное производство аппарата Cyclosphere Pro. Зарегистрировано 3 патента. ТГ-канал: https://t.me/cyclicityOfBeauty.\n\nХотят масштабировать бизнес и убрать конкурентов. Занимаются спортом, любят путешествовать. Философски относится к деньгам (\"главное какой пресс у тебя в кармане, а не на животе\").\n\n## Из кружочков\n\n- 38 лет прожил в Питере, переехал в Москву 5 лет назад - считает это правильным решением\n- Рассуждал о важности окружения: \"Если у тебя есть окружение, с которым тебе хорошо - это одно. А если ты все время один...\"\n\n## Ключевые темы\n\n- Косметологическое оборудование (Корея, Китай)\n- Собственное производство (Cyclosphere Pro, 3 патента)\n- Масштабирование бизнеса\n\n## Контекст восстановления\n\n- Есть развернутый профиль. В чате заметна активность: 6 сообщений.\n\n## Контекст в графе\n\n- Сферы: Бьюти и красота, Производство.\n- Интересы: Фитнес, Путешествия.\n- География: Москва, Санкт-Петербург.\n- Этап: Масштабирование.\n- Чатовый след: 6 сообщений, 1 упоминаний.\n- Есть развернутый профиль. В чате заметна активность: 6 сообщений.\n\n## Чем может быть полезен\n\n- опыт импорта из Кореи/Китая\n- производство оборудования\n\n## Что ищет\n\n- масштабирование\n- конкурентная защита",
       "mini_group_id": null,
       "mini_group_mentor": null,
       "message_count": 6,
@@ -1889,9 +1894,10 @@
       "profile_topics": [
         "Бьюти и красота",
         "Производство",
+        "Фитнес",
         "Путешествия",
         "География: Москва",
-        "Этап: Растущий бизнес"
+        "Этап: Масштабирование"
       ],
       "coverage_note": "Есть развернутый профиль. В чате заметна активность: 6 сообщений."
     },
@@ -6228,7 +6234,7 @@
       "source": "ilya_makarov",
       "target": "alexey_aleksei333",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Финансы и инвестиции, Недвижимость; Илья Макаров может помочь с: инвесторов - пришел в ММ в том числе для этого; Илья Макаров может помочь с: инвесторов",
+      "explanation": "Общая сфера: Недвижимость, Финансы и инвестиции; Илья Макаров может помочь с: инвесторов - пришел в ММ в том числе для этого; Илья Макаров может помочь с: инвесторов",
       "strength": 10,
       "confidence": 0.73,
       "is_inferred": false
@@ -6246,7 +6252,7 @@
       "source": "artur_shamalov",
       "target": "karim_siraev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции, IT и технологии; Одна география: Москва; Карим Сираев может помочь с: стальные яички - выдерживающие любое решение",
+      "explanation": "Общая сфера: Финансы и инвестиции, IT и технологии, Образование; Одна география: Москва; Карим Сираев может помочь с: стальные яички - выдерживающие любое решение",
       "strength": 10,
       "confidence": 0.95,
       "is_inferred": false
@@ -6255,7 +6261,7 @@
       "source": "igor_torovin",
       "target": "alexey_aleksei333",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость; Игорь Торовин может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Торовин может помочь с: инвесторов",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт; Игорь Торовин может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Торовин может помочь с: инвесторов",
       "strength": 10,
       "confidence": 0.73,
       "is_inferred": false
@@ -6264,7 +6270,7 @@
       "source": "igor_gelver",
       "target": "alexey_aleksei333",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость; Игорь Гельвер может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Гельвер может помочь с: инвесторов",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт; Игорь Гельвер может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Гельвер может помочь с: инвесторов",
       "strength": 10,
       "confidence": 0.73,
       "is_inferred": false
@@ -6291,7 +6297,7 @@
       "source": "vladimir_ievlev",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Рыбалка, Сноуборд; Одна география: Санкт-Петербург; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: проект промышленного объекта - это к нему",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка, Путешествия; Одна география: Санкт-Петербург; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: проект промышленного объекта - это к нему",
       "strength": 10,
       "confidence": 0.81,
       "is_inferred": false
@@ -6327,7 +6333,7 @@
       "source": "mikhail_larkin",
       "target": "karim_siraev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, IT и технологии; Одна география: Москва; Одна мини-группа на ММ",
+      "explanation": "Общая сфера: IT и технологии, Образование; Одна география: Москва; Одна мини-группа на ММ",
       "strength": 9,
       "confidence": 0.95,
       "is_inferred": false
@@ -6336,7 +6342,7 @@
       "source": "mikhail_shurmin",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия, Сноуборд; Одна мини-группа на ММ",
+      "explanation": "Общая сфера: Образование; Общие хобби: Сноуборд, Путешествия; Одна мини-группа на ММ",
       "strength": 9.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -6363,7 +6369,7 @@
       "source": "artur_shamalov",
       "target": "petr",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Консалтинг, IT и технологии; Общие хобби: Путешествия; Пётр может помочь с: стальные яички - выдерживающие любое решение",
+      "explanation": "Общая сфера: IT и технологии, Консалтинг; Общие хобби: Путешествия; Пётр может помочь с: стальные яички - выдерживающие любое решение",
       "strength": 8.5,
       "confidence": 0.87,
       "is_inferred": false
@@ -6372,7 +6378,7 @@
       "source": "artur_shamalov",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг, IT и технологии; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: IT и технологии, Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 8.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6408,7 +6414,7 @@
       "source": "sergey_zhivotnev",
       "target": "maxim_sinaev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Еда и напитки; Общие хобби: Велосипед, Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Еда и напитки, Строительство и ремонт; Общие хобби: Велосипед, Путешествия; Одна география: Москва",
       "strength": 8.0,
       "confidence": 1.0,
       "is_inferred": false
@@ -6417,7 +6423,7 @@
       "source": "artur_shamalov",
       "target": "viktoriya_mitrofanova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Одна география: Москва; Виктория Митрофанова может помочь с: пояснить тебе позицию в которой ты можешь участвовать в этом процессе",
+      "explanation": "Общая сфера: Консалтинг, Образование; Одна география: Москва; Виктория Митрофанова может помочь с: пояснить тебе позицию в которой ты можешь участвовать в этом процессе",
       "strength": 8,
       "confidence": 0.93,
       "is_inferred": false
@@ -6471,7 +6477,7 @@
       "source": "natalya_zvereva",
       "target": "aleksandr_gulyaev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Наталья Зверева может помочь с: масштабирование бьюти",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Наталья Зверева может помочь с: масштабирование бьюти",
       "strength": 8.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -6480,7 +6486,7 @@
       "source": "aleksandr_gulyaev",
       "target": "elena_pakhtina",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Елена Рубинштейн может помочь с: масштабирование бьюти",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Елена Рубинштейн может помочь с: масштабирование бьюти",
       "strength": 8.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -6489,7 +6495,7 @@
       "source": "aleksandr_gulyaev",
       "target": "valeriya_patik",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Валерия Патик может помочь с: масштабирование бьюти",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Валерия Патик может помочь с: масштабирование бьюти",
       "strength": 8.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -6498,7 +6504,7 @@
       "source": "roman_grigoryev",
       "target": "kirill_mochalov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Маркетплейсы, Недвижимость; Одна мини-группа на ММ",
+      "explanation": "Общая сфера: Недвижимость, Маркетплейсы; Одна мини-группа на ММ",
       "strength": 8,
       "confidence": 0.9,
       "is_inferred": false
@@ -6525,7 +6531,7 @@
       "source": "viktoriya_mitrofanova",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Одна мини-группа на ММ",
+      "explanation": "Общая сфера: Консалтинг, Образование; Одна мини-группа на ММ",
       "strength": 8,
       "confidence": 0.9,
       "is_inferred": false
@@ -6543,7 +6549,7 @@
       "source": "maxim_stukalkin",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Футбол; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Футбол, Путешествия; Одна география: Санкт-Петербург",
       "strength": 8.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -6552,7 +6558,7 @@
       "source": "maxim_stukalkin",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Баня, Путешествия; Одна география: Санкт-Петербург",
       "strength": 8.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -6561,7 +6567,7 @@
       "source": "maxim_stukalkin",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Одна мини-группа на ММ",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Одна мини-группа на ММ",
       "strength": 8,
       "confidence": 0.9,
       "is_inferred": false
@@ -6570,7 +6576,7 @@
       "source": "ilya_novoselov",
       "target": "karim_siraev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, IT и технологии; Одна мини-группа на ММ",
+      "explanation": "Общая сфера: IT и технологии, Образование; Одна мини-группа на ММ",
       "strength": 8,
       "confidence": 0.93,
       "is_inferred": false
@@ -6579,7 +6585,7 @@
       "source": "dmitrii_klimchuk",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Путешествия, Фотография; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Фотография, Путешествия; Одна география: Санкт-Петербург",
       "strength": 8.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -6624,7 +6630,7 @@
       "source": "natalya_zvereva",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Бьюти и красота, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Бьюти и красота, Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 7.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -6669,7 +6675,7 @@
       "source": "sergey_zhivotnev",
       "target": "maxim_stukalkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Баня, Путешествия",
       "strength": 7.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -6678,7 +6684,7 @@
       "source": "sergey_zhivotnev",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Баня, Путешествия",
       "strength": 7.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -6705,7 +6711,7 @@
       "source": "artur_shamalov",
       "target": "ilya_novoselov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, IT и технологии; Илья Новосёлов может помочь с: стальные яички - выдерживающие любое решение",
+      "explanation": "Общая сфера: IT и технологии, Образование; Илья Новосёлов может помочь с: стальные яички - выдерживающие любое решение",
       "strength": 7,
       "confidence": 0.93,
       "is_inferred": false
@@ -6714,7 +6720,7 @@
       "source": "stanislav",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка, Сноуборд",
+      "explanation": "Общая сфера: Энергетика, Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка",
       "strength": 7.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -6723,7 +6729,7 @@
       "source": "nikita_sokolov",
       "target": "natalya_zvereva",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Фитнес, Путешествия",
       "strength": 7.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -6732,7 +6738,7 @@
       "source": "petr",
       "target": "alexey_shalamov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Консалтинг, IT и технологии; Пётр может помочь с: масштабирование консалтинга",
+      "explanation": "Общая сфера: IT и технологии, Консалтинг; Пётр может помочь с: масштабирование консалтинга",
       "strength": 7,
       "confidence": 0.87,
       "is_inferred": false
@@ -6741,7 +6747,16 @@
       "source": "roman_grigoryev",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна мини-группа на ММ",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна мини-группа на ММ",
+      "strength": 7.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_bigs8",
+      "target": "ekaterina_artur",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Фитнес, Путешествия; Одна география: Москва, Санкт-Петербург",
       "strength": 7.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -6759,7 +6774,7 @@
       "source": "veta",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Рыбалка, Путешествия",
       "strength": 7.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -6777,7 +6792,7 @@
       "source": "ilya_makarov",
       "target": "valeriya_elatnikova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Финансы и инвестиции, Недвижимость; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Недвижимость, Финансы и инвестиции; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6849,7 +6864,7 @@
       "source": "artur_shamalov",
       "target": "natalya_zvereva",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6858,7 +6873,7 @@
       "source": "artur_shamalov",
       "target": "veta",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6894,7 +6909,7 @@
       "source": "nikita_sokolov",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Похожий этап: Из найма в бизнес",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Похожий этап: Из найма в бизнес",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6912,7 +6927,7 @@
       "source": "natalya_zvereva",
       "target": "veta",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6930,7 +6945,7 @@
       "source": "natalya_zvereva",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -6942,15 +6957,6 @@
       "explanation": "Общая сфера: Бьюти и красота, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.88,
-      "is_inferred": false
-    },
-    {
-      "source": "aleksandr_gulyaev",
-      "target": "artur_shamalov_p",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Артур Шамалов (участник) может помочь с: масштабирование бьюти",
-      "strength": 6.5,
-      "confidence": 0.83,
       "is_inferred": false
     },
     {
@@ -6981,21 +6987,12 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "ksenia_abramova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота, Производство; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Производство, Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.83,
-      "is_inferred": false
-    },
-    {
-      "source": "artur_shamalov_p",
-      "target": "oleg_inet",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Артур Шамалов (участник) может помочь с: переориентация бизнеса",
-      "strength": 6.5,
-      "confidence": 0.81,
       "is_inferred": false
     },
     {
@@ -7011,7 +7008,7 @@
       "source": "veta",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 6.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -7056,7 +7053,7 @@
       "source": "vladimir_ievlev",
       "target": "dmitriy_gelver",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "strength": 6.5,
       "confidence": 0.79,
       "is_inferred": false
@@ -7083,7 +7080,7 @@
       "source": "kirill_chiriatyev",
       "target": "dmitriy_gelver",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "strength": 6.5,
       "confidence": 0.79,
       "is_inferred": false
@@ -7101,7 +7098,7 @@
       "source": "sergey_zhivotnev",
       "target": "vladimir_gusarov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Сергей Животнёв может помочь с: инвестиции, партнерства и ментора",
+      "explanation": "Общие хобби: Баня, Путешествия; Сергей Животнёв может помочь с: инвестиции, партнерства и ментора",
       "strength": 6.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -7110,7 +7107,7 @@
       "source": "sergey_zhivotnev",
       "target": "katrin_l",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Походы; Екатерина Лапика может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
+      "explanation": "Общие хобби: Походы, Путешествия; Екатерина Лапика может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
       "strength": 6.0,
       "confidence": 0.93,
       "is_inferred": false
@@ -7128,7 +7125,7 @@
       "source": "sergey_zhivotnev",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Дмитрий Кокорев может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
+      "explanation": "Общие хобби: Баня, Путешествия; Дмитрий Кокорев может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
       "strength": 6.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -7146,7 +7143,7 @@
       "source": "maxim_sinaev",
       "target": "valeriya_patik",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 6.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -7155,7 +7152,7 @@
       "source": "artur_shamalov",
       "target": "alexey_shalamov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Финансы и инвестиции, Консалтинг, IT и технологии",
+      "explanation": "Общая сфера: Финансы и инвестиции, IT и технологии, Консалтинг",
       "strength": 6,
       "confidence": 0.95,
       "is_inferred": false
@@ -7218,16 +7215,25 @@
       "source": "svetlana_rodionova",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Дмитрий Кокорев может помочь с: финансовая стабилизация",
+      "explanation": "Общие хобби: Баня, Путешествия; Дмитрий Кокорев может помочь с: финансовая стабилизация",
       "strength": 6.0,
       "confidence": 0.8,
       "is_inferred": false
     },
     {
       "source": "natalya_zvereva",
+      "target": "artur_bigs8",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "strength": 6.0,
+      "confidence": 0.83,
+      "is_inferred": false
+    },
+    {
+      "source": "natalya_zvereva",
       "target": "elena_pakhtina",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 6.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -7236,7 +7242,7 @@
       "source": "natalya_zvereva",
       "target": "valeriya_patik",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 6.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -7278,6 +7284,24 @@
       "is_inferred": false
     },
     {
+      "source": "artur_bigs8",
+      "target": "elena_pakhtina",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "strength": 6.0,
+      "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_bigs8",
+      "target": "valeriya_patik",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "strength": 6.0,
+      "confidence": 0.5,
+      "is_inferred": true
+    },
+    {
       "source": "maxim_stukalkin",
       "target": "lyudmila",
       "relation_type": "industry",
@@ -7290,7 +7314,7 @@
       "source": "maxim_stukalkin",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Одна география: Санкт-Петербург; Похожий этап: Устоявшийся",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Одна география: Санкт-Петербург; Похожий этап: Устоявшийся",
       "strength": 6,
       "confidence": 0.7,
       "is_inferred": false
@@ -7308,7 +7332,7 @@
       "source": "dmitriy_nefedov",
       "target": "veta",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование; Общие хобби: Баня, Рыбалка; Одна география: Москва",
+      "explanation": "Общая сфера: Образование; Общие хобби: Рыбалка, Баня; Одна география: Москва",
       "strength": 6.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -7326,7 +7350,7 @@
       "source": "margarita_chalaya",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: масштаб",
+      "explanation": "Общие хобби: Баня, Путешествия; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: масштаб",
       "strength": 6.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -7344,7 +7368,7 @@
       "source": "elena_pakhtina",
       "target": "valeriya_patik",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 6.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -7362,7 +7386,7 @@
       "source": "vladimir_gusarov",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: инвестиции, партнерства и ментора",
+      "explanation": "Общие хобби: Баня, Путешествия; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: инвестиции, партнерства и ментора",
       "strength": 6.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -7371,7 +7395,7 @@
       "source": "vladimir_gusarov",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Асхаб Парфюм Ойл может помочь с: инвестиции, партнерства и ментора",
+      "explanation": "Общие хобби: Баня, Путешествия; Асхаб Парфюм Ойл может помочь с: инвестиции, партнерства и ментора",
       "strength": 6.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -7569,7 +7593,7 @@
       "source": "sergey_zhivotnev",
       "target": "vladimir_zonov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство, Еда и напитки; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Еда и напитки, Производство; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -7596,7 +7620,7 @@
       "source": "sergey_zhivotnev",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.81,
       "is_inferred": false
@@ -7648,6 +7672,15 @@
     },
     {
       "source": "yulya_stepanova",
+      "target": "artur_bigs8",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Санкт-Петербург; Похожий этап: Масштабирование",
+      "strength": 5.5,
+      "confidence": 0.83,
+      "is_inferred": false
+    },
+    {
+      "source": "yulya_stepanova",
       "target": "vladimir_gusarov",
       "relation_type": "hobby",
       "explanation": "Общие хобби: Путешествия; Одна мини-группа на ММ",
@@ -7677,7 +7710,7 @@
       "source": "maxim_sinaev",
       "target": "aleksandr_ivkin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес, Сноуборд; Одна география: Москва",
+      "explanation": "Общие хобби: Сноуборд, Фитнес, Путешествия; Одна география: Москва",
       "strength": 5.5,
       "confidence": 0.73,
       "is_inferred": false
@@ -7695,7 +7728,7 @@
       "source": "artur_shamalov",
       "target": "nikita_sokolov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -7704,7 +7737,7 @@
       "source": "artur_shamalov",
       "target": "dmitrii_klimchuk",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.87,
       "is_inferred": false
@@ -7713,7 +7746,7 @@
       "source": "artur_shamalov",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -7722,7 +7755,7 @@
       "source": "artur_shamalov",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.9,
       "is_inferred": false
@@ -7731,7 +7764,7 @@
       "source": "artur_shamalov",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -7767,7 +7800,7 @@
       "source": "sergey_efimov",
       "target": "stanislav",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка",
+      "explanation": "Общая сфера: Энергетика, Строительство и ремонт; Общие хобби: Рыбалка",
       "strength": 5.5,
       "confidence": 0.87,
       "is_inferred": false
@@ -7776,7 +7809,7 @@
       "source": "sergey_efimov",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка",
+      "explanation": "Общая сфера: Энергетика, Строительство и ремонт; Общие хобби: Рыбалка",
       "strength": 5.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -7812,7 +7845,7 @@
       "source": "nikita_sokolov",
       "target": "veta",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -7821,7 +7854,7 @@
       "source": "nikita_sokolov",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -7830,7 +7863,7 @@
       "source": "nikita_sokolov",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.9,
       "is_inferred": false
@@ -7848,7 +7881,7 @@
       "source": "natalya_zvereva",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.9,
       "is_inferred": false
@@ -7857,7 +7890,7 @@
       "source": "petr",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Консалтинг, IT и технологии; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: IT и технологии, Консалтинг; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.87,
       "is_inferred": false
@@ -7881,19 +7914,10 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
-      "target": "ekaterina_artur",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Москва, Санкт-Петербург",
-      "strength": 5.5,
-      "confidence": 0.7,
-      "is_inferred": false
-    },
-    {
       "source": "kirill_mochalov",
       "target": "ruslan_rudnev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость; Общие хобби: Горные лыжи",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт; Общие хобби: Горные лыжи",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -7902,7 +7926,7 @@
       "source": "marina",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Общие хобби: Готовка",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Общие хобби: Готовка",
       "strength": 5.5,
       "confidence": 0.7,
       "is_inferred": false
@@ -7929,7 +7953,7 @@
       "source": "dmitriy_nefedov",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Баня",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Баня",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -7938,7 +7962,7 @@
       "source": "veta",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.9,
       "is_inferred": false
@@ -7956,7 +7980,7 @@
       "source": "mikhail_larkin",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -7965,7 +7989,7 @@
       "source": "mikhail_larkin",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.9,
       "is_inferred": false
@@ -7992,7 +8016,7 @@
       "source": "ksenia_lova",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "explanation": "Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "strength": 5.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -8017,9 +8041,18 @@
     },
     {
       "source": "ilya_makarov",
+      "target": "artur_bigs8",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва; Похожий этап: Масштабирование",
+      "strength": 5.0,
+      "confidence": 0.83,
+      "is_inferred": false
+    },
+    {
+      "source": "ilya_makarov",
       "target": "dmitriy_nefedov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Финансы и инвестиции, Недвижимость; Одна география: Москва",
+      "explanation": "Общая сфера: Недвижимость, Финансы и инвестиции; Одна география: Москва",
       "strength": 5,
       "confidence": 0.87,
       "is_inferred": false
@@ -8064,7 +8097,7 @@
       "source": "sergey_zhivotnev",
       "target": "nikolay",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия, Походы",
+      "explanation": "Общая сфера: Производство; Общие хобби: Походы, Путешествия",
       "strength": 5.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -8073,7 +8106,7 @@
       "source": "sergey_zhivotnev",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Одна география: Москва",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Одна география: Москва",
       "strength": 5,
       "confidence": 0.7,
       "is_inferred": false
@@ -8145,7 +8178,7 @@
       "source": "yulya_stepanova",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -8163,7 +8196,7 @@
       "source": "maxim_sinaev",
       "target": "vladimir_zonov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Еда и напитки; Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общая сфера: Еда и напитки; Общие хобби: Фитнес, Путешествия",
       "strength": 5.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -8172,7 +8205,7 @@
       "source": "maxim_sinaev",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -8181,7 +8214,7 @@
       "source": "maxim_sinaev",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -8190,7 +8223,7 @@
       "source": "maxim_sinaev",
       "target": "dmitriy_gelver",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -8251,9 +8284,18 @@
     },
     {
       "source": "vladimir_zonov",
+      "target": "artur_bigs8",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Фитнес, Путешествия",
+      "strength": 5.0,
+      "confidence": 0.83,
+      "is_inferred": false
+    },
+    {
+      "source": "vladimir_zonov",
       "target": "ekaterina_artur",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общая сфера: Производство; Общие хобби: Фитнес, Путешествия",
       "strength": 5.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -8271,7 +8313,7 @@
       "source": "vladimir_zonov",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Производство; Общие хобби: Рыбалка, Путешествия",
       "strength": 5.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -8289,7 +8331,7 @@
       "source": "vladimir_zonov",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Производство; Общие хобби: Рыбалка, Путешествия",
       "strength": 5.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -8307,7 +8349,7 @@
       "source": "stanislav",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка",
       "strength": 5.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -8316,7 +8358,7 @@
       "source": "stanislav",
       "target": "dmitriy_gelver",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Сноуборд",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка",
       "strength": 5.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -8325,7 +8367,7 @@
       "source": "igor_torovin",
       "target": "igor_gelver",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость; Одна география: Сочи",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт; Одна география: Сочи",
       "strength": 5,
       "confidence": 0.9,
       "is_inferred": false
@@ -8343,7 +8385,7 @@
       "source": "inna_borisenko",
       "target": "veta",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка; Одна география: Москва; Похожий этап: Смена направления",
+      "explanation": "Общие хобби: Рыбалка, Путешествия; Одна география: Москва; Похожий этап: Смена направления",
       "strength": 5.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -8352,7 +8394,7 @@
       "source": "inna_borisenko",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Рыбалка, Путешествия",
       "strength": 5.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -8370,7 +8412,7 @@
       "source": "svetlana_rodionova",
       "target": "vladimir_gusarov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Туризм; Общие хобби: Путешествия, Баня",
+      "explanation": "Общая сфера: Туризм; Общие хобби: Баня, Путешествия",
       "strength": 5.0,
       "confidence": 0.93,
       "is_inferred": false
@@ -8406,9 +8448,18 @@
       "source": "natalya_zvereva",
       "target": "viktoriya_mitrofanova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Одна география: Москва",
       "strength": 5,
       "confidence": 0.93,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_gulyaev",
+      "target": "artur_bigs8",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия",
+      "strength": 5.0,
+      "confidence": 0.83,
       "is_inferred": false
     },
     {
@@ -8433,7 +8484,7 @@
       "source": "alexey_shalamov",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Консалтинг, IT и технологии; Похожий этап: Из найма в бизнес",
+      "explanation": "Общая сфера: IT и технологии, Консалтинг; Похожий этап: Из найма в бизнес",
       "strength": 5,
       "confidence": 0.95,
       "is_inferred": false
@@ -8496,7 +8547,7 @@
       "source": "viktoriya_mitrofanova",
       "target": "veta",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Одна география: Москва",
       "strength": 5,
       "confidence": 0.93,
       "is_inferred": false
@@ -8505,7 +8556,7 @@
       "source": "viktoriya_mitrofanova",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Одна география: Москва",
+      "explanation": "Общая сфера: Консалтинг, Образование; Одна география: Москва",
       "strength": 5,
       "confidence": 0.93,
       "is_inferred": false
@@ -8523,7 +8574,7 @@
       "source": "kirill_mochalov",
       "target": "alexey_aleksei333",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт; Одна география: Санкт-Петербург",
       "strength": 5,
       "confidence": 0.73,
       "is_inferred": false
@@ -8532,7 +8583,7 @@
       "source": "angelina_bukatina",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Консалтинг; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Консалтинг; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -8550,7 +8601,7 @@
       "source": "dmitriy_nefedov",
       "target": "karim_siraev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции; Одна география: Москва",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование; Одна география: Москва",
       "strength": 5,
       "confidence": 0.87,
       "is_inferred": false
@@ -8559,7 +8610,7 @@
       "source": "margarita_chalaya",
       "target": "veta",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Одна география: Москва; Похожий этап: Смена направления",
+      "explanation": "Общие хобби: Баня, Путешествия; Одна география: Москва; Похожий этап: Смена направления",
       "strength": 5.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -8568,7 +8619,7 @@
       "source": "veta",
       "target": "vladimir_gusarov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия, Баня",
+      "explanation": "Общая сфера: Образование; Общие хобби: Баня, Путешествия",
       "strength": 5.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -8577,7 +8628,7 @@
       "source": "veta",
       "target": "eleonora_kruzhkova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг; Похожий этап: Смена направления",
+      "explanation": "Общая сфера: Консалтинг, Образование; Похожий этап: Смена направления",
       "strength": 5,
       "confidence": 0.95,
       "is_inferred": false
@@ -8586,7 +8637,7 @@
       "source": "veta",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия, Баня",
+      "explanation": "Общая сфера: Образование; Общие хобби: Баня, Путешествия",
       "strength": 5.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -8595,7 +8646,7 @@
       "source": "elena_pakhtina",
       "target": "elina",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота, Медицина; Одна география: Москва",
+      "explanation": "Общая сфера: Медицина, Бьюти и красота; Одна география: Москва",
       "strength": 5,
       "confidence": 0.7,
       "is_inferred": false
@@ -8640,7 +8691,7 @@
       "source": "vladimir_gusarov",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование; Общие хобби: Путешествия, Баня",
+      "explanation": "Общая сфера: Образование; Общие хобби: Баня, Путешествия",
       "strength": 5.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -8649,7 +8700,7 @@
       "source": "vladimir_ievlev",
       "target": "denis_lobanov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Путешествия",
       "strength": 5.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -8658,7 +8709,7 @@
       "source": "vladimir_ievlev",
       "target": "nikolay",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Производство; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -8667,7 +8718,7 @@
       "source": "vladimir_ievlev",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Одна география: Санкт-Петербург",
       "strength": 5,
       "confidence": 0.7,
       "is_inferred": false
@@ -8685,7 +8736,7 @@
       "source": "denis_lobanov",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Путешествия",
       "strength": 5.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -8694,7 +8745,7 @@
       "source": "denis_lobanov",
       "target": "dmitriy_gelver",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Путешествия",
       "strength": 5.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -8712,7 +8763,7 @@
       "source": "nikolay",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общая сфера: Производство; Общие хобби: Сноуборд, Путешествия",
       "strength": 5.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -8739,7 +8790,7 @@
       "source": "kirill_chiriatyev",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт; Одна география: Санкт-Петербург",
       "strength": 5,
       "confidence": 0.7,
       "is_inferred": false
@@ -8757,7 +8808,7 @@
       "source": "nikita_aleksandrov",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции; Одна география: Санкт-Петербург",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование; Одна география: Санкт-Петербург",
       "strength": 5,
       "confidence": 0.8,
       "is_inferred": false
@@ -8890,7 +8941,7 @@
     },
     {
       "source": "sergey_zhivotnev",
-      "target": "artur_shamalov_p",
+      "target": "artur_bigs8",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 4.5,
@@ -8946,7 +8997,7 @@
       "source": "katerina",
       "target": "dmitrii_klimchuk",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Книги, Путешествия, Фотография",
+      "explanation": "Общие хобби: Фотография, Книги, Путешествия",
       "strength": 4.5,
       "confidence": 0.87,
       "is_inferred": false
@@ -8962,7 +9013,7 @@
     },
     {
       "source": "ekaterina_aleksandrova",
-      "target": "artur_shamalov_p",
+      "target": "artur_bigs8",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.5,
@@ -9052,7 +9103,7 @@
     },
     {
       "source": "valeriya_elatnikova",
-      "target": "artur_shamalov_p",
+      "target": "artur_bigs8",
       "relation_type": "industry",
       "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 4.5,
@@ -9090,7 +9141,7 @@
       "source": "yulya_stepanova",
       "target": "maxim_sinaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Серфинг, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Серфинг, Путешествия",
       "strength": 4.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -9102,15 +9153,6 @@
       "explanation": "Общие хобби: Путешествия; Shamalov Artur может помочь с: инвесторы",
       "strength": 4.5,
       "confidence": 0.95,
-      "is_inferred": false
-    },
-    {
-      "source": "yulya_stepanova",
-      "target": "artur_shamalov_p",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
-      "strength": 4.5,
-      "confidence": 0.83,
       "is_inferred": false
     },
     {
@@ -9198,9 +9240,18 @@
       "source": "vladimir_zonov",
       "target": "elena_pakhtina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Музыка, Путешествия, Фитнес",
+      "explanation": "Общие хобби: Музыка, Фитнес, Путешествия",
       "strength": 4.5,
       "confidence": 0.7,
+      "is_inferred": false
+    },
+    {
+      "source": "ildar_iskhakov",
+      "target": "artur_bigs8",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Фитнес; Одна география: Санкт-Петербург",
+      "strength": 4.5,
+      "confidence": 0.83,
       "is_inferred": false
     },
     {
@@ -9268,7 +9319,7 @@
     },
     {
       "source": "inna_borisenko",
-      "target": "artur_shamalov_p",
+      "target": "artur_bigs8",
       "relation_type": "industry",
       "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
       "strength": 4.5,
@@ -9396,18 +9447,9 @@
       "source": "aleksandr_ivkin",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Баскетбол, Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Баскетбол, Сноуборд, Путешествия",
       "strength": 4.5,
       "confidence": 0.73,
-      "is_inferred": false
-    },
-    {
-      "source": "natalya_zvereva",
-      "target": "artur_shamalov_p",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
-      "strength": 4.5,
-      "confidence": 0.83,
       "is_inferred": false
     },
     {
@@ -9501,7 +9543,7 @@
       "is_inferred": true
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "maxim_stukalkin",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
@@ -9510,16 +9552,16 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
-      "target": "elena_pakhtina",
+      "source": "artur_bigs8",
+      "target": "egor_bashkov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Производство; Общие хобби: Фитнес; Одна география: Москва",
       "strength": 4.5,
-      "confidence": 0.7,
+      "confidence": 0.73,
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
@@ -9528,16 +9570,16 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
-      "target": "valeriya_patik",
+      "source": "artur_bigs8",
+      "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
+      "explanation": "Общая сфера: Производство; Общие хобби: Фитнес; Одна география: Москва",
       "strength": 4.5,
-      "confidence": 0.5,
-      "is_inferred": true
+      "confidence": 0.7,
+      "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
@@ -9546,7 +9588,7 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "aleksandr_devkin",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
@@ -9657,7 +9699,7 @@
       "source": "maxim_stukalkin",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Настольные игры, Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Настольные игры, Путешествия",
       "strength": 4.5,
       "confidence": 0.67,
       "is_inferred": false
@@ -9675,7 +9717,7 @@
       "source": "veta",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка, Баня",
+      "explanation": "Общие хобби: Рыбалка, Баня, Путешествия",
       "strength": 4.5,
       "confidence": 0.95,
       "is_inferred": false
@@ -9729,7 +9771,7 @@
       "source": "vladimir_ievlev",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "strength": 4.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -9855,7 +9897,7 @@
       "source": "ksenia_lova",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "strength": 4.5,
       "confidence": 0.8,
       "is_inferred": false
@@ -9864,7 +9906,7 @@
       "source": "ksenia_lova",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "strength": 4.5,
       "confidence": 0.79,
       "is_inferred": false
@@ -9900,7 +9942,7 @@
       "source": "ilya_makarov",
       "target": "maxim_sinaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -9909,7 +9951,7 @@
       "source": "ilya_makarov",
       "target": "aleksandr_ivkin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -9918,7 +9960,7 @@
       "source": "ilya_makarov",
       "target": "natalya_zvereva",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -9936,7 +9978,7 @@
       "source": "ilya_makarov",
       "target": "ekaterina_artur",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -9945,7 +9987,7 @@
       "source": "ilya_makarov",
       "target": "elena_pakhtina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -9954,7 +9996,7 @@
       "source": "ilya_makarov",
       "target": "valeriya_patik",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -10044,7 +10086,7 @@
       "source": "sergey_zhivotnev",
       "target": "alexey_mentor",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10062,7 +10104,7 @@
       "source": "sergey_zhivotnev",
       "target": "marina",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.87,
       "is_inferred": false
@@ -10071,7 +10113,7 @@
       "source": "sergey_zhivotnev",
       "target": "margarita_chalaya",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Одна география: Москва",
+      "explanation": "Общие хобби: Баня, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -10080,7 +10122,7 @@
       "source": "sergey_zhivotnev",
       "target": "veta",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Одна география: Москва",
+      "explanation": "Общие хобби: Баня, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -10107,7 +10149,7 @@
       "source": "sergey_zhivotnev",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.9,
       "is_inferred": false
@@ -10116,7 +10158,7 @@
       "source": "sergey_zhivotnev",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -10233,7 +10275,7 @@
       "source": "yulya_stepanova",
       "target": "angelina_bukatina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10242,7 +10284,7 @@
       "source": "yulya_stepanova",
       "target": "vladimir_ievlev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -10260,7 +10302,7 @@
       "source": "yulya_stepanova",
       "target": "mikhail_shurmin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -10269,7 +10311,7 @@
       "source": "yulya_stepanova",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -10341,7 +10383,7 @@
       "source": "alexey_mentor",
       "target": "marina",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10350,7 +10392,7 @@
       "source": "alexey_mentor",
       "target": "maxim_stukalkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10359,7 +10401,7 @@
       "source": "alexey_mentor",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10377,7 +10419,7 @@
       "source": "alexey_mentor",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -10386,7 +10428,7 @@
       "source": "alexey_mentor",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10404,7 +10446,7 @@
       "source": "alexey_mentor",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10413,7 +10455,7 @@
       "source": "alexey_mentor",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -10440,16 +10482,25 @@
       "source": "maxim_sinaev",
       "target": "natalya_zvereva",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 1.0,
       "is_inferred": false
     },
     {
       "source": "maxim_sinaev",
+      "target": "artur_bigs8",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "strength": 4.0,
+      "confidence": 0.83,
+      "is_inferred": false
+    },
+    {
+      "source": "maxim_sinaev",
       "target": "ekaterina_artur",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10458,7 +10509,7 @@
       "source": "maxim_sinaev",
       "target": "elena_pakhtina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10485,7 +10536,7 @@
       "source": "artur_shamalov",
       "target": "eleonora_kruzhkova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.95,
       "is_inferred": false
@@ -10566,7 +10617,7 @@
       "source": "boris_laptinskiy",
       "target": "nikita_shepard",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Музыка, Теннис; Одна география: Москва",
+      "explanation": "Общие хобби: Теннис, Музыка; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10584,7 +10635,7 @@
       "source": "ivan_grodikov",
       "target": "vitaliy_darya",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Рисование, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Рисование; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10665,7 +10716,7 @@
       "source": "kirill_kryzh",
       "target": "viktoriya_mitrofanova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Строительство и ремонт",
+      "explanation": "Общая сфера: Строительство и ремонт, Образование",
       "strength": 4,
       "confidence": 0.93,
       "is_inferred": false
@@ -10710,7 +10761,7 @@
       "source": "ildar_iskhakov",
       "target": "dmitriy_smirnov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Велосипед, Горные лыжи; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Горные лыжи, Велосипед; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -10719,7 +10770,7 @@
       "source": "igor_torovin",
       "target": "kirill_mochalov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.93,
       "is_inferred": false
@@ -10728,7 +10779,7 @@
       "source": "igor_torovin",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -10737,7 +10788,7 @@
       "source": "igor_torovin",
       "target": "ruslan_rudnev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -10755,16 +10806,25 @@
       "source": "nikita_sokolov",
       "target": "viktoriya_mitrofanova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.93,
       "is_inferred": false
     },
     {
       "source": "nikita_sokolov",
+      "target": "artur_bigs8",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Санкт-Петербург",
+      "strength": 4.0,
+      "confidence": 0.83,
+      "is_inferred": false
+    },
+    {
+      "source": "nikita_sokolov",
       "target": "ekaterina_artur",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10782,7 +10842,7 @@
       "source": "nikita_sokolov",
       "target": "eleonora_kruzhkova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.95,
       "is_inferred": false
@@ -10845,7 +10905,16 @@
       "source": "aleksandr_ivkin",
       "target": "natalya_zvereva",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "strength": 4.0,
+      "confidence": 0.73,
+      "is_inferred": false
+    },
+    {
+      "source": "aleksandr_ivkin",
+      "target": "artur_bigs8",
+      "relation_type": "hobby",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -10854,7 +10923,7 @@
       "source": "aleksandr_ivkin",
       "target": "ekaterina_artur",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10863,7 +10932,7 @@
       "source": "aleksandr_ivkin",
       "target": "elena_pakhtina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10881,7 +10950,7 @@
       "source": "aleksandr_ivkin",
       "target": "valeriya_patik",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -10908,7 +10977,7 @@
       "source": "natalya_zvereva",
       "target": "ekaterina_artur",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -10917,7 +10986,7 @@
       "source": "natalya_zvereva",
       "target": "eleonora_kruzhkova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.95,
       "is_inferred": false
@@ -10953,7 +11022,7 @@
       "source": "igor_gelver",
       "target": "kirill_mochalov",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.9,
       "is_inferred": false
@@ -10962,7 +11031,7 @@
       "source": "igor_gelver",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -10971,7 +11040,7 @@
       "source": "igor_gelver",
       "target": "ruslan_rudnev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -11106,7 +11175,7 @@
       "source": "viktoriya_mitrofanova",
       "target": "eleonora_kruzhkova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.93,
       "is_inferred": false
@@ -11115,7 +11184,7 @@
       "source": "viktoriya_mitrofanova",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -11151,7 +11220,7 @@
       "source": "ekaterina_artur",
       "target": "elena_pakhtina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -11160,7 +11229,7 @@
       "source": "ekaterina_artur",
       "target": "valeriya_patik",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "explanation": "Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "strength": 4.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -11187,7 +11256,7 @@
       "source": "kirill_mochalov",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11214,7 +11283,7 @@
       "source": "angelina_bukatina",
       "target": "vladimir_ievlev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -11223,7 +11292,7 @@
       "source": "angelina_bukatina",
       "target": "mikhail_shurmin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -11232,7 +11301,7 @@
       "source": "angelina_bukatina",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -11286,7 +11355,7 @@
       "source": "marina",
       "target": "maxim_stukalkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.87,
       "is_inferred": false
@@ -11295,7 +11364,7 @@
       "source": "marina",
       "target": "vladimir_ievlev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.81,
       "is_inferred": false
@@ -11304,7 +11373,7 @@
       "source": "marina",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11313,7 +11382,7 @@
       "source": "marina",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.87,
       "is_inferred": false
@@ -11322,7 +11391,7 @@
       "source": "marina",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.87,
       "is_inferred": false
@@ -11331,7 +11400,7 @@
       "source": "maxim_stukalkin",
       "target": "dmitrii_klimchuk",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Футбол; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Футбол, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -11340,7 +11409,7 @@
       "source": "maxim_stukalkin",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11349,7 +11418,7 @@
       "source": "maxim_stukalkin",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Баня, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -11367,7 +11436,7 @@
       "source": "dmitriy_nefedov",
       "target": "dmitrii_klimchuk",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование",
       "strength": 4,
       "confidence": 0.87,
       "is_inferred": false
@@ -11412,7 +11481,7 @@
       "source": "ilya_novoselov",
       "target": "mikhail_larkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, IT и технологии",
+      "explanation": "Общая сфера: IT и технологии, Образование",
       "strength": 4,
       "confidence": 0.93,
       "is_inferred": false
@@ -11583,7 +11652,7 @@
       "source": "vladimir_ievlev",
       "target": "dmitrii_klimchuk",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Футбол; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Футбол, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -11592,7 +11661,7 @@
       "source": "vladimir_ievlev",
       "target": "mikhail_shurmin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -11601,7 +11670,7 @@
       "source": "vladimir_ievlev",
       "target": "vitaliy_darya",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11610,7 +11679,7 @@
       "source": "vladimir_ievlev",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.81,
       "is_inferred": false
@@ -11700,7 +11769,7 @@
       "source": "mikhail_larkin",
       "target": "eleonora_kruzhkova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.95,
       "is_inferred": false
@@ -11727,7 +11796,7 @@
       "source": "dmitrii_klimchuk",
       "target": "karim_siraev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование",
       "strength": 4,
       "confidence": 0.87,
       "is_inferred": false
@@ -11745,7 +11814,7 @@
       "source": "mikhail_shurmin",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Сноуборд, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -11853,7 +11922,7 @@
       "source": "eleonora_kruzhkova",
       "target": "ksenia_lova",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -11862,7 +11931,7 @@
       "source": "eleonora_kruzhkova",
       "target": "alexey_semenenko",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Консалтинг",
+      "explanation": "Общая сфера: Консалтинг, Образование",
       "strength": 4,
       "confidence": 0.9,
       "is_inferred": false
@@ -11871,7 +11940,7 @@
       "source": "vitaliy_darya",
       "target": "alexey_aleksei333",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11880,7 +11949,7 @@
       "source": "vitaliy_darya",
       "target": "ruslan_rudnev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11889,7 +11958,7 @@
       "source": "vitaliy_darya",
       "target": "kirill_chiriatyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11898,7 +11967,7 @@
       "source": "vitaliy_darya",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11907,7 +11976,7 @@
       "source": "vitaliy_darya",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -11943,7 +12012,7 @@
       "source": "alexey_aleksei333",
       "target": "ruslan_rudnev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Недвижимость",
+      "explanation": "Общая сфера: Недвижимость, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.73,
       "is_inferred": false
@@ -11961,7 +12030,7 @@
       "source": "alexey_aleksei333",
       "target": "artem_malyshev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Финансы и инвестиции",
+      "explanation": "Общая сфера: Финансы и инвестиции, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.73,
       "is_inferred": false
@@ -11970,7 +12039,7 @@
       "source": "kirill_chiriatyev",
       "target": "alexey_shabalin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.9,
       "is_inferred": false
@@ -11979,7 +12048,7 @@
       "source": "kirill_chiriatyev",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня; Одна география: Санкт-Петербург",
+      "explanation": "Общие хобби: Баня, Путешествия; Одна география: Санкт-Петербург",
       "strength": 4.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -12078,7 +12147,7 @@
       "source": "karim_siraev",
       "target": "dmitriy_kokorev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Образование, Финансы и инвестиции",
+      "explanation": "Общая сфера: Финансы и инвестиции, Образование",
       "strength": 4,
       "confidence": 0.8,
       "is_inferred": false
@@ -12096,7 +12165,7 @@
       "source": "lyudmila",
       "target": "aleksandr_devkin",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Маркетплейсы, Производство",
+      "explanation": "Общая сфера: Производство, Маркетплейсы",
       "strength": 4,
       "confidence": 0.86,
       "is_inferred": false
@@ -12114,7 +12183,7 @@
       "source": "alexey_shabalin",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
-      "explanation": "Общая сфера: Строительство и ремонт, Производство",
+      "explanation": "Общая сфера: Производство, Строительство и ремонт",
       "strength": 4,
       "confidence": 0.7,
       "is_inferred": false
@@ -12796,15 +12865,6 @@
     },
     {
       "source": "vladimir_zonov",
-      "target": "artur_shamalov_p",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
-      "strength": 3.5,
-      "confidence": 0.83,
-      "is_inferred": false
-    },
-    {
-      "source": "vladimir_zonov",
       "target": "artem_mustafin",
       "relation_type": "industry",
       "explanation": "Общая сфера: Еда и напитки; Общие хобби: Фитнес",
@@ -13326,7 +13386,7 @@
       "is_inferred": true
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "nikolay",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
@@ -13335,7 +13395,16 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
+      "target": "oleg_inet",
+      "relation_type": "industry",
+      "explanation": "Общая сфера: Производство; Общие хобби: Путешествия",
+      "strength": 3.5,
+      "confidence": 0.81,
+      "is_inferred": false
+    },
+    {
+      "source": "artur_bigs8",
       "target": "valentina_kostyuchenko",
       "relation_type": "industry",
       "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия",
@@ -13344,7 +13413,7 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "ksenia_lova",
       "relation_type": "industry",
       "explanation": "Общая сфера: Бьюти и красота; Общие хобби: Путешествия",
@@ -14166,7 +14235,7 @@
       "source": "ilya_makarov",
       "target": "vladimir_zonov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -14175,7 +14244,7 @@
       "source": "ilya_makarov",
       "target": "nikita_sokolov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -14184,7 +14253,7 @@
       "source": "ilya_makarov",
       "target": "aleksandr_gulyaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -14346,7 +14415,7 @@
       "source": "sergey_zhivotnev",
       "target": "svetlana_rodionova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.93,
       "is_inferred": false
@@ -14436,7 +14505,7 @@
       "source": "sergey_zhivotnev",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -14472,7 +14541,7 @@
       "source": "katerina",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фотография",
+      "explanation": "Общие хобби: Фотография, Путешествия",
       "strength": 3.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -14670,7 +14739,7 @@
       "source": "yulya_stepanova",
       "target": "aleksandr_ivkin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -14679,7 +14748,7 @@
       "source": "yulya_stepanova",
       "target": "roman_grigoryev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -14697,7 +14766,7 @@
       "source": "yulya_stepanova",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -14706,7 +14775,7 @@
       "source": "yulya_stepanova",
       "target": "oleg_inet",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Серфинг",
+      "explanation": "Общие хобби: Серфинг, Путешествия",
       "strength": 3.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -14715,7 +14784,7 @@
       "source": "yulya_stepanova",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -14760,7 +14829,7 @@
       "source": "maxim_sinaev",
       "target": "nikita_sokolov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -14769,7 +14838,7 @@
       "source": "maxim_sinaev",
       "target": "aleksandr_gulyaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -14778,7 +14847,7 @@
       "source": "maxim_sinaev",
       "target": "roman_grigoryev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -14805,7 +14874,7 @@
       "source": "maxim_sinaev",
       "target": "angelina_bukatina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -14823,7 +14892,7 @@
       "source": "maxim_sinaev",
       "target": "mikhail_shurmin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -14832,7 +14901,7 @@
       "source": "maxim_sinaev",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -14841,7 +14910,7 @@
       "source": "maxim_sinaev",
       "target": "oleg_inet",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Серфинг",
+      "explanation": "Общие хобби: Серфинг, Путешествия",
       "strength": 3.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -14850,7 +14919,7 @@
       "source": "maxim_sinaev",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -15057,7 +15126,7 @@
       "source": "sergey_efimov",
       "target": "vladimir_chip",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Охота, Стрельба",
+      "explanation": "Общие хобби: Стрельба, Охота",
       "strength": 3.0,
       "confidence": 0.77,
       "is_inferred": false
@@ -15084,7 +15153,7 @@
       "source": "sergey_efimov",
       "target": "kawasaki_fanis",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Охота, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Охота",
       "strength": 3.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -15093,7 +15162,7 @@
       "source": "vladimir_zonov",
       "target": "inna_borisenko",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -15102,7 +15171,7 @@
       "source": "vladimir_zonov",
       "target": "nikita_sokolov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -15111,7 +15180,7 @@
       "source": "vladimir_zonov",
       "target": "aleksandr_ivkin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15120,7 +15189,7 @@
       "source": "vladimir_zonov",
       "target": "natalya_zvereva",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -15129,7 +15198,7 @@
       "source": "vladimir_zonov",
       "target": "aleksandr_gulyaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -15138,7 +15207,7 @@
       "source": "vladimir_zonov",
       "target": "veta",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -15147,7 +15216,7 @@
       "source": "vladimir_zonov",
       "target": "denis_lobanov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -15156,7 +15225,7 @@
       "source": "vladimir_zonov",
       "target": "valeriya_patik",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -15165,7 +15234,7 @@
       "source": "vladimir_zonov",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -15174,7 +15243,7 @@
       "source": "vladimir_zonov",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -15237,7 +15306,7 @@
       "source": "stanislav",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Рыбалка, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Рыбалка",
       "strength": 3.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -15253,15 +15322,6 @@
     },
     {
       "source": "ildar_iskhakov",
-      "target": "artur_shamalov_p",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Одна география: Санкт-Петербург",
-      "strength": 3,
-      "confidence": 0.83,
-      "is_inferred": false
-    },
-    {
-      "source": "ildar_iskhakov",
       "target": "ilya_novoselov",
       "relation_type": "industry",
       "explanation": "Общая сфера: IT и технологии; Одна география: Санкт-Петербург",
@@ -15273,7 +15333,7 @@
       "source": "ildar_iskhakov",
       "target": "olga_matveeva",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Баня, Горные лыжи",
+      "explanation": "Общие хобби: Горные лыжи, Баня",
       "strength": 3.0,
       "confidence": 0.85,
       "is_inferred": false
@@ -15372,7 +15432,7 @@
       "source": "inna_borisenko",
       "target": "kawasaki_fanis",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Готовка, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Готовка",
       "strength": 3.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -15381,7 +15441,7 @@
       "source": "inna_borisenko",
       "target": "vladimir_ievlev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -15390,7 +15450,7 @@
       "source": "inna_borisenko",
       "target": "denis_lobanov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -15399,7 +15459,7 @@
       "source": "inna_borisenko",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -15408,7 +15468,7 @@
       "source": "inna_borisenko",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -15435,7 +15495,7 @@
       "source": "nikita_sokolov",
       "target": "aleksandr_ivkin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15444,7 +15504,7 @@
       "source": "nikita_sokolov",
       "target": "aleksandr_gulyaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -15462,7 +15522,7 @@
       "source": "nikita_sokolov",
       "target": "elena_pakhtina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -15471,7 +15531,7 @@
       "source": "nikita_sokolov",
       "target": "valeriya_patik",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -15498,7 +15558,7 @@
       "source": "svetlana_rodionova",
       "target": "maxim_stukalkin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.93,
       "is_inferred": false
@@ -15507,7 +15567,7 @@
       "source": "svetlana_rodionova",
       "target": "margarita_chalaya",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -15516,7 +15576,7 @@
       "source": "svetlana_rodionova",
       "target": "veta",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.93,
       "is_inferred": false
@@ -15534,7 +15594,7 @@
       "source": "svetlana_rodionova",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.93,
       "is_inferred": false
@@ -15561,7 +15621,7 @@
       "source": "svetlana_rodionova",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -15579,7 +15639,7 @@
       "source": "aleksandr_ivkin",
       "target": "aleksandr_gulyaev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15588,7 +15648,7 @@
       "source": "aleksandr_ivkin",
       "target": "roman_grigoryev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15606,7 +15666,7 @@
       "source": "aleksandr_ivkin",
       "target": "angelina_bukatina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -15615,7 +15675,7 @@
       "source": "aleksandr_ivkin",
       "target": "vladimir_ievlev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15624,7 +15684,7 @@
       "source": "aleksandr_ivkin",
       "target": "mikhail_shurmin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15633,7 +15693,7 @@
       "source": "aleksandr_ivkin",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -15642,7 +15702,7 @@
       "source": "aleksandr_ivkin",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15651,7 +15711,7 @@
       "source": "aleksandr_ivkin",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.73,
       "is_inferred": false
@@ -15696,7 +15756,7 @@
       "source": "aleksandr_gulyaev",
       "target": "ekaterina_artur",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Фитнес",
+      "explanation": "Общие хобби: Фитнес, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -15714,7 +15774,7 @@
       "source": "roman_grigoryev",
       "target": "angelina_bukatina",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -15723,7 +15783,7 @@
       "source": "roman_grigoryev",
       "target": "vladimir_ievlev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -15732,7 +15792,7 @@
       "source": "roman_grigoryev",
       "target": "mikhail_shurmin",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -15741,7 +15801,7 @@
       "source": "roman_grigoryev",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -15750,7 +15810,7 @@
       "source": "roman_grigoryev",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.9,
       "is_inferred": false
@@ -15759,7 +15819,7 @@
       "source": "roman_grigoryev",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -16062,7 +16122,7 @@
       "is_inferred": true
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "karolina_romanova",
       "relation_type": "industry",
       "explanation": "Общая сфера: Бьюти и красота; Одна география: Санкт-Петербург",
@@ -16071,7 +16131,7 @@
       "is_inferred": true
     },
     {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "elina",
       "relation_type": "industry",
       "explanation": "Общая сфера: Бьюти и красота; Одна география: Москва",
@@ -16080,25 +16140,7 @@
       "is_inferred": false
     },
     {
-      "source": "artur_shamalov_p",
-      "target": "egor_bashkov",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Одна география: Москва",
-      "strength": 3,
-      "confidence": 0.73,
-      "is_inferred": false
-    },
-    {
-      "source": "artur_shamalov_p",
-      "target": "vitaliy_darya",
-      "relation_type": "industry",
-      "explanation": "Общая сфера: Производство; Одна география: Москва",
-      "strength": 3,
-      "confidence": 0.7,
-      "is_inferred": false
-    },
-    {
-      "source": "artur_shamalov_p",
+      "source": "artur_bigs8",
       "target": "aleksandr_artemyev",
       "relation_type": "industry",
       "explanation": "Общая сфера: Производство; Одна география: Санкт-Петербург",
@@ -16146,7 +16188,7 @@
       "source": "angelina_bukatina",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -16155,7 +16197,7 @@
       "source": "angelina_bukatina",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -16182,7 +16224,7 @@
       "source": "maxim_stukalkin",
       "target": "margarita_chalaya",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -16191,7 +16233,7 @@
       "source": "maxim_stukalkin",
       "target": "veta",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -16200,7 +16242,7 @@
       "source": "maxim_stukalkin",
       "target": "vladimir_gusarov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.95,
       "is_inferred": false
@@ -16299,7 +16341,7 @@
       "source": "dmitriy_nefedov",
       "target": "kirill_chiriatyev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Баня, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Баня",
       "strength": 3.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -16335,7 +16377,7 @@
       "source": "margarita_chalaya",
       "target": "vladimir_gusarov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.87,
       "is_inferred": false
@@ -16353,7 +16395,7 @@
       "source": "margarita_chalaya",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -16362,7 +16404,7 @@
       "source": "margarita_chalaya",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.8,
       "is_inferred": false
@@ -16443,7 +16485,7 @@
       "source": "veta",
       "target": "vladimir_ievlev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.81,
       "is_inferred": false
@@ -16452,7 +16494,7 @@
       "source": "veta",
       "target": "denis_lobanov",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -16470,7 +16512,7 @@
       "source": "veta",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -16479,7 +16521,7 @@
       "source": "veta",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -16677,7 +16719,7 @@
       "source": "katrin_l",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Походы",
+      "explanation": "Общие хобби: Походы, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -16803,7 +16845,7 @@
       "source": "mikhail_shurmin",
       "target": "nikolay",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -16812,7 +16854,7 @@
       "source": "mikhail_shurmin",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -16830,7 +16872,7 @@
       "source": "denis_lobanov",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Рыбалка",
+      "explanation": "Общие хобби: Рыбалка, Путешествия",
       "strength": 3.0,
       "confidence": 0.53,
       "is_inferred": true
@@ -16857,7 +16899,7 @@
       "source": "nikolay",
       "target": "ksenia_lova",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -16866,7 +16908,7 @@
       "source": "nikolay",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Сноуборд",
+      "explanation": "Общие хобби: Сноуборд, Путешествия",
       "strength": 3.0,
       "confidence": 0.7,
       "is_inferred": false
@@ -16875,7 +16917,7 @@
       "source": "oleg_inet",
       "target": "dmitriy_gelver",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Горные лыжи",
+      "explanation": "Общие хобби: Горные лыжи, Путешествия",
       "strength": 3.0,
       "confidence": 0.79,
       "is_inferred": false
@@ -16893,7 +16935,7 @@
       "source": "valeriya_patik",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Шахматы",
+      "explanation": "Общие хобби: Шахматы, Путешествия",
       "strength": 3.0,
       "confidence": 0.5,
       "is_inferred": true
@@ -16929,7 +16971,7 @@
       "source": "ruslan_rudnev",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Настольные игры, Шахматы",
+      "explanation": "Общие хобби: Шахматы, Настольные игры",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -16947,7 +16989,7 @@
       "source": "kirill_chiriatyev",
       "target": "askhab",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -17028,7 +17070,7 @@
       "source": "askhab",
       "target": "dmitriy_kokorev",
       "relation_type": "hobby",
-      "explanation": "Общие хобби: Путешествия, Баня",
+      "explanation": "Общие хобби: Баня, Путешествия",
       "strength": 3.0,
       "confidence": 0.67,
       "is_inferred": false
@@ -17082,7 +17124,7 @@
         "anzor",
         "vladimir_chip",
         "dmitriy",
-        "artur_shamalov_p",
+        "artur_bigs8",
         "ekaterina_artur",
         "angelina_bukatina",
         "maxim_stukalkin",
@@ -17136,7 +17178,7 @@
         "anzor",
         "umar",
         "viktoriya_mitrofanova",
-        "artur_shamalov_p",
+        "artur_bigs8",
         "ekaterina_artur",
         "dmitriy_nefedov",
         "margarita_chalaya",
@@ -17209,7 +17251,7 @@
         "alexey_shalamov",
         "grigoriy_nikonov",
         "dmitriy",
-        "artur_shamalov_p",
+        "artur_bigs8",
         "ekaterina_artur",
         "kirill_mochalov",
         "angelina_bukatina",
@@ -17240,7 +17282,7 @@
         "alexey_mentor",
         "vladimir_zonov",
         "ildar_iskhakov",
-        "artur_shamalov_p",
+        "artur_bigs8",
         "ekaterina_artur",
         "marina",
         "maxim_stukalkin",
@@ -17396,6 +17438,7 @@
         "aleksandr_ivkin",
         "natalya_zvereva",
         "aleksandr_gulyaev",
+        "artur_bigs8",
         "ekaterina_artur",
         "yuriy_efimov",
         "elena_pakhtina",
@@ -17407,7 +17450,7 @@
         "anastasia"
       ],
       "description": "Любители фитнес",
-      "size": 18
+      "size": 19
     },
     {
       "id": "cluster_hobby_snowboard",
@@ -17468,7 +17511,7 @@
         "inna_borisenko",
         "natalya_zvereva",
         "aleksandr_gulyaev",
-        "artur_shamalov_p",
+        "artur_bigs8",
         "elena_pakhtina",
         "karolina_romanova",
         "elina",
@@ -18058,6 +18101,19 @@
       "size": 4
     },
     {
+      "id": "cluster_stage_scaling",
+      "name": "Масштабирование",
+      "type": "stage",
+      "members": [
+        "ilya_makarov",
+        "yulya_stepanova",
+        "igor_gelver",
+        "artur_bigs8"
+      ],
+      "description": "Участники на этапе: масштабирование",
+      "size": 4
+    },
+    {
       "id": "cluster_entertainment",
       "name": "Развлечения",
       "type": "industry",
@@ -18164,18 +18220,6 @@
       ],
       "description": "Любители настольные игры",
       "size": 3
-    },
-    {
-      "id": "cluster_stage_scaling",
-      "name": "Масштабирование",
-      "type": "stage",
-      "members": [
-        "ilya_makarov",
-        "yulya_stepanova",
-        "igor_gelver"
-      ],
-      "description": "Участники на этапе: масштабирование",
-      "size": 3
     }
   ],
   "introductions": [
@@ -18207,7 +18251,7 @@
       "person_a": "ilya_makarov",
       "person_b": "alexey_aleksei333",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, Недвижимость; Илья Макаров может помочь с: инвесторов - пришел в ММ в том числе для этого; Илья Макаров может помочь с: инвесторов",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Финансы и инвестиции; Илья Макаров может помочь с: инвесторов - пришел в ММ в том числе для этого; Илья Макаров может помочь с: инвесторов",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и консультации по недвижимости.",
       "value_for_b": "Дать практическую помощь по темам: инвестиционная экспертиза и финансовые инструменты.",
       "synergy_type": "industry",
@@ -18229,7 +18273,7 @@
       "person_a": "artur_shamalov",
       "person_b": "karim_siraev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Финансы и инвестиции, IT и технологии; Одна география: Москва; Карим Сираев может помочь с: стальные яички - выдерживающие любое решение",
+      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, IT и технологии, Образование; Одна география: Москва; Карим Сираев может помочь с: стальные яички - выдерживающие любое решение",
       "value_for_a": "Дать практическую помощь по темам: IT-решения и автоматизация и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "synergy_type": "industry",
@@ -18240,7 +18284,7 @@
       "person_a": "igor_torovin",
       "person_b": "alexey_aleksei333",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость; Игорь Торовин может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Торовин может помочь с: инвесторов",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт; Игорь Торовин может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Торовин может помочь с: инвесторов",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и консультации по недвижимости.",
       "value_for_b": "Дать практическую помощь по темам: менторство и девелопмент.",
       "synergy_type": "industry",
@@ -18251,7 +18295,7 @@
       "person_a": "igor_gelver",
       "person_b": "alexey_aleksei333",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость; Игорь Гельвер может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Гельвер может помочь с: инвесторов",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт; Игорь Гельвер может помочь с: инвесторов - пришел в ММ в том числе для этого; Игорь Гельвер может помочь с: инвесторов",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и консультации по недвижимости.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и инвестиции в землю.",
       "synergy_type": "industry",
@@ -18284,7 +18328,7 @@
       "person_a": "vladimir_ievlev",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Рыбалка, Сноуборд; Одна география: Санкт-Петербург; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: проект промышленного объекта - это к нему",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка, Путешествия; Одна география: Санкт-Петербург; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: проект промышленного объекта - это к нему",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "synergy_type": "industry",
@@ -18385,7 +18429,7 @@
       "person_a": "mikhail_larkin",
       "person_b": "karim_siraev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, IT и технологии; Одна география: Москва; Одна мини-группа на ММ",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Образование; Одна география: Москва; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: IT-решения и автоматизация и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: AI-экспертиза и обучение ИИ.",
       "synergy_type": "industry",
@@ -18396,7 +18440,7 @@
       "person_a": "mikhail_shurmin",
       "person_b": "ksenia_lova",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование; Общие хобби: Путешествия, Сноуборд; Одна мини-группа на ММ",
+      "why_connect": "Общая сфера. Общая сфера: Образование; Общие хобби: Сноуборд, Путешествия; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: танцевальное образование.",
       "synergy_type": "industry",
@@ -18554,7 +18598,7 @@
       "person_a": "artur_shamalov",
       "person_b": "petr",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Консалтинг, IT и технологии; Общие хобби: Путешествия; Пётр может помочь с: стальные яички - выдерживающие любое решение",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Консалтинг; Общие хобби: Путешествия; Пётр может помочь с: стальные яички - выдерживающие любое решение",
       "value_for_a": "Дать практическую помощь по темам: IT-решения и автоматизация и консалтинг и аудит.",
       "value_for_b": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "synergy_type": "industry",
@@ -18565,7 +18609,7 @@
       "person_a": "artur_shamalov",
       "person_b": "mikhail_larkin",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг, IT и технологии; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: AI-экспертиза и обучение ИИ.",
       "value_for_b": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "synergy_type": "industry",
@@ -18631,7 +18675,7 @@
       "person_a": "natalya_zvereva",
       "person_b": "aleksandr_gulyaev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Наталья Зверева может помочь с: масштабирование бьюти",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Наталья Зверева может помочь с: масштабирование бьюти",
       "value_for_a": "Дать практическую помощь по темам: нетворкинг и продажи.",
       "value_for_b": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "synergy_type": "industry",
@@ -18642,7 +18686,7 @@
       "person_a": "natalya_zvereva",
       "person_b": "ksenia_lova",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Бьюти и красота, Консалтинг; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота, Консалтинг, Образование; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "synergy_type": "industry",
@@ -18653,7 +18697,7 @@
       "person_a": "aleksandr_gulyaev",
       "person_b": "elena_pakhtina",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Елена Рубинштейн может помочь с: масштабирование бьюти",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Елена Рубинштейн может помочь с: масштабирование бьюти",
       "value_for_a": "Дать практическую помощь по темам: бьюти-экспертиза и антикризис.",
       "value_for_b": "Дать практическую помощь по темам: нетворкинг и продажи.",
       "synergy_type": "industry",
@@ -18664,7 +18708,7 @@
       "person_a": "aleksandr_gulyaev",
       "person_b": "valeriya_patik",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Валерия Патик может помочь с: масштабирование бьюти",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Валерия Патик может помочь с: масштабирование бьюти",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и консультации по бьюти-бизнесу.",
       "value_for_b": "Дать практическую помощь по темам: нетворкинг и продажи.",
       "synergy_type": "industry",
@@ -18675,7 +18719,7 @@
       "person_a": "roman_grigoryev",
       "person_b": "kirill_mochalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Маркетплейсы, Недвижимость; Одна мини-группа на ММ",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Маркетплейсы; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и помощь с маркетплейсами.",
       "value_for_b": "Дать практическую помощь по темам: автосервис и маркетплейсы.",
       "synergy_type": "industry",
@@ -18686,7 +18730,7 @@
       "person_a": "viktoriya_mitrofanova",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Одна география: Москва; Виктория Митрофанова может помочь с: пояснить тебе позицию в которой ты можешь участвовать в этом процессе",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Одна география: Москва; Виктория Митрофанова может помочь с: пояснить тебе позицию в которой ты можешь участвовать в этом процессе",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: управленческий консалтинг и оптимизация процессов.",
       "synergy_type": "industry",
@@ -18697,7 +18741,7 @@
       "person_a": "viktoriya_mitrofanova",
       "person_b": "alexey_semenenko",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Одна мини-группа на ММ",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: методология обучения и консалтинг и аудит.",
       "value_for_b": "Дать практическую помощь по темам: управленческий консалтинг и оптимизация процессов.",
       "synergy_type": "industry",
@@ -18719,7 +18763,7 @@
       "person_a": "maxim_stukalkin",
       "person_b": "vladimir_ievlev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Футбол; Одна география: Санкт-Петербург",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Футбол, Путешествия; Одна география: Санкт-Петербург",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: проектирование и управленческий опыт.",
       "synergy_type": "industry",
@@ -18730,7 +18774,7 @@
       "person_a": "maxim_stukalkin",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня; Одна география: Санкт-Петербург",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Баня, Путешествия; Одна география: Санкт-Петербург",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: проектирование и управленческий опыт.",
       "synergy_type": "industry",
@@ -18752,7 +18796,7 @@
       "person_a": "ilya_novoselov",
       "person_b": "karim_siraev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, IT и технологии; Одна мини-группа на ММ",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Образование; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: IT-решения и автоматизация и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и IT-решения и автоматизация.",
       "synergy_type": "industry",
@@ -18785,7 +18829,7 @@
       "person_a": "dmitrii_klimchuk",
       "person_b": "dmitriy_kokorev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Путешествия, Фотография; Одна география: Санкт-Петербург",
+      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Фотография, Путешествия; Одна география: Санкт-Петербург",
       "value_for_a": "Дать практическую помощь по темам: методология обучения и финансовая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: менторство и методология обучения.",
       "synergy_type": "industry",
@@ -18873,7 +18917,7 @@
       "person_a": "alexey_shabalin",
       "person_b": "maxim_stukalkin",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Одна мини-группа на ММ",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: проектирование и управленческий опыт.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и производственный опыт.",
       "synergy_type": "industry",
@@ -18976,7 +19020,7 @@
       "person_a": "sergey_zhivotnev",
       "person_b": "maxim_stukalkin",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Баня, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: проектирование и управленческий опыт.",
       "value_for_b": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "synergy_type": "industry",
@@ -18987,7 +19031,7 @@
       "person_a": "sergey_zhivotnev",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия, Баня",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Баня, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "synergy_type": "industry",
@@ -19020,7 +19064,7 @@
       "person_a": "stanislav",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Энергетика, Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: электромонтажные работы.",
       "synergy_type": "industry",
@@ -19031,7 +19075,7 @@
       "person_a": "nikita_sokolov",
       "person_b": "natalya_zvereva",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия, Фитнес",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Фитнес, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "value_for_b": "Дать практическую помощь по темам: карьерные консультации и профориентация.",
       "synergy_type": "industry",
@@ -19042,7 +19086,7 @@
       "person_a": "petr",
       "person_b": "alexey_shalamov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Консалтинг, IT и технологии; Пётр может помочь с: масштабирование консалтинга",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Консалтинг; Пётр может помочь с: масштабирование консалтинга",
       "value_for_a": "Дать практическую помощь по темам: финансовые консультации бесплатно для команды и стратегия личных финансов.",
       "value_for_b": "Дать практическую помощь по темам: IT-решения и автоматизация и консалтинг и аудит.",
       "synergy_type": "industry",
@@ -19053,10 +19097,21 @@
       "person_a": "roman_grigoryev",
       "person_b": "nikolay",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Сноуборд; Одна мини-группа на ММ",
+      "why_connect": "Общие интересы. Общие хобби: Сноуборд, Путешествия; Одна мини-группа на ММ",
       "value_for_a": "Дать практическую помощь по темам: парфюмерия.",
       "value_for_b": "Дать практическую помощь по темам: автосервис и маркетплейсы.",
       "synergy_type": "hobby",
+      "priority": 7,
+      "confidence": 0.7
+    },
+    {
+      "person_a": "artur_bigs8",
+      "person_b": "ekaterina_artur",
+      "group_members": null,
+      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Фитнес, Путешествия; Одна география: Москва, Санкт-Петербург",
+      "value_for_a": "Дать практическую помощь по темам: косметологическое оборудование и Корея/Китай.",
+      "value_for_b": "Дать практическую помощь по темам: опыт импорта из Кореи/Китая и производство оборудования.",
+      "synergy_type": "industry",
       "priority": 7,
       "confidence": 0.7
     },
@@ -19075,7 +19130,7 @@
       "person_a": "ilya_novoselov",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, IT и технологии; Илья Новосёлов может помочь с: стальные яички - выдерживающие любое решение",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Образование; Илья Новосёлов может помочь с: стальные яички - выдерживающие любое решение",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и IT-решения и автоматизация.",
       "synergy_type": "industry",
@@ -19086,7 +19141,7 @@
       "person_a": "veta",
       "person_b": "ksenia_lova",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия, Рыбалка",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "synergy_type": "industry",
@@ -19132,7 +19187,7 @@
       "person_a": "ilya_makarov",
       "person_b": "valeriya_elatnikova",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, Недвижимость; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Финансы и инвестиции; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: корпоративное сопровождение и инвестиции в недвижимость.",
       "value_for_b": "Дать практическую помощь по темам: инвестиционная экспертиза и финансовые инструменты.",
       "synergy_type": "industry",
@@ -19264,7 +19319,7 @@
       "person_a": "maxim_sinaev",
       "person_b": "valeriya_patik",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и консультации по бьюти-бизнесу.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -19275,7 +19330,7 @@
       "person_a": "maxim_sinaev",
       "person_b": "aleksandr_ivkin",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Фитнес, Сноуборд; Одна география: Москва",
+      "why_connect": "Общие интересы. Общие хобби: Сноуборд, Фитнес, Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: betting-экспертиза и ремонт.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "hobby",
@@ -19297,7 +19352,7 @@
       "person_a": "sergey_efimov",
       "person_b": "stanislav",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка",
+      "why_connect": "Общая сфера. Общая сфера: Энергетика, Строительство и ремонт; Общие хобби: Рыбалка",
       "value_for_a": "Дать практическую помощь по темам: электромонтажные работы.",
       "value_for_b": "Дать практическую помощь по темам: менторство и электроэнергетика.",
       "synergy_type": "industry",
@@ -19308,7 +19363,7 @@
       "person_a": "sergey_efimov",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Энергетика; Общие хобби: Рыбалка",
+      "why_connect": "Общая сфера. Общая сфера: Энергетика, Строительство и ремонт; Общие хобби: Рыбалка",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: менторство и электроэнергетика.",
       "synergy_type": "industry",
@@ -19319,7 +19374,7 @@
       "person_a": "vladimir_zonov",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство, Еда и напитки; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Еда и напитки, Производство; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: опыт FMCG и грибы и ягоды.",
       "synergy_type": "industry",
@@ -19418,7 +19473,7 @@
       "person_a": "nikita_sokolov",
       "person_b": "mikhail_larkin",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Похожий этап: Из найма в бизнес",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Похожий этап: Из найма в бизнес",
       "value_for_a": "Дать практическую помощь по темам: AI-экспертиза и обучение ИИ.",
       "value_for_b": "Дать практическую помощь по темам: карьерные консультации и профориентация.",
       "synergy_type": "industry",
@@ -19451,7 +19506,7 @@
       "person_a": "svetlana_rodionova",
       "person_b": "dmitriy_kokorev",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Баня; Дмитрий Кокорев может помочь с: финансовая стабилизация",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Путешествия; Дмитрий Кокорев может помочь с: финансовая стабилизация",
       "value_for_a": "Дать практическую помощь по темам: методология обучения и финансовая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: туристический опыт и космические туры.",
       "synergy_type": "hobby",
@@ -19484,7 +19539,7 @@
       "person_a": "natalya_zvereva",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "synergy_type": "industry",
@@ -19495,7 +19550,7 @@
       "person_a": "petr",
       "person_b": "mikhail_larkin",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Консалтинг, IT и технологии; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: IT и технологии, Консалтинг; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: AI-экспертиза и обучение ИИ.",
       "value_for_b": "Дать практическую помощь по темам: IT-решения и автоматизация и консалтинг и аудит.",
       "synergy_type": "industry",
@@ -19547,54 +19602,32 @@
       "confidence": 0.95
     },
     {
-      "person_a": "artur_shamalov_p",
-      "person_b": "aleksandr_gulyaev",
-      "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия; Артур Шамалов (участник) может помочь с: масштабирование бьюти",
-      "value_for_a": "Дать практическую помощь по темам: нетворкинг и продажи.",
-      "value_for_b": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и производственный опыт.",
-      "synergy_type": "industry",
-      "priority": 6,
-      "confidence": 0.83
-    },
-    {
-      "person_a": "artur_shamalov_p",
+      "person_a": "artur_bigs8",
       "person_b": "ksenia_abramova",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота, Производство; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Бьюти и красота; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
-      "value_for_b": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и производственный опыт.",
+      "value_for_b": "Дать практическую помощь по темам: опыт импорта из Кореи/Китая и производство оборудования.",
       "synergy_type": "industry",
       "priority": 6,
       "confidence": 0.83
     },
     {
-      "person_a": "artur_shamalov_p",
-      "person_b": "oleg_inet",
+      "person_a": "artur_bigs8",
+      "person_b": "natalya_zvereva",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия; Артур Шамалов (участник) может помочь с: переориентация бизнеса",
-      "value_for_a": "Дать практическую помощь по темам: IT-экспертиза и умный дом.",
-      "value_for_b": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и производственный опыт.",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "value_for_a": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
+      "value_for_b": "Дать практическую помощь по темам: опыт импорта из Кореи/Китая и производство оборудования.",
       "synergy_type": "industry",
       "priority": 6,
-      "confidence": 0.81
-    },
-    {
-      "person_a": "ekaterina_artur",
-      "person_b": "artur_shamalov_p",
-      "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Москва, Санкт-Петербург",
-      "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и производственный опыт.",
-      "value_for_b": "Дать практическую помощь по темам: косметологическое оборудование и Корея/Китай.",
-      "synergy_type": "industry",
-      "priority": 6,
-      "confidence": 0.7
+      "confidence": 0.83
     },
     {
       "person_a": "kirill_mochalov",
       "person_b": "ruslan_rudnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость; Общие хобби: Горные лыжи",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт; Общие хобби: Горные лыжи",
       "value_for_a": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и помощь с маркетплейсами.",
       "synergy_type": "industry",
@@ -19605,7 +19638,7 @@
       "person_a": "marina",
       "person_b": "aleksandr_artemyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Готовка",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Готовка",
       "value_for_a": "Дать практическую помощь по темам: проектирование и техконсультации.",
       "value_for_b": "Дать практическую помощь по темам: дизайн интерьера и шторы.",
       "synergy_type": "industry",
@@ -19616,7 +19649,7 @@
       "person_a": "dmitriy_nefedov",
       "person_b": "veta",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование; Общие хобби: Баня, Рыбалка; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Образование; Общие хобби: Рыбалка, Баня; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "value_for_b": "Дать практическую помощь по темам: консультации по недвижимости и методология обучения.",
       "synergy_type": "industry",
@@ -19638,7 +19671,7 @@
       "person_a": "margarita_chalaya",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Баня; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: масштаб",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Путешествия; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: масштаб",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: связи с Китаем и бренд одежды.",
       "synergy_type": "hobby",
@@ -19671,7 +19704,7 @@
       "person_a": "veta",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "synergy_type": "industry",
@@ -19682,7 +19715,7 @@
       "person_a": "veta",
       "person_b": "natalya_zvereva",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "value_for_b": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "synergy_type": "industry",
@@ -19693,7 +19726,7 @@
       "person_a": "elena_pakhtina",
       "person_b": "natalya_zvereva",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "value_for_b": "Дать практическую помощь по темам: бьюти-экспертиза и антикризис.",
       "synergy_type": "industry",
@@ -19781,7 +19814,7 @@
       "person_a": "vladimir_ievlev",
       "person_b": "dmitriy_gelver",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: стройматериалы.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "synergy_type": "industry",
@@ -19792,7 +19825,7 @@
       "person_a": "vladimir_ievlev",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "synergy_type": "industry",
@@ -19836,7 +19869,7 @@
       "person_a": "katrin_l",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Походы; Екатерина Лапика может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
+      "why_connect": "Общие интересы. Общие хобби: Походы, Путешествия; Екатерина Лапика может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: финансовая экспертиза и экспертиза в авто-нише.",
       "synergy_type": "hobby",
@@ -19869,7 +19902,7 @@
       "person_a": "mikhail_larkin",
       "person_b": "natalya_zvereva",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "value_for_b": "Дать практическую помощь по темам: AI-экспертиза и обучение ИИ.",
       "synergy_type": "industry",
@@ -19880,7 +19913,7 @@
       "person_a": "mikhail_larkin",
       "person_b": "veta",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "value_for_b": "Дать практическую помощь по темам: AI-экспертиза и обучение ИИ.",
       "synergy_type": "industry",
@@ -19924,7 +19957,7 @@
       "person_a": "dmitrii_klimchuk",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: менторство и методология обучения.",
       "synergy_type": "industry",
@@ -20034,7 +20067,7 @@
       "person_a": "valeriya_patik",
       "person_b": "natalya_zvereva",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство в бьюти и бизнес-аудит.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и консультации по бьюти-бизнесу.",
       "synergy_type": "industry",
@@ -20043,10 +20076,10 @@
     },
     {
       "person_a": "valeriya_patik",
-      "person_b": "elena_pakhtina",
+      "person_b": "artur_bigs8",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Путешествия, Фитнес; Одна география: Москва",
-      "value_for_a": "Дать практическую помощь по темам: бьюти-экспертиза и антикризис.",
+      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Общие хобби: Фитнес, Путешествия; Одна география: Москва",
+      "value_for_a": "Дать практическую помощь по темам: опыт импорта из Кореи/Китая и производство оборудования.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и консультации по бьюти-бизнесу.",
       "synergy_type": "industry",
       "priority": 6,
@@ -20067,7 +20100,7 @@
       "person_a": "ksenia_lova",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "synergy_type": "industry",
@@ -20078,7 +20111,7 @@
       "person_a": "kirill_chiriatyev",
       "person_b": "dmitriy_gelver",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: стройматериалы.",
       "value_for_b": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "synergy_type": "industry",
@@ -20089,7 +20122,7 @@
       "person_a": "kirill_chiriatyev",
       "person_b": "vladimir_gusarov",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Баня; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: инвестиции, партнерства и ментора",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Путешествия; Кирилл Производство металлоконструкций, промышленное строительство может помочь с: инвестиции, партнерства и ментора",
       "value_for_a": "Дать практическую помощь по темам: помощь с маркетплейсами и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "synergy_type": "hobby",
@@ -20111,7 +20144,7 @@
       "person_a": "alexey_semenenko",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: методология обучения и консалтинг и аудит.",
       "synergy_type": "industry",
@@ -20254,7 +20287,7 @@
       "person_a": "askhab",
       "person_b": "vladimir_gusarov",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Баня; Асхаб Парфюм Ойл может помочь с: инвестиции, партнерства и ментора",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Путешествия; Асхаб Парфюм Ойл может помочь с: инвестиции, партнерства и ментора",
       "value_for_a": "Дать практическую помощь по темам: помощь с маркетплейсами и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: менторство и парфюмерный бизнес.",
       "synergy_type": "hobby",
@@ -20265,7 +20298,7 @@
       "person_a": "dmitriy_kokorev",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Баня; Дмитрий Кокорев может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Путешествия; Дмитрий Кокорев может помочь с: продолжить, но мешают сдерживающие факторы: финансовые, временные и другие",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: методология обучения и финансовая экспертиза.",
       "synergy_type": "hobby",
@@ -20276,7 +20309,7 @@
       "person_a": "dmitriy_kokorev",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Путешествия",
+      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: методология обучения и финансовая экспертиза.",
       "synergy_type": "industry",
@@ -20287,7 +20320,7 @@
       "person_a": "dmitriy_kokorev",
       "person_b": "dmitriy_nefedov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Финансы и инвестиции; Общие хобби: Баня",
+      "why_connect": "Общая сфера. Общая сфера: Финансы и инвестиции, Образование; Общие хобби: Баня",
       "value_for_a": "Дать практическую помощь по темам: консультации по недвижимости и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: методология обучения и финансовая экспертиза.",
       "synergy_type": "industry",
@@ -20353,7 +20386,7 @@
       "person_a": "katerina",
       "person_b": "dmitrii_klimchuk",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Книги, Путешествия, Фотография",
+      "why_connect": "Общие интересы. Общие хобби: Фотография, Книги, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: координация событий.",
       "synergy_type": "hobby",
@@ -20397,7 +20430,7 @@
       "person_a": "alexey_mentor",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -20419,7 +20452,7 @@
       "person_a": "maxim_sinaev",
       "person_b": "vladimir_zonov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Еда и напитки; Общие хобби: Путешествия, Фитнес",
+      "why_connect": "Общая сфера. Общая сфера: Еда и напитки; Общие хобби: Фитнес, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: опыт FMCG и грибы и ягоды.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -20463,7 +20496,7 @@
       "person_a": "stanislav",
       "person_b": "vladimir_ievlev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: электромонтажные работы.",
       "synergy_type": "industry",
@@ -20474,7 +20507,7 @@
       "person_a": "stanislav",
       "person_b": "dmitriy_gelver",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Рыбалка",
       "value_for_a": "Дать практическую помощь по темам: стройматериалы.",
       "value_for_b": "Дать практическую помощь по темам: электромонтажные работы.",
       "synergy_type": "industry",
@@ -20507,7 +20540,7 @@
       "person_a": "igor_torovin",
       "person_b": "igor_gelver",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость; Одна география: Сочи",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт; Одна география: Сочи",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и инвестиции в землю.",
       "value_for_b": "Дать практическую помощь по темам: менторство и девелопмент.",
       "synergy_type": "industry",
@@ -20551,7 +20584,7 @@
       "person_a": "aleksandr_ivkin",
       "person_b": "ksenia_lova",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Баскетбол, Путешествия, Сноуборд",
+      "why_connect": "Общие интересы. Общие хобби: Баскетбол, Сноуборд, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: betting-экспертиза и ремонт.",
       "synergy_type": "hobby",
@@ -20562,7 +20595,7 @@
       "person_a": "aleksandr_ivkin",
       "person_b": "ilya_makarov",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Фитнес; Одна география: Москва",
+      "why_connect": "Общие интересы. Общие хобби: Фитнес, Путешествия; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: инвестиционная экспертиза и финансовые инструменты.",
       "value_for_b": "Дать практическую помощь по темам: betting-экспертиза и ремонт.",
       "synergy_type": "hobby",
@@ -20804,7 +20837,7 @@
       "person_a": "ekaterina_artur",
       "person_b": "vladimir_zonov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия, Фитнес",
+      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Фитнес, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: опыт FMCG и грибы и ягоды.",
       "value_for_b": "Дать практическую помощь по темам: косметологическое оборудование и Корея/Китай.",
       "synergy_type": "industry",
@@ -20823,10 +20856,21 @@
       "confidence": 0.7
     },
     {
+      "person_a": "ekaterina_artur",
+      "person_b": "ekaterina_aleksandrova",
+      "group_members": null,
+      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия; Одна география: Санкт-Петербург",
+      "value_for_a": "Дать практическую помощь по темам: производство одежды и мерч под ключ.",
+      "value_for_b": "Дать практическую помощь по темам: косметологическое оборудование и Корея/Китай.",
+      "synergy_type": "industry",
+      "priority": 5,
+      "confidence": 0.7
+    },
+    {
       "person_a": "kirill_mochalov",
       "person_b": "alexey_aleksei333",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость; Одна география: Санкт-Петербург",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт; Одна география: Санкт-Петербург",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и консультации по недвижимости.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и помощь с маркетплейсами.",
       "synergy_type": "industry",
@@ -20837,7 +20881,7 @@
       "person_a": "angelina_bukatina",
       "person_b": "ksenia_lova",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Консалтинг; Общие хобби: Путешествия, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг; Общие хобби: Сноуборд, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: подбор образа и стиля.",
       "synergy_type": "industry",
@@ -20903,7 +20947,7 @@
       "person_a": "marina",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: дизайн интерьера и шторы.",
       "synergy_type": "industry",
@@ -20914,7 +20958,7 @@
       "person_a": "marina",
       "person_b": "alexey_mentor",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт",
       "value_for_a": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: дизайн интерьера и шторы.",
       "synergy_type": "industry",
@@ -20947,7 +20991,7 @@
       "person_a": "margarita_chalaya",
       "person_b": "veta",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Баня; Одна география: Москва; Похожий этап: Смена направления",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Путешествия; Одна география: Москва; Похожий этап: Смена направления",
       "value_for_a": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "value_for_b": "Дать практическую помощь по темам: связи с Китаем и бренд одежды.",
       "synergy_type": "hobby",
@@ -20967,10 +21011,10 @@
     },
     {
       "person_a": "karolina_romanova",
-      "person_b": "artur_shamalov_p",
+      "person_b": "artur_bigs8",
       "group_members": null,
       "why_connect": "Общая сфера. Общая сфера: Бьюти и красота; Одна география: Санкт-Петербург",
-      "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и производственный опыт.",
+      "value_for_a": "Дать практическую помощь по темам: опыт импорта из Кореи/Китая и производство оборудования.",
       "value_for_b": "Дать практическую помощь по темам: люксовые стрижки.",
       "synergy_type": "industry",
       "priority": 5,
@@ -21035,7 +21079,7 @@
       "person_a": "olga_matveeva",
       "person_b": "ildar_iskhakov",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Баня, Горные лыжи",
+      "why_connect": "Общие интересы. Общие хобби: Горные лыжи, Баня",
       "value_for_a": "Дать практическую помощь по темам: автоматизация техпроцессов.",
       "value_for_b": "Дать практическую помощь по темам: организация туров.",
       "synergy_type": "hobby",
@@ -21057,7 +21101,7 @@
       "person_a": "elina",
       "person_b": "elena_pakhtina",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Бьюти и красота, Медицина; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Медицина, Бьюти и красота; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: бьюти-экспертиза и антикризис.",
       "value_for_b": "Дать практическую помощь по темам: медицинская помощь и СПА.",
       "synergy_type": "industry",
@@ -21376,7 +21420,7 @@
       "person_a": "dmitriy_smirnov",
       "person_b": "ildar_iskhakov",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Велосипед, Горные лыжи; Одна география: Санкт-Петербург",
+      "why_connect": "Общие интересы. Общие хобби: Горные лыжи, Велосипед; Одна география: Санкт-Петербург",
       "value_for_a": "Дать практическую помощь по темам: автоматизация техпроцессов.",
       "value_for_b": "Дать практическую помощь по темам: юридические консультации.",
       "synergy_type": "hobby",
@@ -21398,7 +21442,7 @@
       "person_a": "denis_lobanov",
       "person_b": "vladimir_ievlev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -21409,7 +21453,7 @@
       "person_a": "denis_lobanov",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -21420,7 +21464,7 @@
       "person_a": "denis_lobanov",
       "person_b": "dmitriy_gelver",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Рыбалка",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: стройматериалы.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -21453,7 +21497,7 @@
       "person_a": "nikolay",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия, Походы",
+      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Походы, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: парфюмерия.",
       "synergy_type": "industry",
@@ -21464,7 +21508,7 @@
       "person_a": "nikolay",
       "person_b": "vladimir_ievlev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Сноуборд, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: парфюмерия.",
       "synergy_type": "industry",
@@ -21475,7 +21519,7 @@
       "person_a": "nikolay",
       "person_b": "kirill_chiriatyev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Путешествия, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Производство; Общие хобби: Сноуборд, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "value_for_b": "Дать практическую помощь по темам: парфюмерия.",
       "synergy_type": "industry",
@@ -21530,7 +21574,7 @@
       "person_a": "eleonora_kruzhkova",
       "person_b": "veta",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг; Похожий этап: Смена направления",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование; Похожий этап: Смена направления",
       "value_for_a": "Дать практическую помощь по темам: коучинг и публичные выступления.",
       "value_for_b": "Дать практическую помощь по темам: обучение и методология.",
       "synergy_type": "industry",
@@ -21541,7 +21585,7 @@
       "person_a": "eleonora_kruzhkova",
       "person_b": "artur_shamalov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование",
       "value_for_a": "Дать практическую помощь по темам: менторство и инвестиционная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: обучение и методология.",
       "synergy_type": "industry",
@@ -21552,7 +21596,7 @@
       "person_a": "eleonora_kruzhkova",
       "person_b": "nikita_sokolov",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Образование, Консалтинг",
+      "why_connect": "Общая сфера. Общая сфера: Консалтинг, Образование",
       "value_for_a": "Дать практическую помощь по темам: карьерные консультации и профориентация.",
       "value_for_b": "Дать практическую помощь по темам: обучение и методология.",
       "synergy_type": "industry",
@@ -21563,7 +21607,7 @@
       "person_a": "vitaliy_darya",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Одна география: Москва",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: строительство и охранная деятельность.",
       "synergy_type": "industry",
@@ -21640,7 +21684,7 @@
       "person_a": "ruslan_rudnev",
       "person_b": "igor_torovin",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт",
       "value_for_a": "Дать практическую помощь по темам: менторство и девелопмент.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -21651,7 +21695,7 @@
       "person_a": "ruslan_rudnev",
       "person_b": "igor_gelver",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Недвижимость",
+      "why_connect": "Общая сфера. Общая сфера: Недвижимость, Строительство и ремонт",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и инвестиции в землю.",
       "value_for_b": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "synergy_type": "industry",
@@ -21662,7 +21706,7 @@
       "person_a": "kirill_chiriatyev",
       "person_b": "maxim_sinaev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: менторство и промышленное строительство.",
       "synergy_type": "industry",
@@ -21816,7 +21860,7 @@
       "person_a": "alexey_shabalin",
       "person_b": "sergey_zhivotnev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт",
       "value_for_a": "Дать практическую помощь по темам: менторство и построение партнёрств.",
       "value_for_b": "Дать практическую помощь по темам: строительная экспертиза и производственный опыт.",
       "synergy_type": "industry",
@@ -21827,7 +21871,7 @@
       "person_a": "dmitriy_gelver",
       "person_b": "maxim_sinaev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Путешествия, Сноуборд",
+      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт; Общие хобби: Сноуборд, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: менторство и строительная экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: стройматериалы.",
       "synergy_type": "industry",
@@ -21838,7 +21882,7 @@
       "person_a": "dmitriy_gelver",
       "person_b": "ksenia_lova",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Путешествия, Рыбалка, Сноуборд",
+      "why_connect": "Общие интересы. Общие хобби: Сноуборд, Рыбалка, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: консультации по бьюти-бизнесу и методология обучения.",
       "value_for_b": "Дать практическую помощь по темам: стройматериалы.",
       "synergy_type": "hobby",
@@ -21882,7 +21926,7 @@
       "person_a": "aleksandr_artemyev",
       "person_b": "vladimir_ievlev",
       "group_members": null,
-      "why_connect": "Общая сфера. Общая сфера: Строительство и ремонт, Производство; Одна география: Санкт-Петербург",
+      "why_connect": "Общая сфера. Общая сфера: Производство, Строительство и ремонт; Одна география: Санкт-Петербург",
       "value_for_a": "Дать практическую помощь по темам: строительная экспертиза и туристическая экспертиза.",
       "value_for_b": "Дать практическую помощь по темам: проектирование и техконсультации.",
       "synergy_type": "industry",
@@ -21948,7 +21992,7 @@
       "person_a": "nikita_shepard",
       "person_b": "boris_laptinskiy",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Музыка, Теннис; Одна география: Москва",
+      "why_connect": "Общие интересы. Общие хобби: Теннис, Музыка; Одна география: Москва",
       "value_for_a": "Дать практическую помощь по темам: инвестиционная экспертиза и нетворкинг.",
       "value_for_b": "Дать практическую помощь по темам: IT-экспертиза.",
       "synergy_type": "hobby",
@@ -22014,7 +22058,7 @@
       "person_a": "askhab",
       "person_b": "maxim_stukalkin",
       "group_members": null,
-      "why_connect": "Общие интересы. Общие хобби: Настольные игры, Путешествия, Баня",
+      "why_connect": "Общие интересы. Общие хобби: Баня, Настольные игры, Путешествия",
       "value_for_a": "Дать практическую помощь по темам: проектирование и управленческий опыт.",
       "value_for_b": "Дать практическую помощь по темам: менторство и парфюмерный бизнес.",
       "synergy_type": "hobby",
@@ -22824,6 +22868,11 @@
         "connections": 43
       },
       {
+        "id": "ilya_makarov",
+        "name": "Илья Макаров",
+        "connections": 40
+      },
+      {
         "id": "vladimir_ievlev",
         "name": "Владимир Иевлев",
         "connections": 40
@@ -22832,11 +22881,6 @@
         "id": "aleksandr_artemyev",
         "name": "Александр Артемьев",
         "connections": 40
-      },
-      {
-        "id": "ilya_makarov",
-        "name": "Илья Макаров",
-        "connections": 39
       },
       {
         "id": "valeriya_elatnikova",
