@@ -176,8 +176,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 #welcomeScreen .welcome-logo { font-size: 42px; font-weight: 700; color: var(--accent); }
 #welcomeScreen .welcome-logo span { color: var(--text2); font-weight: 300; font-size: 24px; display: block; margin-top: 4px; }
 #welcomeScreen .welcome-subtitle { font-size: 16px; color: var(--text2); max-width: 400px; text-align: center; line-height: 1.6; }
-#welcomeScreen .welcome-input { width: 320px; padding: 14px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 12px; color: var(--text); font-size: 16px; font-family: var(--mono); text-align: center; outline: none; transition: border-color 0.3s; }
+#welcomeScreen .welcome-search-box { position: relative; width: min(640px, calc(100vw - 40px)); }
+#welcomeScreen .welcome-input { width: 100%; padding: 14px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 12px; color: var(--text); font-size: 16px; font-family: var(--mono); text-align: center; outline: none; transition: border-color 0.3s; }
 #welcomeScreen .welcome-input:focus { border-color: var(--accent); }
+#welcomeScreen .welcome-results { top: calc(100% + 8px); z-index: 1100; border-radius: 12px; overflow: hidden; }
+#welcomeScreen .welcome-results .search-result-item { font-size: 15px; padding: 14px 18px; text-align: left; }
 #welcomeScreen .welcome-btn { padding: 14px 48px; background: var(--accent); color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: transform 0.2s, box-shadow 0.2s; }
 #welcomeScreen .welcome-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
 #welcomeScreen .welcome-skip { color: var(--text2); font-size: 13px; cursor: pointer; border: none; background: none; margin-top: 8px; }
@@ -201,7 +204,10 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 <div id="welcomeScreen">
   <div class="welcome-logo">Социальные связи<span>чата ММ17</span></div>
   <div class="welcome-subtitle">Найди себя в социальных связях чата ММ17</div>
-  <input class="welcome-input" id="welcomeInput" type="text" placeholder="@username">
+  <div class="welcome-search-box">
+    <input class="welcome-input" id="welcomeInput" type="text" placeholder="@username">
+    <div class="search-results welcome-results" id="welcomeResults"></div>
+  </div>
   <button class="welcome-btn" id="welcomeEnter" disabled>Войти</button>
   <button class="welcome-skip" id="welcomeSkip" disabled>Пропустить</button>
   <div class="welcome-status" id="welcomeStatus">Загружаем данные…</div>
@@ -298,6 +304,7 @@ async function loadData() {
     initGraph();
     setupSearch();
     setupModes();
+    setupWelcomeInput();
     setWelcomeState({ ready: true, message: 'Введите @username или открой все связи' });
   } catch (error) {
     console.error('Failed to load graph data', error);
@@ -790,40 +797,101 @@ function focusNode(id) {
 // ============================================================
 // SEARCH
 // ============================================================
+function getNodeMatches(query, limit = 10) {
+  if (!DATA?.nodes?.length) return [];
+  const q = query.toLowerCase().trim();
+  if (q.length < 2) return [];
+
+  const qClean = q.replace('@', '');
+  return DATA.nodes.filter(n => {
+    const nameMatch = n.name.toLowerCase().includes(q);
+    const tgMatch = n.telegram && n.telegram.toLowerCase().replace('@', '').includes(qClean);
+    return nameMatch || tgMatch;
+  }).slice(0, limit);
+}
+
+function renderMatchList(container, matches, onSelect) {
+  if (!container) return;
+  if (!matches.length) {
+    container.classList.remove('active');
+    container.innerHTML = '';
+    return;
+  }
+
+  container.innerHTML = matches.map(m =>
+    `<div class="search-result-item" data-id="${m.id}">${m.name}${m.telegram ? `<span class="role-tag">${m.telegram}</span>` : `<span class="role-tag">${m.role}</span>`}</div>`
+  ).join('');
+  container.classList.add('active');
+
+  container.querySelectorAll('.search-result-item').forEach(el => {
+    el.addEventListener('click', () => onSelect(el.dataset.id));
+  });
+}
+
 function setupSearch() {
   const input = document.getElementById('searchInput');
   const results = document.getElementById('searchResults');
 
   input.addEventListener('input', () => {
-    const q = input.value.toLowerCase().trim();
-    if (q.length < 2) { results.classList.remove('active'); return; }
-
-    const qClean = q.replace('@', '');
-    const matches = DATA.nodes.filter(n => {
-      const nameMatch = n.name.toLowerCase().includes(q);
-      const tgMatch = n.telegram && n.telegram.toLowerCase().replace('@', '').includes(qClean);
-      return nameMatch || tgMatch;
-    }).slice(0, 10);
-
-    if (matches.length === 0) { results.classList.remove('active'); return; }
-
-    results.innerHTML = matches.map(m =>
-      `<div class="search-result-item" data-id="${m.id}">${m.name}${m.telegram ? `<span class="role-tag">${m.telegram}</span>` : `<span class="role-tag">${m.role}</span>`}</div>`
-    ).join('');
-    results.classList.add('active');
-
-    results.querySelectorAll('.search-result-item').forEach(el => {
-      el.addEventListener('click', () => {
-        focusNode(el.dataset.id);
-        results.classList.remove('active');
-        input.value = '';
-      });
+    const matches = getNodeMatches(input.value);
+    renderMatchList(results, matches, (id) => {
+      focusNode(id);
+      results.classList.remove('active');
+      input.value = '';
     });
   });
 
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.search-box')) results.classList.remove('active');
   });
+}
+
+function setupWelcomeInput() {
+  const input = document.getElementById('welcomeInput');
+  const results = document.getElementById('welcomeResults');
+
+  const renderWelcomeMatches = () => {
+    if (!isDataLoaded) {
+      results.classList.remove('active');
+      return;
+    }
+    const matches = getNodeMatches(input.value, 8);
+    renderMatchList(results, matches, (id) => {
+      const node = DATA.nodes.find(n => n.id === id);
+      if (!node) return;
+      input.value = node.telegram || node.name;
+      results.classList.remove('active');
+      enterApp(input.value);
+    });
+  };
+
+  input.addEventListener('input', renderWelcomeMatches);
+  input.addEventListener('focus', renderWelcomeMatches);
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.welcome-search-box')) results.classList.remove('active');
+  });
+}
+
+function resolveWelcomeNode(query) {
+  const value = query.trim();
+  if (!value) return { node: null, state: 'empty' };
+
+  const normalized = value.toLowerCase();
+  const cleanTelegram = value.replace('@', '').toLowerCase();
+
+  const exactTelegramMatch = DATA.nodes.find(n =>
+    n.telegram && n.telegram.replace('@', '').toLowerCase() === cleanTelegram
+  );
+  if (exactTelegramMatch) return { node: exactTelegramMatch, state: 'exact' };
+
+  const exactNameMatch = DATA.nodes.find(n => n.name.toLowerCase() === normalized);
+  if (exactNameMatch) return { node: exactNameMatch, state: 'exact' };
+
+  const matches = getNodeMatches(value, 8);
+  if (matches.length === 1) return { node: matches[0], state: 'single' };
+  if (matches.length > 1) return { node: null, state: 'multiple', matches };
+  return { node: null, state: 'missing' };
 }
 
 // ============================================================
@@ -1088,14 +1156,18 @@ function enterApp(tgHandle) {
 
   let node = null;
   if (tgHandle) {
-    const clean = tgHandle.replace('@', '').toLowerCase();
-    node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
+    const resolved = resolveWelcomeNode(tgHandle);
+    node = resolved.node;
     if (!node) {
-      setWelcomeState({ ready: true, message: 'Такой Telegram не найден. Проверь @username или нажми «Пропустить».' });
+      const message = resolved.state === 'multiple'
+        ? 'Нашлось несколько вариантов. Выбери себя в подсказках или введи точнее.'
+        : 'Человека не нашли. Проверь имя или @username, либо выбери вариант в подсказках.';
+      setWelcomeState({ ready: true, message });
       return;
     }
   }
 
+  document.getElementById('welcomeResults').classList.remove('active');
   document.getElementById('welcomeScreen').style.display = 'none';
   document.querySelector('.app').style.display = 'grid';
   loggedInNode = node;
