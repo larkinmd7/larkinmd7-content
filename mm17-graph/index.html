@@ -231,8 +231,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   <!-- Graph -->
   <div class="graph-area" id="graphArea">
     <div class="filters-bar" id="filtersBar">
-      <div class="filter-chip active" data-filter="all">Все связи</div>
-      <div class="filter-chip" data-filter="my">Мой граф</div>
+      <div class="filter-chip" data-filter="all">Все связи</div>
+      <div class="filter-chip active" data-filter="my">Мой граф</div>
       <div class="filter-chip" data-filter="industry">По сфере</div>
       <div class="filter-chip" data-filter="hobby">По хобби</div>
     </div>
@@ -268,7 +268,7 @@ let DATA = null;
 let simulation = null;
 let svg, g, linkG, nodeG;
 let currentMode = 'graph';
-let currentFilter = 'all';
+let currentFilter = 'my';
 let selectedNode = null;
 let loggedInNode = null;
 let width, height;
@@ -618,8 +618,8 @@ function showPersonCard(d) {
     <div class="profile-tabs">
       ${hasBiz ? '<div class="profile-tab active" data-tab="overview">Обзор</div>' : ''}
       <div class="profile-tab ${!hasBiz ? 'active' : ''}" data-tab="details">Подробнее</div>
+      ${intros.length ? '<div class="profile-tab" data-tab="intros">Интро <span style="font-size:10px;opacity:0.6">' + intros.length + '</span></div>' : ''}
       ${hasConn ? `<div class="profile-tab" data-tab="connections">Связи <span style="font-size:10px;opacity:0.6">${connections.length}</span></div>` : ''}
-      ${intros.length ? '<div class="profile-tab" data-tab="intros">Интро</div>' : ''}
     </div>`;
 
   // === TAB: Overview ===
@@ -650,35 +650,6 @@ function showPersonCard(d) {
     html += `<div class="tab-content ${!hasBiz ? 'active' : ''}" data-tab="details">
       <div style="font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap">${rawBio}</div>
     </div>`;
-  }
-
-  // === TAB: Connections (rich) ===
-  if (hasConn) {
-    html += `<div class="tab-content" data-tab="connections">`;
-    connections.slice(0, 25).forEach(c => {
-      const p = c.person;
-      const pBg = getNodeColor(p).replace('#', '');
-      const pAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(p.name)}&background=${pBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
-      const relTypeLabels = { industry: 'Индустрия', hobby: 'Хобби', synergy: 'Синергия', geography: 'География', team: 'Команда', general: 'Общее' };
-      const relLabel = relTypeLabels[c.link.relation_type] || '';
-
-      html += `<div class="conn-card" onclick="focusNode('${p.id}')">
-        <div class="conn-card-header">
-          <img class="conn-card-avatar" src="${pAvatar}" alt="${p.name}">
-          <div style="flex:1">
-            <div class="conn-card-name">${p.name}</div>
-            <div class="conn-card-role">${p.bio ? p.bio.substring(0, 60) + (p.bio.length > 60 ? '...' : '') : ''}</div>
-          </div>
-        </div>
-        <div class="conn-card-why">💡 ${c.link.explanation}</div>
-        <div class="conn-card-tags">
-          <span class="conn-card-tag">${relLabel}</span>
-          <span class="conn-card-tag">Сила: ${c.link.strength.toFixed(1)}/10</span>
-          ${c.link.is_inferred ? '<span class="conn-card-tag" style="background:rgba(255,74,106,0.1);color:var(--red)">Гипотеза</span>' : ''}
-        </div>
-      </div>`;
-    });
-    html += `</div>`;
   }
 
   // === TAB: Intros ===
@@ -725,6 +696,35 @@ function showPersonCard(d) {
         </div>`;
       });
     }
+    html += `</div>`;
+  }
+
+  // === TAB: Connections (rich) ===
+  if (hasConn) {
+    html += `<div class="tab-content" data-tab="connections">`;
+    connections.slice(0, 25).forEach(c => {
+      const p = c.person;
+      const pBg = getNodeColor(p).replace('#', '');
+      const pAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(p.name)}&background=${pBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
+      const relTypeLabels = { industry: 'Индустрия', hobby: 'Хобби', synergy: 'Синергия', geography: 'География', team: 'Команда', general: 'Общее' };
+      const relLabel = relTypeLabels[c.link.relation_type] || '';
+
+      html += `<div class="conn-card" onclick="focusNode('${p.id}')">
+        <div class="conn-card-header">
+          <img class="conn-card-avatar" src="${pAvatar}" alt="${p.name}">
+          <div style="flex:1">
+            <div class="conn-card-name">${p.name}</div>
+            <div class="conn-card-role">${p.bio ? p.bio.substring(0, 60) + (p.bio.length > 60 ? '...' : '') : ''}</div>
+          </div>
+        </div>
+        <div class="conn-card-why">💡 ${c.link.explanation}</div>
+        <div class="conn-card-tags">
+          <span class="conn-card-tag">${relLabel}</span>
+          <span class="conn-card-tag">Сила: ${c.link.strength.toFixed(1)}/10</span>
+          ${c.link.is_inferred ? '<span class="conn-card-tag" style="background:rgba(255,74,106,0.1);color:var(--red)">Гипотеза</span>' : ''}
+        </div>
+      </div>`;
+    });
     html += `</div>`;
   }
 
@@ -1071,6 +1071,7 @@ function enterApp(tgHandle) {
       node.fx = null;
       node.fy = null;
       selectNode(node);
+      applyFilter();
       setTimeout(() => centerOnNode(node), 500);
     }, 2000);
   }, 100);
