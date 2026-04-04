@@ -1852,9 +1852,7 @@ function showPersonCard(d) {
 
   html += `<div class="tab-content active" data-tab="overview">`;
   html += `<div class="card-section"><div class="card-section-title">Контекст участия</div><div class="tag-list">${contextTags.join('')}</div></div>`;
-  if (d.coverage_note) {
-    html += `<div class="card-section"><div class="card-note"><strong>Покрытие данных</strong>${escapeHtml(d.coverage_note)}</div></div>`;
-  }
+  // coverage_note hidden — technical info not shown to users
   if (d.industries.length) {
     html += `<div class="card-section"><div class="card-section-title">Сфера деятельности</div>
       <div class="tag-list">${d.industries.map(t => renderInteractiveTag(t, 'industry', 'industry')).join('')}</div></div>`;
