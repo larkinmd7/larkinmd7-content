@@ -133,6 +133,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 .card-bio { font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 16px; }
 .card-section { margin-bottom: 16px; }
 .card-section-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.card-note { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); font-size: 12px; line-height: 1.55; color: var(--text2); }
+.card-note strong { display: block; margin-bottom: 4px; color: var(--text); }
 .tag-list { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag { padding: 3px 10px; border-radius: 12px; font-size: 12px; background: var(--surface2); border: 1px solid var(--border); color: var(--text); appearance: none; font-family: inherit; line-height: 1.3; }
 .tag.industry { border-color: var(--accent); color: var(--accent2); }
@@ -420,6 +422,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 #welcomeScreen .welcome-search-box {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #welcomeScreen .welcome-input {
   width: 100%;
@@ -441,9 +445,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   transform: translate(-2px, -2px);
 }
 #welcomeScreen .welcome-results {
+  position: static;
   top: calc(100% + 12px);
   z-index: 1100;
   display: none;
+  margin-top: 12px;
   border: 2px solid #111;
   border-radius: 0;
   overflow: hidden;
@@ -1351,6 +1357,12 @@ function getName(d) {
   return typeof d === 'string' ? d : d.name;
 }
 
+function getRoleLabel(role) {
+  if (role === 'organizer') return 'Организатор';
+  if (role === 'mentor') return 'Ментор';
+  return 'Участник';
+}
+
 function truncateText(text, maxLength = 110) {
   const normalized = String(text || '').replace(/\s+/g, ' ').trim();
   if (!normalized) return '';
@@ -1376,8 +1388,124 @@ function renderInteractiveTag(tagName, cssClass, clusterType) {
   return `<button type="button" class="tag ${cssClass} is-clickable" data-cluster-type="${clusterType}" data-cluster-name="${encodedName}">${tagName}</button>`;
 }
 
+function escapeHtml(text) {
+  return String(text || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderStaticTag(tagName, cssClass = '') {
+  const className = ['tag', cssClass].filter(Boolean).join(' ');
+  return `<span class="${className}">${escapeHtml(tagName)}</span>`;
+}
+
 function renderStageChip(label) {
   return `<button type="button" class="card-stage is-clickable" data-cluster-type="stage" data-cluster-name="${encodeURIComponent(label)}">${label}</button>`;
+}
+
+function pluralizeRu(count, one, few, many) {
+  const value = Math.abs(Number(count)) % 100;
+  const rest = value % 10;
+  if (value > 10 && value < 20) return many;
+  if (rest > 1 && rest < 5) return few;
+  if (rest === 1) return one;
+  return many;
+}
+
+function normalizeLookupText(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/ё/g, 'е')
+    .replace(/[^a-zа-я0-9]+/g, ' ')
+    .trim();
+}
+
+function findNodeByNameHint(rawName) {
+  const hint = normalizeLookupText(rawName);
+  if (!hint || !DATA?.nodes?.length) return null;
+  const exact = DATA.nodes.filter(node => normalizeLookupText(node.name) === hint);
+  if (exact.length === 1) return exact[0];
+  const firstToken = hint.split(' ')[0];
+  const firstMatches = DATA.nodes.filter(node => normalizeLookupText(node.name).split(' ')[0] === firstToken);
+  if (firstMatches.length === 1) return firstMatches[0];
+  return firstMatches.sort((a, b) => (b.confidence || 0) - (a.confidence || 0))[0] || null;
+}
+
+function getMiniGroupLabel(person) {
+  if (!person?.mini_group_id) return '';
+  const number = String(person.mini_group_id).split('_').pop();
+  return `Мини-группа ${number}`;
+}
+
+function getFallbackContactEntries(person) {
+  if (!DATA?.nodes?.length || !person) return [];
+  const entries = [];
+  const seen = new Set();
+  const addEntry = (target, reason, tags = []) => {
+    if (!target || target.id === person.id || seen.has(target.id)) return;
+    seen.add(target.id);
+    entries.push({ person: target, reason, tags });
+  };
+
+  const mentorNames = String(person.mini_group_mentor || '')
+    .split(/[;,]/)
+    .map(item => item.trim())
+    .filter(Boolean);
+  mentorNames.forEach(name => {
+    const mentor = findNodeByNameHint(name);
+    if (!mentor) return;
+    addEntry(mentor, `${mentor.name} может дать быстрый входной контекст по потоку и по вашему мини-групповому контуру.`, ['Ментор']);
+  });
+
+  if (person.mini_group_id) {
+    DATA.nodes
+      .filter(node => node.id !== person.id && node.mini_group_id === person.mini_group_id)
+      .sort((a, b) => (b.confidence || 0) - (a.confidence || 0))
+      .slice(0, 3)
+      .forEach(node => addEntry(node, 'Вы в одной мини-группе ММ17. Это ближайший peer-контур для старта общения.', [getMiniGroupLabel(person)]));
+  }
+
+  if (!entries.length && Array.isArray(person.geo) && person.geo.length) {
+    DATA.nodes
+      .filter(node => node.id !== person.id && Array.isArray(node.geo) && node.geo.some(tag => person.geo.includes(tag)))
+      .sort((a, b) => (b.confidence || 0) - (a.confidence || 0))
+      .slice(0, 3)
+      .forEach(node => {
+        const shared = node.geo.filter(tag => person.geo.includes(tag)).slice(0, 2).join(', ');
+        addEntry(node, `Опорный контакт по географии: у вас пересечение по региону ${shared}.`, ['География']);
+      });
+  }
+
+  if (!entries.length && Array.isArray(person.industries) && person.industries.length) {
+    DATA.nodes
+      .filter(node => node.id !== person.id && Array.isArray(node.industries) && node.industries.some(tag => person.industries.includes(tag)))
+      .sort((a, b) => (b.confidence || 0) - (a.confidence || 0))
+      .slice(0, 3)
+      .forEach(node => {
+        const shared = node.industries.filter(tag => person.industries.includes(tag)).slice(0, 2).join(', ');
+        addEntry(node, `Опорный контакт по сфере: у вас общая тема ${shared}.`, ['Сфера']);
+      });
+  }
+
+  return entries.slice(0, 4);
+}
+
+function renderInfoCard(person, reason, tags = []) {
+  const avatar = getPersonAvatarUrl(person, 64);
+  return `<div class="conn-card" onclick="focusNode('${person.id}')">
+    <div class="conn-card-header">
+      <img class="conn-card-avatar" src="${avatar}" alt="${escapeHtml(person.name)}">
+      <div style="flex:1">
+        <div class="conn-card-name">${escapeHtml(person.name)}</div>
+        <div class="conn-card-role">${escapeHtml(getPersonSnippet(person, 96))}</div>
+      </div>
+    </div>
+    <div class="conn-card-why">${escapeHtml(reason)}</div>
+    ${tags.length ? `<div class="conn-card-tags">${tags.map(tag => `<span class="conn-card-tag">${escapeHtml(tag)}</span>`).join('')}</div>` : ''}
+  </div>`;
 }
 
 function getClusterDescription(type, name) {
@@ -1650,7 +1778,6 @@ function showPersonCard(d) {
   document.getElementById('sidebarTitle').textContent = 'Профиль';
   const content = document.getElementById('sidebarContent');
 
-  // Find connections with explanations
   const connections = [];
   DATA.links.forEach(l => {
     const sid = typeof l.source === 'string' ? l.source : l.source.id;
@@ -1663,7 +1790,6 @@ function showPersonCard(d) {
   });
   connections.sort((a, b) => b.link.strength - a.link.strength);
 
-  // Find recommended intros
   const intros = DATA.introductions.filter(i =>
     i.person_a === d.id || i.person_b === d.id ||
     (i.group_members && i.group_members.includes(d.id))
@@ -1671,24 +1797,41 @@ function showPersonCard(d) {
     const otherId = i.person_a === d.id ? i.person_b : i.person_a;
     return DATA.nodes.some(n => n.id === otherId);
   });
+  const fallbackContacts = getFallbackContactEntries(d);
+  const introPreviewCount = intros.length || Math.min(connections.length, 3) || fallbackContacts.length;
+  const connectionPreviewCount = connections.length || fallbackContacts.length;
 
   const avatarColor = getNodeColor(d);
   const avatarUrl = getPersonAvatarUrl(d, 120);
   const tgLink = d.telegram ? `https://t.me/${d.telegram.replace('@','')}` : '';
   const tgHtml = d.telegram ? `<a href="${tgLink}" target="_blank">${d.telegram}</a> <span style="font-size:11px;color:var(--text2)">→ открыть</span>` : '';
 
-  const roleLabel = d.role === 'organizer' ? 'Организатор' : d.role === 'mentor' ? 'Ментор' : 'Участник';
+  const roleLabel = getRoleLabel(d.role);
+  const hasStructuredOverview = d.industries.length || d.strengths.length || d.needs.length || d.offers.length || d.hobbies.length || d.geo.length || d.stage;
+  const contextTags = [];
+  if (d.mini_group_id) contextTags.push(renderStaticTag(getMiniGroupLabel(d)));
+  if (d.message_count > 0) contextTags.push(renderStaticTag(`${d.message_count} ${pluralizeRu(d.message_count, 'сообщение', 'сообщения', 'сообщений')} в чате`));
+  if (d.mention_count > 0) contextTags.push(renderStaticTag(`${d.mention_count} ${pluralizeRu(d.mention_count, 'упоминание', 'упоминания', 'упоминаний')}`));
+  if (!contextTags.length) contextTags.push(renderStaticTag('Низкий цифровой след'));
 
-  // Count tabs to show
-  const hasBiz = d.industries.length || d.strengths.length || d.needs.length || d.offers.length || d.hobbies.length || d.geo.length || d.stage;
-  const hasConn = connections.length || intros.length;
+  const relTypeLabels = {
+    industry: 'Индустрия',
+    hobby: 'Хобби',
+    synergy: 'Синергия',
+    geography: 'География',
+    team: 'Команда',
+    general: 'Общее',
+  };
+  const rawBio = (d.full_bio || d.bio || d.coverage_note || '')
+    .replace(/^#+ /gm, '')
+    .replace(/\*\*/g, '')
+    .replace(/^- /gm, '• ');
 
   let html = `<div class="card">
-    <!-- Header -->
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px">
-      <img src="${avatarUrl}" style="width:60px;height:60px;border-radius:50%;border:3px solid ${avatarColor};flex-shrink:0" alt="${d.name}">
+      <img src="${avatarUrl}" style="width:60px;height:60px;border-radius:50%;border:3px solid ${avatarColor};flex-shrink:0" alt="${escapeHtml(d.name)}">
       <div>
-        <div class="card-name" style="font-size:20px">${d.name}</div>
+        <div class="card-name" style="font-size:20px">${escapeHtml(d.name)}</div>
         <div class="card-tg">${tgHtml}</div>
         ${d.telegram ? `<a href="https://t.me/${d.telegram.replace('@','')}" target="_blank" style="display:inline-block;margin-top:8px;padding:8px 20px;background:var(--accent);color:#fff;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none">Написать</a>` : ''}
       </div>
@@ -1697,62 +1840,61 @@ function showPersonCard(d) {
       <span class="card-role ${d.role}">${roleLabel}</span>
       ${d.age ? `<span class="card-stage">${d.age} лет</span>` : ''}
       ${d.stage ? renderStageChip(d.stage) : ''}
-      ${d.geo.length ? d.geo.map(tag => `<button type="button" class="card-stage is-clickable" data-cluster-type="geography" data-cluster-name="${encodeURIComponent(tag)}">📍 ${tag}</button>`).join('') : ''}
+      ${d.geo.length ? d.geo.map(tag => `<button type="button" class="card-stage is-clickable" data-cluster-type="geography" data-cluster-name="${encodeURIComponent(tag)}">📍 ${escapeHtml(tag)}</button>`).join('') : ''}
     </div>
-
-    <!-- Bio -->
-    <div class="card-bio" style="margin-bottom:16px">${d.bio}</div>
-
-    <!-- Tabs -->
+    <div class="card-bio" style="margin-bottom:16px">${escapeHtml(d.bio || d.coverage_note || 'Профиль восстанавливается из доступных данных.')}</div>
     <div class="profile-tabs">
-      ${hasBiz ? '<div class="profile-tab active" data-tab="overview">Обзор</div>' : ''}
-      <div class="profile-tab ${!hasBiz ? 'active' : ''}" data-tab="details">Подробнее</div>
-      ${intros.length ? '<div class="profile-tab" data-tab="intros">Интро <span style="font-size:10px;opacity:0.6">' + intros.length + '</span></div>' : ''}
-      ${hasConn ? `<div class="profile-tab" data-tab="connections">Связи <span style="font-size:10px;opacity:0.6">${connections.length}</span></div>` : ''}
+      <div class="profile-tab active" data-tab="overview">Обзор</div>
+      <div class="profile-tab" data-tab="details">Подробнее</div>
+      <div class="profile-tab" data-tab="intros">Интро <span style="font-size:10px;opacity:0.6">${introPreviewCount}</span></div>
+      <div class="profile-tab" data-tab="connections">Связи <span style="font-size:10px;opacity:0.6">${connectionPreviewCount}</span></div>
     </div>`;
 
-  // === TAB: Overview ===
-  if (hasBiz) {
-    html += `<div class="tab-content active" data-tab="overview">`;
-    if (d.industries.length) {
-      html += `<div class="card-section"><div class="card-section-title">Сфера деятельности</div>
-        <div class="tag-list">${d.industries.map(t => renderInteractiveTag(t, 'industry', 'industry')).join('')}</div></div>`;
-    }
-    if (d.hobbies.length) {
-      html += `<div class="card-section"><div class="card-section-title">Хобби и интересы</div>
-        <div class="tag-list">${d.hobbies.map(t => renderInteractiveTag(t, 'hobby', 'hobby')).join('')}</div></div>`;
-    }
-    if (d.geo.length) {
-      html += `<div class="card-section"><div class="card-section-title">География</div>
-        <div class="tag-list">${d.geo.map(t => renderInteractiveTag(t, 'geo', 'geography')).join('')}</div></div>`;
-    }
-    if (d.strengths.length) {
-      html += `<div class="card-section"><div class="card-section-title">Компетенции и сильные стороны</div>
-        <div class="tag-list">${d.strengths.map(t => `<span class="tag strength">${t}</span>`).join('')}</div></div>`;
-    }
-    if (d.offers.length) {
-      html += `<div class="card-section"><div class="card-section-title">Чем может быть полезен</div>
-        <div class="tag-list">${d.offers.map(t => `<span class="tag offer">${t}</span>`).join('')}</div></div>`;
-    }
-    if (d.needs.length) {
-      html += `<div class="card-section"><div class="card-section-title">Что ищет / запросы</div>
-        <div class="tag-list">${d.needs.map(t => `<span class="tag need">${t}</span>`).join('')}</div></div>`;
-    }
-    html += `</div>`;
+  html += `<div class="tab-content active" data-tab="overview">`;
+  html += `<div class="card-section"><div class="card-section-title">Контекст участия</div><div class="tag-list">${contextTags.join('')}</div></div>`;
+  if (d.coverage_note) {
+    html += `<div class="card-section"><div class="card-note"><strong>Покрытие данных</strong>${escapeHtml(d.coverage_note)}</div></div>`;
   }
-
-  // === TAB: Details (Подробнее) ===
-  {
-    const rawBio = (d.full_bio || d.bio).replace(/^#+ /gm, '').replace(/\*\*/g, '').replace(/^- /gm, '• ');
-    html += `<div class="tab-content ${!hasBiz ? 'active' : ''}" data-tab="details">
-      <div style="font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap">${rawBio}</div>
-    </div>`;
+  if (d.industries.length) {
+    html += `<div class="card-section"><div class="card-section-title">Сфера деятельности</div>
+      <div class="tag-list">${d.industries.map(t => renderInteractiveTag(t, 'industry', 'industry')).join('')}</div></div>`;
   }
+  if (d.hobbies.length) {
+    html += `<div class="card-section"><div class="card-section-title">Хобби и интересы</div>
+      <div class="tag-list">${d.hobbies.map(t => renderInteractiveTag(t, 'hobby', 'hobby')).join('')}</div></div>`;
+  }
+  if (d.geo.length) {
+    html += `<div class="card-section"><div class="card-section-title">География</div>
+      <div class="tag-list">${d.geo.map(t => renderInteractiveTag(t, 'geo', 'geography')).join('')}</div></div>`;
+  }
+  if (d.strengths.length) {
+    html += `<div class="card-section"><div class="card-section-title">Компетенции и сильные стороны</div>
+      <div class="tag-list">${d.strengths.map(t => renderStaticTag(t, 'strength')).join('')}</div></div>`;
+  }
+  if (d.offers.length) {
+    html += `<div class="card-section"><div class="card-section-title">Чем может быть полезен</div>
+      <div class="tag-list">${d.offers.map(t => renderStaticTag(t, 'offer')).join('')}</div></div>`;
+  }
+  if (d.needs.length) {
+    html += `<div class="card-section"><div class="card-section-title">Что ищет / запросы</div>
+      <div class="tag-list">${d.needs.map(t => renderStaticTag(t, 'need')).join('')}</div></div>`;
+  }
+  if (Array.isArray(d.profile_topics) && d.profile_topics.length) {
+    html += `<div class="card-section"><div class="card-section-title">Ключевые темы и сигналы</div>
+      <div class="tag-list">${d.profile_topics.map(t => renderStaticTag(t)).join('')}</div></div>`;
+  }
+  if (!hasStructuredOverview) {
+    html += `<div class="card-section"><div class="card-note"><strong>Структурированный профиль еще собирается</strong>По этому участнику пока мало жестких тегов из профиля и чата, поэтому обзор опирается на контекст потока, мини-группу и цифровой след.</div></div>`;
+  }
+  html += `</div>`;
 
-  // === TAB: Intros ===
+  html += `<div class="tab-content" data-tab="details">
+    <div style="font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap">${escapeHtml(rawBio)}</div>
+  </div>`;
+
+  html += `<div class="tab-content" data-tab="intros">`;
   if (intros.length) {
-    html += `<div class="tab-content" data-tab="intros">
-      <div style="font-size:12px;color:var(--text2);margin-bottom:12px">Люди, с которыми особенно стоит познакомиться</div>`;
+    html += `<div style="font-size:12px;color:var(--text2);margin-bottom:12px">Люди, с которыми особенно стоит познакомиться по текущим данным графа.</div>`;
     intros.forEach(i => {
       const otherId = i.person_a === d.id ? i.person_b : i.person_a;
       const other = DATA.nodes.find(n => n.id === otherId);
@@ -1763,23 +1905,22 @@ function showPersonCard(d) {
 
       html += `<div class="conn-card" onclick="focusNode('${other.id}')">
         <div class="conn-card-header">
-          <img class="conn-card-avatar" src="${oAvatar}" alt="${other.name}">
+          <img class="conn-card-avatar" src="${oAvatar}" alt="${escapeHtml(other.name)}">
           <div style="flex:1">
-            <div class="conn-card-name">${other.name} <span class="intro-priority">⭐ ${i.priority}/10</span></div>
-            <div class="conn-card-role">${getPersonSnippet(other, 92)}</div>
+            <div class="conn-card-name">${escapeHtml(other.name)} <span class="intro-priority">⭐ ${i.priority}/10</span></div>
+            <div class="conn-card-role">${escapeHtml(getPersonSnippet(other, 92))}</div>
           </div>
         </div>
         <div class="conn-card-why" style="padding-left:42px">
           <div style="margin-bottom:4px"><strong>Почему стоит познакомиться:</strong></div>
-          <div>${i.why_connect}</div>
-          ${valueForMe ? `<div style="margin-top:6px;color:var(--green)">✅ Чем ${other.name.split(' ')[0]} может быть полезен тебе: ${valueForMe}</div>` : ''}
-          ${valueForThem ? `<div style="margin-top:2px;color:var(--blue)">🤝 Чем ты можешь быть полезен со своей стороны: ${valueForThem}</div>` : ''}
+          <div>${escapeHtml(i.why_connect)}</div>
+          ${valueForMe ? `<div style="margin-top:6px;color:var(--green)">✅ Чем ${escapeHtml(other.name.split(' ')[0])} может быть полезен тебе: ${escapeHtml(valueForMe)}</div>` : ''}
+          ${valueForThem ? `<div style="margin-top:2px;color:var(--blue)">🤝 Чем ты можешь быть полезен со своей стороны: ${escapeHtml(valueForThem)}</div>` : ''}
           ${other.telegram ? `<a href="https://t.me/${other.telegram.replace('@','')}" target="_blank" style="display:inline-block;margin-top:8px;padding:6px 16px;background:var(--accent);color:#fff;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;transition:transform 0.2s">Написать в Telegram</a>` : ''}
         </div>
       </div>`;
     });
 
-    // Group intros
     const groupIntros = intros.filter(i => i.group_members && i.group_members.length > 0);
     if (groupIntros.length) {
       html += `<div style="margin-top:12px;font-size:12px;color:var(--text2)">Групповые знакомства:</div>`;
@@ -1787,41 +1928,63 @@ function showPersonCard(d) {
         const allIds = [i.person_a, i.person_b, ...(i.group_members || [])].filter(id => id !== d.id);
         const names = allIds.map(id => DATA.nodes.find(n => n.id === id)?.name || id);
         html += `<div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:13px">
-          <div style="font-weight:600">${names.join(' + ')}</div>
-          <div style="color:var(--text2);margin-top:3px">${i.why_connect}</div>
+          <div style="font-weight:600">${escapeHtml(names.join(' + '))}</div>
+          <div style="color:var(--text2);margin-top:3px">${escapeHtml(i.why_connect)}</div>
         </div>`;
       });
     }
-    html += `</div>`;
+  } else if (connections.length) {
+    html += `<div class="card-note" style="margin-bottom:12px"><strong>Пока нет отдельно ранжированных интро</strong>Но ниже уже видны самые близкие связи, от которых логично начинать знакомства.</div>`;
+    connections.slice(0, 3).forEach(c => {
+      const relLabel = relTypeLabels[c.link.relation_type] || 'Связь';
+      html += renderInfoCard(
+        c.person,
+        c.link.explanation || 'Это одна из ближайших связей по текущему графу.',
+        ['Гипотеза для знакомства', relLabel]
+      );
+    });
+  } else if (fallbackContacts.length) {
+    html += `<div class="card-note" style="margin-bottom:12px"><strong>Интро восстановлены через контур потока</strong>По этому человеку мало прямых графовых связей, поэтому ниже показаны самые уместные точки входа.</div>`;
+    fallbackContacts.forEach(entry => {
+      html += renderInfoCard(entry.person, entry.reason, ['Точка входа', ...(entry.tags || [])]);
+    });
+  } else {
+    html += `<div class="card-note"><strong>Интро пока не выведены</strong>${escapeHtml(d.coverage_note || 'По участнику пока недостаточно достоверных сигналов, чтобы предложить безопасные знакомства.')}</div>`;
   }
+  html += `</div>`;
 
-  // === TAB: Connections (rich) ===
-  if (hasConn) {
-    html += `<div class="tab-content" data-tab="connections">`;
+  html += `<div class="tab-content" data-tab="connections">`;
+  if (connections.length) {
     connections.slice(0, 25).forEach(c => {
       const p = c.person;
       const pAvatar = getPersonAvatarUrl(p, 64);
-      const relTypeLabels = { industry: 'Индустрия', hobby: 'Хобби', synergy: 'Синергия', geography: 'География', team: 'Команда', general: 'Общее' };
       const relLabel = relTypeLabels[c.link.relation_type] || '';
 
       html += `<div class="conn-card" onclick="focusNode('${p.id}')">
         <div class="conn-card-header">
-          <img class="conn-card-avatar" src="${pAvatar}" alt="${p.name}">
+          <img class="conn-card-avatar" src="${pAvatar}" alt="${escapeHtml(p.name)}">
           <div style="flex:1">
-            <div class="conn-card-name">${p.name}</div>
-            <div class="conn-card-role">${getPersonSnippet(p, 96)}</div>
+            <div class="conn-card-name">${escapeHtml(p.name)}</div>
+            <div class="conn-card-role">${escapeHtml(getPersonSnippet(p, 96))}</div>
           </div>
         </div>
-        <div class="conn-card-why">💡 ${c.link.explanation}</div>
+        <div class="conn-card-why">💡 ${escapeHtml(c.link.explanation)}</div>
         <div class="conn-card-tags">
-          <span class="conn-card-tag">${relLabel}</span>
+          <span class="conn-card-tag">${escapeHtml(relLabel)}</span>
           <span class="conn-card-tag">Сила: ${c.link.strength.toFixed(1)}/10</span>
           ${c.link.is_inferred ? '<span class="conn-card-tag" style="background:rgba(255,74,106,0.1);color:var(--red)">Гипотеза</span>' : ''}
         </div>
       </div>`;
     });
-    html += `</div>`;
+  } else if (fallbackContacts.length) {
+    html += `<div class="card-note" style="margin-bottom:12px"><strong>Надежные графовые связи пока не подтверждены</strong>Но есть ближайший контур, с которого можно начать навигацию по потоку.</div>`;
+    fallbackContacts.forEach(entry => {
+      html += renderInfoCard(entry.person, entry.reason, entry.tags || []);
+    });
+  } else {
+    html += `<div class="card-note"><strong>Связи еще не восстановлены</strong>${escapeHtml(d.coverage_note || 'По участнику пока есть только базовый контекст состава потока.')}</div>`;
   }
+  html += `</div>`;
 
   html += `</div>`;
   content.innerHTML = html;
@@ -1898,7 +2061,7 @@ function renderMatchList(container, matches, onSelect) {
   }
 
   container.innerHTML = matches.map(m =>
-    `<div class="search-result-item" data-id="${m.id}">${m.name}${m.telegram ? `<span class="role-tag">${m.telegram}</span>` : `<span class="role-tag">${m.role}</span>`}</div>`
+    `<div class="search-result-item" data-id="${m.id}">${m.name}${m.telegram ? `<span class="role-tag">${m.telegram}</span>` : `<span class="role-tag">${getRoleLabel(m.role)}</span>`}</div>`
   ).join('');
   container.classList.add('active');
 
