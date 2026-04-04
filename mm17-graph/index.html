@@ -147,12 +147,97 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 .intro-priority { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; font-family: var(--mono); background: rgba(255,107,0,0.15); color: var(--accent); margin-top: 6px; }
 
 /* Cluster list */
+.cluster-browser { padding: 16px; }
+.cluster-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.cluster-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.cluster-tab:hover {
+  border-color: var(--text2);
+  color: var(--text);
+}
+.cluster-tab.active {
+  background: rgba(255,107,0,0.12);
+  border-color: rgba(255,107,0,0.4);
+  color: var(--accent);
+}
+.cluster-tab-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  opacity: 0.85;
+}
+.cluster-browser-copy {
+  margin-bottom: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text2);
+}
+.cluster-list {
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.08);
+}
 .cluster-card { padding: 16px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
 .cluster-card:hover { background: var(--surface2); }
 .cluster-card.active { background: rgba(255,107,0,0.08); }
+.cluster-list .cluster-card:last-child { border-bottom: none; }
 .cluster-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 .cluster-type { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
 .cluster-count { font-size: 12px; color: var(--accent); font-family: var(--mono); }
+.cluster-hint { font-size: 12px; color: var(--text2); }
+.cluster-empty { padding: 20px; border: 1px dashed var(--border); border-radius: 14px; color: var(--text2); font-size: 13px; line-height: 1.6; }
+.cluster-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.cluster-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.cluster-back:hover {
+  border-color: var(--text2);
+  color: var(--text);
+}
+.cluster-detail-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255,107,0,0.1);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 
 /* Rankings */
 .ranking-section { padding: 16px 20px; border-bottom: 1px solid var(--border); }
@@ -578,6 +663,7 @@ let selectedNode = null;
 let loggedInNode = null;
 let hoveredNode = null;
 let activeClusterId = null;
+let activeClusterType = 'hobby';
 let width, height;
 let isDataLoaded = false;
 
@@ -593,6 +679,25 @@ const LINK_TYPE_COLORS = {
   geography: '#fbbf24',
   team: '#a855f7',
   general: '#555570',
+};
+const CLUSTER_TYPE_ORDER = ['hobby', 'industry', 'geography', 'stage'];
+const CLUSTER_TYPE_META = {
+  hobby: {
+    label: 'Хобби',
+    browserCopy: 'Выбери общее хобби, чтобы подсветить на графе людей с похожими интересами.',
+  },
+  industry: {
+    label: 'Индустрии',
+    browserCopy: 'Выбери индустрию, чтобы увидеть людей из одной сферы и их связи между собой.',
+  },
+  geography: {
+    label: 'География',
+    browserCopy: 'Выбери город или регион, чтобы собрать на графе локальные связи участников.',
+  },
+  stage: {
+    label: 'Этапы',
+    browserCopy: 'Выбери этап развития, чтобы быстро посмотреть людей в похожем состоянии бизнеса.',
+  },
 };
 
 function isCurrentUserNode(d) {
@@ -1394,6 +1499,7 @@ function activateMode(mode) {
     return;
   }
 
+  const previousMode = currentMode;
   const resolvedMode = mode === 'my' && !loggedInNode ? 'all' : mode;
   currentMode = resolvedMode;
 
@@ -1411,10 +1517,14 @@ function activateMode(mode) {
   }
 
   currentFilter = 'all';
-  restoreGraphState();
+  if (resolvedMode === 'categories') {
+    if (previousMode !== 'categories') activeClusterId = null;
+    showClustersList(activeClusterType, { resetSelection: true });
+    return;
+  }
 
-  if (resolvedMode === 'categories') showClustersList();
-  else if (resolvedMode === 'rankings') showRankings();
+  restoreGraphState();
+  if (resolvedMode === 'rankings') showRankings();
 }
 
 function showIntrosList() {
@@ -1443,32 +1553,80 @@ function focusIntro(a, b) {
   if (na) selectNode(na);
 }
 
-function showClustersList() {
-  document.getElementById('sidebarTitle').textContent = `Категории (${DATA.clusters.length})`;
+function getAvailableClusterTypes() {
+  if (!DATA?.clusters?.length) return [];
+  const types = new Set(DATA.clusters.map(c => c.type));
+  return CLUSTER_TYPE_ORDER.filter(type => types.has(type));
+}
+
+function resolveClusterType(type) {
+  const available = getAvailableClusterTypes();
+  if (!available.length) return null;
+  if (type && available.includes(type)) return type;
+  if (activeClusterId) {
+    const active = DATA.clusters.find(c => c.id === activeClusterId);
+    if (active && available.includes(active.type)) return active.type;
+  }
+  if (available.includes(activeClusterType)) return activeClusterType;
+  return available[0];
+}
+
+function renderClusterTabs(activeType) {
+  const available = getAvailableClusterTypes();
+  return `<div class="cluster-tabs">${available.map(type => {
+    const meta = CLUSTER_TYPE_META[type] || { label: type };
+    const count = DATA.clusters.filter(c => c.type === type).length;
+    return `<button class="cluster-tab ${type === activeType ? 'active' : ''}" onclick="showClustersList('${type}')">
+      <span>${meta.label}</span>
+      <span class="cluster-tab-count">${count}</span>
+    </button>`;
+  }).join('')}</div>`;
+}
+
+function showClustersList(type = activeClusterType, { resetSelection = true } = {}) {
+  const resolvedType = resolveClusterType(type);
+  activeClusterType = resolvedType || activeClusterType;
+  if (resetSelection) activeClusterId = null;
+  if (currentMode === 'categories') restoreGraphState();
+
+  document.getElementById('sidebarTitle').textContent = 'Категории';
   const content = document.getElementById('sidebarContent');
-  content.innerHTML = DATA.clusters.map(c => {
-    const typeLabels = { industry: 'Индустрия', geography: 'География', hobby: 'Хобби', stage: 'Этап' };
-    return `<div class="cluster-card ${c.id === activeClusterId ? 'active' : ''}" onclick="highlightCluster('${c.id}')">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="cluster-name">${c.name}</div>
-        <span class="cluster-count">${c.size}</span>
+  const clusters = DATA.clusters.filter(c => !resolvedType || c.type === resolvedType);
+  const meta = CLUSTER_TYPE_META[resolvedType] || { label: 'Категории', browserCopy: '' };
+
+  content.innerHTML = `<div class="cluster-browser">
+    ${renderClusterTabs(resolvedType)}
+    ${meta.browserCopy ? `<div class="cluster-browser-copy">${meta.browserCopy}</div>` : ''}
+    ${clusters.length ? `<div class="cluster-list">${clusters.map(c => `
+      <div class="cluster-card ${c.id === activeClusterId ? 'active' : ''}" onclick="highlightCluster('${c.id}')">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div>
+            <div class="cluster-name">${c.name}</div>
+            <div class="cluster-hint">Открыть состав и подсветить на графе</div>
+          </div>
+          <span class="cluster-count">${c.size}</span>
+        </div>
       </div>
-      <div class="cluster-type">${typeLabels[c.type] || c.type}</div>
-    </div>`;
-  }).join('');
+    `).join('')}</div>` : `<div class="cluster-empty">Для этого раздела пока нет подкатегорий.</div>`}
+  </div>`;
 }
 
 function highlightCluster(clusterId) {
   const cluster = DATA.clusters.find(c => c.id === clusterId);
   if (!cluster) return;
   activeClusterId = clusterId;
+  activeClusterType = cluster.type;
   selectedNode = null;
   restoreGraphState();
 
-  // Show cluster members in sidebar
   document.getElementById('sidebarTitle').textContent = cluster.name;
   const content = document.getElementById('sidebarContent');
+  const typeLabel = (CLUSTER_TYPE_META[cluster.type] || { label: cluster.type }).label;
   let html = `<div class="card">
+    <div class="cluster-detail-header">
+      <button class="cluster-back" onclick="showClustersList('${cluster.type}')">← Назад к категориям</button>
+      <span class="cluster-detail-pill">${typeLabel}</span>
+    </div>
     <div class="card-bio">${cluster.description}</div>
     <div class="card-section"><div class="card-section-title">Участники (${cluster.size})</div>
     <ul class="card-connections">`;
