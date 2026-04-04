@@ -111,13 +111,23 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 .card-section { margin-bottom: 16px; }
 .card-section-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 5px; }
-.tag { padding: 3px 10px; border-radius: 12px; font-size: 12px; background: var(--surface2); border: 1px solid var(--border); color: var(--text); }
+.tag { padding: 3px 10px; border-radius: 12px; font-size: 12px; background: var(--surface2); border: 1px solid var(--border); color: var(--text); appearance: none; font-family: inherit; line-height: 1.3; }
 .tag.industry { border-color: var(--accent); color: var(--accent2); }
 .tag.hobby { border-color: var(--blue); color: var(--blue); }
 .tag.geo { border-color: var(--green); color: var(--green); }
 .tag.strength { border-color: var(--yellow); color: var(--yellow); }
 .tag.need { border-color: var(--red); color: var(--red); }
 .tag.offer { border-color: var(--purple); color: var(--purple); }
+.tag.is-clickable,
+.card-stage.is-clickable {
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, color 0.16s ease;
+}
+.tag.is-clickable:hover,
+.card-stage.is-clickable:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.04);
+}
 
 /* Profile tabs */
 .profile-tabs { display: flex; border-bottom: 1px solid var(--border); margin: 0 -20px; padding: 0 20px; gap: 0; }
@@ -132,7 +142,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 .card-tg a:hover { text-decoration: underline; }
 
 /* Stage badge */
-.card-stage { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; background: var(--surface2); border: 1px solid var(--border); color: var(--text2); margin-left: 8px; }
+.card-stage { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; background: var(--surface2); border: 1px solid var(--border); color: var(--text2); margin-left: 8px; appearance: none; font-family: inherit; line-height: 1.3; }
 
 /* Connection cards (rich) */
 .conn-card { padding: 12px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
@@ -668,6 +678,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
     padding: 10px 16px 10px;
     background: linear-gradient(180deg, rgba(20,20,31,0.98), rgba(20,20,31,0.9));
     backdrop-filter: blur(14px);
+    cursor: ns-resize;
+    touch-action: none;
+    user-select: none;
   }
   .mobile-sheet-handle { display: flex; }
   .sidebar-title { font-size: 12px; }
@@ -838,6 +851,7 @@ let activeClusterId = null;
 let activeClusterType = 'hobby';
 let mobileSheetState = 'peek';
 let mobileSheetDrag = null;
+let pinnedFocusNode = null;
 let width, height;
 let isDataLoaded = false;
 
@@ -896,6 +910,27 @@ function isMobileLayout() {
 
 function shouldAllowNodeDrag() {
   return !window.matchMedia('(pointer: coarse)').matches;
+}
+
+function clearPinnedFocusNode() {
+  if (!pinnedFocusNode) return;
+  pinnedFocusNode.fx = null;
+  pinnedFocusNode.fy = null;
+  pinnedFocusNode = null;
+}
+
+function pinFocusedNode(node) {
+  if (!isMobileLayout() || !node || !Number.isFinite(node.x) || !Number.isFinite(node.y)) {
+    clearPinnedFocusNode();
+    return;
+  }
+  if (pinnedFocusNode && pinnedFocusNode !== node) {
+    pinnedFocusNode.fx = null;
+    pinnedFocusNode.fy = null;
+  }
+  pinnedFocusNode = node;
+  node.fx = node.x;
+  node.fy = node.y;
 }
 
 function getMobileSheetHeights() {
@@ -981,12 +1016,14 @@ function snapMobileSheet(height) {
 
 function setupMobileSheet() {
   const handle = document.getElementById('mobileSheetHandle');
+  const header = document.getElementById('sidebarHeader');
   const sidebar = document.getElementById('sidebar');
-  if (!handle || !sidebar) return;
+  if (!handle || !sidebar || !header) return;
 
   const finishDrag = (event) => {
     if (!mobileSheetDrag || (event.pointerId != null && event.pointerId !== mobileSheetDrag.pointerId)) return;
     const wasDragging = mobileSheetDrag.dragging;
+    const captureTarget = mobileSheetDrag.captureTarget;
     mobileSheetDrag = null;
     sidebar.classList.remove('is-mobile-dragging');
     if (wasDragging) {
@@ -994,12 +1031,12 @@ function setupMobileSheet() {
     } else {
       toggleMobileSheet();
     }
-    if (event.pointerId != null && handle.hasPointerCapture?.(event.pointerId)) {
-      handle.releasePointerCapture(event.pointerId);
+    if (event.pointerId != null && captureTarget?.hasPointerCapture?.(event.pointerId)) {
+      captureTarget.releasePointerCapture(event.pointerId);
     }
   };
 
-  handle.addEventListener('pointerdown', (event) => {
+  header.addEventListener('pointerdown', (event) => {
     if (!isMobileLayout()) return;
     event.preventDefault();
     mobileSheetDrag = {
@@ -1007,12 +1044,13 @@ function setupMobileSheet() {
       startY: event.clientY,
       startHeight: sidebar.getBoundingClientRect().height,
       dragging: false,
+      captureTarget: header,
     };
     sidebar.classList.add('is-mobile-dragging');
-    handle.setPointerCapture?.(event.pointerId);
+    header.setPointerCapture?.(event.pointerId);
   });
 
-  handle.addEventListener('pointermove', (event) => {
+  header.addEventListener('pointermove', (event) => {
     if (!mobileSheetDrag || event.pointerId !== mobileSheetDrag.pointerId || !isMobileLayout()) return;
     const delta = mobileSheetDrag.startY - event.clientY;
     if (Math.abs(delta) > 4) mobileSheetDrag.dragging = true;
@@ -1022,8 +1060,14 @@ function setupMobileSheet() {
     applyMobileSheetHeight(nextHeight, { skipTransition: true });
   });
 
-  handle.addEventListener('pointerup', finishDrag);
-  handle.addEventListener('pointercancel', finishDrag);
+  header.addEventListener('pointerup', finishDrag);
+  header.addEventListener('pointercancel', finishDrag);
+  handle.addEventListener('keydown', (event) => {
+    if (!isMobileLayout()) return;
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    toggleMobileSheet();
+  });
 
   setMobileSheetState(mobileSheetState, { skipTransition: true });
 }
@@ -1219,14 +1263,145 @@ function getNodeColor(d) {
   return ROLE_COLORS[d.role] || ROLE_COLORS.participant;
 }
 
+function escapeSvgText(text) {
+  return String(text ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function getAvatarInitials(name) {
+  const parts = String(name || '')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (!parts.length) return '?';
+  const initials = parts.slice(0, 2).map(part => {
+    const symbol = Array.from(part).find(char => /[\p{L}\p{N}]/u.test(char));
+    return symbol ? symbol.toUpperCase() : '';
+  }).join('');
+  return initials || '?';
+}
+
+function buildAvatarDataUri(name, color, size = 96) {
+  const safeColor = color || '#4a9eff';
+  const initials = getAvatarInitials(name);
+  const fontSize = initials.length > 1 ? Math.round(size * 0.34) : Math.round(size * 0.42);
+  const svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <rect width="${size}" height="${size}" rx="${Math.round(size / 2)}" fill="${safeColor}"/>
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="${fontSize}" font-weight="700">${escapeSvgText(initials)}</text>
+  </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svgMarkup)}`;
+}
+
 function getAvatarUrl(d) {
-  const name = encodeURIComponent(d.name);
-  const bg = getNodeColor(d).replace('#', '');
-  return `https://ui-avatars.com/api/?name=${name}&background=${bg}&color=fff&size=80&font-size=0.4&bold=true&format=svg`;
+  return buildAvatarDataUri(d.name, getNodeColor(d), 96);
+}
+
+function getPersonAvatarUrl(person, size = 96) {
+  return buildAvatarDataUri(person.name, getNodeColor(person), size);
 }
 
 function getName(d) {
   return typeof d === 'string' ? d : d.name;
+}
+
+function truncateText(text, maxLength = 110) {
+  const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!normalized) return '';
+  if (normalized.length <= maxLength) return normalized;
+  return `${normalized.slice(0, maxLength - 3).trim()}...`;
+}
+
+function getPersonSnippet(person, maxLength = 110) {
+  const bio = String(person?.bio || '').replace(/\s+/g, ' ').trim();
+  if (bio) {
+    const sentence = bio.match(/^.*?[.!?](?:\s|$)/);
+    return truncateText(sentence ? sentence[0].trim() : bio, maxLength);
+  }
+  const fallbackBits = [];
+  if (person?.industries?.length) fallbackBits.push(person.industries.slice(0, 2).join(', '));
+  if (person?.stage) fallbackBits.push(person.stage);
+  if (person?.geo?.length) fallbackBits.push(person.geo.slice(0, 1).join(', '));
+  return truncateText(fallbackBits.join(' • '), maxLength);
+}
+
+function renderInteractiveTag(tagName, cssClass, clusterType) {
+  const encodedName = encodeURIComponent(tagName);
+  return `<button type="button" class="tag ${cssClass} is-clickable" data-cluster-type="${clusterType}" data-cluster-name="${encodedName}">${tagName}</button>`;
+}
+
+function renderStageChip(label) {
+  return `<button type="button" class="card-stage is-clickable" data-cluster-type="stage" data-cluster-name="${encodeURIComponent(label)}">${label}</button>`;
+}
+
+function getClusterDescription(type, name) {
+  if (type === 'industry') return `Участники из сферы ${name.toLowerCase()}`;
+  if (type === 'hobby') return `Участники с общим интересом: ${name.toLowerCase()}`;
+  if (type === 'geography') return `Участники из ${name}`;
+  if (type === 'stage') return `Участники на этапе: ${name.toLowerCase()}`;
+  return `Участники по категории: ${name}`;
+}
+
+function buildDynamicClusterMembers(type, name) {
+  const fieldMap = {
+    industry: 'industries',
+    hobby: 'hobbies',
+    geography: 'geo',
+    stage: 'stage',
+  };
+  const field = fieldMap[type];
+  if (!field) return [];
+  return DATA.nodes
+    .filter(node => {
+      if (field === 'stage') return node.stage === name;
+      return Array.isArray(node[field]) && node[field].includes(name);
+    })
+    .map(node => node.id);
+}
+
+function ensureCategoryCluster(type, name) {
+  if (!DATA?.clusters?.length) return null;
+  const normalizedName = String(name || '').trim().toLowerCase();
+  const existing = DATA.clusters.find(cluster =>
+    cluster.type === type && String(cluster.name || '').trim().toLowerCase() === normalizedName
+  );
+  if (existing) return existing;
+
+  const members = buildDynamicClusterMembers(type, name);
+  if (!members.length) return null;
+
+  const cluster = {
+    id: `dynamic_${type}_${encodeURIComponent(normalizedName)}`,
+    name,
+    type,
+    members,
+    description: getClusterDescription(type, name),
+    size: members.length,
+  };
+  DATA.clusters.push(cluster);
+  return cluster;
+}
+
+function focusCategoryTag(type, name) {
+  const cluster = ensureCategoryCluster(type, name);
+  if (!cluster) return;
+  activateMode('categories');
+  highlightCluster(cluster.id);
+}
+
+function wireProfileCategoryTags(container) {
+  container.querySelectorAll('[data-cluster-type][data-cluster-name]').forEach(tag => {
+    tag.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const type = tag.dataset.clusterType;
+      const name = decodeURIComponent(tag.dataset.clusterName || '');
+      if (!type || !name) return;
+      focusCategoryTag(type, name);
+    });
+  });
 }
 
 function refreshNodeVisuals(alpha = 0.45) {
@@ -1402,9 +1577,10 @@ function selectNode(d) {
     activeClusterId = null;
   }
   selectedNode = d;
+  pinFocusedNode(d);
   restoreGraphState(220);
-  centerOnNode(d);
   showPersonCard(d);
+  centerOnNode(d);
 }
 
 function centerOnNode(d, attempt = 0) {
@@ -1417,8 +1593,11 @@ function centerOnNode(d, attempt = 0) {
   const w = area.clientWidth;
   const h = area.clientHeight;
   const scale = 1.5;
+  const mobileHeights = isMobileLayout() ? getMobileSheetHeights() : null;
+  const sheetHeight = mobileHeights ? (mobileHeights[mobileSheetState] || document.getElementById('sidebar')?.getBoundingClientRect().height || 0) : 0;
+  const visibleGraphHeight = mobileHeights ? Math.max(160, h - sheetHeight) : h;
   const x = w / 2 - d.x * scale;
-  const y = h / 2 - d.y * scale;
+  const y = visibleGraphHeight / 2 - d.y * scale;
 
   svg.transition().duration(900).ease(d3.easeCubicInOut)
     .call(zoomBehavior.transform, d3.zoomIdentity.translate(x, y).scale(scale));
@@ -1450,22 +1629,21 @@ function showPersonCard(d) {
     return DATA.nodes.some(n => n.id === otherId);
   });
 
-  const avatarBg = getNodeColor(d).replace('#', '');
-  const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(d.name)}&background=${avatarBg}&color=fff&size=120&font-size=0.38&bold=true&format=svg`;
+  const avatarColor = getNodeColor(d);
+  const avatarUrl = getPersonAvatarUrl(d, 120);
   const tgLink = d.telegram ? `https://t.me/${d.telegram.replace('@','')}` : '';
   const tgHtml = d.telegram ? `<a href="${tgLink}" target="_blank">${d.telegram}</a> <span style="font-size:11px;color:var(--text2)">→ открыть</span>` : '';
 
   const roleLabel = d.role === 'organizer' ? 'Организатор' : d.role === 'mentor' ? 'Ментор' : 'Участник';
 
   // Count tabs to show
-  const hasBiz = d.industries.length || d.strengths.length || d.needs.length || d.offers.length;
-  const hasLife = d.hobbies.length || d.geo.length || d.age;
+  const hasBiz = d.industries.length || d.strengths.length || d.needs.length || d.offers.length || d.hobbies.length || d.geo.length || d.stage;
   const hasConn = connections.length || intros.length;
 
   let html = `<div class="card">
     <!-- Header -->
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px">
-      <img src="${avatarUrl}" style="width:60px;height:60px;border-radius:50%;border:3px solid #${avatarBg};flex-shrink:0" alt="${d.name}">
+      <img src="${avatarUrl}" style="width:60px;height:60px;border-radius:50%;border:3px solid ${avatarColor};flex-shrink:0" alt="${d.name}">
       <div>
         <div class="card-name" style="font-size:20px">${d.name}</div>
         <div class="card-tg">${tgHtml}</div>
@@ -1475,8 +1653,8 @@ function showPersonCard(d) {
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
       <span class="card-role ${d.role}">${roleLabel}</span>
       ${d.age ? `<span class="card-stage">${d.age} лет</span>` : ''}
-      ${d.stage ? `<span class="card-stage">${d.stage}</span>` : ''}
-      ${d.geo.length ? `<span class="card-stage">📍 ${d.geo.join(', ')}</span>` : ''}
+      ${d.stage ? renderStageChip(d.stage) : ''}
+      ${d.geo.length ? d.geo.map(tag => `<button type="button" class="card-stage is-clickable" data-cluster-type="geography" data-cluster-name="${encodeURIComponent(tag)}">📍 ${tag}</button>`).join('') : ''}
     </div>
 
     <!-- Bio -->
@@ -1495,7 +1673,15 @@ function showPersonCard(d) {
     html += `<div class="tab-content active" data-tab="overview">`;
     if (d.industries.length) {
       html += `<div class="card-section"><div class="card-section-title">Сфера деятельности</div>
-        <div class="tag-list">${d.industries.map(t => `<span class="tag industry">${t}</span>`).join('')}</div></div>`;
+        <div class="tag-list">${d.industries.map(t => renderInteractiveTag(t, 'industry', 'industry')).join('')}</div></div>`;
+    }
+    if (d.hobbies.length) {
+      html += `<div class="card-section"><div class="card-section-title">Хобби и интересы</div>
+        <div class="tag-list">${d.hobbies.map(t => renderInteractiveTag(t, 'hobby', 'hobby')).join('')}</div></div>`;
+    }
+    if (d.geo.length) {
+      html += `<div class="card-section"><div class="card-section-title">География</div>
+        <div class="tag-list">${d.geo.map(t => renderInteractiveTag(t, 'geo', 'geography')).join('')}</div></div>`;
     }
     if (d.strengths.length) {
       html += `<div class="card-section"><div class="card-section-title">Компетенции и сильные стороны</div>
@@ -1528,8 +1714,7 @@ function showPersonCard(d) {
       const otherId = i.person_a === d.id ? i.person_b : i.person_a;
       const other = DATA.nodes.find(n => n.id === otherId);
       if (!other) return;
-      const oBg = getNodeColor(other).replace('#', '');
-      const oAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(other.name)}&background=${oBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
+      const oAvatar = getPersonAvatarUrl(other, 64);
       const valueForMe = i.person_a === d.id ? i.value_for_a : i.value_for_b;
       const valueForThem = i.person_a === d.id ? i.value_for_b : i.value_for_a;
 
@@ -1538,14 +1723,14 @@ function showPersonCard(d) {
           <img class="conn-card-avatar" src="${oAvatar}" alt="${other.name}">
           <div style="flex:1">
             <div class="conn-card-name">${other.name} <span class="intro-priority">⭐ ${i.priority}/10</span></div>
-            <div class="conn-card-role">${other.bio ? other.bio.substring(0, 80) + (other.bio.length > 80 ? '...' : '') : ''}</div>
+            <div class="conn-card-role">${getPersonSnippet(other, 92)}</div>
           </div>
         </div>
         <div class="conn-card-why" style="padding-left:42px">
           <div style="margin-bottom:4px"><strong>Почему стоит познакомиться:</strong></div>
           <div>${i.why_connect}</div>
-          ${valueForMe ? `<div style="margin-top:6px;color:var(--green)">✅ Польза для тебя: ${valueForMe}</div>` : ''}
-          ${valueForThem ? `<div style="margin-top:2px;color:var(--blue)">🤝 Польза для ${other.name.split(' ')[0]}: ${valueForThem}</div>` : ''}
+          ${valueForMe ? `<div style="margin-top:6px;color:var(--green)">✅ Чем ${other.name.split(' ')[0]} может быть полезен тебе: ${valueForMe}</div>` : ''}
+          ${valueForThem ? `<div style="margin-top:2px;color:var(--blue)">🤝 Чем ты можешь быть полезен со своей стороны: ${valueForThem}</div>` : ''}
           ${other.telegram ? `<a href="https://t.me/${other.telegram.replace('@','')}" target="_blank" style="display:inline-block;margin-top:8px;padding:6px 16px;background:var(--accent);color:#fff;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;transition:transform 0.2s">Написать в Telegram</a>` : ''}
         </div>
       </div>`;
@@ -1572,8 +1757,7 @@ function showPersonCard(d) {
     html += `<div class="tab-content" data-tab="connections">`;
     connections.slice(0, 25).forEach(c => {
       const p = c.person;
-      const pBg = getNodeColor(p).replace('#', '');
-      const pAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(p.name)}&background=${pBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
+      const pAvatar = getPersonAvatarUrl(p, 64);
       const relTypeLabels = { industry: 'Индустрия', hobby: 'Хобби', synergy: 'Синергия', geography: 'География', team: 'Команда', general: 'Общее' };
       const relLabel = relTypeLabels[c.link.relation_type] || '';
 
@@ -1582,7 +1766,7 @@ function showPersonCard(d) {
           <img class="conn-card-avatar" src="${pAvatar}" alt="${p.name}">
           <div style="flex:1">
             <div class="conn-card-name">${p.name}</div>
-            <div class="conn-card-role">${p.bio ? p.bio.substring(0, 60) + (p.bio.length > 60 ? '...' : '') : ''}</div>
+            <div class="conn-card-role">${getPersonSnippet(p, 96)}</div>
           </div>
         </div>
         <div class="conn-card-why">💡 ${c.link.explanation}</div>
@@ -1609,6 +1793,7 @@ function showPersonCard(d) {
       content.querySelectorAll(`.tab-content[data-tab="${target}"]`).forEach(t => t.classList.add('active'));
     });
   });
+  wireProfileCategoryTags(content);
   syncMobileSheetToContext();
 }
 
@@ -1839,6 +2024,11 @@ function activateMode(mode) {
     currentFilter = 'my';
     activeClusterId = null;
     selectedNode = loggedInNode || null;
+    if (selectedNode) {
+      pinFocusedNode(selectedNode);
+    } else {
+      clearPinnedFocusNode();
+    }
     restoreGraphState(220);
     if (loggedInNode) {
       showPersonCard(loggedInNode);
@@ -1853,6 +2043,7 @@ function activateMode(mode) {
   if (resolvedMode === 'categories') {
     activeClusterId = null;
     if (isSameMode) selectedNode = null;
+    if (!selectedNode) clearPinnedFocusNode();
     restoreGraphState(220);
     showClustersList(activeClusterType, { resetSelection: false });
     return;
@@ -1860,6 +2051,7 @@ function activateMode(mode) {
 
   activeClusterId = null;
   if (isSameMode) selectedNode = null;
+  if (!selectedNode) clearPinnedFocusNode();
 
   restoreGraphState(220);
   if (resolvedMode === 'rankings') {
@@ -1966,6 +2158,7 @@ function highlightCluster(clusterId) {
   activeClusterId = clusterId;
   activeClusterType = cluster.type;
   selectedNode = null;
+  clearPinnedFocusNode();
   restoreGraphState();
 
   document.getElementById('sidebarTitle').textContent = cluster.name;
@@ -2020,6 +2213,7 @@ function showRankings() {
 }
 
 function showEmptyState(mode = currentMode) {
+  if (!selectedNode) clearPinnedFocusNode();
   const heading = mode === 'my' ? 'Мои связи на графе' : 'Кликни на узел или связь';
   const description = mode === 'my'
     ? 'Показаны только твои прямые связи. Выбери участника на графе, чтобы открыть профиль и детали связи.'
@@ -2089,6 +2283,7 @@ function startSession(node, { revealApp = false } = {}) {
   closeIdentityPrompt();
 
   if (!node) {
+    clearPinnedFocusNode();
     activateMode('all');
     waitForGraphViewport(() => restoreGraphState(), 0.4);
     return;
@@ -2103,9 +2298,19 @@ function startSession(node, { revealApp = false } = {}) {
     simulation.alpha(0.55).restart();
     selectNode(node);
     restoreGraphState(220);
+    [180, 520].forEach(delay => {
+      setTimeout(() => {
+        if (selectedNode?.id === node.id && currentMode === 'my') {
+          pinFocusedNode(node);
+          centerOnNode(node);
+        }
+      }, delay);
+    });
     setTimeout(() => {
-      node.fx = null;
-      node.fy = null;
+      if (pinnedFocusNode !== node) {
+        node.fx = null;
+        node.fy = null;
+      }
       simulation.alpha(0.2).restart();
     }, 240);
   }, 0.85);
