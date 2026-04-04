@@ -894,6 +894,10 @@ function isMobileLayout() {
   return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches;
 }
 
+function shouldAllowNodeDrag() {
+  return !window.matchMedia('(pointer: coarse)').matches;
+}
+
 function getMobileSheetHeights() {
   const headerHeight = document.querySelector('.header')?.getBoundingClientRect().height || 0;
   const available = Math.max(220, window.innerHeight - headerHeight - 12);
@@ -1076,6 +1080,7 @@ function initGraph() {
 
   // Zoom & pan (applied to SVG before node drag handlers)
   zoomBehavior = d3.zoom()
+    .touchable(() => true)
     .scaleExtent([0.15, 4])
     .on('zoom', (e) => g.attr('transform', e.transform));
   svg.call(zoomBehavior);
@@ -1136,11 +1141,10 @@ function initGraph() {
     .join('g')
     .attr('class', 'node-group')
     .style('cursor', 'pointer')
-    .call(d3.drag()
-      .on('start', dragStarted)
-      .on('drag', dragged)
-      .on('end', dragEnded))
-    .on('click', (e, d) => selectNode(d))
+    .on('click', (e, d) => {
+      if (e.defaultPrevented) return;
+      selectNode(d);
+    })
     .on('mouseenter', (e, d) => {
       hoveredNode = d;
       previewNodeState(d);
@@ -1151,6 +1155,13 @@ function initGraph() {
       restoreGraphState(320);
       hideTooltip();
     });
+
+  if (shouldAllowNodeDrag()) {
+    nodeElements.call(d3.drag()
+      .on('start', dragStarted)
+      .on('drag', dragged)
+      .on('end', dragEnded));
+  }
 
   // Ring (border) behind avatar
   nodeElements.append('circle')
@@ -2085,18 +2096,19 @@ function startSession(node, { revealApp = false } = {}) {
 
   activateMode('my');
   waitForGraphViewport(() => {
-    node.fx = width / 2;
-    node.fy = height / 2;
-    simulation.alpha(1).restart();
-
+    if (Number.isFinite(node.x) && Number.isFinite(node.y)) {
+      node.fx = node.x;
+      node.fy = node.y;
+    }
+    simulation.alpha(0.55).restart();
+    selectNode(node);
+    restoreGraphState(220);
     setTimeout(() => {
       node.fx = null;
       node.fy = null;
-      selectNode(node);
-      restoreGraphState();
-      setTimeout(() => centerOnNode(node), 500);
-    }, 1600);
-  }, 1);
+      simulation.alpha(0.2).restart();
+    }, 240);
+  }, 0.85);
 }
 
 function submitIdentityPrompt() {
