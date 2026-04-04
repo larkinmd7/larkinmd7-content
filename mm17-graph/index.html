@@ -1041,16 +1041,16 @@ function previewNodeState(node) {
 }
 
 function restoreGraphState(duration = 420) {
-  if (currentMode === 'my' && loggedInNode) {
-    applyMyGraphState(duration);
-    return;
-  }
   if (currentMode === 'categories' && activeClusterId) {
     applyClusterGraphState(duration);
     return;
   }
-  if (currentMode === 'all' && selectedNode) {
+  if (selectedNode) {
     applyNodeNeighborhoodState(selectedNode, duration);
+    return;
+  }
+  if (currentMode === 'my' && loggedInNode) {
+    applyMyGraphState(duration);
     return;
   }
   applyAllGraphState(duration);
@@ -1076,9 +1076,11 @@ function hideTooltip() {
 // SELECTION
 // ============================================================
 function selectNode(d) {
+  if (currentMode === 'categories' && activeClusterId) {
+    activeClusterId = null;
+  }
   selectedNode = d;
-  if (currentMode === 'all') applyNodeNeighborhoodState(d, 320);
-  else restoreGraphState(220);
+  restoreGraphState(220);
   centerOnNode(d);
   showPersonCard(d);
 }
@@ -1501,30 +1503,46 @@ function activateMode(mode) {
 
   const previousMode = currentMode;
   const resolvedMode = mode === 'my' && !loggedInNode ? 'all' : mode;
+  const isSameMode = previousMode === resolvedMode;
   currentMode = resolvedMode;
 
   document.querySelectorAll('.mode-tab').forEach(tab => {
     tab.classList.toggle('active', tab.dataset.mode === resolvedMode);
   });
 
-  selectedNode = null;
-
-  if (resolvedMode === 'all' || resolvedMode === 'my') {
-    currentFilter = resolvedMode;
-    restoreGraphState();
-    showEmptyState(resolvedMode);
+  if (resolvedMode === 'my') {
+    currentFilter = 'my';
+    activeClusterId = null;
+    selectedNode = loggedInNode || null;
+    restoreGraphState(220);
+    if (loggedInNode) {
+      showPersonCard(loggedInNode);
+      centerOnNode(loggedInNode);
+    } else {
+      showEmptyState('my');
+    }
     return;
   }
 
   currentFilter = 'all';
   if (resolvedMode === 'categories') {
-    if (previousMode !== 'categories') activeClusterId = null;
-    showClustersList(activeClusterType, { resetSelection: true });
+    activeClusterId = null;
+    if (isSameMode) selectedNode = null;
+    restoreGraphState(220);
+    showClustersList(activeClusterType, { resetSelection: false });
     return;
   }
 
-  restoreGraphState();
-  if (resolvedMode === 'rankings') showRankings();
+  activeClusterId = null;
+  if (isSameMode) selectedNode = null;
+
+  restoreGraphState(220);
+  if (resolvedMode === 'rankings') {
+    showRankings();
+    return;
+  }
+
+  showEmptyState('all');
 }
 
 function showIntrosList() {
