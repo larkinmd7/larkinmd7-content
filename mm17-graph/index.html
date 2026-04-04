@@ -330,14 +330,14 @@ function initGraph() {
   const validLinks = DATA.links.filter(l => nodeMap[l.source] && nodeMap[l.target]);
 
   simulation = d3.forceSimulation(DATA.nodes)
-    .force('link', d3.forceLink(validLinks).id(d => d.id).distance(d => 130 - d.strength * 8).strength(d => 0.08 + d.strength * 0.015))
-    .force('charge', d3.forceManyBody().strength(-180).distanceMax(400))
+    .force('link', d3.forceLink(validLinks).id(d => d.id).distance(d => 180 - d.strength * 6).strength(d => 0.04 + d.strength * 0.008))
+    .force('charge', d3.forceManyBody().strength(-350).distanceMax(600))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(d => getNodeRadius(d) + 6).strength(0.7))
-    .force('x', d3.forceX(width / 2).strength(0.025))
-    .force('y', d3.forceY(height / 2).strength(0.025))
-    .alphaDecay(0.015)
-    .velocityDecay(0.4);
+    .force('collision', d3.forceCollide().radius(d => getNodeRadius(d) + 14).strength(0.8))
+    .force('x', d3.forceX(width / 2).strength(0.015))
+    .force('y', d3.forceY(height / 2).strength(0.015))
+    .alphaDecay(0.012)
+    .velocityDecay(0.45);
 
   // Draw links
   const linkElements = linkG.selectAll('line')
