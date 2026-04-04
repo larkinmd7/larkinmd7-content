@@ -149,6 +149,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 /* Cluster list */
 .cluster-card { padding: 16px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
 .cluster-card:hover { background: var(--surface2); }
+.cluster-card.active { background: rgba(255,107,0,0.08); }
 .cluster-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
 .cluster-type { font-size: 11px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
 .cluster-count { font-size: 12px; color: var(--accent); font-family: var(--mono); }
@@ -172,22 +173,403 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 ::-webkit-scrollbar-thumb:hover { background: var(--text2); }
 
 /* Welcome screen */
-#welcomeScreen { position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
-#welcomeScreen .welcome-logo { font-size: 42px; font-weight: 700; color: var(--accent); }
-#welcomeScreen .welcome-logo span { color: var(--text2); font-weight: 300; font-size: 24px; display: block; margin-top: 4px; }
-#welcomeScreen .welcome-subtitle { font-size: 16px; color: var(--text2); max-width: 400px; text-align: center; line-height: 1.6; }
-#welcomeScreen .welcome-search-box { position: relative; width: min(640px, calc(100vw - 40px)); }
-#welcomeScreen .welcome-input { width: 100%; padding: 14px 20px; background: var(--surface2); border: 2px solid var(--border); border-radius: 12px; color: var(--text); font-size: 16px; font-family: var(--mono); text-align: center; outline: none; transition: border-color 0.3s; }
-#welcomeScreen .welcome-input:focus { border-color: var(--accent); }
-#welcomeScreen .welcome-results { top: calc(100% + 8px); z-index: 1100; border-radius: 12px; overflow: hidden; }
-#welcomeScreen .welcome-results .search-result-item { font-size: 15px; padding: 14px 18px; text-align: left; }
-#welcomeScreen .welcome-btn { padding: 14px 48px; background: var(--accent); color: #fff; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: var(--font); transition: transform 0.2s, box-shadow 0.2s; }
-#welcomeScreen .welcome-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
-#welcomeScreen .welcome-skip { color: var(--text2); font-size: 13px; cursor: pointer; border: none; background: none; margin-top: 8px; }
-#welcomeScreen .welcome-skip:hover { color: var(--text); }
-#welcomeScreen .welcome-status { min-height: 20px; font-size: 13px; color: var(--text2); }
+#welcomeScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(circle at top right, rgba(255,107,0,0.18), transparent 28%),
+    linear-gradient(180deg, #f7f2e8 0%, #efe9dc 100%);
+  color: #111;
+}
+#welcomeScreen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(17,17,17,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17,17,17,0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+#welcomeScreen::after {
+  content: '';
+  position: absolute;
+  inset: auto auto -16% -10%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255,107,0,0.16) 0%, rgba(255,107,0,0) 72%);
+  filter: blur(10px);
+}
+.welcome-deco-square {
+  position: absolute;
+  border: 2px solid #111;
+  background: rgba(255,255,255,0.84);
+  box-shadow: 10px 10px 0 rgba(17,17,17,0.08);
+  z-index: 1;
+}
+.welcome-deco-square.a { top: 72px; left: 72px; width: 92px; height: 92px; }
+.welcome-deco-square.b { top: 118px; right: 10%; width: 132px; height: 132px; background: rgba(255,107,0,0.12); }
+.welcome-deco-square.c { bottom: 84px; left: 12%; width: 112px; height: 112px; }
+.welcome-deco-square.d { right: 80px; bottom: 108px; width: 64px; height: 64px; background: rgba(17,17,17,0.92); }
+.welcome-shell {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.6fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.welcome-panel {
+  position: relative;
+  border: 2px solid #111;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 14px 14px 0 #111;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.welcome-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.welcome-eyebrow,
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 2px solid #111;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.welcome-badge {
+  background: #111;
+  color: #fff;
+}
+.welcome-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 10ch;
+  font-size: clamp(56px, 8vw, 98px);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
+.welcome-title strong {
+  color: var(--accent);
+}
+.welcome-title span {
+  display: block;
+  max-width: 18ch;
+  font-size: clamp(22px, 3vw, 38px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: #1b1b22;
+}
+.welcome-subtitle {
+  max-width: 34ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(17,17,17,0.72);
+}
+.welcome-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.welcome-stat {
+  border: 2px solid #111;
+  background: #fff;
+  padding: 14px 16px;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.welcome-stat strong {
+  font-size: 28px;
+  line-height: 1;
+  font-family: var(--mono);
+  color: var(--accent);
+}
+.welcome-stat span {
+  font-size: 12px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(17,17,17,0.56);
+}
+#welcomeScreen .welcome-search-box {
+  position: relative;
+  width: min(760px, 100%);
+}
+#welcomeScreen .welcome-input {
+  width: 100%;
+  padding: 18px 22px;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 0;
+  box-shadow: 10px 10px 0 rgba(17,17,17,0.1);
+  color: #111;
+  font-size: 22px;
+  font-family: var(--mono);
+  text-align: left;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+#welcomeScreen .welcome-input:focus {
+  border-color: var(--accent);
+  box-shadow: 14px 14px 0 rgba(255,107,0,0.18);
+  transform: translate(-2px, -2px);
+}
+#welcomeScreen .welcome-results {
+  top: calc(100% + 12px);
+  z-index: 1100;
+  display: none;
+  border: 2px solid #111;
+  border-radius: 0;
+  overflow: hidden;
+  background: rgba(255,250,240,0.98);
+  box-shadow: 12px 12px 0 rgba(17,17,17,0.12);
+}
+#welcomeScreen .welcome-results.active {
+  display: block;
+}
+#welcomeScreen .welcome-results .search-result-item {
+  padding: 14px 18px;
+  font-size: 15px;
+  text-align: left;
+  border-bottom-color: rgba(17,17,17,0.08);
+  color: #111;
+  background: transparent;
+}
+#welcomeScreen .welcome-results .role-tag {
+  color: rgba(17,17,17,0.48);
+}
+#welcomeScreen .welcome-results .search-result-item:hover .role-tag {
+  color: rgba(255,255,255,0.76);
+}
+.welcome-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#welcomeScreen .welcome-btn,
+#welcomeScreen .welcome-skip {
+  min-height: 58px;
+  padding: 0 28px;
+  border: 2px solid #111;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+#welcomeScreen .welcome-btn {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 10px 10px 0 #111;
+}
+#welcomeScreen .welcome-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 14px 14px 0 #111;
+}
+#welcomeScreen .welcome-skip {
+  background: #fff;
+  color: #111;
+  box-shadow: 10px 10px 0 rgba(17,17,17,0.12);
+}
+#welcomeScreen .welcome-skip:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 14px 14px 0 rgba(17,17,17,0.18);
+}
+#welcomeScreen .welcome-status {
+  min-height: 24px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(17,17,17,0.58);
+}
 #welcomeScreen .welcome-btn:disabled,
-#welcomeScreen .welcome-skip:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+#welcomeScreen .welcome-skip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.welcome-side {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+.welcome-note {
+  border: 2px solid #111;
+  padding: 20px;
+  box-shadow: 12px 12px 0 rgba(17,17,17,0.12);
+}
+.welcome-note.dark {
+  background: #111;
+  color: #fff;
+}
+.welcome-note.light {
+  background: rgba(255,255,255,0.9);
+  color: #111;
+}
+.welcome-note.accent {
+  background: var(--accent);
+  color: #fff;
+}
+.welcome-note-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.welcome-note-title {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.welcome-note-copy {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.82;
+}
+.welcome-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+.welcome-mini-grid div {
+  min-height: 74px;
+  padding: 12px;
+  border: 2px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.welcome-mini-grid strong {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Identity prompt */
+.identity-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 96px 20px 20px;
+  background: rgba(10,10,15,0.5);
+  backdrop-filter: blur(12px);
+}
+.identity-prompt.active {
+  display: flex;
+}
+.identity-card {
+  width: min(460px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(20,20,31,0.96);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.42);
+  padding: 22px;
+}
+.identity-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.identity-copy {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text2);
+  margin-bottom: 16px;
+}
+.identity-search-box {
+  position: relative;
+}
+.identity-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: var(--mono);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.identity-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+}
+.identity-results {
+  top: calc(100% + 8px);
+  border-radius: 12px;
+  z-index: 1210;
+}
+.identity-status {
+  min-height: 20px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text2);
+}
+.identity-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+.identity-btn {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.identity-btn:hover {
+  border-color: var(--text2);
+  color: var(--text);
+}
+.identity-btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.identity-btn.primary:hover {
+  background: var(--accent2);
+  border-color: var(--accent2);
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -195,6 +577,19 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   .sidebar { border-left: none; border-top: 1px solid var(--border); }
   .stats { display: none; }
   .mode-tabs { overflow-x: auto; }
+  .welcome-shell { grid-template-columns: 1fr; gap: 18px; }
+  .welcome-panel { padding: 22px; box-shadow: 10px 10px 0 #111; }
+  .welcome-title { font-size: clamp(42px, 14vw, 72px); }
+  .welcome-title span { font-size: 26px; }
+  .welcome-stats-strip { grid-template-columns: 1fr; }
+  .welcome-actions { flex-direction: column; align-items: stretch; }
+  #welcomeScreen .welcome-btn,
+  #welcomeScreen .welcome-skip { width: 100%; justify-content: center; }
+  .welcome-side { grid-template-columns: 1fr; }
+  .welcome-deco-square.b,
+  .welcome-deco-square.d { display: none; }
+  .identity-prompt { padding-top: 72px; }
+  .identity-actions { flex-direction: column-reverse; }
 }
 </style>
 </head>
@@ -202,21 +597,71 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 
 <!-- Welcome Screen -->
 <div id="welcomeScreen">
-  <div class="welcome-logo">Социальные связи<span>чата ММ17</span></div>
-  <div class="welcome-subtitle">Найди себя в социальных связях чата ММ17</div>
-  <div class="welcome-search-box">
-    <input class="welcome-input" id="welcomeInput" type="text" placeholder="@username">
-    <div class="search-results welcome-results" id="welcomeResults"></div>
+  <div class="welcome-deco-square a"></div>
+  <div class="welcome-deco-square b"></div>
+  <div class="welcome-deco-square c"></div>
+  <div class="welcome-deco-square d"></div>
+  <div class="welcome-shell">
+    <section class="welcome-panel">
+      <div class="welcome-topline">
+        <div class="welcome-eyebrow">MM17 / Социальные связи</div>
+        <div class="welcome-badge">Граф связей</div>
+      </div>
+      <div class="welcome-title"><strong>Социальные связи</strong><span>чата ММ17</span></div>
+      <div class="welcome-subtitle">Найди себя в графе, выдели свои связи и быстро переходи к людям, с кем уже есть сильный контакт.</div>
+      <div class="welcome-stats-strip">
+        <div class="welcome-stat">
+          <strong id="welcomeStatPeople">0</strong>
+          <span>участников в чате</span>
+        </div>
+        <div class="welcome-stat">
+          <strong id="welcomeStatLinks">0</strong>
+          <span>связей в графе</span>
+        </div>
+        <div class="welcome-stat">
+          <strong id="welcomeStatClusters">0</strong>
+          <span>категорий и кластеров</span>
+        </div>
+      </div>
+      <div class="welcome-search-box">
+        <input class="welcome-input" id="welcomeInput" type="text" placeholder="Введи имя или @username">
+        <div class="search-results welcome-results" id="welcomeResults"></div>
+      </div>
+      <div class="welcome-actions">
+        <button class="welcome-btn" id="welcomeEnter" disabled>Войти и показать мои связи</button>
+        <button class="welcome-skip" id="welcomeSkip" disabled>Пропустить и открыть весь граф</button>
+      </div>
+      <div class="welcome-status" id="welcomeStatus">Загружаем данные…</div>
+    </section>
+    <aside class="welcome-side">
+      <div class="welcome-note dark">
+        <div class="welcome-note-label">Старт</div>
+        <div class="welcome-note-title">Введи себя и получи свой контур</div>
+        <div class="welcome-note-copy">После входа граф сразу собирается вокруг тебя: свои связи, интро и ближайшие точки контакта.</div>
+      </div>
+      <div class="welcome-note light">
+        <div class="welcome-note-label">Что внутри</div>
+        <div class="welcome-note-copy">Сценарий построен как быстрый навигатор по людям, а не просто красивая картинка.</div>
+        <div class="welcome-mini-grid">
+          <div><strong>01</strong><span>Мои связи</span></div>
+          <div><strong>02</strong><span>Категории</span></div>
+          <div><strong>03</strong><span>Рейтинг</span></div>
+          <div><strong>04</strong><span>Интро</span></div>
+        </div>
+      </div>
+      <div class="welcome-note accent">
+        <div class="welcome-note-label">Подсказка</div>
+        <div class="welcome-note-title">Достаточно 2 символов</div>
+        <div class="welcome-note-copy">Начни вводить имя или Telegram и выбери себя в выпадающих подсказках, как в основном поиске.</div>
+      </div>
+    </aside>
   </div>
-  <button class="welcome-btn" id="welcomeEnter" disabled>Войти</button>
-  <button class="welcome-skip" id="welcomeSkip" disabled>Пропустить</button>
-  <div class="welcome-status" id="welcomeStatus">Загружаем данные…</div>
 </div>
 
 <div class="app" style="display:none">
   <!-- Header -->
   <header class="header">
-    <div class="logo">Социальные связи<span>чата ММ17</span></div>
+    <div class="logo">Социальные связи <span>чата ММ17</span></div>
     <div class="search-box">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input type="text" id="searchInput" placeholder="Имя или @telegram...">
@@ -242,7 +687,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
       <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div>Организатор</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Ментор</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>Участник</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Ты (Михаил)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div><span id="legendCurrentUserLabel">Ты</span></div>
     </div>
   </div>
 
@@ -260,6 +705,22 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   </div>
 </div>
 
+<div class="identity-prompt" id="identityPrompt">
+  <div class="identity-card">
+    <div class="identity-title">Кто ты в чате?</div>
+    <div class="identity-copy">Введи имя или @username. После этого граф переключится на твои связи и сфокусируется на тебе.</div>
+    <div class="identity-search-box">
+      <input class="identity-input" id="identityInput" type="text" placeholder="Имя или @username">
+      <div class="search-results identity-results" id="identityResults"></div>
+    </div>
+    <div class="identity-status" id="identityStatus">Начни вводить имя или Telegram.</div>
+    <div class="identity-actions">
+      <button class="identity-btn" id="identityCancel">Отмена</button>
+      <button class="identity-btn primary" id="identityConfirm">Показать мои связи</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ============================================================
 // APP STATE
@@ -272,6 +733,8 @@ let currentMode = 'all';
 let currentFilter = 'all';
 let selectedNode = null;
 let loggedInNode = null;
+let hoveredNode = null;
+let activeClusterId = null;
 let width, height;
 let isDataLoaded = false;
 
@@ -289,6 +752,20 @@ const LINK_TYPE_COLORS = {
   general: '#555570',
 };
 
+function isCurrentUserNode(d) {
+  return Boolean(loggedInNode && d && d.id === loggedInNode.id);
+}
+
+function getCurrentUserShortName() {
+  return loggedInNode ? loggedInNode.name.split(' ')[0] : 'Ты';
+}
+
+function updateLegendUserLabel() {
+  const label = document.getElementById('legendCurrentUserLabel');
+  if (!label) return;
+  label.textContent = loggedInNode ? `Ты (${getCurrentUserShortName()})` : 'Ты';
+}
+
 // ============================================================
 // LOAD DATA
 // ============================================================
@@ -301,10 +778,15 @@ async function loadData() {
     isDataLoaded = true;
     document.getElementById('statNodes').textContent = DATA.nodes.length;
     document.getElementById('statLinks').textContent = DATA.links.length;
+    document.getElementById('welcomeStatPeople').textContent = DATA.nodes.length;
+    document.getElementById('welcomeStatLinks').textContent = DATA.links.length;
+    document.getElementById('welcomeStatClusters').textContent = DATA.clusters.length;
     initGraph();
     setupSearch();
     setupModes();
     setupWelcomeInput();
+    setupIdentityPrompt();
+    updateLegendUserLabel();
     setWelcomeState({ ready: true, message: 'Введите @username или открой все связи' });
   } catch (error) {
     console.error('Failed to load graph data', error);
@@ -404,11 +886,13 @@ function initGraph() {
       .on('end', dragEnded))
     .on('click', (e, d) => selectNode(d))
     .on('mouseenter', (e, d) => {
-      highlightNeighbors(d);
+      hoveredNode = d;
+      previewNodeState(d);
       showTooltip(e, d.name);
     })
-    .on('mouseleave', (e, d) => {
-      unhighlightAll();
+    .on('mouseleave', () => {
+      hoveredNode = null;
+      restoreGraphState(320);
       hideTooltip();
     });
 
@@ -417,8 +901,8 @@ function initGraph() {
     .attr('r', d => getNodeRadius(d) + 2.5)
     .attr('fill', 'none')
     .attr('stroke', d => getNodeColor(d))
-    .attr('stroke-width', d => d.id === 'mikhail_larkin' ? 3 : 2)
-    .attr('filter', d => d.role === 'organizer' || d.id === 'mikhail_larkin' ? 'url(#glow)' : 'none')
+    .attr('stroke-width', d => isCurrentUserNode(d) ? 3 : 2)
+    .attr('filter', d => d.role === 'organizer' || isCurrentUserNode(d) ? 'url(#glow)' : 'none')
     .style('transition', 'stroke-width 0.4s ease, stroke 0.4s ease');
 
   // Avatar image
@@ -453,17 +937,18 @@ function initGraph() {
   window._linkElements = linkElements;
   window._nodeElements = nodeElements;
   window._validLinks = validLinks;
+  window._defs = defs;
 }
 
 function getNodeRadius(d) {
-  if (d.id === 'mikhail_larkin') return 16;
+  if (isCurrentUserNode(d)) return 16;
   if (d.role === 'organizer') return 14;
   if (d.role === 'mentor') return 12;
   return 7 + d.confidence * 4;
 }
 
 function getNodeColor(d) {
-  if (d.id === 'mikhail_larkin') return '#FF6B00';
+  if (isCurrentUserNode(d)) return '#FF6B00';
   return ROLE_COLORS[d.role] || ROLE_COLORS.participant;
 }
 
@@ -475,6 +960,32 @@ function getAvatarUrl(d) {
 
 function getName(d) {
   return typeof d === 'string' ? d : d.name;
+}
+
+function refreshNodeVisuals(alpha = 0.45) {
+  if (!svg || !simulation || !window._nodeElements) return;
+
+  DATA.nodes.forEach(n => {
+    svg.select(`#clip-${n.id} circle`).attr('r', getNodeRadius(n));
+  });
+
+  window._nodeElements.select('circle')
+    .attr('r', d => getNodeRadius(d) + 2.5)
+    .attr('stroke', d => getNodeColor(d))
+    .attr('stroke-width', d => isCurrentUserNode(d) ? 3 : 2)
+    .attr('filter', d => d.role === 'organizer' || isCurrentUserNode(d) ? 'url(#glow)' : 'none');
+
+  window._nodeElements.select('image')
+    .attr('x', d => -getNodeRadius(d))
+    .attr('y', d => -getNodeRadius(d))
+    .attr('width', d => getNodeRadius(d) * 2)
+    .attr('height', d => getNodeRadius(d) * 2);
+
+  window._nodeElements.select('text')
+    .attr('dy', d => getNodeRadius(d) + 14);
+
+  simulation.force('collision', d3.forceCollide().radius(d => getNodeRadius(d) + 20).strength(0.8));
+  simulation.alpha(alpha).restart();
 }
 
 // Drag
@@ -489,51 +1000,119 @@ function dragEnded(e, d) {
 }
 
 // Highlight
-function highlightNeighbors(d) {
-  const neighbors = new Set();
+function getNeighborSet(nodeId) {
+  const neighbors = new Set([nodeId]);
   window._validLinks.forEach(l => {
     const sid = typeof l.source === 'string' ? l.source : l.source.id;
     const tid = typeof l.target === 'string' ? l.target : l.target.id;
-    if (sid === d.id) neighbors.add(tid);
-    if (tid === d.id) neighbors.add(sid);
+    if (sid === nodeId) neighbors.add(tid);
+    if (tid === nodeId) neighbors.add(sid);
   });
-  neighbors.add(d.id);
+  return neighbors;
+}
 
+function transitionGraphState({ circleOpacity, imageOpacity = circleOpacity, textOpacity = circleOpacity, linkOpacity }, duration = 420) {
+  if (!window._nodeElements || !window._linkElements) return;
   window._nodeElements.select('circle')
-    .transition().duration(400).ease(d3.easeCubicOut)
-    .attr('opacity', n => neighbors.has(n.id) ? 1 : 0.12);
+    .transition().duration(duration).ease(d3.easeCubicOut)
+    .attr('opacity', circleOpacity);
   window._nodeElements.select('image')
-    .transition().duration(400).ease(d3.easeCubicOut)
-    .attr('opacity', n => neighbors.has(n.id) ? 1 : 0.12);
+    .transition().duration(duration).ease(d3.easeCubicOut)
+    .attr('opacity', imageOpacity);
   window._nodeElements.select('text')
-    .transition().duration(400).ease(d3.easeCubicOut)
-    .attr('opacity', n => neighbors.has(n.id) ? 1 : 0.08);
+    .transition().duration(duration).ease(d3.easeCubicOut)
+    .attr('opacity', textOpacity);
   window._linkElements
-    .transition().duration(400).ease(d3.easeCubicOut)
-    .attr('stroke-opacity', l => {
+    .transition().duration(duration).ease(d3.easeCubicOut)
+    .attr('stroke-opacity', linkOpacity);
+}
+
+function applyAllGraphState(duration = 420) {
+  transitionGraphState({
+    circleOpacity: () => 1,
+    imageOpacity: () => 1,
+    textOpacity: () => 1,
+    linkOpacity: d => d.is_inferred ? 0.2 : 0.35,
+  }, duration);
+}
+
+function applyNodeNeighborhoodState(node, duration = 380) {
+  if (!node) {
+    applyAllGraphState(duration);
+    return;
+  }
+  const neighbors = getNeighborSet(node.id);
+  transitionGraphState({
+    circleOpacity: n => neighbors.has(n.id) ? 1 : 0.12,
+    imageOpacity: n => neighbors.has(n.id) ? 1 : 0.12,
+    textOpacity: n => neighbors.has(n.id) ? 1 : 0.08,
+    linkOpacity: l => {
       const sid = typeof l.source === 'string' ? l.source : l.source.id;
       const tid = typeof l.target === 'string' ? l.target : l.target.id;
-      return (sid === d.id || tid === d.id) ? 0.8 : 0.02;
-    });
+      return (sid === node.id || tid === node.id) ? 0.8 : 0.02;
+    },
+  }, duration);
+}
+
+function applyMyGraphState(duration = 420) {
+  if (!loggedInNode) {
+    applyAllGraphState(duration);
+    return;
+  }
+  const myNeighbors = getNeighborSet(loggedInNode.id);
+  transitionGraphState({
+    circleOpacity: n => myNeighbors.has(n.id) ? 1 : 0.05,
+    imageOpacity: n => myNeighbors.has(n.id) ? 1 : 0.05,
+    textOpacity: n => myNeighbors.has(n.id) ? 1 : 0.03,
+    linkOpacity: d => {
+      const sid = typeof d.source === 'string' ? d.source : d.source.id;
+      const tid = typeof d.target === 'string' ? d.target : d.target.id;
+      return (sid === loggedInNode.id || tid === loggedInNode.id) ? 0.7 : 0.01;
+    },
+  }, duration);
+}
+
+function applyClusterGraphState(duration = 420) {
+  const cluster = DATA.clusters.find(c => c.id === activeClusterId);
+  if (!cluster) {
+    applyAllGraphState(duration);
+    return;
+  }
+  const members = new Set(cluster.members);
+  transitionGraphState({
+    circleOpacity: n => members.has(n.id) ? 1 : 0.08,
+    imageOpacity: n => members.has(n.id) ? 1 : 0.08,
+    textOpacity: n => members.has(n.id) ? 1 : 0.04,
+    linkOpacity: l => {
+      const sid = typeof l.source === 'string' ? l.source : l.source.id;
+      const tid = typeof l.target === 'string' ? l.target : l.target.id;
+      return (members.has(sid) && members.has(tid)) ? 0.6 : 0.02;
+    },
+  }, duration);
+}
+
+function previewNodeState(node) {
+  applyNodeNeighborhoodState(node, 280);
+}
+
+function restoreGraphState(duration = 420) {
+  if (currentMode === 'my' && loggedInNode) {
+    applyMyGraphState(duration);
+    return;
+  }
+  if (currentMode === 'categories' && activeClusterId) {
+    applyClusterGraphState(duration);
+    return;
+  }
+  if (currentMode === 'all' && selectedNode) {
+    applyNodeNeighborhoodState(selectedNode, duration);
+    return;
+  }
+  applyAllGraphState(duration);
 }
 
 function unhighlightAll() {
-  if (selectedNode) {
-    highlightNeighbors(selectedNode);
-    return;
-  }
-  window._nodeElements.select('circle')
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('opacity', 1);
-  window._nodeElements.select('image')
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('opacity', 1);
-  window._nodeElements.select('text')
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('opacity', 1);
-  window._linkElements
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('stroke-opacity', d => d.is_inferred ? 0.2 : 0.35);
+  restoreGraphState(320);
 }
 
 // Tooltip
@@ -553,7 +1132,8 @@ function hideTooltip() {
 // ============================================================
 function selectNode(d) {
   selectedNode = d;
-  highlightNeighbors(d);
+  if (currentMode === 'all') applyNodeNeighborhoodState(d, 320);
+  else restoreGraphState(220);
   centerOnNode(d);
   showPersonCard(d);
 }
@@ -873,7 +1453,46 @@ function setupWelcomeInput() {
   });
 }
 
-function resolveWelcomeNode(query) {
+function setupIdentityPrompt() {
+  const prompt = document.getElementById('identityPrompt');
+  const input = document.getElementById('identityInput');
+  const results = document.getElementById('identityResults');
+
+  const renderIdentityMatches = () => {
+    if (!isDataLoaded) {
+      results.classList.remove('active');
+      return;
+    }
+    const matches = getNodeMatches(input.value, 8);
+    renderMatchList(results, matches, (id) => {
+      const node = DATA.nodes.find(n => n.id === id);
+      if (!node) return;
+      input.value = node.telegram || node.name;
+      results.classList.remove('active');
+      submitIdentityPrompt();
+    });
+  };
+
+  input.addEventListener('input', renderIdentityMatches);
+  input.addEventListener('focus', renderIdentityMatches);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') submitIdentityPrompt();
+    if (e.key === 'Escape') closeIdentityPrompt();
+  });
+
+  prompt.addEventListener('click', (e) => {
+    if (e.target === prompt) closeIdentityPrompt();
+  });
+
+  document.getElementById('identityCancel').addEventListener('click', closeIdentityPrompt);
+  document.getElementById('identityConfirm').addEventListener('click', submitIdentityPrompt);
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.identity-search-box')) results.classList.remove('active');
+  });
+}
+
+function resolveIdentityNode(query) {
   const value = query.trim();
   if (!value) return { node: null, state: 'empty' };
 
@@ -894,6 +1513,30 @@ function resolveWelcomeNode(query) {
   return { node: null, state: 'missing' };
 }
 
+function getIdentityResolutionMessage(resolved) {
+  if (resolved.state === 'multiple') return 'Нашлось несколько вариантов. Выбери себя в подсказках или введи точнее.';
+  if (resolved.state === 'empty') return 'Введи имя или @username.';
+  return 'Человека не нашли. Проверь имя или @username, либо выбери вариант в подсказках.';
+}
+
+function setIdentityPromptMessage(message) {
+  document.getElementById('identityStatus').textContent = message;
+}
+
+function openIdentityPrompt() {
+  const prompt = document.getElementById('identityPrompt');
+  const input = document.getElementById('identityInput');
+  input.value = '';
+  prompt.classList.add('active');
+  setIdentityPromptMessage('Начни вводить имя или Telegram.');
+  setTimeout(() => input.focus(), 0);
+}
+
+function closeIdentityPrompt() {
+  document.getElementById('identityPrompt').classList.remove('active');
+  document.getElementById('identityResults').classList.remove('active');
+}
+
 // ============================================================
 // MODES
 // ============================================================
@@ -906,6 +1549,11 @@ function setupModes() {
 }
 
 function activateMode(mode) {
+  if (mode === 'my' && !loggedInNode && document.querySelector('.app').style.display !== 'none') {
+    openIdentityPrompt();
+    return;
+  }
+
   const resolvedMode = mode === 'my' && !loggedInNode ? 'all' : mode;
   currentMode = resolvedMode;
 
@@ -914,17 +1562,16 @@ function activateMode(mode) {
   });
 
   selectedNode = null;
-  unhighlightAll();
 
   if (resolvedMode === 'all' || resolvedMode === 'my') {
     currentFilter = resolvedMode;
-    applyFilter();
+    restoreGraphState();
     showEmptyState(resolvedMode);
     return;
   }
 
   currentFilter = 'all';
-  applyFilter();
+  restoreGraphState();
 
   if (resolvedMode === 'categories') showClustersList();
   else if (resolvedMode === 'rankings') showRankings();
@@ -961,7 +1608,7 @@ function showClustersList() {
   const content = document.getElementById('sidebarContent');
   content.innerHTML = DATA.clusters.map(c => {
     const typeLabels = { industry: 'Индустрия', geography: 'География', hobby: 'Хобби', stage: 'Этап' };
-    return `<div class="cluster-card" onclick="highlightCluster('${c.id}')">
+    return `<div class="cluster-card ${c.id === activeClusterId ? 'active' : ''}" onclick="highlightCluster('${c.id}')">
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div class="cluster-name">${c.name}</div>
         <span class="cluster-count">${c.size}</span>
@@ -974,27 +1621,9 @@ function showClustersList() {
 function highlightCluster(clusterId) {
   const cluster = DATA.clusters.find(c => c.id === clusterId);
   if (!cluster) return;
-
-  const memberSet = new Set(cluster.members);
-
-  window._nodeElements.select('circle')
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('opacity', n => memberSet.has(n.id) ? 1 : 0.08);
-  window._nodeElements.select('image')
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('opacity', n => memberSet.has(n.id) ? 1 : 0.08);
-  window._nodeElements.select('text')
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('opacity', n => memberSet.has(n.id) ? 1 : 0.04);
-  window._linkElements
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('stroke-opacity', l => {
-      const sid = typeof l.source === 'string' ? l.source : l.source.id;
-      const tid = typeof l.target === 'string' ? l.target : l.target.id;
-      return (memberSet.has(sid) && memberSet.has(tid)) ? 0.6 : 0.02;
-    });
-
+  activeClusterId = clusterId;
   selectedNode = null;
+  restoreGraphState();
 
   // Show cluster members in sidebar
   document.getElementById('sidebarTitle').textContent = cluster.name;
@@ -1054,52 +1683,7 @@ function showEmptyState(mode = currentMode) {
 }
 
 function applyFilter() {
-  selectedNode = null;
-
-  // "Мой граф" — show only logged-in user's connections
-  if (currentFilter === 'my' && loggedInNode) {
-    const myNeighbors = new Set([loggedInNode.id]);
-    window._validLinks.forEach(l => {
-      const sid = typeof l.source === 'string' ? l.source : l.source.id;
-      const tid = typeof l.target === 'string' ? l.target : l.target.id;
-      if (sid === loggedInNode.id) myNeighbors.add(tid);
-      if (tid === loggedInNode.id) myNeighbors.add(sid);
-    });
-
-    window._nodeElements.select('circle')
-      .transition().duration(500).ease(d3.easeCubicOut)
-      .attr('opacity', n => myNeighbors.has(n.id) ? 1 : 0.05);
-    window._nodeElements.select('image')
-      .transition().duration(500).ease(d3.easeCubicOut)
-      .attr('opacity', n => myNeighbors.has(n.id) ? 1 : 0.05);
-    window._nodeElements.select('text')
-      .transition().duration(500).ease(d3.easeCubicOut)
-      .attr('opacity', n => myNeighbors.has(n.id) ? 1 : 0.03);
-
-    window._linkElements
-      .transition().duration(500).ease(d3.easeCubicOut)
-      .attr('stroke-opacity', d => {
-        const sid = typeof d.source === 'string' ? d.source : d.source.id;
-        const tid = typeof d.target === 'string' ? d.target : d.target.id;
-        return (sid === loggedInNode.id || tid === loggedInNode.id) ? 0.7 : 0.01;
-      });
-    return;
-  }
-
-  // Other filters
-  window._linkElements
-    .transition().duration(500).ease(d3.easeCubicOut)
-    .attr('stroke-opacity', d => {
-      if (currentFilter === 'all') return d.is_inferred ? 0.2 : 0.35;
-      return 0.35;
-    });
-
-  window._nodeElements.select('circle')
-    .transition().duration(500).ease(d3.easeCubicOut).attr('opacity', 1);
-  window._nodeElements.select('image')
-    .transition().duration(500).ease(d3.easeCubicOut).attr('opacity', 1);
-  window._nodeElements.select('text')
-    .transition().duration(500).ease(d3.easeCubicOut).attr('opacity', 1);
+  restoreGraphState();
 }
 
 function setWelcomeState({ ready, message }) {
@@ -1133,6 +1717,58 @@ function refreshGraphViewport(alpha = 0.3) {
   return true;
 }
 
+function waitForGraphViewport(callback, alpha = 0.4, attempt = 0) {
+  if (refreshGraphViewport(alpha)) {
+    callback();
+    return;
+  }
+  if (attempt < 10) setTimeout(() => waitForGraphViewport(callback, alpha, attempt + 1), 120);
+}
+
+function startSession(node, { revealApp = false } = {}) {
+  if (revealApp) {
+    document.getElementById('welcomeScreen').style.display = 'none';
+    document.querySelector('.app').style.display = 'grid';
+  }
+
+  loggedInNode = node;
+  updateLegendUserLabel();
+  refreshNodeVisuals(node ? 0.9 : 0.35);
+  document.getElementById('welcomeResults').classList.remove('active');
+  closeIdentityPrompt();
+
+  if (!node) {
+    activateMode('all');
+    waitForGraphViewport(() => restoreGraphState(), 0.4);
+    return;
+  }
+
+  activateMode('my');
+  waitForGraphViewport(() => {
+    node.fx = width / 2;
+    node.fy = height / 2;
+    simulation.alpha(1).restart();
+
+    setTimeout(() => {
+      node.fx = null;
+      node.fy = null;
+      selectNode(node);
+      restoreGraphState();
+      setTimeout(() => centerOnNode(node), 500);
+    }, 1600);
+  }, 1);
+}
+
+function submitIdentityPrompt() {
+  const value = document.getElementById('identityInput').value.trim();
+  const resolved = resolveIdentityNode(value);
+  if (!resolved.node) {
+    setIdentityPromptMessage(getIdentityResolutionMessage(resolved));
+    return;
+  }
+  startSession(resolved.node, { revealApp: false });
+}
+
 // ============================================================
 // RESIZE
 // ============================================================
@@ -1156,49 +1792,14 @@ function enterApp(tgHandle) {
 
   let node = null;
   if (tgHandle) {
-    const resolved = resolveWelcomeNode(tgHandle);
+    const resolved = resolveIdentityNode(tgHandle);
     node = resolved.node;
     if (!node) {
-      const message = resolved.state === 'multiple'
-        ? 'Нашлось несколько вариантов. Выбери себя в подсказках или введи точнее.'
-        : 'Человека не нашли. Проверь имя или @username, либо выбери вариант в подсказках.';
-      setWelcomeState({ ready: true, message });
+      setWelcomeState({ ready: true, message: getIdentityResolutionMessage(resolved) });
       return;
     }
   }
-
-  document.getElementById('welcomeResults').classList.remove('active');
-  document.getElementById('welcomeScreen').style.display = 'none';
-  document.querySelector('.app').style.display = 'grid';
-  loggedInNode = node;
-  activateMode(loggedInNode ? 'my' : 'all');
-
-  const waitForViewport = (callback, attempt = 0) => {
-    if (refreshGraphViewport(loggedInNode ? 1 : 0.4)) {
-      callback();
-      return;
-    }
-    if (attempt < 10) setTimeout(() => waitForViewport(callback, attempt + 1), 120);
-  };
-
-  if (!loggedInNode) {
-    waitForViewport(() => applyFilter());
-    return;
-  }
-
-  waitForViewport(() => {
-    node.fx = width / 2;
-    node.fy = height / 2;
-    simulation.alpha(1).restart();
-
-    setTimeout(() => {
-      node.fx = null;
-      node.fy = null;
-      selectNode(node);
-      applyFilter();
-      setTimeout(() => centerOnNode(node), 500);
-    }, 2000);
-  });
+  startSession(node, { revealApp: true });
 }
 
 document.getElementById('welcomeEnter').addEventListener('click', () => {
