@@ -101,6 +101,37 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 .tag.need { border-color: var(--red); color: var(--red); }
 .tag.offer { border-color: var(--purple); color: var(--purple); }
 
+/* Profile tabs */
+.profile-tabs { display: flex; border-bottom: 1px solid var(--border); margin: 0 -20px; padding: 0 20px; gap: 0; }
+.profile-tab { padding: 10px 16px; font-size: 12px; font-weight: 600; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.3px; }
+.profile-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.profile-tab:hover:not(.active) { color: var(--text); }
+.tab-content { display: none; padding-top: 16px; }
+.tab-content.active { display: block; }
+
+/* TG link */
+.card-tg a { color: var(--blue); text-decoration: none; font-family: var(--mono); font-size: 13px; }
+.card-tg a:hover { text-decoration: underline; }
+
+/* Stage badge */
+.card-stage { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; background: var(--surface2); border: 1px solid var(--border); color: var(--text2); margin-left: 8px; }
+
+/* Connection cards (rich) */
+.conn-card { padding: 12px 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
+.conn-card:hover { background: rgba(255,255,255,0.02); }
+.conn-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.conn-card-avatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; }
+.conn-card-name { font-size: 14px; font-weight: 600; }
+.conn-card-role { font-size: 11px; color: var(--text2); }
+.conn-card-why { font-size: 12px; color: var(--text2); line-height: 1.5; margin-top: 4px; padding-left: 42px; }
+.conn-card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; padding-left: 42px; }
+.conn-card-tag { padding: 2px 8px; border-radius: 10px; font-size: 10px; background: rgba(255,107,0,0.1); color: var(--accent); }
+
+/* Info rows */
+.info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 13px; }
+.info-label { color: var(--text2); }
+.info-value { color: var(--text); font-weight: 500; text-align: right; max-width: 60%; }
+
 .card-connections { list-style: none; }
 .card-connections li { padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
 .card-connections li:hover { color: var(--accent); }
@@ -503,7 +534,7 @@ function showPersonCard(d) {
   document.getElementById('sidebarTitle').textContent = 'Профиль';
   const content = document.getElementById('sidebarContent');
 
-  // Find connections
+  // Find connections with explanations
   const connections = [];
   DATA.links.forEach(l => {
     const sid = typeof l.source === 'string' ? l.source : l.source.id;
@@ -524,70 +555,171 @@ function showPersonCard(d) {
 
   const avatarBg = getNodeColor(d).replace('#', '');
   const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(d.name)}&background=${avatarBg}&color=fff&size=120&font-size=0.38&bold=true&format=svg`;
+  const tgLink = d.telegram ? `https://t.me/${d.telegram.replace('@','')}` : '';
+  const tgHtml = d.telegram ? `<a href="${tgLink}" target="_blank">${d.telegram}</a> <span style="font-size:11px;color:var(--text2)">→ открыть</span>` : '';
+
+  const roleLabel = d.role === 'organizer' ? 'Организатор' : d.role === 'mentor' ? 'Ментор' : 'Участник';
+
+  // Count tabs to show
+  const hasBiz = d.industries.length || d.strengths.length || d.needs.length || d.offers.length;
+  const hasLife = d.hobbies.length || d.geo.length || d.age;
+  const hasConn = connections.length || intros.length;
 
   let html = `<div class="card">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px">
-      <img src="${avatarUrl}" style="width:56px;height:56px;border-radius:50%;border:2.5px solid #${avatarBg};flex-shrink:0" alt="${d.name}">
+    <!-- Header -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px">
+      <img src="${avatarUrl}" style="width:60px;height:60px;border-radius:50%;border:3px solid #${avatarBg};flex-shrink:0" alt="${d.name}">
       <div>
-        <div class="card-name">${d.name}</div>
-        <div class="card-tg">${d.telegram || ''}</div>
+        <div class="card-name" style="font-size:20px">${d.name}</div>
+        <div class="card-tg">${tgHtml}</div>
       </div>
     </div>
-    <span class="card-role ${d.role}">${d.role === 'organizer' ? 'Организатор' : d.role === 'mentor' ? 'Ментор' : 'Участник'}</span>
-    ${d.age ? `<span style="margin-left:8px;font-size:13px;color:var(--text2)">${d.age} лет</span>` : ''}
-    <div class="card-bio">${d.bio}</div>`;
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+      <span class="card-role ${d.role}">${roleLabel}</span>
+      ${d.age ? `<span class="card-stage">${d.age} лет</span>` : ''}
+      <span class="card-stage">${d.stage}</span>
+      ${d.geo.length ? `<span class="card-stage">📍 ${d.geo.join(', ')}</span>` : ''}
+    </div>
 
-  if (d.industries.length) {
-    html += `<div class="card-section"><div class="card-section-title">Сфера</div>
-      <div class="tag-list">${d.industries.map(t => `<span class="tag industry">${t}</span>`).join('')}</div></div>`;
-  }
-  if (d.geo.length) {
-    html += `<div class="card-section"><div class="card-section-title">География</div>
-      <div class="tag-list">${d.geo.map(t => `<span class="tag geo">${t}</span>`).join('')}</div></div>`;
-  }
-  if (d.hobbies.length) {
-    html += `<div class="card-section"><div class="card-section-title">Хобби</div>
-      <div class="tag-list">${d.hobbies.map(t => `<span class="tag hobby">${t}</span>`).join('')}</div></div>`;
-  }
-  if (d.strengths.length) {
-    html += `<div class="card-section"><div class="card-section-title">Сильные стороны</div>
-      <div class="tag-list">${d.strengths.map(t => `<span class="tag strength">${t}</span>`).join('')}</div></div>`;
-  }
-  if (d.needs.length) {
-    html += `<div class="card-section"><div class="card-section-title">Запросы</div>
-      <div class="tag-list">${d.needs.map(t => `<span class="tag need">${t}</span>`).join('')}</div></div>`;
-  }
-  if (d.offers.length) {
-    html += `<div class="card-section"><div class="card-section-title">Может дать</div>
-      <div class="tag-list">${d.offers.map(t => `<span class="tag offer">${t}</span>`).join('')}</div></div>`;
+    <!-- Bio -->
+    <div class="card-bio" style="margin-bottom:16px">${d.bio}</div>
+
+    <!-- Tabs -->
+    <div class="profile-tabs">
+      ${hasBiz ? '<div class="profile-tab active" data-tab="biz">Бизнес</div>' : ''}
+      ${hasLife ? `<div class="profile-tab ${!hasBiz ? 'active' : ''}" data-tab="life">Личное</div>` : ''}
+      ${hasConn ? `<div class="profile-tab ${!hasBiz && !hasLife ? 'active' : ''}" data-tab="connections">Связи <span style="font-size:10px;opacity:0.6">${connections.length}</span></div>` : ''}
+      ${intros.length ? '<div class="profile-tab" data-tab="intros">Интро</div>' : ''}
+    </div>`;
+
+  // === TAB: Business ===
+  if (hasBiz) {
+    html += `<div class="tab-content active" data-tab="biz">`;
+    if (d.industries.length) {
+      html += `<div class="card-section"><div class="card-section-title">Сфера деятельности</div>
+        <div class="tag-list">${d.industries.map(t => `<span class="tag industry">${t}</span>`).join('')}</div></div>`;
+    }
+    if (d.strengths.length) {
+      html += `<div class="card-section"><div class="card-section-title">Компетенции и сильные стороны</div>
+        <div class="tag-list">${d.strengths.map(t => `<span class="tag strength">${t}</span>`).join('')}</div></div>`;
+    }
+    if (d.offers.length) {
+      html += `<div class="card-section"><div class="card-section-title">Чем может быть полезен</div>
+        <div class="tag-list">${d.offers.map(t => `<span class="tag offer">${t}</span>`).join('')}</div></div>`;
+    }
+    if (d.needs.length) {
+      html += `<div class="card-section"><div class="card-section-title">Что ищет / запросы</div>
+        <div class="tag-list">${d.needs.map(t => `<span class="tag need">${t}</span>`).join('')}</div></div>`;
+    }
+    html += `</div>`;
   }
 
-  if (connections.length) {
-    html += `<div class="card-section"><div class="card-section-title">Связи (${connections.length})</div>
-      <ul class="card-connections">`;
-    connections.slice(0, 20).forEach(c => {
-      html += `<li onclick="focusNode('${c.person.id}')">${c.person.name} <span class="conn-strength">${c.link.strength.toFixed(1)}</span></li>`;
-    });
-    html += `</ul></div>`;
+  // === TAB: Life ===
+  if (hasLife) {
+    html += `<div class="tab-content" data-tab="life">`;
+    if (d.geo.length) {
+      html += `<div class="card-section"><div class="card-section-title">География</div>
+        <div class="tag-list">${d.geo.map(t => `<span class="tag geo">${t}</span>`).join('')}</div></div>`;
+    }
+    if (d.hobbies.length) {
+      html += `<div class="card-section"><div class="card-section-title">Хобби и увлечения</div>
+        <div class="tag-list">${d.hobbies.map(t => `<span class="tag hobby">${t}</span>`).join('')}</div></div>`;
+    }
+    if (d.age) {
+      html += `<div class="info-row"><span class="info-label">Возраст</span><span class="info-value">${d.age} лет</span></div>`;
+    }
+    html += `<div class="info-row"><span class="info-label">Уверенность профиля</span><span class="info-value">${(d.confidence * 100).toFixed(0)}%</span></div>`;
+    html += `</div>`;
   }
 
-  if (intros.length) {
-    html += `<div class="card-section"><div class="card-section-title">Рекомендуемые знакомства</div>`;
-    intros.forEach(i => {
-      const otherName = i.person_a === d.id
-        ? (DATA.nodes.find(n => n.id === i.person_b)?.name || i.person_b)
-        : (DATA.nodes.find(n => n.id === i.person_a)?.name || i.person_a);
-      html += `<div class="intro-card" style="padding:10px 0; border-bottom:1px solid var(--border)">
-        <div style="font-weight:600;font-size:14px">${otherName}</div>
-        <div style="font-size:12px;color:var(--text2);margin-top:4px">${i.why_connect}</div>
-        <span class="intro-priority">Приоритет: ${i.priority}/10</span>
+  // === TAB: Connections (rich) ===
+  if (hasConn) {
+    html += `<div class="tab-content" data-tab="connections">`;
+    connections.slice(0, 25).forEach(c => {
+      const p = c.person;
+      const pBg = getNodeColor(p).replace('#', '');
+      const pAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(p.name)}&background=${pBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
+      const relTypeLabels = { industry: 'Индустрия', hobby: 'Хобби', synergy: 'Синергия', geography: 'География', team: 'Команда', general: 'Общее' };
+      const relLabel = relTypeLabels[c.link.relation_type] || '';
+
+      html += `<div class="conn-card" onclick="focusNode('${p.id}')">
+        <div class="conn-card-header">
+          <img class="conn-card-avatar" src="${pAvatar}" alt="${p.name}">
+          <div style="flex:1">
+            <div class="conn-card-name">${p.name}</div>
+            <div class="conn-card-role">${p.bio ? p.bio.substring(0, 60) + (p.bio.length > 60 ? '...' : '') : ''}</div>
+          </div>
+        </div>
+        <div class="conn-card-why">💡 ${c.link.explanation}</div>
+        <div class="conn-card-tags">
+          <span class="conn-card-tag">${relLabel}</span>
+          <span class="conn-card-tag">Сила: ${c.link.strength.toFixed(1)}/10</span>
+          ${c.link.is_inferred ? '<span class="conn-card-tag" style="background:rgba(255,74,106,0.1);color:var(--red)">Гипотеза</span>' : ''}
+        </div>
       </div>`;
     });
     html += `</div>`;
   }
 
+  // === TAB: Intros ===
+  if (intros.length) {
+    html += `<div class="tab-content" data-tab="intros">
+      <div style="font-size:12px;color:var(--text2);margin-bottom:12px">Люди, с которыми особенно стоит познакомиться</div>`;
+    intros.forEach(i => {
+      const otherId = i.person_a === d.id ? i.person_b : i.person_a;
+      const other = DATA.nodes.find(n => n.id === otherId);
+      if (!other) return;
+      const oBg = getNodeColor(other).replace('#', '');
+      const oAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(other.name)}&background=${oBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
+      const valueForMe = i.person_a === d.id ? i.value_for_a : i.value_for_b;
+      const valueForThem = i.person_a === d.id ? i.value_for_b : i.value_for_a;
+
+      html += `<div class="conn-card" onclick="focusNode('${other.id}')">
+        <div class="conn-card-header">
+          <img class="conn-card-avatar" src="${oAvatar}" alt="${other.name}">
+          <div style="flex:1">
+            <div class="conn-card-name">${other.name} <span class="intro-priority">⭐ ${i.priority}/10</span></div>
+            <div class="conn-card-role">${other.bio ? other.bio.substring(0, 80) + (other.bio.length > 80 ? '...' : '') : ''}</div>
+          </div>
+        </div>
+        <div class="conn-card-why" style="padding-left:42px">
+          <div style="margin-bottom:4px"><strong>Почему стоит познакомиться:</strong></div>
+          <div>${i.why_connect}</div>
+          ${valueForMe ? `<div style="margin-top:6px;color:var(--green)">✅ Польза для тебя: ${valueForMe}</div>` : ''}
+          ${valueForThem ? `<div style="margin-top:2px;color:var(--blue)">🤝 Польза для ${other.name.split(' ')[0]}: ${valueForThem}</div>` : ''}
+        </div>
+      </div>`;
+    });
+
+    // Group intros
+    const groupIntros = intros.filter(i => i.group_members && i.group_members.length > 0);
+    if (groupIntros.length) {
+      html += `<div style="margin-top:12px;font-size:12px;color:var(--text2)">Групповые знакомства:</div>`;
+      groupIntros.forEach(i => {
+        const allIds = [i.person_a, i.person_b, ...(i.group_members || [])].filter(id => id !== d.id);
+        const names = allIds.map(id => DATA.nodes.find(n => n.id === id)?.name || id);
+        html += `<div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:13px">
+          <div style="font-weight:600">${names.join(' + ')}</div>
+          <div style="color:var(--text2);margin-top:3px">${i.why_connect}</div>
+        </div>`;
+      });
+    }
+    html += `</div>`;
+  }
+
   html += `</div>`;
   content.innerHTML = html;
+
+  // Setup tab switching
+  content.querySelectorAll('.profile-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      content.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+      content.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.tab;
+      content.querySelectorAll(`.tab-content[data-tab="${target}"]`).forEach(t => t.classList.add('active'));
+    });
+  });
 }
 
 function showEdgeDetail(d) {
