@@ -231,13 +231,10 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   <!-- Graph -->
   <div class="graph-area" id="graphArea">
     <div class="filters-bar" id="filtersBar">
-      <div class="filter-chip active" data-filter="all">Все</div>
-      <div class="filter-chip" data-filter="strong">Сильные связи</div>
-      <div class="filter-chip" data-filter="intros">Рекомендации</div>
-      <div class="filter-chip" data-filter="inferred">Гипотезы</div>
-      <div class="filter-chip" data-filter="industry">Индустрия</div>
-      <div class="filter-chip" data-filter="hobby">Хобби</div>
-      <div class="filter-chip" data-filter="team">Мини-группы</div>
+      <div class="filter-chip active" data-filter="all">Все связи</div>
+      <div class="filter-chip" data-filter="my">Мой граф</div>
+      <div class="filter-chip" data-filter="industry">По сфере</div>
+      <div class="filter-chip" data-filter="hobby">По хобби</div>
     </div>
     <svg class="graph-canvas" id="graphCanvas"></svg>
     <div class="graph-tooltip" id="tooltip"></div>
@@ -273,6 +270,7 @@ let svg, g, linkG, nodeG;
 let currentMode = 'graph';
 let currentFilter = 'all';
 let selectedNode = null;
+let loggedInNode = null;
 let width, height;
 
 const ROLE_COLORS = {
@@ -313,15 +311,26 @@ function initGraph() {
 
   svg = d3.select('#graphCanvas')
     .attr('width', width)
-    .attr('height', height);
+    .attr('height', height)
+    .style('pointer-events', 'all');
 
-  // Zoom
+  g = svg.append('g');
+
+  // Background rect to catch pan/drag events on empty space
+  g.append('rect')
+    .attr('width', width * 3)
+    .attr('height', height * 3)
+    .attr('x', -width)
+    .attr('y', -height)
+    .attr('fill', 'transparent')
+    .style('pointer-events', 'all');
+
+  // Zoom & pan (applied to SVG before node drag handlers)
   const zoom = d3.zoom()
     .scaleExtent([0.15, 4])
     .on('zoom', (e) => g.attr('transform', e.transform));
   svg.call(zoom);
 
-  g = svg.append('g');
   linkG = g.append('g').attr('class', 'links');
   nodeG = g.append('g').attr('class', 'nodes');
 
@@ -592,6 +601,7 @@ function showPersonCard(d) {
       <div>
         <div class="card-name" style="font-size:20px">${d.name}</div>
         <div class="card-tg">${tgHtml}</div>
+        ${d.telegram ? `<a href="https://t.me/${d.telegram.replace('@','')}" target="_blank" style="display:inline-block;margin-top:8px;padding:8px 20px;background:var(--accent);color:#fff;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none">Написать</a>` : ''}
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
@@ -697,6 +707,7 @@ function showPersonCard(d) {
           <div>${i.why_connect}</div>
           ${valueForMe ? `<div style="margin-top:6px;color:var(--green)">✅ Польза для тебя: ${valueForMe}</div>` : ''}
           ${valueForThem ? `<div style="margin-top:2px;color:var(--blue)">🤝 Польза для ${other.name.split(' ')[0]}: ${valueForThem}</div>` : ''}
+          ${other.telegram ? `<a href="https://t.me/${other.telegram.replace('@','')}" target="_blank" style="display:inline-block;margin-top:8px;padding:6px 16px;background:var(--accent);color:#fff;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;transition:transform 0.2s">Написать в Telegram</a>` : ''}
         </div>
       </div>`;
     });
@@ -959,27 +970,43 @@ function setupFilters() {
 function applyFilter() {
   selectedNode = null;
 
-  // Determine which links to show
-  const introSet = new Set();
-  DATA.introductions.forEach(i => {
-    introSet.add(`${i.person_a}|${i.person_b}`);
-    introSet.add(`${i.person_b}|${i.person_a}`);
-  });
+  // "Мой граф" — show only logged-in user's connections
+  if (currentFilter === 'my' && loggedInNode) {
+    const myNeighbors = new Set([loggedInNode.id]);
+    window._validLinks.forEach(l => {
+      const sid = typeof l.source === 'string' ? l.source : l.source.id;
+      const tid = typeof l.target === 'string' ? l.target : l.target.id;
+      if (sid === loggedInNode.id) myNeighbors.add(tid);
+      if (tid === loggedInNode.id) myNeighbors.add(sid);
+    });
 
+    window._nodeElements.select('circle')
+      .transition().duration(500).ease(d3.easeCubicOut)
+      .attr('opacity', n => myNeighbors.has(n.id) ? 1 : 0.05);
+    window._nodeElements.select('image')
+      .transition().duration(500).ease(d3.easeCubicOut)
+      .attr('opacity', n => myNeighbors.has(n.id) ? 1 : 0.05);
+    window._nodeElements.select('text')
+      .transition().duration(500).ease(d3.easeCubicOut)
+      .attr('opacity', n => myNeighbors.has(n.id) ? 1 : 0.03);
+
+    window._linkElements
+      .transition().duration(500).ease(d3.easeCubicOut)
+      .attr('stroke-opacity', d => {
+        const sid = typeof d.source === 'string' ? d.source : d.source.id;
+        const tid = typeof d.target === 'string' ? d.target : d.target.id;
+        return (sid === loggedInNode.id || tid === loggedInNode.id) ? 0.7 : 0.01;
+      });
+    return;
+  }
+
+  // Other filters
   window._linkElements
     .transition().duration(500).ease(d3.easeCubicOut)
     .attr('stroke-opacity', d => {
-      const sid = typeof d.source === 'string' ? d.source : d.source.id;
-      const tid = typeof d.target === 'string' ? d.target : d.target.id;
-      const key = `${sid}|${tid}`;
-
       if (currentFilter === 'all') return d.is_inferred ? 0.2 : 0.35;
-      if (currentFilter === 'strong') return d.strength >= 5 ? 0.6 : 0.03;
-      if (currentFilter === 'intros') return introSet.has(key) ? 0.7 : 0.03;
-      if (currentFilter === 'inferred') return d.is_inferred ? 0.5 : 0.03;
       if (currentFilter === 'industry') return d.relation_type === 'industry' ? 0.6 : 0.03;
       if (currentFilter === 'hobby') return d.relation_type === 'hobby' ? 0.6 : 0.03;
-      if (currentFilter === 'team') return d.relation_type === 'team' ? 0.8 : 0.03;
       return 0.35;
     });
 
@@ -1000,6 +1027,8 @@ window.addEventListener('resize', () => {
   height = area.clientHeight;
   svg.attr('width', width).attr('height', height);
   simulation.force('center', d3.forceCenter(width / 2, height / 2));
+  simulation.force('x', d3.forceX(width / 2).strength(0.012));
+  simulation.force('y', d3.forceY(height / 2).strength(0.012));
   simulation.alpha(0.3).restart();
 });
 
@@ -1019,21 +1048,32 @@ function enterApp(tgHandle) {
   const clean = tgHandle.replace('@', '').toLowerCase();
   const node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
   if (!node) return;
+  loggedInNode = node;
 
-  // Pin the node to center while simulation settles
-  const area = document.getElementById('graphArea');
-  node.fx = area.clientWidth / 2;
-  node.fy = area.clientHeight / 2;
-  simulation.alpha(1).restart();
-
-  // After simulation settles, unpin and center smoothly
+  // Wait for layout to compute, then recalculate center
   setTimeout(() => {
-    node.fx = null;
-    node.fy = null;
-    selectNode(node);
-    // Re-center after a bit more settling
-    setTimeout(() => centerOnNode(node), 500);
-  }, 1500);
+    const area = document.getElementById('graphArea');
+    const w = area.clientWidth;
+    const h = area.clientHeight;
+
+    // Update simulation center to match actual graph area
+    simulation.force('center', d3.forceCenter(w / 2, h / 2));
+    simulation.force('x', d3.forceX(w / 2).strength(0.012));
+    simulation.force('y', d3.forceY(h / 2).strength(0.012));
+
+    // Pin user node to center
+    node.fx = w / 2;
+    node.fy = h / 2;
+    simulation.alpha(1).restart();
+
+    // After settling, unpin and select
+    setTimeout(() => {
+      node.fx = null;
+      node.fy = null;
+      selectNode(node);
+      setTimeout(() => centerOnNode(node), 500);
+    }, 2000);
+  }, 100);
 }
 
 document.getElementById('welcomeEnter').addEventListener('click', () => {
