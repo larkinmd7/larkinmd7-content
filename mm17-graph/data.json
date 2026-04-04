@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "ММ17 Social Graph",
-    "description": "Интерактивный граф связей участников MasterMind 17",
+    "title": "Социальные связи чата ММ17",
+    "description": "Интерактивная карта социальных связей чата ММ17",
     "total_people": 108,
     "total_links": 938,
     "total_clusters": 52,
