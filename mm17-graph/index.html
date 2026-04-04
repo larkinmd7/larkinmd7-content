@@ -29,7 +29,7 @@
 body { font-family: var(--font); background: var(--bg); color: var(--text); overflow: hidden; height: 100vh; }
 
 /* Layout */
-.app { display: grid; grid-template-columns: 340px 1fr 380px; grid-template-rows: 56px 1fr; height: 100vh; }
+.app { display: grid; grid-template-columns: 1fr 380px; grid-template-rows: 56px 1fr; height: 100vh; }
 .header { grid-column: 1 / -1; display: flex; align-items: center; padding: 0 20px; gap: 16px; border-bottom: 1px solid var(--border); background: var(--surface); z-index: 10; }
 .graph-area { position: relative; overflow: hidden; }
 .sidebar { border-left: 1px solid var(--border); background: var(--surface); overflow-y: auto; display: flex; flex-direction: column; }
@@ -176,9 +176,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text2); }
 
-/* Left sidebar */
-.sidebar-left { border-right: 1px solid var(--border); background: var(--surface); overflow-y: auto; display: flex; flex-direction: column; grid-row: 2; }
-
 /* Welcome screen */
 #welcomeScreen { position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
 #welcomeScreen .welcome-logo { font-size: 42px; font-weight: 700; color: var(--accent); }
@@ -194,7 +191,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 /* Mobile */
 @media (max-width: 768px) {
   .app { grid-template-columns: 1fr; grid-template-rows: 56px 1fr 40vh; }
-  .sidebar-left { display: none; }
   .sidebar { border-left: none; border-top: 1px solid var(--border); }
   .stats { display: none; }
   .mode-tabs { overflow-x: auto; }
@@ -231,19 +227,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
       <div class="stat-item"><span id="statLinks">0</span> связей</div>
     </div>
   </header>
-
-  <!-- Left Sidebar: Intros -->
-  <div class="sidebar-left" id="sidebarLeft">
-    <div class="sidebar-header">
-      <div class="sidebar-title" id="sidebarLeftTitle">Интро</div>
-    </div>
-    <div class="sidebar-content" id="sidebarLeftContent">
-      <div class="empty-state">
-        <h3>Рекомендации</h3>
-        <p>Выбери участника, чтобы увидеть персональные рекомендации по знакомствам.</p>
-      </div>
-    </div>
-  </div>
 
   <!-- Graph -->
   <div class="graph-area" id="graphArea">
@@ -318,7 +301,6 @@ async function loadData() {
   setupSearch();
   setupModes();
   setupFilters();
-  updateLeftSidebar(null);
 }
 
 // ============================================================
@@ -554,7 +536,6 @@ function selectNode(d) {
   highlightNeighbors(d);
   centerOnNode(d);
   showPersonCard(d);
-  updateLeftSidebar(d);
 }
 
 function centerOnNode(d) {
@@ -655,8 +636,9 @@ function showPersonCard(d) {
 
   // === TAB: Details (Подробнее) ===
   {
+    const rawBio = (d.full_bio || d.bio).replace(/^#+ /gm, '').replace(/\*\*/g, '').replace(/^- /gm, '• ');
     html += `<div class="tab-content ${!hasBiz ? 'active' : ''}" data-tab="details">
-      <div style="font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap">${d.full_bio || d.bio}</div>
+      <div style="font-size:14px;line-height:1.8;color:var(--text);white-space:pre-wrap">${rawBio}</div>
     </div>`;
   }
 
@@ -958,74 +940,6 @@ function showEmptyState() {
     <h3>Кликни на узел или связь</h3>
     <p>Выбери участника на графе, чтобы увидеть его профиль, связи и рекомендации.</p>
   </div>`;
-  updateLeftSidebar(null);
-}
-
-// ============================================================
-// LEFT SIDEBAR — INTROS
-// ============================================================
-function updateLeftSidebar(d) {
-  const title = document.getElementById('sidebarLeftTitle');
-  const content = document.getElementById('sidebarLeftContent');
-
-  if (!DATA) return;
-
-  if (d) {
-    // Person-specific intros
-    const intros = DATA.introductions.filter(i =>
-      i.person_a === d.id || i.person_b === d.id ||
-      (i.group_members && i.group_members.includes(d.id))
-    );
-
-    title.textContent = `Интро для ${d.name.split(' ')[0]} (${intros.length})`;
-
-    if (intros.length === 0) {
-      content.innerHTML = `<div class="empty-state"><p>Нет рекомендаций для этого участника</p></div>`;
-      return;
-    }
-
-    content.innerHTML = intros.map(i => {
-      const otherId = i.person_a === d.id ? i.person_b : i.person_a;
-      const other = DATA.nodes.find(n => n.id === otherId);
-      if (!other) return '';
-      const oBg = getNodeColor(other).replace('#', '');
-      const oAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(other.name)}&background=${oBg}&color=fff&size=64&font-size=0.4&bold=true&format=svg`;
-      const valueForMe = i.person_a === d.id ? i.value_for_a : i.value_for_b;
-      const valueForThem = i.person_a === d.id ? i.value_for_b : i.value_for_a;
-
-      return `<div class="conn-card" style="padding:12px 20px;cursor:pointer" onclick="focusNode('${other.id}')">
-        <div class="conn-card-header">
-          <img class="conn-card-avatar" src="${oAvatar}" alt="${other.name}">
-          <div style="flex:1">
-            <div class="conn-card-name">${other.name} <span class="intro-priority">${i.priority}/10</span></div>
-            <div class="conn-card-role">${other.bio ? other.bio.substring(0, 60) + (other.bio.length > 60 ? '...' : '') : ''}</div>
-          </div>
-        </div>
-        <div class="conn-card-why" style="padding-left:42px">${i.why_connect}</div>
-        ${valueForMe ? `<div style="padding-left:42px;margin-top:4px;font-size:12px;color:var(--green)">Польза: ${valueForMe}</div>` : ''}
-      </div>`;
-    }).join('');
-
-  } else {
-    // Global intros
-    title.textContent = `Рекомендации (${DATA.introductions.length})`;
-    content.innerHTML = DATA.introductions.map(i => {
-      const a = DATA.nodes.find(n => n.id === i.person_a);
-      const b = DATA.nodes.find(n => n.id === i.person_b);
-      const names = [a?.name || i.person_a, b?.name || i.person_b];
-      if (i.group_members) {
-        i.group_members.forEach(gm => {
-          const gn = DATA.nodes.find(n => n.id === gm);
-          if (gn) names.push(gn.name);
-        });
-      }
-      return `<div class="intro-card" onclick="focusIntro('${i.person_a}','${i.person_b}')">
-        <div class="intro-people">${names.join(' + ')}</div>
-        <div class="intro-why">${i.why_connect}</div>
-        <span class="intro-priority">Приоритет: ${i.priority}/10</span>
-      </div>`;
-    }).join('');
-  }
 }
 
 // ============================================================
