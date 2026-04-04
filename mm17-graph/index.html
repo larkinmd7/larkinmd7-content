@@ -212,38 +212,26 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   box-shadow: 10px 10px 0 rgba(17,17,17,0.08);
   z-index: 1;
 }
-.welcome-deco-square.a { top: 72px; left: 72px; width: 92px; height: 92px; }
-.welcome-deco-square.b { top: 118px; right: 10%; width: 132px; height: 132px; background: rgba(255,107,0,0.12); }
-.welcome-deco-square.c { bottom: 84px; left: 12%; width: 112px; height: 112px; }
-.welcome-deco-square.d { right: 80px; bottom: 108px; width: 64px; height: 64px; background: rgba(17,17,17,0.92); }
+.welcome-deco-square.a { top: 84px; left: 84px; width: 84px; height: 84px; }
+.welcome-deco-square.b { right: 92px; bottom: 96px; width: 96px; height: 96px; background: rgba(255,107,0,0.12); }
 .welcome-shell {
   position: relative;
   z-index: 2;
-  width: min(1180px, 100%);
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.6fr);
-  gap: 28px;
-  align-items: stretch;
+  width: min(620px, calc(100vw - 40px));
 }
 .welcome-panel {
   position: relative;
   border: 2px solid #111;
   background: rgba(255,255,255,0.9);
   box-shadow: 14px 14px 0 #111;
-  padding: 34px;
+  padding: 40px 34px 30px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
+  align-items: center;
+  text-align: center;
 }
-.welcome-topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.welcome-eyebrow,
-.welcome-badge {
+.welcome-eyebrow {
   display: inline-flex;
   align-items: center;
   min-height: 38px;
@@ -255,67 +243,26 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.welcome-badge {
-  background: #111;
-  color: #fff;
-}
 .welcome-title {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   max-width: 10ch;
-  font-size: clamp(56px, 8vw, 98px);
-  line-height: 0.88;
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 0.92;
   letter-spacing: -0.06em;
   font-weight: 800;
+  color: #111;
 }
-.welcome-title strong {
+.welcome-title .accent {
   color: var(--accent);
 }
-.welcome-title span {
-  display: block;
-  max-width: 18ch;
-  font-size: clamp(22px, 3vw, 38px);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-  color: #1b1b22;
-}
 .welcome-subtitle {
-  max-width: 34ch;
-  font-size: 18px;
+  max-width: 30ch;
+  font-size: 16px;
   line-height: 1.6;
   color: rgba(17,17,17,0.72);
 }
-.welcome-stats-strip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-.welcome-stat {
-  border: 2px solid #111;
-  background: #fff;
-  padding: 14px 16px;
-  min-height: 88px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.welcome-stat strong {
-  font-size: 28px;
-  line-height: 1;
-  font-family: var(--mono);
-  color: var(--accent);
-}
-.welcome-stat span {
-  font-size: 12px;
-  line-height: 1.4;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(17,17,17,0.56);
-}
 #welcomeScreen .welcome-search-box {
   position: relative;
-  width: min(760px, 100%);
+  width: 100%;
 }
 #welcomeScreen .welcome-input {
   width: 100%;
@@ -325,9 +272,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   border-radius: 0;
   box-shadow: 10px 10px 0 rgba(17,17,17,0.1);
   color: #111;
-  font-size: 22px;
+  font-size: 20px;
   font-family: var(--mono);
-  text-align: left;
+  text-align: center;
   outline: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
@@ -365,16 +312,16 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 }
 .welcome-actions {
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: stretch;
 }
 #welcomeScreen .welcome-btn,
 #welcomeScreen .welcome-skip {
-  min-height: 58px;
-  padding: 0 28px;
-  border: 2px solid #111;
-  border-radius: 0;
+  width: 100%;
+  min-height: 56px;
+  padding: 0 24px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -382,6 +329,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
 }
 #welcomeScreen .welcome-btn {
+  border: 2px solid #111;
+  border-radius: 0;
   background: var(--accent);
   color: #fff;
   box-shadow: 10px 10px 0 #111;
@@ -391,13 +340,16 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   box-shadow: 14px 14px 0 #111;
 }
 #welcomeScreen .welcome-skip {
-  background: #fff;
-  color: #111;
-  box-shadow: 10px 10px 0 rgba(17,17,17,0.12);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(17,17,17,0.62);
+  box-shadow: none;
 }
 #welcomeScreen .welcome-skip:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 14px 14px 0 rgba(17,17,17,0.18);
+  transform: none;
+  box-shadow: none;
+  color: #111;
 }
 #welcomeScreen .welcome-status {
   min-height: 24px;
@@ -411,68 +363,6 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
-}
-.welcome-side {
-  display: grid;
-  gap: 16px;
-  align-content: start;
-}
-.welcome-note {
-  border: 2px solid #111;
-  padding: 20px;
-  box-shadow: 12px 12px 0 rgba(17,17,17,0.12);
-}
-.welcome-note.dark {
-  background: #111;
-  color: #fff;
-}
-.welcome-note.light {
-  background: rgba(255,255,255,0.9);
-  color: #111;
-}
-.welcome-note.accent {
-  background: var(--accent);
-  color: #fff;
-}
-.welcome-note-label {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-.welcome-note-title {
-  font-size: 20px;
-  line-height: 1.1;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-.welcome-note-copy {
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.82;
-}
-.welcome-mini-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 16px;
-}
-.welcome-mini-grid div {
-  min-height: 74px;
-  padding: 12px;
-  border: 2px solid currentColor;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 12px;
-  line-height: 1.4;
-}
-.welcome-mini-grid strong {
-  font-size: 18px;
-  line-height: 1;
 }
 
 /* Identity prompt */
@@ -577,17 +467,11 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   .sidebar { border-left: none; border-top: 1px solid var(--border); }
   .stats { display: none; }
   .mode-tabs { overflow-x: auto; }
-  .welcome-shell { grid-template-columns: 1fr; gap: 18px; }
-  .welcome-panel { padding: 22px; box-shadow: 10px 10px 0 #111; }
-  .welcome-title { font-size: clamp(42px, 14vw, 72px); }
-  .welcome-title span { font-size: 26px; }
-  .welcome-stats-strip { grid-template-columns: 1fr; }
-  .welcome-actions { flex-direction: column; align-items: stretch; }
-  #welcomeScreen .welcome-btn,
-  #welcomeScreen .welcome-skip { width: 100%; justify-content: center; }
-  .welcome-side { grid-template-columns: 1fr; }
-  .welcome-deco-square.b,
-  .welcome-deco-square.d { display: none; }
+  #welcomeScreen { padding: 24px 14px; }
+  .welcome-panel { padding: 24px 20px; box-shadow: 10px 10px 0 #111; }
+  .welcome-title { font-size: clamp(36px, 14vw, 56px); }
+  #welcomeScreen .welcome-input { font-size: 18px; padding: 16px 18px; }
+  .welcome-deco-square { display: none; }
   .identity-prompt { padding-top: 72px; }
   .identity-actions { flex-direction: column-reverse; }
 }
@@ -599,62 +483,21 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 <div id="welcomeScreen">
   <div class="welcome-deco-square a"></div>
   <div class="welcome-deco-square b"></div>
-  <div class="welcome-deco-square c"></div>
-  <div class="welcome-deco-square d"></div>
   <div class="welcome-shell">
     <section class="welcome-panel">
-      <div class="welcome-topline">
-        <div class="welcome-eyebrow">MM17 / Социальные связи</div>
-        <div class="welcome-badge">Граф связей</div>
-      </div>
-      <div class="welcome-title"><strong>Социальные связи</strong><span>чата ММ17</span></div>
-      <div class="welcome-subtitle">Найди себя в графе, выдели свои связи и быстро переходи к людям, с кем уже есть сильный контакт.</div>
-      <div class="welcome-stats-strip">
-        <div class="welcome-stat">
-          <strong id="welcomeStatPeople">0</strong>
-          <span>участников в чате</span>
-        </div>
-        <div class="welcome-stat">
-          <strong id="welcomeStatLinks">0</strong>
-          <span>связей в графе</span>
-        </div>
-        <div class="welcome-stat">
-          <strong id="welcomeStatClusters">0</strong>
-          <span>категорий и кластеров</span>
-        </div>
-      </div>
+      <div class="welcome-eyebrow">MM17</div>
+      <div class="welcome-title"><span class="accent">Социальные связи</span> чата ММ17</div>
+      <div class="welcome-subtitle">Введи имя или @username, чтобы сразу открыть свои связи.</div>
       <div class="welcome-search-box">
         <input class="welcome-input" id="welcomeInput" type="text" placeholder="Введи имя или @username">
         <div class="search-results welcome-results" id="welcomeResults"></div>
       </div>
       <div class="welcome-actions">
-        <button class="welcome-btn" id="welcomeEnter" disabled>Войти и показать мои связи</button>
-        <button class="welcome-skip" id="welcomeSkip" disabled>Пропустить и открыть весь граф</button>
+        <button class="welcome-btn" id="welcomeEnter" disabled>Войти</button>
+        <button class="welcome-skip" id="welcomeSkip" disabled>Пропустить</button>
       </div>
       <div class="welcome-status" id="welcomeStatus">Загружаем данные…</div>
     </section>
-    <aside class="welcome-side">
-      <div class="welcome-note dark">
-        <div class="welcome-note-label">Старт</div>
-        <div class="welcome-note-title">Введи себя и получи свой контур</div>
-        <div class="welcome-note-copy">После входа граф сразу собирается вокруг тебя: свои связи, интро и ближайшие точки контакта.</div>
-      </div>
-      <div class="welcome-note light">
-        <div class="welcome-note-label">Что внутри</div>
-        <div class="welcome-note-copy">Сценарий построен как быстрый навигатор по людям, а не просто красивая картинка.</div>
-        <div class="welcome-mini-grid">
-          <div><strong>01</strong><span>Мои связи</span></div>
-          <div><strong>02</strong><span>Категории</span></div>
-          <div><strong>03</strong><span>Рейтинг</span></div>
-          <div><strong>04</strong><span>Интро</span></div>
-        </div>
-      </div>
-      <div class="welcome-note accent">
-        <div class="welcome-note-label">Подсказка</div>
-        <div class="welcome-note-title">Достаточно 2 символов</div>
-        <div class="welcome-note-copy">Начни вводить имя или Telegram и выбери себя в выпадающих подсказках, как в основном поиске.</div>
-      </div>
-    </aside>
   </div>
 </div>
 
@@ -778,16 +621,13 @@ async function loadData() {
     isDataLoaded = true;
     document.getElementById('statNodes').textContent = DATA.nodes.length;
     document.getElementById('statLinks').textContent = DATA.links.length;
-    document.getElementById('welcomeStatPeople').textContent = DATA.nodes.length;
-    document.getElementById('welcomeStatLinks').textContent = DATA.links.length;
-    document.getElementById('welcomeStatClusters').textContent = DATA.clusters.length;
     initGraph();
     setupSearch();
     setupModes();
     setupWelcomeInput();
     setupIdentityPrompt();
     updateLegendUserLabel();
-    setWelcomeState({ ready: true, message: 'Введите @username или открой все связи' });
+    setWelcomeState({ ready: true, message: '' });
   } catch (error) {
     console.error('Failed to load graph data', error);
     setWelcomeState({ ready: false, message: 'Не удалось загрузить граф. Обнови страницу через пару секунд.' });
