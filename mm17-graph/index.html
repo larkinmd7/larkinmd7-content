@@ -1101,17 +1101,25 @@ function enterApp(tgHandle) {
   document.getElementById('welcomeScreen').style.display = 'none';
   document.querySelector('.app').style.display = 'grid';
 
-  // Wait for graph to initialize
+  if (!tgHandle) return;
+  const clean = tgHandle.replace('@', '').toLowerCase();
+  const node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
+  if (!node) return;
+
+  // Pin the node to center while simulation settles
+  const area = document.getElementById('graphArea');
+  node.fx = area.clientWidth / 2;
+  node.fy = area.clientHeight / 2;
+  simulation.alpha(1).restart();
+
+  // After simulation settles, unpin and center smoothly
   setTimeout(() => {
-    if (tgHandle) {
-      const clean = tgHandle.replace('@', '').toLowerCase();
-      const node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
-      if (node) {
-        selectNode(node);
-        return;
-      }
-    }
-  }, 800);
+    node.fx = null;
+    node.fy = null;
+    selectNode(node);
+    // Re-center after a bit more settling
+    setTimeout(() => centerOnNode(node), 500);
+  }, 1500);
 }
 
 document.getElementById('welcomeEnter').addEventListener('click', () => {
