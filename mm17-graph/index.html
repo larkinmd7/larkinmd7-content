@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MM17 Social Graph</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23FF6B00'/%3E%3Ctext x='32' y='40' font-size='28' text-anchor='middle' fill='white' font-family='Arial'%3EM%3C/text%3E%3C/svg%3E">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -187,6 +188,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 #welcomeScreen .welcome-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
 #welcomeScreen .welcome-skip { color: var(--text2); font-size: 13px; cursor: pointer; border: none; background: none; margin-top: 8px; }
 #welcomeScreen .welcome-skip:hover { color: var(--text); }
+#welcomeScreen .welcome-status { min-height: 20px; font-size: 13px; color: var(--text2); }
+#welcomeScreen .welcome-btn:disabled,
+#welcomeScreen .welcome-skip:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -204,8 +208,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   <div class="welcome-logo">MM17<span>Social Graph</span></div>
   <div class="welcome-subtitle">Найди себя в сети участников MasterMind 17</div>
   <input class="welcome-input" id="welcomeInput" type="text" placeholder="@username">
-  <button class="welcome-btn" id="welcomeEnter">Войти</button>
-  <button class="welcome-skip" id="welcomeSkip">Пропустить</button>
+  <button class="welcome-btn" id="welcomeEnter" disabled>Войти</button>
+  <button class="welcome-skip" id="welcomeSkip" disabled>Пропустить</button>
+  <div class="welcome-status" id="welcomeStatus">Загружаем данные…</div>
 </div>
 
 <div class="app" style="display:none">
@@ -231,8 +236,8 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
   <!-- Graph -->
   <div class="graph-area" id="graphArea">
     <div class="filters-bar" id="filtersBar">
-      <div class="filter-chip" data-filter="all">Все связи</div>
-      <div class="filter-chip active" data-filter="my">Мой граф</div>
+      <div class="filter-chip active" data-filter="all">Все связи</div>
+      <div class="filter-chip" data-filter="my">Мой граф</div>
       <div class="filter-chip" data-filter="industry">По сфере</div>
       <div class="filter-chip" data-filter="hobby">По хобби</div>
     </div>
@@ -266,12 +271,14 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 // ============================================================
 let DATA = null;
 let simulation = null;
-let svg, g, linkG, nodeG;
+let zoomBehavior = null;
+let svg, g, linkG, nodeG, backgroundRect;
 let currentMode = 'graph';
-let currentFilter = 'my';
+let currentFilter = 'all';
 let selectedNode = null;
 let loggedInNode = null;
 let width, height;
+let isDataLoaded = false;
 
 const ROLE_COLORS = {
   organizer: '#a855f7',
@@ -291,14 +298,23 @@ const LINK_TYPE_COLORS = {
 // LOAD DATA
 // ============================================================
 async function loadData() {
-  const resp = await fetch('data.json');
-  DATA = await resp.json();
-  document.getElementById('statNodes').textContent = DATA.nodes.length;
-  document.getElementById('statLinks').textContent = DATA.links.length;
-  initGraph();
-  setupSearch();
-  setupModes();
-  setupFilters();
+  setWelcomeState({ ready: false, message: 'Загружаем данные…' });
+  try {
+    const resp = await fetch('data.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    DATA = await resp.json();
+    isDataLoaded = true;
+    document.getElementById('statNodes').textContent = DATA.nodes.length;
+    document.getElementById('statLinks').textContent = DATA.links.length;
+    initGraph();
+    setupSearch();
+    setupModes();
+    setupFilters();
+    setWelcomeState({ ready: true, message: 'Введите @username или открой все связи' });
+  } catch (error) {
+    console.error('Failed to load graph data', error);
+    setWelcomeState({ ready: false, message: 'Не удалось загрузить граф. Обнови страницу через пару секунд.' });
+  }
 }
 
 // ============================================================
@@ -317,7 +333,7 @@ function initGraph() {
   g = svg.append('g');
 
   // Background rect to catch pan/drag events on empty space
-  g.append('rect')
+  backgroundRect = g.append('rect')
     .attr('width', width * 3)
     .attr('height', height * 3)
     .attr('x', -width)
@@ -326,10 +342,10 @@ function initGraph() {
     .style('pointer-events', 'all');
 
   // Zoom & pan (applied to SVG before node drag handlers)
-  const zoom = d3.zoom()
+  zoomBehavior = d3.zoom()
     .scaleExtent([0.15, 4])
     .on('zoom', (e) => g.attr('transform', e.transform));
-  svg.call(zoom);
+  svg.call(zoomBehavior);
 
   linkG = g.append('g').attr('class', 'links');
   nodeG = g.append('g').attr('class', 'nodes');
@@ -547,7 +563,12 @@ function selectNode(d) {
   showPersonCard(d);
 }
 
-function centerOnNode(d) {
+function centerOnNode(d, attempt = 0) {
+  if (!zoomBehavior) return;
+  if (!Number.isFinite(d?.x) || !Number.isFinite(d?.y)) {
+    if (attempt < 6) setTimeout(() => centerOnNode(d, attempt + 1), 120);
+    return;
+  }
   const area = document.getElementById('graphArea');
   const w = area.clientWidth;
   const h = area.clientHeight;
@@ -556,7 +577,7 @@ function centerOnNode(d) {
   const y = h / 2 - d.y * scale;
 
   svg.transition().duration(900).ease(d3.easeCubicInOut)
-    .call(d3.zoom().transform, d3.zoomIdentity.translate(x, y).scale(scale));
+    .call(zoomBehavior.transform, d3.zoomIdentity.translate(x, y).scale(scale));
 }
 
 function showPersonCard(d) {
@@ -580,7 +601,10 @@ function showPersonCard(d) {
   const intros = DATA.introductions.filter(i =>
     i.person_a === d.id || i.person_b === d.id ||
     (i.group_members && i.group_members.includes(d.id))
-  );
+  ).filter(i => {
+    const otherId = i.person_a === d.id ? i.person_b : i.person_a;
+    return DATA.nodes.some(n => n.id === otherId);
+  });
 
   const avatarBg = getNodeColor(d).replace('#', '');
   const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(d.name)}&background=${avatarBg}&color=fff&size=120&font-size=0.38&bold=true&format=svg`;
@@ -959,9 +983,7 @@ function showEmptyState() {
 function setupFilters() {
   document.querySelectorAll('.filter-chip').forEach(chip => {
     chip.addEventListener('click', () => {
-      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      currentFilter = chip.dataset.filter;
+      setActiveFilter(chip.dataset.filter);
       applyFilter();
     });
   });
@@ -969,6 +991,10 @@ function setupFilters() {
 
 function applyFilter() {
   selectedNode = null;
+
+  if (currentFilter === 'my' && !loggedInNode) {
+    setActiveFilter('all');
+  }
 
   // "Мой граф" — show only logged-in user's connections
   if (currentFilter === 'my' && loggedInNode) {
@@ -1018,18 +1044,49 @@ function applyFilter() {
     .transition().duration(500).ease(d3.easeCubicOut).attr('opacity', 1);
 }
 
+function setActiveFilter(filter) {
+  currentFilter = filter === 'my' && !loggedInNode ? 'all' : filter;
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.dataset.filter === currentFilter);
+  });
+}
+
+function setWelcomeState({ ready, message }) {
+  const enter = document.getElementById('welcomeEnter');
+  const skip = document.getElementById('welcomeSkip');
+  const status = document.getElementById('welcomeStatus');
+  enter.disabled = !ready;
+  skip.disabled = !ready;
+  status.textContent = message;
+}
+
+function refreshGraphViewport(alpha = 0.3) {
+  if (!svg || !simulation) return false;
+  const area = document.getElementById('graphArea');
+  width = area.clientWidth;
+  height = area.clientHeight;
+  if (!width || !height) return false;
+
+  svg.attr('width', width).attr('height', height);
+  if (backgroundRect) {
+    backgroundRect
+      .attr('width', width * 3)
+      .attr('height', height * 3)
+      .attr('x', -width)
+      .attr('y', -height);
+  }
+  simulation.force('center', d3.forceCenter(width / 2, height / 2));
+  simulation.force('x', d3.forceX(width / 2).strength(0.012));
+  simulation.force('y', d3.forceY(height / 2).strength(0.012));
+  simulation.alpha(alpha).restart();
+  return true;
+}
+
 // ============================================================
 // RESIZE
 // ============================================================
 window.addEventListener('resize', () => {
-  const area = document.getElementById('graphArea');
-  width = area.clientWidth;
-  height = area.clientHeight;
-  svg.attr('width', width).attr('height', height);
-  simulation.force('center', d3.forceCenter(width / 2, height / 2));
-  simulation.force('x', d3.forceX(width / 2).strength(0.012));
-  simulation.force('y', d3.forceY(height / 2).strength(0.012));
-  simulation.alpha(0.3).restart();
+  refreshGraphViewport();
 });
 
 // ============================================================
@@ -1041,32 +1098,44 @@ loadData();
 // WELCOME SCREEN
 // ============================================================
 function enterApp(tgHandle) {
+  if (!isDataLoaded || !DATA) {
+    setWelcomeState({ ready: false, message: 'Данные еще загружаются…' });
+    return;
+  }
+
+  let node = null;
+  if (tgHandle) {
+    const clean = tgHandle.replace('@', '').toLowerCase();
+    node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
+    if (!node) {
+      setWelcomeState({ ready: true, message: 'Такой Telegram не найден. Проверь @username или нажми «Пропустить».' });
+      return;
+    }
+  }
+
   document.getElementById('welcomeScreen').style.display = 'none';
   document.querySelector('.app').style.display = 'grid';
-
-  if (!tgHandle) return;
-  const clean = tgHandle.replace('@', '').toLowerCase();
-  const node = DATA.nodes.find(n => n.telegram && n.telegram.replace('@', '').toLowerCase() === clean);
-  if (!node) return;
   loggedInNode = node;
+  setActiveFilter(loggedInNode ? 'my' : 'all');
 
-  // Wait for layout to compute, then recalculate center
-  setTimeout(() => {
-    const area = document.getElementById('graphArea');
-    const w = area.clientWidth;
-    const h = area.clientHeight;
+  const waitForViewport = (callback, attempt = 0) => {
+    if (refreshGraphViewport(loggedInNode ? 1 : 0.4)) {
+      callback();
+      return;
+    }
+    if (attempt < 10) setTimeout(() => waitForViewport(callback, attempt + 1), 120);
+  };
 
-    // Update simulation center to match actual graph area
-    simulation.force('center', d3.forceCenter(w / 2, h / 2));
-    simulation.force('x', d3.forceX(w / 2).strength(0.012));
-    simulation.force('y', d3.forceY(h / 2).strength(0.012));
+  if (!loggedInNode) {
+    waitForViewport(() => applyFilter());
+    return;
+  }
 
-    // Pin user node to center
-    node.fx = w / 2;
-    node.fy = h / 2;
+  waitForViewport(() => {
+    node.fx = width / 2;
+    node.fy = height / 2;
     simulation.alpha(1).restart();
 
-    // After settling, unpin and select
     setTimeout(() => {
       node.fx = null;
       node.fy = null;
@@ -1074,7 +1143,7 @@ function enterApp(tgHandle) {
       applyFilter();
       setTimeout(() => centerOnNode(node), 500);
     }, 2000);
-  }, 100);
+  });
 }
 
 document.getElementById('welcomeEnter').addEventListener('click', () => {
