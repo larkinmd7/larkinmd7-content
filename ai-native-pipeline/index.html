@@ -1882,6 +1882,13 @@ body.edit-mode #sb-edit-btn { display: none; }
 .toc-item:hover { background: #F9FAFB; color: var(--text); border-color: var(--border); }
 .toc-item.toc-active { color: var(--accent); font-weight: 600; background: #FFF7ED; border-color: #FED7AA; }
 .toc-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); min-width: 22px; flex-shrink: 0; padding-top: 1px; }
+.toc-drag-handle { display: none; font-size: 11px; color: var(--text-dim); opacity: 0.5; line-height: 1; padding-top: 2px; flex-shrink: 0; user-select: none; letter-spacing: -1px; }
+body.edit-mode .toc-drag-handle { display: inline-block; }
+body.edit-mode .toc-item { cursor: grab; }
+body.edit-mode .toc-item:active { cursor: grabbing; }
+body.edit-mode .toc-item.toc-dragging { opacity: 0.35; }
+body.edit-mode .toc-item.toc-drop-before { box-shadow: 0 -2px 0 var(--accent) inset, 0 -2px 0 var(--accent); border-top-color: var(--accent); }
+body.edit-mode .toc-item.toc-drop-after { box-shadow: 0 2px 0 var(--accent) inset, 0 2px 0 var(--accent); border-bottom-color: var(--accent); }
 
 /* Timer tab */
 .timer-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
@@ -2225,6 +2232,9 @@ body.marquee-dragging { user-select: none !important; }
 
 <script>
 const slides = Array.from(document.querySelectorAll('.slide'));
+// Assign permanent identity once so persisted order survives reloads
+slides.forEach((s, i) => { if (!s.dataset.sid) s.dataset.sid = String(i); });
+const slidesContainer = document.getElementById('slides');
 const dotsEl = document.getElementById('dots');
 const counter = document.getElementById('counter');
 const badge = document.getElementById('section-badge');
@@ -2244,7 +2254,11 @@ let cropTargetImg = null;
 let savedSel = null; // saved selection for fmt toolbar
 
 // ── INIT ──
-function init() {
+// Rebuilds dots + TOC from current `slides` array (called after reorder)
+let dragFromIdx = null;
+function rebuildNav() {
+  dotsEl.innerHTML = '';
+  tocList.innerHTML = '';
   slides.forEach((s, i) => {
     const d = document.createElement('div');
     d.className = 'dot';
@@ -2253,10 +2267,82 @@ function init() {
 
     const t = document.createElement('div');
     t.className = 'toc-item';
-    t.innerHTML = `<span class="toc-num">${String(i+1).padStart(2,'0')}</span>${s.dataset.section || '—'}`;
-    t.addEventListener('click', () => { goTo(i); closePanel(); });
+    t.draggable = true;
+    t.dataset.tocIdx = String(i);
+    t.innerHTML = `<span class="toc-drag-handle" aria-hidden="true">⋮⋮</span><span class="toc-num">${String(i+1).padStart(2,'0')}</span><span>${s.dataset.section || '—'}</span>`;
+    t.addEventListener('click', (e) => {
+      if (t.classList.contains('toc-dragging')) return;
+      goTo(parseInt(t.dataset.tocIdx)); closePanel();
+    });
+    t.addEventListener('dragstart', (e) => {
+      if (!editMode) { e.preventDefault(); return; }
+      dragFromIdx = parseInt(t.dataset.tocIdx);
+      t.classList.add('toc-dragging');
+      if (e.dataTransfer) {
+        e.dataTransfer.effectAllowed = 'move';
+        try { e.dataTransfer.setData('text/plain', String(dragFromIdx)); } catch(_) {}
+      }
+    });
+    t.addEventListener('dragend', () => {
+      t.classList.remove('toc-dragging');
+      tocList.querySelectorAll('.toc-drop-before, .toc-drop-after').forEach(el => {
+        el.classList.remove('toc-drop-before', 'toc-drop-after');
+      });
+      dragFromIdx = null;
+    });
+    t.addEventListener('dragover', (e) => {
+      if (!editMode || dragFromIdx === null) return;
+      e.preventDefault();
+      if (e.dataTransfer) e.dataTransfer.dropEffect = 'move';
+      const rect = t.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      tocList.querySelectorAll('.toc-drop-before, .toc-drop-after').forEach(el => {
+        el.classList.remove('toc-drop-before', 'toc-drop-after');
+      });
+      t.classList.add(before ? 'toc-drop-before' : 'toc-drop-after');
+    });
+    t.addEventListener('drop', (e) => {
+      if (!editMode || dragFromIdx === null) return;
+      e.preventDefault();
+      const rect = t.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      const toIdx = parseInt(t.dataset.tocIdx);
+      const target = before ? toIdx : toIdx + 1;
+      reorderSlide(dragFromIdx, target);
+    });
     tocList.appendChild(t);
   });
+}
+
+function reorderSlide(from, to) {
+  if (from < 0 || from >= slides.length) return;
+  if (to < 0) to = 0;
+  if (to > slides.length) to = slides.length;
+  if (from === to || from === to - 1) return; // no-op
+  const moved = slides[from];
+  slides.splice(from, 1);
+  const newIdx = to > from ? to - 1 : to;
+  slides.splice(newIdx, 0, moved);
+  // Sync DOM to new `slides` order
+  const refNode = slides[newIdx + 1] || null;
+  slidesContainer.insertBefore(moved, refNode);
+  // Update current pointer
+  if (current === from) {
+    current = newIdx;
+  } else if (from < current && newIdx >= current) {
+    current--;
+  } else if (from > current && newIdx <= current) {
+    current++;
+  }
+  rebuildNav();
+  saveEdits();
+  update();
+}
+
+function init() {
+  // Restore persisted order + content BEFORE building nav so TOC reflects final order
+  loadEdits();
+  rebuildNav();
 
   // CRITICAL: prevent toolbar clicks from stealing focus/selection from contentEditable
   fmtToolbar.addEventListener('mousedown', e => {
@@ -2284,8 +2370,7 @@ function init() {
   // selection change → show/hide toolbar
   document.addEventListener('selectionchange', onSelectionChange);
 
-  // load from localStorage
-  loadEdits();
+  // (loadEdits already called at top of init so order is applied before nav/overlay)
   slides.forEach(ensureSlideOverlay);
   update();
 }
@@ -2541,6 +2626,12 @@ function editorSave() {
 }
 function editorDiscard() {
   if (!editEntrySnapshot) return;
+  // Restore order first
+  if (editEntrySnapshot._order) {
+    applySavedOrder(editEntrySnapshot._order);
+    rebuildNav();
+    if (current >= slides.length) current = slides.length - 1;
+  }
   // Restore all slides to state at edit-entry (or last save)
   slides.forEach((s, i) => {
     if (editEntrySnapshot[i]) s.innerHTML = editEntrySnapshot[i];
@@ -2548,6 +2639,7 @@ function editorDiscard() {
   slides.forEach(ensureSlideOverlay);
   saveEdits(); // sync localStorage with reverted state
   editsSavedSinceEntry = true; // mark as "handled" so exitEditMode won't revert again
+  update();
   exitEditMode();
 }
 function exitEditMode() {
@@ -2616,6 +2708,7 @@ function toggleEdit() {
   // Capture snapshot of all slides before any edits
   editEntrySnapshot = {};
   slides.forEach((s, i) => { editEntrySnapshot[i] = s.innerHTML; });
+  editEntrySnapshot._order = slides.map(s => s.dataset.sid || '');
   editsSavedSinceEntry = false;
   undoStack.length = 0;
   redoStack.length = 0;
@@ -3985,7 +4078,23 @@ function saveEdits() {
   slides.forEach((s, i) => {
     state[i] = s.innerHTML;
   });
+  // Persist slide order as array of permanent sids
+  state._order = slides.map(s => s.dataset.sid || '');
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+function applySavedOrder(orderSids) {
+  if (!Array.isArray(orderSids) || !orderSids.length) return;
+  const bySid = {};
+  slides.forEach(s => { bySid[s.dataset.sid] = s; });
+  const newOrder = [];
+  orderSids.forEach(sid => { if (bySid[sid]) newOrder.push(bySid[sid]); });
+  // Append any slide missing from the saved order (new slides added after save)
+  slides.forEach(s => { if (newOrder.indexOf(s) === -1) newOrder.push(s); });
+  if (newOrder.length !== slides.length) return;
+  newOrder.forEach(s => slidesContainer.appendChild(s));
+  slides.length = 0;
+  newOrder.forEach(s => slides.push(s));
 }
 
 function loadEdits() {
@@ -3993,6 +4102,9 @@ function loadEdits() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return;
     const state = JSON.parse(raw);
+    // 1) restore order first
+    if (state && state._order) applySavedOrder(state._order);
+    // 2) restore content by positional index (matches save schema)
     slides.forEach((s, i) => {
       if (state[i]) s.innerHTML = state[i];
     });
